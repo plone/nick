@@ -687,7 +687,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:667
+#: src/routes/content/content.ts:688
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "ஆவணம் பூட்டப்பட்டுள்ளது"
@@ -1668,7 +1668,7 @@ msgid "Rename"
 msgstr "பெயர் மாற்றம்"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:481
+#: src/routes/content/content.ts:502
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "தேவையான புலம்(கள்) இல்லை."
@@ -2330,7 +2330,7 @@ msgid "Type of the current document is not found."
 msgstr "தற்போதைய ஆவணத்தின் வகை காணப்படவில்லை."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:470
+#: src/routes/content/content.ts:491
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2577,7 +2577,7 @@ msgstr "நீங்கள் கணினி பயனர்களை நீக
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:62
-#: src/routes/content/content.ts:664
+#: src/routes/content/content.ts:685
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "இந்த ஆவணம் மற்றொரு பயனரால் பூட்டப்பட்டுள்ளதால், அதைச் சேமிக்க உங்களுக்கு அனுமதி இல்லை."

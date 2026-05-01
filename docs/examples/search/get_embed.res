@@ -14,6 +14,7 @@ Content-Type: application/json
       "Title": "News",
       "Subject": null,
       "is_folderish": true,
+      "markdown": "# News\n\n",
       "exclude_from_nav": false,
       "Type": "Folder",
       "getId": "news",

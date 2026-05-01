@@ -36,6 +36,7 @@ import behaviors from '../../behaviors';
 import config from '../../helpers/config/config';
 import type { Json, Request } from '../../types';
 import type { Knex } from 'knex';
+import { slateToMarkdown } from '../../helpers/markdown/markdown';
 
 /**
  * A model for Document.
@@ -1438,5 +1439,26 @@ ${Object.keys(event)
   .map((key) => `${key}:${event[key]}`)
   .join('\n')}
 END:VEVENT`;
+  }
+
+  /**
+   * Convert document to Markdown format
+   * @returns {string} Markdown string
+   */
+  toMarkdown(): string {
+    const self: any = this;
+
+    return (self.json.blocks_layout?.items || [])
+      .map((block: any) => {
+        switch (self.json.blocks[block]['@type']) {
+          case 'title':
+            return `# ${self.json.title}\n\n`;
+          case 'slate':
+            return slateToMarkdown(self.json.blocks[block].value);
+          default:
+            return '';
+        }
+      })
+      .join('');
   }
 }

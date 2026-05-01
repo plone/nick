@@ -937,6 +937,11 @@
       "name": "hasPreviewImage",
       "type": "boolean",
       "attr": "hasPreviewImage"
+    },
+    {
+      "name": "markdown",
+      "type": "text",
+      "attr": "toMarkdown"
     }
   ]
 }

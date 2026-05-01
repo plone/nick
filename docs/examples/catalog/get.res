@@ -11,6 +11,7 @@ Content-Type: application/json
   "Title": "Welcome to Nick!",
   "Subject": null,
   "is_folderish": true,
+  "markdown": "# Welcome to Nick!\n\nThis is the demo site of [Nick](https://nickcms.org) and is build with the [Volto](https://voltocms.com) frontend.\n\n## Demo\n\nYou can use this site to test the latest version of Nick. You can login with *username* **admin** and *password* **admin**.\n\nThis instance is reset every night so feel free to make any changes!\n\n",
   "end": null,
   "exclude_from_nav": null,
   "Type": "Site",

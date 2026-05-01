@@ -425,6 +425,27 @@ export default [
   },
   {
     op: 'get',
+    view: '/markdown_view',
+    permission: 'View',
+    client: 'getMarkdown',
+    cache: 'content',
+    handler: async (req: Request, trx: Knex.Transaction) => {
+      await req.document.fetchChildren(req, trx);
+      await req.document.restrictChildren(req, trx);
+
+      const markdown = await req.document.toMarkdown();
+      return {
+        headers: {
+          'content-type': 'text/markdown',
+          'content-disposition': `attachment; filename="${req.document.id}.md"`,
+        },
+        xkeys: [req.document.uuid],
+        html: markdown,
+      };
+    },
+  },
+  {
+    op: 'get',
     view: '',
     permission: 'View',
     client: 'getContent',

@@ -68,4 +68,7 @@ describe('Content', () => {
 
   it('should export a rss file for a folder object', () =>
     testRequest(app, 'content/rss'));
+
+  it('should export a markdown file for an object', () =>
+    testRequest(app, 'content/markdown'));
 });

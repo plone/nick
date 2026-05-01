@@ -111,6 +111,7 @@
 - Add video content type @robgietema
 - Add push api @robgietema
 - Add ai response to search endpoint if requested @robgietema
+- Add markdown support @robgietema
 
 ### Bugfix
 
