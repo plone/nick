@@ -98,7 +98,7 @@
     "express-rate-limit": "8.4.1",
     "helmet": "8.1.0",
     "jsonwebtoken": "9.0.3",
-    "knex": "3.2.9",
+    "knex": "3.2.10",
     "log4js": "6.9.1",
     "mime-types": "3.0.2",
     "node-cron": "4.2.1",

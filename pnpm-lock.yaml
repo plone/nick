@@ -42,8 +42,8 @@ importers:
         specifier: 9.0.3
         version: 9.0.3
       knex:
-        specifier: 3.2.9
-        version: 3.2.9(pg@8.20.0)
+        specifier: 3.2.10
+        version: 3.2.10(pg@8.20.0)
       log4js:
         specifier: 6.9.1
         version: 6.9.1
@@ -61,10 +61,10 @@ importers:
         version: 3.1.14
       objection:
         specifier: 3.1.5
-        version: 3.1.5(knex@3.2.9(pg@8.20.0))
+        version: 3.1.5(knex@3.2.10(pg@8.20.0))
       objection-table-name:
         specifier: 2.0.2
-        version: 2.0.2(objection@3.1.5(knex@3.2.9(pg@8.20.0)))
+        version: 2.0.2(objection@3.1.5(knex@3.2.10(pg@8.20.0)))
       pdf-parse:
         specifier: 2.4.5
         version: 2.4.5
@@ -1316,8 +1316,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.348:
-    resolution: {integrity: sha512-QC2X59nRlycQQMc4ZXjSVBX+tSgJfgRtcrYHbIZLgOV2dCvefoQGegLR7lLXKgpPpSuVmJU19LMzGrSa2C7k3Q==}
+  electron-to-chromium@1.5.349:
+    resolution: {integrity: sha512-QsWVGyRuY07Aqb234QytTfwd5d9AJlfNIQ5wIOl1L+PZDzI9d9+Fn0FRale/QYlFxt/bUnB0/nLd1jFPGxGK1A==}
 
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
@@ -1722,8 +1722,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  knex@3.2.9:
-    resolution: {integrity: sha512-dtAILTjBMaG8YloP5oBxohDIKyIsdQ/TkcVvSjhsksvsjeH63Y0PADyuMDfNZKbVT3Rlx3vEYVBlecbPT/KerA==}
+  knex@3.2.10:
+    resolution: {integrity: sha512-oypTHfrc9i72iyxaUQBKHOxhcr0xM65MPf6FpN02nimsftXwzXprIkLjfXdubvhbu4PMWLp023q8o8CYvHSuZw==}
     engines: {node: '>=16'}
     hasBin: true
     peerDependencies:
@@ -3359,7 +3359,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.25
       caniuse-lite: 1.0.30001791
-      electron-to-chromium: 1.5.348
+      electron-to-chromium: 1.5.349
       node-releases: 2.0.38
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -3470,7 +3470,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.348: {}
+  electron-to-chromium@1.5.349: {}
 
   encodeurl@2.0.0: {}
 
@@ -3913,7 +3913,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  knex@3.2.9(pg@8.20.0):
+  knex@3.2.10(pg@8.20.0):
     dependencies:
       colorette: 2.0.19
       commander: 10.0.1
@@ -4056,19 +4056,19 @@ snapshots:
 
   object-inspect@1.13.4: {}
 
-  objection-table-name@2.0.2(objection@3.1.5(knex@3.2.9(pg@8.20.0))):
+  objection-table-name@2.0.2(objection@3.1.5(knex@3.2.10(pg@8.20.0))):
     dependencies:
       lodash.camelcase: 4.3.0
       lodash.memoize: 4.1.2
-      objection: 3.1.5(knex@3.2.9(pg@8.20.0))
+      objection: 3.1.5(knex@3.2.10(pg@8.20.0))
       pluralize: 8.0.0
 
-  objection@3.1.5(knex@3.2.9(pg@8.20.0)):
+  objection@3.1.5(knex@3.2.10(pg@8.20.0)):
     dependencies:
       ajv: 8.20.0
       ajv-formats: 2.1.1(ajv@8.20.0)
       db-errors: 0.2.3
-      knex: 3.2.9(pg@8.20.0)
+      knex: 3.2.10(pg@8.20.0)
 
   obug@2.1.1: {}
 
