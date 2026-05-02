@@ -1,5 +1,5 @@
 ---
-nav_order: 10
+nav_order: 11
 permalink: /endpoints/email
 parent: Endpoints
 ---

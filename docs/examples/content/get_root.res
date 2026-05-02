@@ -206,6 +206,7 @@ Content-Type: application/json
   ],
   "@components": {
     "catalog": { "@id": "http://localhost:8080/@catalog" },
+    "contextnavigation": { "@id": "http://localhost:8080/@contextnavigation" },
     "actions": { "@id": "http://localhost:8080/@actions" },
     "breadcrumbs": { "@id": "http://localhost:8080/@breadcrumbs" },
     "navigation": { "@id": "http://localhost:8080/@navigation" },

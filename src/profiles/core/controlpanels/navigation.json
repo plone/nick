@@ -38,7 +38,7 @@
     "required": ["displayed_types"]
   },
   "data": {
-    "displayed_types": ["Folder", "Page"],
+    "displayed_types": ["Folder", "Page", "Event"],
     "additional_items": ""
   }
 }

@@ -15,6 +15,7 @@ The following is a list of components that support expansion.
 - [actions](/actions)
 - [breadcrumbs](/breadcrumbs)
 - [catalog](/catalog)
+- [contextnavigation](/contextnavigation)
 - [navigation](/navigation)
 - [navroot](/navroot)
 - [related](/related)

@@ -5,7 +5,7 @@ const login = await cli.login({
   data: { login: 'admin', password: 'admin' },
 });
 
-const { data } = await cli.getNavigation({
+const { data } = await cli.getContextNavigation({
   token: login.data.token,
-  path: '/news',
+  path: '/',
 });

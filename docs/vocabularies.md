@@ -1,5 +1,5 @@
 ---
-nav_order: 31
+nav_order: 32
 permalink: /endpoints/vocabularies
 parent: Endpoints
 ---

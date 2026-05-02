@@ -15,6 +15,7 @@ import { vision } from '../ai/ai';
 
 import { handler as actions } from '../../routes/actions/actions';
 import { handler as breadcrumbs } from '../../routes/breadcrumbs/breadcrumbs';
+import { handler as contextnavigation } from '../../routes/contextnavigation/contextnavigation';
 import { handler as navigation } from '../../routes/navigation/navigation';
 import { handler as navroot } from '../../routes/navroot/navroot';
 import { handler as related } from '../../routes/related/related';
@@ -339,6 +340,13 @@ export async function getComponents(
     components.breadcrumbs = (await breadcrumbs(req, trx)).json;
   } else {
     components.breadcrumbs = { '@id': `${baseUrl}/@breadcrumbs` };
+  }
+
+  // Include contextnavigation expander
+  if (expand.includes('contextnavigation')) {
+    components.contextnavigation = (await contextnavigation(req, trx)).json;
+  } else {
+    components.contextnavigation = { '@id': `${baseUrl}/@contextnavigation` };
   }
 
   // Include navigation expander

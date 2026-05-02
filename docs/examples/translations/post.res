@@ -13,6 +13,9 @@ Content-Type: application/json
     "catalog": {
       "@id": "http://localhost:8080/nl/evenementen/@catalog"
     },
+    "contextnavigation": {
+      "@id": "http://localhost:8080/nl/evenementen/@contextnavigation"
+    },
     "navigation": {
       "@id": "http://localhost:8080/nl/evenementen/@navigation"
     },

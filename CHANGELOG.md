@@ -114,6 +114,7 @@
 - Add markdown support @robgietema
 - Add streaming support for the video content type @robgietema
 - Add exportimport script to migrate data @robgietema
+- Add context navigation endpoint @robgietema
 
 ### Bugfix
 
