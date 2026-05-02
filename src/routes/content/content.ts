@@ -238,7 +238,7 @@ export default [
   },
   {
     op: 'get',
-    view: '/@@download/:field',
+    view: '/@@videos/:field',
     // permission: 'View',
     handler: async (req: Request, trx: Knex.Transaction) => {
       const field = req.document.json[req.params.field];
@@ -285,6 +285,35 @@ export default [
         etag: uuid,
         xkeys: [req.document.uuid],
         binary: buffer.subarray(start, end + 1),
+      };
+    },
+  },
+  {
+    op: 'get',
+    view: '/@@download/:field',
+    permission: 'View',
+    handler: async (req: Request, trx: Knex.Transaction) => {
+      const field = req.document.json[req.params.field];
+      const uuid = field.uuid;
+
+      // Check if current etag
+      if (checkETag(req, uuid)) {
+        return {
+          status: 304,
+        };
+      }
+
+      // Fetch file
+      const buffer = await readFile(uuid, trx);
+      return {
+        headers: {
+          'content-type': field['content-type'],
+          'content-disposition': `attachment; filename="${field.filename}"`,
+          'Accept-Ranges': 'bytes',
+        },
+        etag: uuid,
+        xkeys: [req.document.uuid],
+        binary: buffer,
       };
     },
   },
