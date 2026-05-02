@@ -28,6 +28,7 @@
     "client": "tsx src/client_test.ts",
     "coverage": "vitest --coverage",
     "convert": "tsx scripts/convert.ts",
+    "exportimport": "tsx scripts/exportimport.ts",
     "create-config": "cp -n config.ts.sample config.ts",
     "i18n": "tsx scripts/i18n.ts",
     "i18n:ci": "pnpm i18n && git diff -G'^[^\"POT]' --exit-code",

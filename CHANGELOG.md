@@ -113,6 +113,7 @@
 - Add ai response to search endpoint if requested @robgietema
 - Add markdown support @robgietema
 - Add streaming support for the video content type @robgietema
+- Add exportimport script to migrate data @robgietema
 
 ### Bugfix
 
