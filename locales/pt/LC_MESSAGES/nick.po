@@ -687,7 +687,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:711
+#: src/routes/content/content.ts:740
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Documento bloqueado"
@@ -1668,7 +1668,7 @@ msgid "Rename"
 msgstr "Renomear"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:525
+#: src/routes/content/content.ts:554
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Campo(s) obrigatório(s) em falta."
@@ -2330,7 +2330,7 @@ msgid "Type of the current document is not found."
 msgstr "O tipo do documento atual não foi encontrado."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:514
+#: src/routes/content/content.ts:543
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2577,7 +2577,7 @@ msgstr "Não podes eliminar utilizadores de sistema."
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:62
-#: src/routes/content/content.ts:708
+#: src/routes/content/content.ts:737
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Não tens permissão para guardar este documento porque está bloqueado por outro utilizador."
