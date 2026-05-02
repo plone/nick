@@ -98,5 +98,7 @@ function renderNode(
  * @returns A Markdown string.
  */
 export function slateToMarkdown(nodes: SlateNode[]): string {
-  return nodes.map((node) => renderNode(node, 0, 0, null)).join('\n\n');
+  return nodes
+    ? nodes.map((node) => renderNode(node, 0, 0, null)).join('\n\n')
+    : '';
 }

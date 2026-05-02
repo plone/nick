@@ -186,6 +186,7 @@
 - Fix error with translation unlinking @robgietema
 - Fix error with language locator for languageroots @robgietema
 - Remove /++api++ from request url @robgietema
+- Fix markdown indexer bug @robgietema
 
 ### Internal
 
