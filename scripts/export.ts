@@ -1,7 +1,7 @@
 /* eslint no-console: 0 */
 /**
- * Export/Import script.
- * @module scripts/exportimport
+ * Export script.
+ * @module scripts/export
  */
 
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
@@ -37,7 +37,7 @@ const writeMetadata = (path: string, profile: string) => {
 
 /**
  * Convert permissions
- * @param {Array} permissions Permissions to import.
+ * @param {Array} permissions Permissions to export.
  * @param {string} path Path of the output folder.
  */
 const convertPermissions = (permissions: any[], path: string) => {
@@ -59,7 +59,7 @@ const convertPermissions = (permissions: any[], path: string) => {
 
 /**
  * Convert roles
- * @param {Array} roles Roles to import.
+ * @param {Array} roles Roles to export.
  * @param {string} path Path of the output folder.
  */
 const convertRoles = (roles: any[], path: string) => {
@@ -82,7 +82,7 @@ const convertRoles = (roles: any[], path: string) => {
 
 /**
  * Convert groups
- * @param {Array} groups Groups to import.
+ * @param {Array} groups Groups to export.
  * @param {string} path Path of the output folder.
  */
 const convertGroups = (groups: any[], path: string) => {
@@ -107,7 +107,7 @@ const convertGroups = (groups: any[], path: string) => {
 
 /**
  * Convert users
- * @param {Array} users Users to import.
+ * @param {Array} users Users to export.
  * @param {string} path Path of the output folder.
  */
 const convertUsers = (users: any[], path: string) => {
@@ -134,7 +134,7 @@ const convertUsers = (users: any[], path: string) => {
 
 /**
  * Convert actions
- * @param {Object} actions Actions to import.
+ * @param {Object} actions Actions to export.
  * @param {string} path Path of the output folder.
  */
 const convertActions = (actions: any, path: string) => {
@@ -171,7 +171,7 @@ const convertActions = (actions: any, path: string) => {
 
 /**
  * Convert types
- * @param {Array} types Types to import.
+ * @param {Array} types Types to export.
  * @param {string} path Path of the output folder.
  * @param {string} url Url
  * @param {string} token Auth token
@@ -332,9 +332,7 @@ async function fetchFromApi(
 async function main() {
   // Check arguments
   if (process.argv.length !== 6) {
-    console.log(
-      'Usage: pnpm exportimport <url> <login> <password> <outputprofile>',
-    );
+    console.log('Usage: pnpm export <url> <login> <password> <outputprofile>');
     return;
   }
 
