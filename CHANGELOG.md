@@ -112,6 +112,7 @@
 - Add push api @robgietema
 - Add ai response to search endpoint if requested @robgietema
 - Add markdown support @robgietema
+- Add streaming support for the video content type @robgietema
 
 ### Bugfix
 

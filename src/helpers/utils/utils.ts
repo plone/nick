@@ -127,3 +127,27 @@ export function getNodeVersion(): string {
 export function stripNewlines(string: string): string {
   return string.replace(/\r\n|\n|\r/gm, '');
 }
+
+/**
+ * Convert string with bytes to number
+ * @param bytes Input string
+ * @returns Values in bytes
+ */
+export function bytesToNumber(bytes: string): number {
+  const units: { [key: string]: number } = {
+    kb: 1024,
+    mb: 1024 ** 2,
+    gb: 1024 ** 3,
+    tb: 1024 ** 4,
+  };
+
+  // Match number and unit
+  const match = bytes.toLowerCase().match(/^(\d+(?:\.\d+)?)\s*([a-z]+)$/);
+
+  if (!match) return parseFloat(bytes) || 0;
+
+  const value = parseFloat(match[1]);
+  const unit = match[2];
+
+  return units[unit] ? value * units[unit] : value;
+}

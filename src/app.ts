@@ -216,13 +216,14 @@ routes.map((route: Route) => {
           if (view && view.json) {
             // Send json data
             res.status(view.status || 200).send(view.json);
+          } else if (view && view.binary) {
+            // Send binary data
+            res.statusCode = view.status || 200;
+            res.write(view.binary, 'binary');
+            res.end(undefined, 'binary');
           } else if (view && view.status) {
             // Send just the status code with no data
             res.status(view.status).send();
-          } else if (view && view.binary) {
-            // Send binary data
-            res.write(view.binary, 'binary');
-            res.end(undefined, 'binary');
           } else if (view && view.html) {
             res.status(view.status || 200).send(view.html);
           }

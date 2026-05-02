@@ -90,6 +90,7 @@ class Config {
       requestLimit: config.requestLimit || {
         api: '1mb',
         files: '10mb',
+        chunk: '1mb',
       },
       push: {
         enabled: config.push?.enabled || false,

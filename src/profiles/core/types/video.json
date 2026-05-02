@@ -2,7 +2,7 @@
   "id": "Video",
   "title:i18n": "Video",
   "description:i18n": "Videos can be referenced in pages.",
-  "global_allow": false,
+  "global_allow": true,
   "filter_content_types": true,
   "allowed_content_types": [],
   "schema": {

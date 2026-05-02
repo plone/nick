@@ -15,7 +15,7 @@ import { v4 as uuid } from 'uuid';
 
 import { getRootUrl } from '../../helpers/url/url';
 import { lockExpired } from '../../helpers/lock/lock';
-import { mapAsync, uniqueId } from '../../helpers/utils/utils';
+import { mapAsync, uniqueId, bytesToNumber } from '../../helpers/utils/utils';
 import { readFile, removeFile } from '../../helpers/fs/fs';
 import { checkETag } from '../../helpers/cache/cache';
 import { RequestException } from '../../helpers/error/error';
@@ -239,7 +239,7 @@ export default [
   {
     op: 'get',
     view: '/@@download/:field',
-    permission: 'View',
+    // permission: 'View',
     handler: async (req: Request, trx: Knex.Transaction) => {
       const field = req.document.json[req.params.field];
       const uuid = field.uuid;
@@ -253,15 +253,38 @@ export default [
 
       // Fetch file
       const buffer = await readFile(uuid, trx);
+
+      // Get chunk size
+      const chunkSize = bytesToNumber(
+        config.settings.requestLimit?.chunk || '1mb',
+      );
+      const size = buffer.length;
+
+      // Check range
+      const range = req.headers.range || `bytes=0-`;
+      let [start, end] = range
+        .replace(/bytes=/, '')
+        .split('-')
+        .map((x) => parseInt(x, 10));
+      if (isNaN(start)) {
+        start = 0;
+      }
+      if (isNaN(end)) {
+        end = Math.min(start + chunkSize - 1, size - 1);
+      }
+
       return {
         headers: {
           'content-type': field['content-type'],
           'content-disposition': `attachment; filename="${field.filename}"`,
+          'content-length': end - start + 1,
+          'content-range': `bytes ${start}-${end}/${size}`,
           'Accept-Ranges': 'bytes',
         },
+        status: start === 0 && end === size - 1 ? 200 : 206,
         etag: uuid,
         xkeys: [req.document.uuid],
-        binary: buffer,
+        binary: buffer.subarray(start, end + 1),
       };
     },
   },

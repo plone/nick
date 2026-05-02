@@ -687,7 +687,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:688
+#: src/routes/content/content.ts:711
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Document verrouillé"
@@ -1045,8 +1045,8 @@ msgid "Information about rights held in and over this item."
 msgstr "Informations sur les droits relatifs à cet élément."
 
 #. Default: "Internal server error"
-#: src/app.ts:254
-#: src/app.ts:264
+#: src/app.ts:255
+#: src/app.ts:265
 msgctxt "App"
 msgid "Internal server error"
 msgstr "Erreur interne du serveur"
@@ -1668,7 +1668,7 @@ msgid "Rename"
 msgstr "Renommer"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:502
+#: src/routes/content/content.ts:525
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Champ(s) obligatoire(s) manquant(s)."
@@ -2330,7 +2330,7 @@ msgid "Type of the current document is not found."
 msgstr "Le type du document actuel n'a pas été trouvé."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:491
+#: src/routes/content/content.ts:514
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2577,7 +2577,7 @@ msgstr "Tu ne peux pas supprimer les utilisateurs système."
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:62
-#: src/routes/content/content.ts:685
+#: src/routes/content/content.ts:708
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Tu n'as pas la permission de sauvegarder ce document car il est verrouillé par un autre utilisateur."

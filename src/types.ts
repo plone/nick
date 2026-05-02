@@ -249,8 +249,9 @@ export type ConfigSettings = {
   behaviors?: Record<string, any>;
   vocabularies?: Record<string, any>;
   requestLimit?: {
-    files: number;
-    api: number;
+    files: string;
+    api: string;
+    chunk: string;
   };
   userschema?: (req: Request) => any;
 };

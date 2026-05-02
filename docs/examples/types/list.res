@@ -39,7 +39,7 @@ Content-Type: application/json
   },
   {
     "@id": "http://localhost:8080/@types/Video",
-    "addable": false,
+    "addable": true,
     "title": "Video"
   }
 ]

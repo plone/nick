@@ -687,7 +687,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:688
+#: src/routes/content/content.ts:711
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "文档已锁定"
@@ -1045,8 +1045,8 @@ msgid "Information about rights held in and over this item."
 msgstr "关于此项目权利的信息。"
 
 #. Default: "Internal server error"
-#: src/app.ts:254
-#: src/app.ts:264
+#: src/app.ts:255
+#: src/app.ts:265
 msgctxt "App"
 msgid "Internal server error"
 msgstr "内部服务器错误"
@@ -1668,7 +1668,7 @@ msgid "Rename"
 msgstr "重命名"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:502
+#: src/routes/content/content.ts:525
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "缺少必填字段。"
@@ -2330,7 +2330,7 @@ msgid "Type of the current document is not found."
 msgstr "未找到当前文档的类型。"
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:491
+#: src/routes/content/content.ts:514
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2577,7 +2577,7 @@ msgstr "无法删除系统用户。"
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:62
-#: src/routes/content/content.ts:685
+#: src/routes/content/content.ts:708
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "您无权保存此文档，因为它已被其他用户锁定。"

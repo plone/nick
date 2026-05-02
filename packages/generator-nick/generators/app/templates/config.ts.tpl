@@ -54,6 +54,7 @@ export const config = {
   requestLimit: {
     api: '1mb',
     files: '10mb',
+    chunk: '1mb',
   },
   rateLimit: {
     api: 100,
