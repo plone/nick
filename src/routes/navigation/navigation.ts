@@ -5,16 +5,24 @@
 
 import models from '../../models';
 import { getUrl } from '../../helpers/url/url';
+import { mapAsync } from '../../helpers/utils/utils';
 import { compact } from 'es-toolkit/array';
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
 
-export const handler = async (req: Request, trx: Knex.Transaction) => {
+async function getItems(
+  parentUuid: string,
+  displayed_types: string[],
+  depth: number,
+  maxDepth: number,
+  req: Request,
+  trx: Knex.Transaction,
+): Promise<any[]> {
   const Catalog = models.get('Catalog');
-  const Controlpanel = models.get('Controlpanel');
-  const Index = models.get('Index');
+
+  // Fetch items
   const items = await Catalog.fetchAllRestricted(
-    { _parent: req.navroot.uuid },
+    { _parent: parentUuid },
     { order: '_getObjPositionInParent' },
     trx,
     req,
@@ -23,12 +31,40 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
   // Omit exclude from nav items
   items.filter((item: any) => !item.exclude_from_nav);
 
+  // Omit by type
+  items.filter((item: any) => displayed_types.includes(item.Type));
+
+  // Get output
+  const output = await items.toJson(req);
+
+  await mapAsync(output, async (item: any) => {
+    item.items =
+      depth < maxDepth - 1
+        ? await getItems(
+            item.UID,
+            displayed_types,
+            depth + 1,
+            maxDepth,
+            req,
+            trx,
+          )
+        : [];
+  });
+
+  return output;
+}
+
+export const handler = async (req: Request, trx: Knex.Transaction) => {
+  const Catalog = models.get('Catalog');
+  const Controlpanel = models.get('Controlpanel');
+  const Index = models.get('Index');
+
+  // Fetch query params
+  const maxDepth = parseInt(req.query['expand.navigation.depth']) || 1;
+
   // Fetch settings
   const controlpanel = await Controlpanel.fetchById('navigation', {}, trx);
   const settings = controlpanel.data;
-
-  // Omit by type
-  items.filter((item: any) => settings.displayed_types.includes(item.Type));
 
   // Fetch indexes
   if (!req.indexes) {
@@ -49,12 +85,14 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
             items: [],
           };
         }),
-        ...(await items.toJson(req)).map((item: any) => {
-          return {
-            ...item,
-            items: [],
-          };
-        }),
+        ...(await getItems(
+          req.navroot.uuid,
+          settings.displayed_types,
+          0,
+          maxDepth,
+          req,
+          trx,
+        )),
       ],
     },
   };
