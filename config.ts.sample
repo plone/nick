@@ -57,10 +57,19 @@ export const config = {
     `${__dirname}/src/profiles/core`,
     /* `${__dirname}/src/profiles/ai`, */
     `${__dirname}/src/profiles/default`,
+    /* `${__dirname}/src/profiles/multilingual`, */
+    /* `${__dirname}/src/profiles/multilingualcontent`, */
   ],
+  push: {
+    enabled: false,
+    user: 'admin',
+    password: 'admin',
+    url: 'https://somehost/push',
+  },
   requestLimit: {
     api: '1mb',
     files: '10mb',
+    chunk: '1mb',
   },
   rateLimit: {
     api: API_RATE_LIMIT || 100,
