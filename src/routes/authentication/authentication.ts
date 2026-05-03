@@ -3,19 +3,22 @@
  * @module routes/authentication/authentication
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// External imports
 // @ts-expect-error bcrypt-promise does not have types
 import bcrypt from 'bcrypt-promise';
 import jwt from 'jsonwebtoken';
 
+// Internal imports
 import models from '../../models';
-import { log } from '../../helpers/log/log';
+import { addToken, removeToken } from '../../helpers/auth/auth';
+import config from '../../helpers/config/config';
 import { RequestException } from '../../helpers/error/error';
 import { authLimiter } from '../../helpers/limiter/limiter';
-import { addToken, removeToken } from '../../helpers/auth/auth';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
-
-import config from '../../helpers/config/config';
+import { log } from '../../helpers/log/log';
 
 /**
  * Generate and store jwt token

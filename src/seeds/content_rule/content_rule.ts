@@ -1,9 +1,18 @@
+/**
+ * Content Rule seed.
+ * @module seeds/content_rule/content_rule
+ */
+
+// Type imports
 import type { Knex } from 'knex';
-import { fileExists } from '../../helpers/fs/fs';
-import { mapAsync } from '../../helpers/utils/utils';
-import { stripI18n } from '../../helpers/i18n/i18n';
+
+// External imports
 import { omit } from 'es-toolkit/object';
 
+// Internal imports
+import { fileExists } from '../../helpers/fs/fs';
+import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 const contentRuleFields = ['id', 'title', 'description', 'event', 'enabled'];

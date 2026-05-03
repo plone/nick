@@ -3,11 +3,14 @@
  * @module routes/catalog/catalog
  */
 
-import models from '../../models';
-import { getUrl } from '../../helpers/url/url';
-import { mapAsync } from '../../helpers/utils/utils';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// Internal imports
+import { getUrl } from '../../helpers/url/url';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
   await req.document.fetchRelated('_catalog', trx);

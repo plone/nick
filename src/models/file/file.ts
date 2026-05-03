@@ -3,6 +3,7 @@
  * @module models/file/file
  */
 
+// Internal imports
 import { Model } from '../_model/_model';
 
 /**

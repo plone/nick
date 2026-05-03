@@ -3,6 +3,7 @@
  * @module log
  */
 
+// External imports
 import logger from 'log4js';
 
 // Configure logs

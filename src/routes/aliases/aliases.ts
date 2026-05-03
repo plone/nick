@@ -3,16 +3,20 @@
  * @module routes/aliases/aliases
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 
-dayjs.extend(utc);
-
-import models from '../../models';
-import { mapAsync } from '../../helpers/utils/utils';
+// Internal imports
 import { getUrl } from '../../helpers/url/url';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
+
+dayjs.extend(utc);
 
 export default [
   {

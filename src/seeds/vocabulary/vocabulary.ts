@@ -1,11 +1,19 @@
+/**
+ * Vocabulary seed.
+ * @module seeds/vocabulary/vocabulary
+ */
+
+// Type imports
 import type { Knex } from 'knex';
+
+// External imports
 import { dropRight } from 'es-toolkit/array';
 import { promises as fs } from 'fs';
 
+// Internal imports
 import { dirExists } from '../../helpers/fs/fs';
-import { mapAsync } from '../../helpers/utils/utils';
 import { stripI18n } from '../../helpers/i18n/i18n';
-
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 export const seedVocabulary = async (

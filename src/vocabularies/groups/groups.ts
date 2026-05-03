@@ -3,9 +3,12 @@
  * @module vocabularies/groups/groups
  */
 
-import models from '../../models';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request, Vocabulary } from '../../types';
+
+// Internal imports
+import models from '../../models';
 
 /**
  * Returns the groups vocabulary.

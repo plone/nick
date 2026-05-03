@@ -1,3 +1,9 @@
+/**
+ * Actions url migration.
+ * @module migration/actions_url
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
 export const up = async (knex: Knex): Promise<void> => {

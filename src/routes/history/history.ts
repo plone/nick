@@ -3,20 +3,23 @@
  * @module routes/history/history
  */
 
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-
-dayjs.extend(utc);
-
-import { omit } from 'es-toolkit/object';
-
-import { lockExpired } from '../../helpers/lock/lock';
-import { RequestException } from '../../helpers/error/error';
-import { uniqueId } from '../../helpers/utils/utils';
-import { Collection } from '../../collections/_collection/_collection';
-import models from '../../models';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { omit } from 'es-toolkit/object';
+
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
+import { RequestException } from '../../helpers/error/error';
+import { lockExpired } from '../../helpers/lock/lock';
+import { uniqueId } from '../../helpers/utils/utils';
+import models from '../../models';
+
+dayjs.extend(utc);
 
 export default [
   {

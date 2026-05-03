@@ -3,13 +3,15 @@
  * @module helpers/tests/tests
  */
 
-import { expect } from 'vitest';
-import request, { Response } from 'supertest';
-import fs from 'fs';
-import { indexOf } from 'es-toolkit/compat';
-import { Application } from 'express';
+// Type imports
 import type { AllMethods } from 'supertest/types';
-import { isEmpty } from 'es-toolkit/compat';
+
+// External imports
+import { indexOf, isEmpty } from 'es-toolkit/compat';
+import { Application } from 'express';
+import fs from 'fs';
+import request, { Response } from 'supertest';
+import { expect } from 'vitest';
 
 interface FileData {
   request: string;

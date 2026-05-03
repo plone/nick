@@ -3,6 +3,7 @@
  * @module events/cache
  */
 
+// Internal imports
 import { purgeXkey } from '../../helpers/cache/cache';
 
 export const purge = {

@@ -1,3 +1,9 @@
+/**
+ * Permission migration.
+ * @module migration/permission
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
 export const up = async (knex: Knex): Promise<void> => {

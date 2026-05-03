@@ -3,32 +3,33 @@
  * @module app
  */
 
-import express from 'express';
-import helmet from 'helmet';
-import { existsSync, mkdirSync } from 'fs';
+// Type imports
+import type { Request, Route } from './types';
+
+// External imports
 import { isObject } from 'es-toolkit/compat';
+import express, { NextFunction, Response } from 'express';
+import { existsSync, mkdirSync } from 'fs';
+import helmet from 'helmet';
 import cron from 'node-cron';
 
-import { RequestException } from './helpers/error/error';
-import { log } from './helpers/log/log';
-import { regExpEscape } from './helpers/utils/utils';
-import { callHandler } from './helpers/handler/handler';
-import models from './models';
-import globalRoutes from './routes';
-import globalTasks from './tasks';
+// Internal imports
 import { purge } from './events/cache/cache';
 import { content_rules } from './events/content_rules/content_rules';
 import { push } from './events/push/push';
-
+import { applyCache } from './helpers/cache/cache';
+import config from './helpers/config/config';
+import { RequestException } from './helpers/error/error';
+import { callHandler } from './helpers/handler/handler';
+import { log } from './helpers/log/log';
+import { regExpEscape } from './helpers/utils/utils';
 import { accessLogger } from './middleware/access-logger/access-logger';
 import { cors } from './middleware/cors/cors';
 import { i18n } from './middleware/i18n/i18n';
 import { removeZopeVhosting } from './middleware/volto/volto';
-import type { Request, Route } from './types';
-import { Response, NextFunction } from 'express';
-
-import config from './helpers/config/config';
-import { applyCache } from './helpers/cache/cache';
+import models from './models';
+import globalRoutes from './routes';
+import globalTasks from './tasks';
 
 const localRoutes = config.settings.routes
   ? (await import(`${process.cwd()}/src/routes`)).default

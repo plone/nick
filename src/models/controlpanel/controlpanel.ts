@@ -3,12 +3,16 @@
  * @module models/controlpanel/controlpanel
  */
 
+// Type imports
+import type { Json, Request } from '../../types';
+
+// External imports
 import { compact } from 'es-toolkit/array';
 
-import { getRootUrl } from '../../helpers/url/url';
-import { translateSchema } from '../../helpers/schema/schema';
+// Internal imports
 import { Model } from '../_model/_model';
-import type { Json, Request } from '../../types';
+import { translateSchema } from '../../helpers/schema/schema';
+import { getRootUrl } from '../../helpers/url/url';
 
 /**
  * A model for Controlpanel.

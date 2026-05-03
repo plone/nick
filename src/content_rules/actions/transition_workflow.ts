@@ -3,9 +3,12 @@
  * @module content_rules/actions/transition_workflow
  */
 
+// Type imports
+import type { Params, Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import { Knex } from 'knex';
-import type { Params, Request } from '../../types';
 
 export const transition_workflow = {
   getTitle: (req: Request) => req.i18n('Transition workflow state'),

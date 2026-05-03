@@ -3,10 +3,15 @@
  * @module behaviors/children_from_query/children_from_query
  */
 
+// Type imports
+import type { Request } from '../../types';
+
+// External imports
+import { Knex } from 'knex';
+
+// Internal imports
 import { querystringToQuery } from '../../helpers/query/query';
 import models from '../../models';
-import type { Request } from '../../types';
-import { Knex } from 'knex';
 
 interface DocumentType {
   id: string;

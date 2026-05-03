@@ -1,5 +1,13 @@
-import path from 'path';
+/**
+ * Knexfile
+ * @module knexfile
+ */
+
+// External imports
 import { fileURLToPath } from 'url';
+import path from 'path';
+
+// Internal imports
 import config from './src/helpers/config/config';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

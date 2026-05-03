@@ -3,8 +3,11 @@
  * @module helpers/utils/utils
  */
 
-import { omitBy } from 'es-toolkit/object';
+// Type imports
 import type { VocabularyTerm } from '../../types';
+
+// External imports
+import { omitBy } from 'es-toolkit/object';
 
 /**
  * Map asynchronous but in order through array

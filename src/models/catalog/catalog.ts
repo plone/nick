@@ -3,19 +3,22 @@
  * @module models/catalog/catalog
  */
 
-import { uniq } from 'es-toolkit/array';
-import { pick } from 'es-toolkit/object';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-
-dayjs.extend(utc);
-
-import { getRootUrl } from '../../helpers/url/url';
-import { Model } from '../_model/_model';
-
-import config from '../../helpers/config/config';
+// Type imports
 import type { Json, Request, VocabularyTerm } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { uniq } from 'es-toolkit/array';
+import { pick } from 'es-toolkit/object';
+
+// Internal imports
+import { Model } from '../_model/_model';
+import config from '../../helpers/config/config';
+import { getRootUrl } from '../../helpers/url/url';
+
+dayjs.extend(utc);
 
 /**
  * A model for Catalog.

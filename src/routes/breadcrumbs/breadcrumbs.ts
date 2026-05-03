@@ -3,12 +3,16 @@
  * @module routes/breadcrumbs/breadcrumbs
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// External imports
 import { compact, drop, head, last } from 'es-toolkit/array';
 
+// Internal imports
+import { getPath, getRootUrl, getUrl } from '../../helpers/url/url';
 import models from '../../models';
-import { getRootUrl, getUrl, getPath } from '../../helpers/url/url';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
 
 /**
  * Traverse path.

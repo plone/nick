@@ -3,6 +3,11 @@
  * @module helpers/fs/fs
  */
 
+// Type imports
+import type { Metadata } from 'sharp';
+import type { Knex } from 'knex';
+
+// External imports
 import {
   access as accessPromise,
   copyFile as copyFilePromise,
@@ -10,15 +15,13 @@ import {
   writeFile as writeFilePromise,
   rm as rmPromise,
 } from 'node:fs/promises';
-import { v4 as uuid, validate } from 'uuid';
 import sharp from 'sharp';
-import type { Metadata } from 'sharp';
-import type { Knex } from 'knex';
+import { v4 as uuid, validate } from 'uuid';
 
-import { mapAsync } from '../utils/utils';
-import models from '../../models';
-
+// Internal imports
 import config from '../../helpers/config/config';
+import models from '../../models';
+import { mapAsync } from '../utils/utils';
 
 /**
  * Get scale dimensions

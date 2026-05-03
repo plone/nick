@@ -4,9 +4,11 @@
  * @example import events from './events';
  */
 
+// External imports
 import { mapKeys } from 'es-toolkit/object';
 import { Knex } from 'knex';
 
+// Internal imports
 import { mapAsync } from '../helpers/utils/utils';
 
 type EventHandler = (

@@ -1,11 +1,17 @@
+/**
+ * Catalog seed.
+ * @module seeds/catalog/catalog
+ */
+
+// Type imports
 import type { Knex } from 'knex';
-import { fileExists } from '../../helpers/fs/fs';
-import { mapAsync } from '../../helpers/utils/utils';
-import { stripI18n } from '../../helpers/i18n/i18n';
 
-import models from '../../models';
-
+// Internal imports
 import config from '../../helpers/config/config';
+import { fileExists } from '../../helpers/fs/fs';
+import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 export const seedCatalog = async (
   trx: Knex.Transaction,

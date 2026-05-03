@@ -1,16 +1,20 @@
 /**
- * Log.
- * @module log
+ * Access Logger.
+ * @module middleware/access-logger/access-logger
  */
 
-import { logger } from '../../helpers/log/log';
+// Type imports
+import type { Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
+import { NextFunction, Response } from 'express';
+
+// Internal imports
+import { logger } from '../../helpers/log/log';
 
 dayjs.extend(utc);
-
-import { Response, NextFunction } from 'express';
-import type { Request } from '../../types';
 
 // Create access logger
 const access = logger.getLogger('access');

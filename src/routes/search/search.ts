@@ -3,18 +3,20 @@
  * @module routes/search/search
  */
 
+// Type imports
+import type { Request } from '../../types';
+import type { Knex } from 'knex';
+
+// Internal imports
+import { chat } from '../../helpers/ai/ai';
+import config from '../../helpers/config/config';
 import { apiLimiter } from '../../helpers/limiter/limiter';
 import {
   querystringToQuery,
   queryparamToQuery,
 } from '../../helpers/query/query';
 import { getUrl } from '../../helpers/url/url';
-import { chat } from '../../helpers/ai/ai';
-import config from '../../helpers/config/config';
-
 import models from '../../models';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
 
 export default [
   {

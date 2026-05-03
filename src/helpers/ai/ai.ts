@@ -3,12 +3,14 @@
  * @module helpers/ai/ai
  */
 
-import config from '../config/config';
-import models from '../../models';
-
+// Type imports
 import type { Json, Params } from '../../types';
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
+
+// Internal imports
+import config from '../config/config';
+import models from '../../models';
 
 interface VisionResult {
   response: string;

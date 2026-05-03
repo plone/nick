@@ -3,22 +3,25 @@
  * @module helpers/base-model/base-model
  */
 
+// Type imports
+import type { Request, VocabularyTerm } from '../../types';
+
+// External imports
+import { difference } from 'es-toolkit/array';
+import { isEmpty, isObject } from 'es-toolkit/compat';
+import { mapKeys, omit } from 'es-toolkit/object';
+import { snakeCase } from 'es-toolkit/string';
+import type { Knex } from 'knex';
 import { mixin, Model as ObjectionModel } from 'objection';
 // @ts-expect-error Objection does not have types for this package
 import TableName from 'objection-table-name';
-import { isEmpty, isObject } from 'es-toolkit/compat';
-import { snakeCase } from 'es-toolkit/string';
-import { difference } from 'es-toolkit/array';
-import { mapKeys, omit } from 'es-toolkit/object';
-import type { Knex } from 'knex';
 
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
 import { formatAttribute } from '../../helpers/format/format';
+import { knex } from '../../helpers/knex/knex';
 import { log } from '../../helpers/log/log';
 import { removeUndefined } from '../../helpers/utils/utils';
-import { knex } from '../../helpers/knex/knex';
-
-import { Collection } from '../../collections/_collection/_collection';
-import type { VocabularyTerm, Request } from '../../types';
 
 // Give the knex instance to objection.
 ObjectionModel.knex(knex);

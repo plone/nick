@@ -3,9 +3,12 @@
  * @module vocabularies/captcha-providers/captcha-providers
  */
 
+// Type imports
 import type { Knex } from 'knex';
-import { objectToVocabulary } from '../../helpers/utils/utils';
 import type { Request, VocabularyTerm } from '../../types';
+
+// Internal imports
+import { objectToVocabulary } from '../../helpers/utils/utils';
 
 const providers = {
   'norobots-captcha': 'NoRobots ReCaptcha Support',

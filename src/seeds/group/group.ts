@@ -1,9 +1,17 @@
+/**
+ * Group seed.
+ * @module seeds/group/group
+ */
+
+// Type imports
 import type { Knex } from 'knex';
+
+// External imports
 import { omit } from 'es-toolkit/object';
 
+// Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
-
 import models from '../../models';
 
 export const seedGroup = async (

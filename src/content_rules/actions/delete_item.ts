@@ -3,12 +3,17 @@
  * @module content_rules/actions/delete_item
  */
 
-import { Knex } from 'knex';
-import { flattenDeep, uniq } from 'es-toolkit/array';
+// Type imports
 import type { Params, Request } from '../../types';
+
+// External imports
+import { flattenDeep, uniq } from 'es-toolkit/array';
+import { Knex } from 'knex';
+
+// Internal imports
 import config from '../../helpers/config/config';
-import { mapAsync } from '../../helpers/utils/utils';
 import { removeFile } from '../../helpers/fs/fs';
+import { mapAsync } from '../../helpers/utils/utils';
 
 export const delete_item = {
   getTitle: (req: Request) => req.i18n('Delete item'),

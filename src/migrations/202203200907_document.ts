@@ -1,6 +1,15 @@
-import { existsSync, mkdirSync, readdirSync, rmSync } from 'fs';
+/**
+ * Document migration.
+ * @module migration/document
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
+// External imports
+import { existsSync, mkdirSync, readdirSync, rmSync } from 'fs';
+
+// Internal imports
 import config from '../helpers/config/config';
 
 export const up = async (knex: Knex): Promise<void> => {

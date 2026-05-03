@@ -3,9 +3,12 @@
  * @module vocabularies/behaviors/behaviors
  */
 
+// Type imports
 import type { Knex } from 'knex';
-import models from '../../models';
 import type { Request, Vocabulary } from '../../types';
+
+// Internal imports
+import models from '../../models';
 
 /**
  * Returns the behaviors vocabulary.

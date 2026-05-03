@@ -3,7 +3,8 @@
  * @module collection/_collection/_collection
  */
 
-import type { Json, Vocabulary, Model, Request } from '../../types';
+// Type imports
+import type { Json, Model, Request, Vocabulary } from '../../types';
 
 /**
  * Base collection used to extend collections from.

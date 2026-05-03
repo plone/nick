@@ -3,10 +3,14 @@
  * @module helpers/mail/mail
  */
 
-import nodemailer from 'nodemailer';
+// Type imports
 import type { SendMailOptions } from 'nodemailer';
+
+// External imports
+import nodemailer from 'nodemailer';
 import { Knex } from 'knex';
 
+// Internal imports
 import { log } from '../log/log';
 import models from '../../models';
 

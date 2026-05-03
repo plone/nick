@@ -3,8 +3,11 @@
  * @module collections/document/document
  */
 
-import { Collection } from '../../collections/_collection/_collection';
+// Type imports
 import type { Json, Model, Request } from '../../types';
+
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
 
 /**
  * Document Collection

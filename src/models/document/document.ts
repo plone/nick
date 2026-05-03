@@ -3,40 +3,39 @@
  * @module models/document/document
  */
 
-import { compact, drop, flatten, head, last, uniq } from 'es-toolkit/array';
-import { mapValues, omit, omitBy, pick, pickBy } from 'es-toolkit/object';
-import { isObject, isEmpty } from 'es-toolkit/compat';
-import { isUndefined, isFunction } from 'es-toolkit/predicate';
-import { v4 as uuid } from 'uuid';
+// Type imports
+import type { Knex } from 'knex';
+import type { Json, Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
+import { compact, drop, flatten, head, last, uniq } from 'es-toolkit/array';
+import { isEmpty, isObject } from 'es-toolkit/compat';
+import { mapValues, omit, omitBy, pick, pickBy } from 'es-toolkit/object';
+import { isFunction, isUndefined } from 'es-toolkit/predicate';
+import { v4 as uuid } from 'uuid';
 
-dayjs.extend(utc);
-
-import languages from '../../constants/languages';
-
-import { Model } from '../_model/_model';
+// Internal imports
 import models from '../';
-
+import { Model } from '../_model/_model';
+import behaviors from '../../behaviors';
+import { DocumentCollection } from '../../collections/document/document';
+import languages from '../../constants/languages';
+import { generate, embed } from '../../helpers/ai/ai';
+import config from '../../helpers/config/config';
 import { copyFile } from '../../helpers/fs/fs';
+import { lockExpired } from '../../helpers/lock/lock';
+import { slateToMarkdown } from '../../helpers/markdown/markdown';
+import { getRootUrl } from '../../helpers/url/url';
 import {
   isPromise,
   mapAsync,
   mapSync,
   uniqueId,
 } from '../../helpers/utils/utils';
-import { getRootUrl } from '../../helpers/url/url';
-import { lockExpired } from '../../helpers/lock/lock';
-import { generate, embed } from '../../helpers/ai/ai';
 
-import { DocumentCollection } from '../../collections/document/document';
-
-import behaviors from '../../behaviors';
-
-import config from '../../helpers/config/config';
-import type { Json, Request } from '../../types';
-import type { Knex } from 'knex';
-import { slateToMarkdown } from '../../helpers/markdown/markdown';
+dayjs.extend(utc);
 
 /**
  * A model for Document.

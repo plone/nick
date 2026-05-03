@@ -1,8 +1,15 @@
-import type { Knex } from 'knex';
-import { fileExists } from '../../helpers/fs/fs';
-import { mapAsync } from '../../helpers/utils/utils';
-import { stripI18n } from '../../helpers/i18n/i18n';
+/**
+ * Action seed.
+ * @module seeds/action/action
+ */
 
+// Type imports
+import type { Knex } from 'knex';
+
+// Internal imports
+import { fileExists } from '../../helpers/fs/fs';
+import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 export const seedAction = async (

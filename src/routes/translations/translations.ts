@@ -3,10 +3,13 @@
  * @module routes/translations/translations
  */
 
-import models from '../../models';
-import { stripPath, getUrl, getUrlByPath } from '../../helpers/url/url';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// Internal imports
+import { getUrl, getUrlByPath, stripPath } from '../../helpers/url/url';
+import models from '../../models';
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
   const Document = models.get('Document');

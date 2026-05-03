@@ -1,3 +1,9 @@
+/**
+ * Type migration.
+ * @module migration/type
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
 export const up = async (knex: Knex): Promise<void> => {

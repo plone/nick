@@ -3,15 +3,19 @@
  * @module routes/lock/lock
  */
 
-import { v4 as uuid } from 'uuid';
-import dayjs from 'dayjs';
-import { flatten } from 'es-toolkit/array';
-import { getUrl } from '../../helpers/url/url';
-import { mapAsync } from '../../helpers/utils/utils';
-import { RequestException } from '../../helpers/error/error';
-
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
+
+// External imports
+import dayjs from 'dayjs';
+import { flatten } from 'es-toolkit/array';
+import { v4 as uuid } from 'uuid';
+
+// Internal imports
+import { RequestException } from '../../helpers/error/error';
+import { getUrl } from '../../helpers/url/url';
+import { mapAsync } from '../../helpers/utils/utils';
 
 type Comment = {
   id: string;

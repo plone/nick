@@ -1,22 +1,29 @@
-import { beforeAll, beforeEach, afterAll, afterEach, vi } from 'vitest';
-import { transaction } from 'objection';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
+/**
+ * Vitest Setup
+ * @module vitest.setup
+ */
 
-dayjs.extend(utc);
-
-import jwt from 'jsonwebtoken';
-import { v4 as uuid } from 'uuid';
-
-import { Model } from './src/models/_model/_model';
-import { User } from './src/models/user/user';
-import { knex } from './src/helpers/knex/knex';
+// Type imports
 import type { Knex } from 'knex';
 
-import * as url from './src/helpers/url/url';
-import * as mail from './src/helpers/mail/mail';
+// External imports
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import jwt from 'jsonwebtoken';
+import { transaction } from 'objection';
+import { v4 as uuid } from 'uuid';
+import { beforeAll, beforeEach, afterAll, afterEach, vi } from 'vitest';
+
+// Internal imports
 import { addToken } from './src/helpers/auth/auth';
+import { knex } from './src/helpers/knex/knex';
 import { logger } from './src/helpers/log/log';
+import * as mail from './src/helpers/mail/mail';
+import * as url from './src/helpers/url/url';
+import { Model } from './src/models/_model/_model';
+import { User } from './src/models/user/user';
+
+dayjs.extend(utc);
 
 declare global {
   var knex: Knex;

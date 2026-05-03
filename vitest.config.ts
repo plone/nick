@@ -1,3 +1,9 @@
+/**
+ * Vitest Config
+ * @module vitest.config
+ */
+
+// External imports
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({

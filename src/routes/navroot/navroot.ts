@@ -3,9 +3,12 @@
  * @module routes/navroot/navroot
  */
 
-import { uniq } from 'es-toolkit/array';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { uniq } from 'es-toolkit/array';
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
   await req.navroot.fetchRelated('[_children(order)._type, _type]', trx);

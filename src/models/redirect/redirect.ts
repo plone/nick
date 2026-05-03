@@ -3,10 +3,13 @@
  * @module models/redirect/redirect
  */
 
+// Type imports
 import type { Knex } from 'knex';
 import type { Json, Request } from '../../types';
-import { Model } from '../_model/_model';
+
+// Internal imports
 import models from '../';
+import { Model } from '../_model/_model';
 
 /**
  * A model for Redirect.

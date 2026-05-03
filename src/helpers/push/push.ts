@@ -3,6 +3,7 @@
  * @module helpers/push/push
  */
 
+// Internal imports
 import config from '../config/config';
 
 /**

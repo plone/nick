@@ -3,21 +3,25 @@
  * @module routes/controlpanels/controlpanels
  */
 
-import slugify from 'slugify';
-import { without } from 'es-toolkit/array';
-import { mapKeys, merge, omit, pick } from 'es-toolkit/object';
-
-import models from '../../models';
-import { getUrl } from '../../helpers/url/url';
-import { RequestException } from '../../helpers/error/error';
-import { handleFiles, handleImages } from '../../helpers/content/content';
-import { translateSchema } from '../../helpers/schema/schema';
-import { stripI18n } from '../../helpers/i18n/i18n';
-import { uniqueId } from '../../helpers/utils/utils';
-import contentRules from '../../content_rules';
-import { apiLimiter } from '../../helpers/limiter/limiter';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { without } from 'es-toolkit/array';
+import { mapKeys, merge, omit, pick } from 'es-toolkit/object';
+import slugify from 'slugify';
+
+// Internal imports
+import contentRules from '../../content_rules';
+import { handleFiles, handleImages } from '../../helpers/content/content';
+import { RequestException } from '../../helpers/error/error';
+import { stripI18n } from '../../helpers/i18n/i18n';
+import { apiLimiter } from '../../helpers/limiter/limiter';
+import { translateSchema } from '../../helpers/schema/schema';
+import { getUrl } from '../../helpers/url/url';
+import { uniqueId } from '../../helpers/utils/utils';
+import models from '../../models';
 
 export default [
   {

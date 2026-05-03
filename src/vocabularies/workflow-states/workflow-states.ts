@@ -3,12 +3,16 @@
  * @module vocabularies/workflows-states/workflows-states
  */
 
-import { mapValues } from 'es-toolkit/object';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request, VocabularyTerm } from '../../types';
 
-import models from '../../models';
+// External imports
+import { mapValues } from 'es-toolkit/object';
+
+// Internal imports
 import { objectToVocabulary } from '../../helpers/utils/utils';
+import models from '../../models';
 
 /**
  * Returns the workflows states vocabulary.

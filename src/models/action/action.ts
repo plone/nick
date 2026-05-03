@@ -3,6 +3,7 @@
  * @module models/action/action
  */
 
+// Internal imports
 import { Model } from '../_model/_model';
 import { ActionCollection } from '../../collections/action/action';
 

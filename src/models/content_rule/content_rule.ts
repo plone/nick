@@ -3,11 +3,14 @@
  * @module models/content_rule/content_rule
  */
 
-import { Model } from '../_model/_model';
+// Type imports
 import type { Json, Request } from '../../types';
-import { getRootUrl } from '../../helpers/url/url';
-import contentRules from '../../content_rules';
+
+// Internal imports
 import models from '../';
+import { Model } from '../_model/_model';
+import contentRules from '../../content_rules';
+import { getRootUrl } from '../../helpers/url/url';
 
 /**
  * A model for Content Rule.

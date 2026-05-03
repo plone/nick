@@ -3,7 +3,10 @@
  * @module content_rules/actions/logger
  */
 
+// Type imports
 import type { Params, Request } from '../../types';
+
+// Internal imports
 import { log } from '../../helpers/log/log';
 
 export const logger = {

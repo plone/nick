@@ -3,11 +3,13 @@
  * @module vocabularies/system-groups/system-groups
  */
 
-import { arrayToVocabulary } from '../../helpers/utils/utils';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request, VocabularyTerm } from '../../types';
 
+// Internal imports
 import config from '../../helpers/config/config';
+import { arrayToVocabulary } from '../../helpers/utils/utils';
 
 /**
  * Returns the system groups vocabulary.

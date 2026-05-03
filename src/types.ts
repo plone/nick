@@ -1,3 +1,9 @@
+/**
+ * Types.
+ * @module types
+ */
+
+// External imports
 import express from 'express';
 import { Knex } from 'knex';
 
@@ -91,7 +97,7 @@ export interface ContentRuleCondition {
     user: any,
     contentRule: any,
     trx: Knex.Transaction,
-  ): Promise<void>;
+  ): Promise<boolean>;
 }
 
 export interface ContentRuleConditionJson {

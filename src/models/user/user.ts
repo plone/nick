@@ -3,13 +3,17 @@
  * @module models/user/user
  */
 
-import { uniq } from 'es-toolkit/array';
+// Type imports
 import type { Knex } from 'knex';
-
-import { getRootUrl } from '../../helpers/url/url';
-import { Model } from '../_model/_model';
-import models from '../';
 import type { Json, Request, VocabularyTerm } from '../../types';
+
+// External imports
+import { uniq } from 'es-toolkit/array';
+
+// Internal imports
+import models from '../';
+import { Model } from '../_model/_model';
+import { getRootUrl } from '../../helpers/url/url';
 
 /**
  * A model for User.

@@ -3,6 +3,7 @@
  * @module constants/userschema
  */
 
+// Type imports
 import type { Request } from '../types';
 
 const userschema = (req: Request) => ({

@@ -3,6 +3,7 @@
  * @module vocabularies
  */
 
+// Internal imports
 import { actions } from './actions/actions';
 import { availableLanguages } from './available-languages/available-languages';
 import { behaviors } from './behaviors/behaviors';

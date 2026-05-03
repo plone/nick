@@ -3,8 +3,7 @@
  * @module content_rules
  */
 
-import { translateSchema } from '../helpers/schema/schema';
-import { stripI18n } from '../helpers/i18n/i18n';
+// Type imports
 import type {
   Request,
   ContentRuleAction,
@@ -15,6 +14,7 @@ import type {
   ContentRuleConditionJson,
 } from '../types';
 
+// Internal imports
 import { copy_item } from './actions/copy_item';
 import { delete_item } from './actions/delete_item';
 import { logger } from './actions/logger';
@@ -22,12 +22,13 @@ import { move_item } from './actions/move_item';
 import { send_email } from './actions/send_email';
 import { transition_workflow } from './actions/transition_workflow';
 import { version_item } from './actions/version_item';
-
 import { content_type } from './conditions/content_type';
 import { file_extension } from './conditions/file_extension';
 import { user_group } from './conditions/user_group';
 import { user_role } from './conditions/user_role';
 import { workflow_state } from './conditions/workflow_state';
+import { stripI18n } from '../helpers/i18n/i18n';
+import { translateSchema } from '../helpers/schema/schema';
 
 /**
  * A content rule registry.

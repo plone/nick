@@ -3,9 +3,12 @@
  * @module routes/roles/roles
  */
 
-import models from '../../models';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
+
+// Internal imports
+import models from '../../models';
 
 export default [
   {

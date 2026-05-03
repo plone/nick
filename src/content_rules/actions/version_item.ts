@@ -3,9 +3,12 @@
  * @module content_rules/actions/version_item
  */
 
+// Type imports
+import type { Params, Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import { Knex } from 'knex';
-import type { Params, Request } from '../../types';
 
 export const version_item = {
   getTitle: (req: Request) => req.i18n('Version item'),

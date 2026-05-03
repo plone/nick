@@ -3,12 +3,16 @@
  * @module vocabularies/subjects/subjects
  */
 
-import { uniq } from 'es-toolkit/array';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request, VocabularyTerm } from '../../types';
 
-import models from '../../models';
+// External imports
+import { uniq } from 'es-toolkit/array';
+
+// Internal imports
 import { arrayToVocabulary } from '../../helpers/utils/utils';
+import models from '../../models';
 
 /**
  * Returns the subjects vocabulary.

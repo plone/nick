@@ -3,12 +3,17 @@
  * @module routes/navigation/navigation
  */
 
-import models from '../../models';
-import { getUrl } from '../../helpers/url/url';
-import { mapAsync } from '../../helpers/utils/utils';
-import { compact } from 'es-toolkit/array';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { compact } from 'es-toolkit/array';
+
+// Internal imports
+import { getUrl } from '../../helpers/url/url';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 async function getItems(
   parentUuid: string,

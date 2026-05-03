@@ -3,8 +3,10 @@
  * @module knex
  */
 
+// External imports
 import knexPkg, { Knex } from 'knex';
 
+// Internal imports
 import config from '../../helpers/config/config';
 
 // Initialize knex with proper types

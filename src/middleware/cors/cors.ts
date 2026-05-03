@@ -1,9 +1,12 @@
 /**
  * Cors middleware.
- * @module cors
+ * @module middleware/cors/cors
  */
-import { Request, Response, NextFunction } from 'express';
 
+// Type imports
+import { NextFunction, Request, Response } from 'express';
+
+// Internal imports
 import config from '../../helpers/config/config';
 
 // Export middleware

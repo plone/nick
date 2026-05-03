@@ -1,11 +1,19 @@
+/**
+ * User seed.
+ * @module seeds/user/user
+ */
+
+// Type imports
 import type { Knex } from 'knex';
-import { omit } from 'es-toolkit/object';
+
+// External imports
 // @ts-expect-error bcrypt-promise does not have types
 import bcrypt from 'bcrypt-promise';
+import { omit } from 'es-toolkit/object';
 
+// Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
-
 import models from '../../models';
 
 const userFields = ['id', 'fullname', 'email'];

@@ -3,11 +3,14 @@
  * @module events/content_rules
  */
 
-import models from '../../models';
-import contentRules from '../../content_rules';
+// External imports
 import { omit } from 'es-toolkit/object';
-import { mapAsync } from '../../helpers/utils/utils';
 import { Knex } from 'knex';
+
+// Internal imports
+import contentRules from '../../content_rules';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 const contentHandler = async (
   event: string,

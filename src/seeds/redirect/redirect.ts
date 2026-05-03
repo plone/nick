@@ -1,7 +1,14 @@
+/**
+ * Redirect seed.
+ * @module seeds/redirect/redirect
+ */
+
+// Type imports
 import type { Knex } from 'knex';
+
+// Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
-
 import models from '../../models';
 
 export const seedRedirect = async (

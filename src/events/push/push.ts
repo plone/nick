@@ -3,6 +3,7 @@
  * @module push/push
  */
 
+// Internal imports
 import { getComponents } from '../../helpers/content/content';
 import { sendPush } from '../../helpers/push/push';
 import models from '../../models';

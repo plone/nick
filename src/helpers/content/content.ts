@@ -3,33 +3,33 @@
  * @module helpers/content/content
  */
 
+// Type imports
+import type { Request } from '../../types';
+
+// External imports
 import { last } from 'es-toolkit/array';
 import { isObject } from 'es-toolkit/compat';
+import { Knex } from 'knex';
 import mime from 'mime-types';
 import { PDFParse } from 'pdf-parse';
-import { Knex } from 'knex';
 
-import { mapAsync } from '../utils/utils';
-import { readProfileFile, writeFile, writeImage } from '../fs/fs';
+// Internal imports
 import { vision } from '../ai/ai';
-
+import config from '../config/config';
+import { readProfileFile, writeFile, writeImage } from '../fs/fs';
+import { mapAsync } from '../utils/utils';
+import { getUrl } from '../../helpers/url/url';
+import models from '../../models';
 import { handler as actions } from '../../routes/actions/actions';
 import { handler as breadcrumbs } from '../../routes/breadcrumbs/breadcrumbs';
 import { handler as contextnavigation } from '../../routes/contextnavigation/contextnavigation';
+import { handler as inherit } from '../../routes/inherit/inherit';
 import { handler as navigation } from '../../routes/navigation/navigation';
 import { handler as navroot } from '../../routes/navroot/navroot';
 import { handler as related } from '../../routes/related/related';
-import { handler as inherit } from '../../routes/inherit/inherit';
 import { handler as translations } from '../../routes/translations/translations';
 import { handler as types } from '../../routes/types/types';
 import { handler as workflow } from '../../routes/workflow/workflow';
-
-import { getUrl } from '../../helpers/url/url';
-
-import models from '../../models';
-import type { Request } from '../../types';
-
-import config from '../config/config';
 
 interface Type {
   getFactoryFields(fieldType: string): Promise<string[]>;

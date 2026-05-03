@@ -1,5 +1,13 @@
-import { fileURLToPath } from 'url';
+/**
+ * Config
+ * @module config
+ */
+
+// External imports
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Internal imports
 import events from './src/events';
 import userschema from './src/develop/nick/src/constants/userschema';
 

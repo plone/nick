@@ -3,16 +3,19 @@
  * @module routes/vocabularies/vocabularies
  */
 
-import { sortBy } from 'es-toolkit/compat';
-
-import models from '../../models';
-import { vocabularies } from '../../vocabularies';
-import { RequestException } from '../../helpers/error/error';
-import { getUrl } from '../../helpers/url/url';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
 
+// External imports
+import { sortBy } from 'es-toolkit/compat';
+
+// Internal imports
 import config from '../../helpers/config/config';
+import { RequestException } from '../../helpers/error/error';
+import { getUrl } from '../../helpers/url/url';
+import models from '../../models';
+import { vocabularies } from '../../vocabularies';
 
 export default [
   {

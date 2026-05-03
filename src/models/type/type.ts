@@ -3,15 +3,19 @@
  * @module models/type/type
  */
 
-import { compact } from 'es-toolkit/array';
+// Type imports
 import type { Knex } from 'knex';
+import type { Json, Request, Schema } from '../../types';
 
-import { getRootUrl } from '../../helpers/url/url';
+// External imports
+import { compact } from 'es-toolkit/array';
+
+// Internal imports
+import models from '../';
+import { Model } from '../_model/_model';
 import { mergeSchemas } from '../../helpers/schema/schema';
 import { TypeCollection } from '../../collections/type/type';
-import { Model } from '../_model/_model';
-import models from '../';
-import type { Json, Request, Schema } from '../../types';
+import { getRootUrl } from '../../helpers/url/url';
 
 /**
  * A model for Type.

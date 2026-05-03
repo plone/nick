@@ -3,12 +3,15 @@
  * @module routes/lock/lock
  */
 
+// Type imports
+import type { Request } from '../../types';
+import type { Knex } from 'knex';
+
+// Internal imports
 import { RequestException } from '../../helpers/error/error';
 import { sendMail } from '../../helpers/mail/mail';
 import { stripNewlines } from '../../helpers/utils/utils';
 import { apiLimiter } from '../../helpers/limiter/limiter';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
 import models from '../../models';
 
 export default [

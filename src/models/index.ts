@@ -1,3 +1,9 @@
+/**
+ * Models.
+ * @module models
+ */
+
+// Internal imports
 import { Action } from './action/action';
 import { Behavior } from './behavior/behavior';
 import { Catalog } from './catalog/catalog';

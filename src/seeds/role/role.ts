@@ -1,12 +1,19 @@
+/**
+ * Role seed.
+ * @module seeds/role/role
+ */
+
+// Type imports
 import type { Knex } from 'knex';
-import { omit } from 'es-toolkit/object';
+
+// External imports
 import { uniq } from 'es-toolkit/array';
-import { merge } from 'es-toolkit/object';
+import { merge, omit } from 'es-toolkit/object';
 
+// Internal imports
 import { fileExists } from '../../helpers/fs/fs';
-import { mapAsync } from '../../helpers/utils/utils';
 import { stripI18n } from '../../helpers/i18n/i18n';
-
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 export const seedRole = async (

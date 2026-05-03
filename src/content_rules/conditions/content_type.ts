@@ -3,6 +3,7 @@
  * @module content_rules/conditions/content_type
  */
 
+// Type imports
 import type { Params, Request } from '../../types';
 
 export const content_type = {

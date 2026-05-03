@@ -17,7 +17,7 @@ msgstr ""
 "Domain: nick\n"
 
 #. Default: "&e = the triggering event, &c = the context, &u = the user"
-#: src/content_rules/actions/logger.ts:27
+#: src/content_rules/actions/logger.ts:30
 msgctxt "Content rules|Actions|Logger"
 msgid "&e = the triggering event, &c = the context, &u = the user"
 msgstr ""
@@ -41,7 +41,7 @@ msgid "A related item from which this item is derived."
 msgstr "이 항목이 파생된 관련 항목입니다."
 
 #. Default: "A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."
-#: src/constants/userschema.ts:18
+#: src/constants/userschema.ts:19
 msgctxt "Constants|Userschema"
 msgid "A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."
 msgstr ""
@@ -54,9 +54,9 @@ msgid "AI"
 msgstr "AI"
 
 #. Default: "AI is disabled."
-#: src/routes/related/related.ts:20
-#: src/routes/ai/ai.ts:44
-#: src/routes/ai/ai.ts:94
+#: src/routes/related/related.ts:22
+#: src/routes/ai/ai.ts:47
+#: src/routes/ai/ai.ts:97
 msgctxt "Routes|Related"
 msgid "AI is disabled."
 msgstr "AI가 비활성화되었습니다."
@@ -204,7 +204,7 @@ msgid "After today"
 msgstr "오늘 이후"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:143
+#: src/models/type/type.ts:147
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "허용된 콘텐츠 유형"
@@ -217,8 +217,8 @@ msgid "Allows users to login with their email address instead of specifying a se
 msgstr ""
 
 #. Default: "Already locked"
-#: src/routes/lock/lock.ts:66
-#: src/routes/lock/lock.ts:119
+#: src/routes/lock/lock.ts:70
+#: src/routes/lock/lock.ts:123
 msgctxt "Routes|Lock"
 msgid "Already locked"
 msgstr "이미 잠겨 있음"
@@ -255,38 +255,38 @@ msgid "Anonymous"
 msgstr "익명"
 
 #. Default: "Apply only to a objects in a particular workflow state"
-#: src/content_rules/conditions/workflow_state.ts:11
+#: src/content_rules/conditions/workflow_state.ts:12
 msgctxt "Content rules|Conditions|Workflow state"
 msgid "Apply only to a objects in a particular workflow state"
 msgstr ""
 
 #. Default: "Apply only to a particular file extension"
-#: src/content_rules/conditions/file_extension.ts:11
+#: src/content_rules/conditions/file_extension.ts:12
 msgctxt "Content rules|Conditions|File extension"
 msgid "Apply only to a particular file extension"
 msgstr ""
 
 #. Default: "Apply only when the current content object is of a particular type"
-#: src/content_rules/conditions/content_type.ts:11
+#: src/content_rules/conditions/content_type.ts:12
 msgctxt "Content rules|Conditions|Content type"
 msgid "Apply only when the current content object is of a particular type"
 msgstr ""
 
 #. Default: "Apply only when the current user has the given role"
-#: src/content_rules/conditions/user_role.ts:12
+#: src/content_rules/conditions/user_role.ts:15
 msgctxt "Content rules|Conditions|User role"
 msgid "Apply only when the current user has the given role"
 msgstr ""
 
 #. Default: "Apply only when the current user is in the given group"
-#: src/content_rules/conditions/user_group.ts:12
+#: src/content_rules/conditions/user_group.ts:15
 msgctxt "Content rules|Conditions|User group"
 msgid "Apply only when the current user is in the given group"
 msgstr ""
 
 #. Default: "As a path relative to the portal root."
-#: src/content_rules/actions/move_item.ts:35
-#: src/content_rules/actions/copy_item.ts:32
+#: src/content_rules/actions/move_item.ts:40
+#: src/content_rules/actions/copy_item.ts:37
 msgctxt "Content rules|Actions|Move item"
 msgid "As a path relative to the portal root."
 msgstr ""
@@ -373,7 +373,7 @@ msgid "Before today"
 msgstr "오늘 이전"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:126
+#: src/models/type/type.ts:130
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "동작"
@@ -390,7 +390,7 @@ msgid "Between dates"
 msgstr "날짜 사이"
 
 #. Default: "Biography"
-#: src/constants/userschema.ts:21
+#: src/constants/userschema.ts:22
 msgctxt "Constants|Userschema"
 msgid "Biography"
 msgstr ""
@@ -428,20 +428,20 @@ msgid "Change Note"
 msgstr "변경 사항 메모"
 
 #. Default: "Comment"
-#: src/content_rules/actions/version_item.ts:30
+#: src/content_rules/actions/version_item.ts:33
 msgctxt "Content rules|Actions|Version item"
 msgid "Comment"
 msgstr ""
 
 #. Default: "Comment does not exist."
-#: src/routes/comments/comments.ts:208
-#: src/routes/comments/comments.ts:264
+#: src/routes/comments/comments.ts:212
+#: src/routes/comments/comments.ts:268
 msgctxt "Routes|Comments"
 msgid "Comment does not exist."
 msgstr ""
 
 #. Default: "Confirm password"
-#: src/routes/userschema/userschema.ts:113
+#: src/routes/userschema/userschema.ts:115
 msgctxt "Routes|Userschema"
 msgid "Confirm password"
 msgstr ""
@@ -480,27 +480,27 @@ msgid "Contains"
 msgstr "포함"
 
 #. Default: "Content"
-#: src/routes/controlpanels/controlpanels.ts:141
+#: src/routes/controlpanels/controlpanels.ts:145
 msgctxt "Routes|Controlpanels"
 msgid "Content"
 msgstr "콘텐츠"
 
 #. Default: "Content Types"
-#: src/routes/controlpanels/controlpanels.ts:140
+#: src/routes/controlpanels/controlpanels.ts:144
 #: src/profiles/core/controlpanels/dexterity-types.json:3
 msgctxt "Routes|Controlpanels"
 msgid "Content Types"
 msgstr "콘텐츠 유형"
 
 #. Default: "Content type"
-#: src/content_rules/conditions/content_type.ts:9
-#: src/content_rules/conditions/content_type.ts:43
+#: src/content_rules/conditions/content_type.ts:10
+#: src/content_rules/conditions/content_type.ts:44
 msgctxt "Content rules|Conditions|Content type"
 msgid "Content type"
 msgstr ""
 
 #. Default: "Content type: {types}"
-#: src/content_rules/conditions/content_type.ts:15
+#: src/content_rules/conditions/content_type.ts:16
 msgctxt "Content rules|Conditions|Content type"
 msgid "Content type: {types}"
 msgstr ""
@@ -524,19 +524,19 @@ msgid "Copy"
 msgstr "복사"
 
 #. Default: "Copy the triggering item to a specific folder"
-#: src/content_rules/actions/copy_item.ts:14
+#: src/content_rules/actions/copy_item.ts:19
 msgctxt "Content rules|Actions|Copy item"
 msgid "Copy the triggering item to a specific folder"
 msgstr ""
 
 #. Default: "Copy to folder"
-#: src/content_rules/actions/copy_item.ts:12
+#: src/content_rules/actions/copy_item.ts:17
 msgctxt "Content rules|Actions|Copy item"
 msgid "Copy to folder"
 msgstr ""
 
 #. Default: "Copy to folder {target_folder}"
-#: src/content_rules/actions/copy_item.ts:16
+#: src/content_rules/actions/copy_item.ts:21
 msgctxt "Content rules|Actions|Copy item"
 msgid "Copy to folder {target_folder}"
 msgstr ""
@@ -597,17 +597,17 @@ msgid "Debug"
 msgstr "디버그"
 
 #. Default: "Default"
-#: src/routes/userschema/userschema.ts:24
-#: src/routes/userschema/userschema.ts:68
-#: src/content_rules/conditions/workflow_state.ts:24
-#: src/content_rules/conditions/user_role.ts:25
-#: src/content_rules/conditions/user_group.ts:25
-#: src/content_rules/conditions/file_extension.ts:21
-#: src/content_rules/conditions/content_type.ts:26
-#: src/content_rules/actions/version_item.ts:22
-#: src/content_rules/actions/transition_workflow.ts:23
-#: src/content_rules/actions/send_email.ts:25
-#: src/constants/userschema.ts:12
+#: src/routes/userschema/userschema.ts:26
+#: src/routes/userschema/userschema.ts:70
+#: src/content_rules/conditions/workflow_state.ts:25
+#: src/content_rules/conditions/user_role.ts:28
+#: src/content_rules/conditions/user_group.ts:28
+#: src/content_rules/conditions/file_extension.ts:22
+#: src/content_rules/conditions/content_type.ts:27
+#: src/content_rules/actions/version_item.ts:25
+#: src/content_rules/actions/transition_workflow.ts:26
+#: src/content_rules/actions/send_email.ts:30
+#: src/constants/userschema.ts:13
 #: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:10
 #: src/profiles/core/upgrades/1001/controlpanels/security.json:10
 #: src/profiles/core/types/video.json:13
@@ -643,20 +643,20 @@ msgid "Delete"
 msgstr "삭제"
 
 #. Default: "Delete item"
-#: src/content_rules/actions/delete_item.ts:14
-#: src/content_rules/actions/delete_item.ts:16
+#: src/content_rules/actions/delete_item.ts:19
+#: src/content_rules/actions/delete_item.ts:21
 msgctxt "Content rules|Actions|Delete item"
 msgid "Delete item"
 msgstr ""
 
 #. Default: "Delete the triggering item"
-#: src/content_rules/actions/delete_item.ts:15
+#: src/content_rules/actions/delete_item.ts:20
 msgctxt "Content rules|Actions|Delete item"
 msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:150
+#: src/models/type/type.ts:154
 #: src/profiles/core/catalog.json:227
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -685,7 +685,7 @@ msgid "Displayed content types"
 msgstr "표시된 콘텐츠 유형"
 
 #. Default: "Do not send the email to the user that did the action."
-#: src/content_rules/actions/send_email.ts:30
+#: src/content_rules/actions/send_email.ts:35
 msgctxt "Content rules|Actions|Send email"
 msgid "Do not send the email to the user that did the action."
 msgstr ""
@@ -703,7 +703,7 @@ msgid "Document copied"
 msgstr ""
 
 #. Default: "Document locked"
-#: src/routes/history/history.ts:65
+#: src/routes/history/history.ts:68
 #: src/routes/content/content.ts:740
 msgctxt "Routes|History"
 msgid "Document locked"
@@ -758,8 +758,8 @@ msgid "Effective date"
 msgstr "유효 날짜"
 
 #. Default: "Email"
-#: src/routes/userschema/userschema.ts:38
-#: src/routes/userschema/userschema.ts:91
+#: src/routes/userschema/userschema.ts:40
+#: src/routes/userschema/userschema.ts:93
 msgctxt "Routes|Userschema"
 msgid "Email"
 msgstr ""
@@ -771,19 +771,19 @@ msgid "Email address to contact about this event."
 msgstr ""
 
 #. Default: "Email recipients"
-#: src/content_rules/actions/send_email.ts:47
+#: src/content_rules/actions/send_email.ts:52
 msgctxt "Content rules|Actions|Send email"
 msgid "Email recipients"
 msgstr ""
 
 #. Default: "Email report to {recipients}"
-#: src/content_rules/actions/send_email.ts:17
+#: src/content_rules/actions/send_email.ts:22
 msgctxt "Content rules|Actions|Send email"
 msgid "Email report to {recipients}"
 msgstr ""
 
 #. Default: "Email source"
-#: src/content_rules/actions/send_email.ts:54
+#: src/content_rules/actions/send_email.ts:59
 msgctxt "Content rules|Actions|Send email"
 msgid "Email source"
 msgstr ""
@@ -801,20 +801,20 @@ msgid "Enter a comment that describes the changes you made."
 msgstr "변경 사항을 설명하는 코멘트를 입력하세요."
 
 #. Default: "Enter a user name, usually something like 'jsmith'. No spaces or special characters. Usernames and passwords are case sensitive, make sure the caps lock key is not enabled. This is the name used to log in."
-#: src/routes/userschema/userschema.ts:118
+#: src/routes/userschema/userschema.ts:120
 msgctxt "Routes|Userschema"
 msgid "Enter a user name, usually something like 'jsmith'. No spaces or special characters. Usernames and passwords are case sensitive, make sure the caps lock key is not enabled. This is the name used to log in."
 msgstr ""
 
 #. Default: "Enter full name, for example, John Smith."
-#: src/routes/userschema/userschema.ts:30
-#: src/routes/userschema/userschema.ts:81
+#: src/routes/userschema/userschema.ts:32
+#: src/routes/userschema/userschema.ts:83
 msgctxt "Routes|Userschema"
 msgid "Enter full name, for example, John Smith."
 msgstr ""
 
 #. Default: "Enter your new password."
-#: src/routes/userschema/userschema.ts:104
+#: src/routes/userschema/userschema.ts:106
 msgctxt "Routes|Userschema"
 msgid "Enter your new password."
 msgstr ""
@@ -869,7 +869,7 @@ msgid "Event start date"
 msgstr "이벤트 시작 날짜"
 
 #. Default: "Exclude actor from recipients"
-#: src/content_rules/actions/send_email.ts:33
+#: src/content_rules/actions/send_email.ts:38
 msgctxt "Content rules|Actions|Send email"
 msgid "Exclude actor from recipients"
 msgstr ""
@@ -882,7 +882,7 @@ msgid "Exclude from navigation"
 msgstr "탐색에서 제외"
 
 #. Default: "Execute transition {transition}"
-#: src/content_rules/actions/transition_workflow.ts:15
+#: src/content_rules/actions/transition_workflow.ts:18
 msgctxt "Content rules|Actions|Transition workflow"
 msgid "Execute transition {transition}"
 msgstr ""
@@ -913,25 +913,25 @@ msgid "File"
 msgstr "파일"
 
 #. Default: "File Extension"
-#: src/content_rules/conditions/file_extension.ts:9
+#: src/content_rules/conditions/file_extension.ts:10
 msgctxt "Content rules|Conditions|File extension"
 msgid "File Extension"
 msgstr ""
 
 #. Default: "File extension"
-#: src/content_rules/conditions/file_extension.ts:28
+#: src/content_rules/conditions/file_extension.ts:29
 msgctxt "Content rules|Conditions|File extension"
 msgid "File extension"
 msgstr ""
 
 #. Default: "File extension is {extension}"
-#: src/content_rules/conditions/file_extension.ts:13
+#: src/content_rules/conditions/file_extension.ts:14
 msgctxt "Content rules|Conditions|File extension"
 msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:156
+#: src/models/type/type.ts:160
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "포함된 유형 필터링"
@@ -961,15 +961,15 @@ msgid "Folder-like"
 msgstr "폴더 같은"
 
 #. Default: "From and message are required fields."
-#: src/routes/email/email.ts:57
-#: src/routes/email/email.ts:97
+#: src/routes/email/email.ts:60
+#: src/routes/email/email.ts:100
 msgctxt "Routes|Email"
 msgid "From and message are required fields."
 msgstr "보낸 사람과 메시지는 필수 필드입니다."
 
 #. Default: "Full Name"
-#: src/routes/userschema/userschema.ts:31
-#: src/routes/userschema/userschema.ts:84
+#: src/routes/userschema/userschema.ts:33
+#: src/routes/userschema/userschema.ts:86
 msgctxt "Routes|Userschema"
 msgid "Full Name"
 msgstr ""
@@ -982,13 +982,13 @@ msgid "Gives the ability to rename an item from its edit form."
 msgstr "편집 양식에서 항목의 이름을 변경할 수 있는 기능을 제공합니다."
 
 #. Default: "Group name"
-#: src/content_rules/conditions/user_group.ts:42
+#: src/content_rules/conditions/user_group.ts:45
 msgctxt "Content rules|Conditions|User group"
 msgid "Group name"
 msgstr ""
 
 #. Default: "Groups are: {groups}"
-#: src/content_rules/conditions/user_group.ts:14
+#: src/content_rules/conditions/user_group.ts:17
 msgctxt "Content rules|Conditions|User group"
 msgid "Groups are: {groups}"
 msgstr ""
@@ -1000,7 +1000,7 @@ msgid "History"
 msgstr "이력"
 
 #. Default: "Home Page"
-#: src/constants/userschema.ts:29
+#: src/constants/userschema.ts:30
 msgctxt "Constants|Userschema"
 msgid "Home Page"
 msgstr ""
@@ -1062,28 +1062,28 @@ msgid "Information about rights held in and over this item."
 msgstr "이 항목에 대한 권한 정보입니다."
 
 #. Default: "Internal server error"
-#: src/app.ts:255
-#: src/app.ts:265
+#: src/app.ts:256
+#: src/app.ts:266
 msgctxt "App"
 msgid "Internal server error"
 msgstr "내부 서버 오류"
 
 #. Default: "Invalid credentials"
-#: src/routes/authentication/authentication.ts:81
-#: src/routes/authentication/authentication.ts:95
+#: src/routes/authentication/authentication.ts:84
+#: src/routes/authentication/authentication.ts:98
 msgctxt "Routes|Authentication"
 msgid "Invalid credentials"
 msgstr "잘못된 자격 증명"
 
 #. Default: "Invalid move."
-#: src/routes/controlpanels/controlpanels.ts:512
-#: src/routes/controlpanels/controlpanels.ts:565
+#: src/routes/controlpanels/controlpanels.ts:516
+#: src/routes/controlpanels/controlpanels.ts:569
 msgctxt "Routes|Controlpanels"
 msgid "Invalid move."
 msgstr ""
 
 #. Default: "Invalid session"
-#: src/routes/authentication/authentication.ts:130
+#: src/routes/authentication/authentication.ts:133
 msgctxt "Routes|Authentication"
 msgid "Invalid session"
 msgstr "유효하지 않은 세션"
@@ -1096,7 +1096,7 @@ msgid "Is"
 msgstr "이다"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:157
+#: src/models/type/type.ts:161
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "이 유형의 항목은 다른 항목을 포함하는 폴더 역할을 할 수 있습니다. 내부에 어떤 콘텐츠 유형을 허용해야 합니까?"
@@ -1145,7 +1145,7 @@ msgid "List of attendees."
 msgstr ""
 
 #. Default: "Location"
-#: src/constants/userschema.ts:37
+#: src/constants/userschema.ts:38
 #: src/profiles/core/catalog.json:7
 #: src/profiles/core/types/event.json:67
 msgctxt "Constants|Userschema"
@@ -1171,7 +1171,7 @@ msgid "Location of the event."
 msgstr ""
 
 #. Default: "Log a particular event"
-#: src/content_rules/actions/logger.ts:11
+#: src/content_rules/actions/logger.ts:14
 msgctxt "Content rules|Actions|Logger"
 msgid "Log a particular event"
 msgstr ""
@@ -1183,7 +1183,7 @@ msgid "Log in"
 msgstr "로그인"
 
 #. Default: "Log message {message}"
-#: src/content_rules/actions/logger.ts:13
+#: src/content_rules/actions/logger.ts:16
 msgctxt "Content rules|Actions|Logger"
 msgid "Log message {message}"
 msgstr ""
@@ -1195,7 +1195,7 @@ msgid "Log out"
 msgstr "로그아웃"
 
 #. Default: "Logger"
-#: src/content_rules/actions/logger.ts:10
+#: src/content_rules/actions/logger.ts:13
 msgctxt "Content rules|Actions|Logger"
 msgid "Logger"
 msgstr ""
@@ -1207,7 +1207,7 @@ msgid "Login"
 msgstr "로그인"
 
 #. Default: "Login and password must be provided in body."
-#: src/routes/authentication/authentication.ts:60
+#: src/routes/authentication/authentication.ts:63
 msgctxt "Routes|Authentication"
 msgid "Login and password must be provided in body."
 msgstr "본문에 로그인 및 비밀번호를 제공해야 합니다."
@@ -1272,14 +1272,14 @@ msgid "Matches any condition"
 msgstr "하나라도 일치"
 
 #. Default: "Message"
-#: src/content_rules/actions/send_email.ts:39
-#: src/content_rules/actions/logger.ts:30
+#: src/content_rules/actions/send_email.ts:44
+#: src/content_rules/actions/logger.ts:33
 msgctxt "Content rules|Actions|Send email"
 msgid "Message"
 msgstr ""
 
 #. Default: "Missing credentials"
-#: src/routes/authentication/authentication.ts:59
+#: src/routes/authentication/authentication.ts:62
 msgctxt "Routes|Authentication"
 msgid "Missing credentials"
 msgstr "자격 증명 누락"
@@ -1311,19 +1311,19 @@ msgid "Modify Own Comments"
 msgstr ""
 
 #. Default: "Move the triggering item to a specific folder"
-#: src/content_rules/actions/move_item.ts:17
+#: src/content_rules/actions/move_item.ts:22
 msgctxt "Content rules|Actions|Move item"
 msgid "Move the triggering item to a specific folder"
 msgstr ""
 
 #. Default: "Move to folder"
-#: src/content_rules/actions/move_item.ts:15
+#: src/content_rules/actions/move_item.ts:20
 msgctxt "Content rules|Actions|Move item"
 msgid "Move to folder"
 msgstr ""
 
 #. Default: "Move to folder {target_folder}"
-#: src/content_rules/actions/move_item.ts:19
+#: src/content_rules/actions/move_item.ts:24
 msgctxt "Content rules|Actions|Move item"
 msgid "Move to folder {target_folder}"
 msgstr ""
@@ -1380,50 +1380,50 @@ msgid "No"
 msgstr "아니요"
 
 #. Default: "None"
-#: src/content_rules/conditions/workflow_state.ts:17
-#: src/content_rules/conditions/user_role.ts:18
-#: src/content_rules/conditions/user_group.ts:18
-#: src/content_rules/conditions/file_extension.ts:14
-#: src/content_rules/conditions/content_type.ts:19
-#: src/content_rules/actions/version_item.ts:15
-#: src/content_rules/actions/transition_workflow.ts:16
-#: src/content_rules/actions/send_email.ts:18
-#: src/content_rules/actions/move_item.ts:23
-#: src/content_rules/actions/logger.ts:14
-#: src/content_rules/actions/copy_item.ts:20
+#: src/content_rules/conditions/workflow_state.ts:18
+#: src/content_rules/conditions/user_role.ts:21
+#: src/content_rules/conditions/user_group.ts:21
+#: src/content_rules/conditions/file_extension.ts:15
+#: src/content_rules/conditions/content_type.ts:20
+#: src/content_rules/actions/version_item.ts:18
+#: src/content_rules/actions/transition_workflow.ts:19
+#: src/content_rules/actions/send_email.ts:23
+#: src/content_rules/actions/move_item.ts:28
+#: src/content_rules/actions/logger.ts:17
+#: src/content_rules/actions/copy_item.ts:25
 msgctxt "Content rules|Conditions|Workflow state"
 msgid "None"
 msgstr ""
 
 #. Default: "Not allowed"
-#: src/routes/lock/lock.ts:170
+#: src/routes/lock/lock.ts:174
 msgctxt "Routes|Lock"
 msgid "Not allowed"
 msgstr "허용되지 않음"
 
 #. Default: "Not found."
-#: src/routes/vocabularies/vocabularies.ts:63
-#: src/routes/users/users.ts:144
-#: src/routes/types/types.ts:41
-#: src/routes/groups/groups.ts:31
-#: src/routes/email/email.ts:65
-#: src/routes/controlpanels/controlpanels.ts:152
-#: src/routes/controlpanels/controlpanels.ts:350
-#: src/routes/controlpanels/controlpanels.ts:387
-#: src/routes/controlpanels/controlpanels.ts:419
-#: src/routes/controlpanels/controlpanels.ts:438
-#: src/routes/controlpanels/controlpanels.ts:469
-#: src/routes/controlpanels/controlpanels.ts:505
-#: src/routes/controlpanels/controlpanels.ts:557
-#: src/routes/controlpanels/controlpanels.ts:605
-#: src/routes/controlpanels/controlpanels.ts:652
-#: src/routes/controlpanels/controlpanels.ts:690
+#: src/routes/vocabularies/vocabularies.ts:66
+#: src/routes/users/users.ts:147
+#: src/routes/types/types.ts:45
+#: src/routes/groups/groups.ts:33
+#: src/routes/email/email.ts:68
+#: src/routes/controlpanels/controlpanels.ts:156
+#: src/routes/controlpanels/controlpanels.ts:354
+#: src/routes/controlpanels/controlpanels.ts:391
+#: src/routes/controlpanels/controlpanels.ts:423
+#: src/routes/controlpanels/controlpanels.ts:442
+#: src/routes/controlpanels/controlpanels.ts:473
+#: src/routes/controlpanels/controlpanels.ts:509
+#: src/routes/controlpanels/controlpanels.ts:561
+#: src/routes/controlpanels/controlpanels.ts:609
+#: src/routes/controlpanels/controlpanels.ts:656
+#: src/routes/controlpanels/controlpanels.ts:694
 msgctxt "Routes|Vocabularies"
 msgid "Not found."
 msgstr "찾을 수 없습니다."
 
 #. Default: "Not found: {url}"
-#: src/helpers/handler/handler.ts:71
+#: src/helpers/handler/handler.ts:79
 msgctxt "Helpers|Handler"
 msgid "Not found: {url}"
 msgstr ""
@@ -1461,27 +1461,27 @@ msgid "Page"
 msgstr "페이지"
 
 #. Default: "Parent comment does not exist."
-#: src/routes/comments/comments.ts:151
+#: src/routes/comments/comments.ts:155
 msgctxt "Routes|Comments"
 msgid "Parent comment does not exist."
 msgstr ""
 
 #. Default: "Password"
-#: src/routes/userschema/userschema.ts:105
+#: src/routes/userschema/userschema.ts:107
 msgctxt "Routes|Userschema"
 msgid "Password"
 msgstr ""
 
 #. Default: "Password reset request"
-#: src/routes/users/users.ts:104
-#: src/routes/users/users.ts:252
+#: src/routes/users/users.ts:107
+#: src/routes/users/users.ts:255
 msgctxt "Routes|Users"
 msgid "Password reset request"
 msgstr "비밀번호 재설정 요청"
 
 #. Default: "Password should be at least 8 characters long."
-#: src/routes/users/users.ts:40
-#: src/routes/users/users.ts:198
+#: src/routes/users/users.ts:43
+#: src/routes/users/users.ts:201
 msgctxt "Routes|Users"
 msgid "Password should be at least 8 characters long."
 msgstr ""
@@ -1499,7 +1499,7 @@ msgid "Pending review"
 msgstr "검토 대기 중"
 
 #. Default: "Perform a workflow transition on the triggering object"
-#: src/content_rules/actions/transition_workflow.ts:13
+#: src/content_rules/actions/transition_workflow.ts:16
 msgctxt "Content rules|Actions|Transition workflow"
 msgid "Perform a workflow transition on the triggering object"
 msgstr ""
@@ -1551,7 +1551,7 @@ msgid "Please use YYYY/MM/DD."
 msgstr "YYYY/MM/DD 형식을 사용하세요."
 
 #. Default: "Portrait"
-#: src/constants/userschema.ts:42
+#: src/constants/userschema.ts:43
 msgctxt "Constants|Userschema"
 msgid "Portrait"
 msgstr ""
@@ -1594,8 +1594,8 @@ msgid "Prompt"
 msgstr "프롬프트"
 
 #. Default: "Prompt is a required field."
-#: src/routes/ai/ai.ts:34
-#: src/routes/ai/ai.ts:84
+#: src/routes/ai/ai.ts:37
+#: src/routes/ai/ai.ts:87
 msgctxt "Routes|Ai"
 msgid "Prompt is a required field."
 msgstr "프롬프트는 필수 입력 항목입니다."
@@ -1637,15 +1637,15 @@ msgid "Query"
 msgstr ""
 
 #. Default: "Query must be at least 2 characters long."
-#: src/routes/users/users.ts:165
-#: src/routes/principals/principals.ts:27
-#: src/routes/groups/groups.ts:52
+#: src/routes/users/users.ts:168
+#: src/routes/principals/principals.ts:30
+#: src/routes/groups/groups.ts:54
 msgctxt "Routes|Users"
 msgid "Query must be at least 2 characters long."
 msgstr ""
 
 #. Default: "Re-enter the password. Make sure the passwords are identical."
-#: src/routes/userschema/userschema.ts:110
+#: src/routes/userschema/userschema.ts:112
 msgctxt "Routes|Userschema"
 msgid "Re-enter the password. Make sure the passwords are identical."
 msgstr ""
@@ -1749,13 +1749,13 @@ msgid "Robots.txt"
 msgstr "Robots.txt"
 
 #. Default: "Roles"
-#: src/content_rules/conditions/user_role.ts:42
+#: src/content_rules/conditions/user_role.ts:45
 msgctxt "Content rules|Conditions|User role"
 msgid "Roles"
 msgstr ""
 
 #. Default: "Roles are: {roles}"
-#: src/content_rules/conditions/user_role.ts:14
+#: src/content_rules/conditions/user_role.ts:17
 msgctxt "Content rules|Conditions|User role"
 msgid "Roles are: {roles}"
 msgstr ""
@@ -1804,19 +1804,19 @@ msgid "Select an image that will be used in listing and teaser blocks."
 msgstr "목록 및 티저 블록에 사용할 이미지를 선택하세요."
 
 #. Default: "Select the workflow transition to attempt"
-#: src/content_rules/actions/transition_workflow.ts:28
+#: src/content_rules/actions/transition_workflow.ts:31
 msgctxt "Content rules|Actions|Transition workflow"
 msgid "Select the workflow transition to attempt"
 msgstr ""
 
 #. Default: "Send a confirmation mail with a link to set the password"
-#: src/routes/userschema/userschema.ts:98
+#: src/routes/userschema/userschema.ts:100
 msgctxt "Routes|Userschema"
 msgid "Send a confirmation mail with a link to set the password"
 msgstr ""
 
 #. Default: "Send an email on the triggering object"
-#: src/content_rules/actions/send_email.ts:15
+#: src/content_rules/actions/send_email.ts:20
 msgctxt "Content rules|Actions|Send email"
 msgid "Send an email on the triggering object"
 msgstr ""
@@ -1828,7 +1828,7 @@ msgid "Send back"
 msgstr "반려"
 
 #. Default: "Send email"
-#: src/content_rules/actions/send_email.ts:13
+#: src/content_rules/actions/send_email.ts:18
 msgctxt "Content rules|Actions|Send email"
 msgid "Send email"
 msgstr ""
@@ -1932,19 +1932,19 @@ msgid "Source"
 msgstr "소스"
 
 #. Default: "Store a new version of the item"
-#: src/content_rules/actions/version_item.ts:12
+#: src/content_rules/actions/version_item.ts:15
 msgctxt "Content rules|Actions|Version item"
 msgid "Store a new version of the item"
 msgstr ""
 
 #. Default: "Subject"
-#: src/content_rules/actions/send_email.ts:60
+#: src/content_rules/actions/send_email.ts:65
 msgctxt "Content rules|Actions|Send email"
 msgid "Subject"
 msgstr ""
 
 #. Default: "Subject of the message"
-#: src/content_rules/actions/send_email.ts:58
+#: src/content_rules/actions/send_email.ts:63
 msgctxt "Content rules|Actions|Send email"
 msgid "Subject of the message"
 msgstr ""
@@ -1962,43 +1962,43 @@ msgid "Submit for publication"
 msgstr "게시를 위해 제출"
 
 #. Default: "Successfully assigned the content rule {rule}"
-#: src/routes/content_rules/content_rules.ts:114
+#: src/routes/content_rules/content_rules.ts:116
 msgctxt "Routes|Content rules"
 msgid "Successfully assigned the content rule {rule}"
 msgstr ""
 
 #. Default: "Successfully disabled rules {rules}"
-#: src/routes/content_rules/content_rules.ts:161
+#: src/routes/content_rules/content_rules.ts:163
 msgctxt "Routes|Content rules"
 msgid "Successfully disabled rules {rules}"
 msgstr ""
 
 #. Default: "Successfully disabled rules {rules} to subfolders"
-#: src/routes/content_rules/content_rules.ts:204
+#: src/routes/content_rules/content_rules.ts:206
 msgctxt "Routes|Content rules"
 msgid "Successfully disabled rules {rules} to subfolders"
 msgstr ""
 
 #. Default: "Successfully enabled rules {rules}"
-#: src/routes/content_rules/content_rules.ts:141
+#: src/routes/content_rules/content_rules.ts:143
 msgctxt "Routes|Content rules"
 msgid "Successfully enabled rules {rules}"
 msgstr ""
 
 #. Default: "Successfully enabled rules {rules} to subfolders"
-#: src/routes/content_rules/content_rules.ts:181
+#: src/routes/content_rules/content_rules.ts:183
 msgctxt "Routes|Content rules"
 msgid "Successfully enabled rules {rules} to subfolders"
 msgstr ""
 
 #. Default: "System group"
-#: src/routes/groups/groups.ts:149
+#: src/routes/groups/groups.ts:151
 msgctxt "Routes|Groups"
 msgid "System group"
 msgstr "시스템 그룹"
 
 #. Default: "System users"
-#: src/routes/users/users.ts:332
+#: src/routes/users/users.ts:335
 msgctxt "Routes|Users"
 msgid "System users"
 msgstr "시스템 사용자"
@@ -2022,21 +2022,21 @@ msgid "Tags are used for organization of content"
 msgstr "태그는 콘텐츠 정리에 사용됩니다"
 
 #. Default: "Target folder"
-#: src/content_rules/actions/move_item.ts:36
-#: src/content_rules/actions/copy_item.ts:33
+#: src/content_rules/actions/move_item.ts:41
+#: src/content_rules/actions/copy_item.ts:38
 msgctxt "Content rules|Actions|Move item"
 msgid "Target folder"
 msgstr ""
 
 #. Default: "Text is required to add a comment."
-#: src/routes/comments/comments.ts:100
-#: src/routes/comments/comments.ts:158
+#: src/routes/comments/comments.ts:104
+#: src/routes/comments/comments.ts:162
 msgctxt "Routes|Comments"
 msgid "Text is required to add a comment."
 msgstr ""
 
 #. Default: "Text is required to modify a comment."
-#: src/routes/comments/comments.ts:226
+#: src/routes/comments/comments.ts:230
 msgctxt "Routes|Comments"
 msgid "Text is required to modify a comment."
 msgstr ""
@@ -2066,7 +2066,7 @@ msgid "The JSON representation of the object blocks layout. Must be a JSON array
 msgstr "객체 블록 레이아웃의 JSON 표현입니다. JSON 배열이어야 합니다."
 
 #. Default: "The URL for your external home page, if you have one."
-#: src/constants/userschema.ts:26
+#: src/constants/userschema.ts:27
 msgctxt "Constants|Userschema"
 msgid "The URL for your external home page, if you have one."
 msgstr ""
@@ -2078,13 +2078,13 @@ msgid "The address of your local SMTP (outgoing email) server. Usually 'localhos
 msgstr "로컬 SMTP(발신 이메일) 서버의 주소입니다. 이메일을 보내기 위해 외부 서버를 사용하지 않는 한 일반적으로 'localhost'입니다."
 
 #. Default: "The comment added to the history while versioning the content."
-#: src/content_rules/actions/version_item.ts:27
+#: src/content_rules/actions/version_item.ts:30
 msgctxt "Content rules|Actions|Version item"
 msgid "The comment added to the history while versioning the content."
 msgstr ""
 
 #. Default: "The content type to check for."
-#: src/content_rules/conditions/content_type.ts:32
+#: src/content_rules/conditions/content_type.ts:33
 msgctxt "Content rules|Conditions|Content type"
 msgid "The content type to check for."
 msgstr ""
@@ -2113,13 +2113,13 @@ msgid "The date an item was created"
 msgstr "항목이 생성된 날짜"
 
 #. Default: "The email address that sends the email. If no email is provided here, it will use the portal from address."
-#: src/content_rules/actions/send_email.ts:51
+#: src/content_rules/actions/send_email.ts:56
 msgctxt "Content rules|Actions|Send email"
 msgid "The email address that sends the email. If no email is provided here, it will use the portal from address."
 msgstr ""
 
 #. Default: "The email where you want to send this message. To send it to different email addresses, just separate them with ,"
-#: src/content_rules/actions/send_email.ts:44
+#: src/content_rules/actions/send_email.ts:49
 msgctxt "Content rules|Actions|Send email"
 msgid "The email where you want to send this message. To send it to different email addresses, just separate them with ,"
 msgstr ""
@@ -2131,14 +2131,14 @@ msgid "The end date and time of an event"
 msgstr "이벤트 종료 날짜 및 시간"
 
 #. Default: "The file extension to check for"
-#: src/content_rules/conditions/file_extension.ts:26
+#: src/content_rules/conditions/file_extension.ts:27
 msgctxt "Content rules|Conditions|File extension"
 msgid "The file extension to check for"
 msgstr ""
 
 #. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
-#: src/routes/users/users.ts:105
-#: src/routes/users/users.ts:253
+#: src/routes/users/users.ts:108
+#: src/routes/users/users.ts:256
 msgctxt "Routes|Users"
 msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 msgstr ""
@@ -2174,13 +2174,13 @@ msgid "The location of an item"
 msgstr "항목의 위치"
 
 #. Default: "The message that you want to mail."
-#: src/content_rules/actions/send_email.ts:37
+#: src/content_rules/actions/send_email.ts:42
 msgctxt "Content rules|Actions|Send email"
 msgid "The message that you want to mail."
 msgstr ""
 
 #. Default: "The name of the group."
-#: src/content_rules/conditions/user_group.ts:31
+#: src/content_rules/conditions/user_group.ts:34
 msgctxt "Content rules|Conditions|User group"
 msgid "The name of the group."
 msgstr ""
@@ -2210,7 +2210,7 @@ msgid "The port of your local SMTP (outgoing email) server. Usually '25'."
 msgstr "로컬 SMTP(발신 이메일) 서버의 포트입니다. 일반적으로 '25'입니다."
 
 #. Default: "The roles to check for."
-#: src/content_rules/conditions/user_role.ts:31
+#: src/content_rules/conditions/user_role.ts:34
 msgctxt "Content rules|Conditions|User role"
 msgid "The roles to check for."
 msgstr ""
@@ -2264,14 +2264,14 @@ msgid "The user viewing the querystring results"
 msgstr "쿼리 문자열 결과를 보고 있는 사용자"
 
 #. Default: "The workflow states to check for."
-#: src/content_rules/conditions/workflow_state.ts:30
+#: src/content_rules/conditions/workflow_state.ts:31
 msgctxt "Content rules|Conditions|Workflow state"
 msgid "The workflow states to check for."
 msgstr ""
 
 #. Default: "This document is already locked by another user."
-#: src/routes/lock/lock.ts:63
-#: src/routes/lock/lock.ts:116
+#: src/routes/lock/lock.ts:67
+#: src/routes/lock/lock.ts:120
 msgctxt "Routes|Lock"
 msgid "This document is already locked by another user."
 msgstr "이 문서는 이미 다른 사용자에 의해 잠겨 있습니다."
@@ -2327,7 +2327,7 @@ msgid "Title"
 msgstr "제목"
 
 #. Default: "To, from and message are required fields."
-#: src/routes/email/email.ts:25
+#: src/routes/email/email.ts:28
 msgctxt "Routes|Email"
 msgid "To, from and message are required fields."
 msgstr "받는 사람, 보낸 사람 및 메시지는 필수 필드입니다."
@@ -2344,21 +2344,21 @@ msgid "Today"
 msgstr "오늘"
 
 #. Default: "Transaction error."
-#: src/client.ts:78
-#: src/app.ts:191
-#: src/app.ts:204
+#: src/client.ts:82
+#: src/app.ts:192
+#: src/app.ts:205
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "트랜잭션 오류."
 
 #. Default: "Transition"
-#: src/content_rules/actions/transition_workflow.ts:30
+#: src/content_rules/actions/transition_workflow.ts:33
 msgctxt "Content rules|Actions|Transition workflow"
 msgid "Transition"
 msgstr ""
 
 #. Default: "Transition workflow state"
-#: src/content_rules/actions/transition_workflow.ts:11
+#: src/content_rules/actions/transition_workflow.ts:14
 msgctxt "Content rules|Actions|Transition workflow"
 msgid "Transition workflow state"
 msgstr ""
@@ -2370,13 +2370,13 @@ msgid "Type"
 msgstr "유형"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:165
+#: src/models/type/type.ts:169
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "유형 이름"
 
 #. Default: "Type of the current document is not found."
-#: src/helpers/handler/handler.ts:90
+#: src/helpers/handler/handler.ts:98
 msgctxt "Helpers|Handler"
 msgid "Type of the current document is not found."
 msgstr "현재 문서의 유형을 찾을 수 없습니다."
@@ -2414,13 +2414,13 @@ msgid "User created"
 msgstr ""
 
 #. Default: "User doesn’t exist or invalid credentials."
-#: src/routes/users/users.ts:65
+#: src/routes/users/users.ts:68
 msgctxt "Routes|Users"
 msgid "User doesn’t exist or invalid credentials."
 msgstr "사용자가 존재하지 않거나 자격 증명이 유효하지 않습니다."
 
 #. Default: "User is not logged in."
-#: src/routes/authentication/authentication.ts:131
+#: src/routes/authentication/authentication.ts:134
 msgctxt "Routes|Authentication"
 msgid "User is not logged in."
 msgstr "사용자가 로그인하지 않았습니다."
@@ -2444,7 +2444,7 @@ msgid "User removed"
 msgstr ""
 
 #. Default: "Username"
-#: src/routes/userschema/userschema.ts:121
+#: src/routes/userschema/userschema.ts:123
 msgctxt "Routes|Userschema"
 msgid "Username"
 msgstr ""
@@ -2456,25 +2456,25 @@ msgid "Username for authentication to your email server. Not required unless you
 msgstr "이메일 서버 인증을 위한 사용자 이름입니다. ESMTP를 사용하지 않는 경우 필요하지 않습니다."
 
 #. Default: "User’s group"
-#: src/content_rules/conditions/user_group.ts:10
+#: src/content_rules/conditions/user_group.ts:13
 msgctxt "Content rules|Conditions|User group"
 msgid "User’s group"
 msgstr ""
 
 #. Default: "User’s role"
-#: src/content_rules/conditions/user_role.ts:10
+#: src/content_rules/conditions/user_role.ts:13
 msgctxt "Content rules|Conditions|User role"
 msgid "User’s role"
 msgstr ""
 
 #. Default: "Version item"
-#: src/content_rules/actions/version_item.ts:11
+#: src/content_rules/actions/version_item.ts:14
 msgctxt "Content rules|Actions|Version item"
 msgid "Version item"
 msgstr ""
 
 #. Default: "Version item with comment {comment}"
-#: src/content_rules/actions/version_item.ts:14
+#: src/content_rules/actions/version_item.ts:17
 msgctxt "Content rules|Actions|Version item"
 msgid "Version item with comment {comment}"
 msgstr ""
@@ -2531,8 +2531,8 @@ msgid "Waiting to be reviewed, not editable by the owner."
 msgstr "검토 대기 중이며, 소유자가 편집할 수 없습니다."
 
 #. Default: "We will use this address if you need to recover your password"
-#: src/routes/userschema/userschema.ts:35
-#: src/routes/userschema/userschema.ts:88
+#: src/routes/userschema/userschema.ts:37
+#: src/routes/userschema/userschema.ts:90
 msgctxt "Routes|Userschema"
 msgid "We will use this address if you need to recover your password"
 msgstr ""
@@ -2578,8 +2578,8 @@ msgid "Within next"
 msgstr "다음 ... 이내"
 
 #. Default: "Workflow state"
-#: src/content_rules/conditions/workflow_state.ts:9
-#: src/content_rules/conditions/workflow_state.ts:41
+#: src/content_rules/conditions/workflow_state.ts:10
+#: src/content_rules/conditions/workflow_state.ts:42
 msgctxt "Content rules|Conditions|Workflow state"
 msgid "Workflow state"
 msgstr ""
@@ -2591,14 +2591,14 @@ msgid "Workflow state changed"
 msgstr ""
 
 #. Default: "Workflow states are: {states}"
-#: src/content_rules/conditions/workflow_state.ts:13
+#: src/content_rules/conditions/workflow_state.ts:14
 msgctxt "Content rules|Conditions|Workflow state"
 msgid "Workflow states are: {states}"
 msgstr ""
 
 #. Default: "Wrong login and/or password."
-#: src/routes/authentication/authentication.ts:82
-#: src/routes/authentication/authentication.ts:96
+#: src/routes/authentication/authentication.ts:85
+#: src/routes/authentication/authentication.ts:99
 msgctxt "Routes|Authentication"
 msgid "Wrong login and/or password."
 msgstr "로그인 및/또는 비밀번호가 잘못되었습니다."
@@ -2611,74 +2611,74 @@ msgid "Yes"
 msgstr "예"
 
 #. Default: "You are not authorization to access this resource."
-#: src/routes/workflow/workflow.ts:41
+#: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
 msgstr ""
 
 #. Default: "You are not authorized to access this resource."
-#: src/helpers/handler/handler.ts:112
+#: src/helpers/handler/handler.ts:120
 msgctxt "Helpers|Handler"
 msgid "You are not authorized to access this resource."
 msgstr "이 리소스에 액세스할 권한이 없습니다."
 
 #. Default: "You can’t delete system groups."
-#: src/routes/groups/groups.ts:148
+#: src/routes/groups/groups.ts:150
 msgctxt "Routes|Groups"
 msgid "You can’t delete system groups."
 msgstr "시스템 그룹은 삭제할 수 없습니다."
 
 #. Default: "You can’t delete system users."
-#: src/routes/users/users.ts:331
+#: src/routes/users/users.ts:334
 msgctxt "Routes|Users"
 msgid "You can’t delete system users."
 msgstr "시스템 사용자는 삭제할 수 없습니다."
 
 #. Default: "You don’t have permission to delete this comment."
-#: src/routes/comments/comments.ts:275
+#: src/routes/comments/comments.ts:279
 msgctxt "Routes|Comments"
 msgid "You don’t have permission to delete this comment."
 msgstr ""
 
 #. Default: "You don’t have permission to edit this comment."
-#: src/routes/comments/comments.ts:219
+#: src/routes/comments/comments.ts:223
 msgctxt "Routes|Comments"
 msgid "You don’t have permission to edit this comment."
 msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
-#: src/routes/history/history.ts:62
+#: src/routes/history/history.ts:65
 #: src/routes/content/content.ts:737
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "다른 사용자가 잠갔으므로 이 문서를 저장할 권한이 없습니다."
 
 #. Default: "You don’t have permission to unlock this document."
-#: src/routes/lock/lock.ts:167
+#: src/routes/lock/lock.ts:171
 msgctxt "Routes|Lock"
 msgid "You don’t have permission to unlock this document."
 msgstr "이 문서의 잠금을 해제할 권한이 없습니다."
 
 #. Default: "You don’t have permissions to add a user."
-#: src/routes/users/users.ts:191
+#: src/routes/users/users.ts:194
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
 msgstr ""
 
 #. Default: "You don’t have permissions to view this user."
-#: src/routes/users/users.ts:132
+#: src/routes/users/users.ts:135
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to view this user."
 msgstr ""
 
 #. Default: "Your location - either city and country - or in a company setting, where your office is located."
-#: src/constants/userschema.ts:34
+#: src/constants/userschema.ts:35
 msgctxt "Constants|Userschema"
 msgid "Your location - either city and country - or in a company setting, where your office is located."
 msgstr ""
 
 #. Default: "Your portrait photo."
-#: src/constants/userschema.ts:41
+#: src/constants/userschema.ts:42
 msgctxt "Constants|Userschema"
 msgid "Your portrait photo."
 msgstr ""

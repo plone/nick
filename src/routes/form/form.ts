@@ -3,8 +3,11 @@
  * @module routes/form/form
  */
 
-import { Request } from '../../types';
+// Type imports
 import type { Knex } from 'knex';
+
+// Internal imports
+import { Request } from '../../types';
 
 export default [
   {

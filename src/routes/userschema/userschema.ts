@@ -3,11 +3,13 @@
  * @module routes/userschema/userschema
  */
 
-import type { Request } from '../../types';
+// Type imports
 import type { Knex } from 'knex';
+import type { Request } from '../../types';
 
-import { mergeSchemas } from '../../helpers/schema/schema';
+// Internal imports
 import config from '../../helpers/config/config';
+import { mergeSchemas } from '../../helpers/schema/schema';
 
 export default [
   {

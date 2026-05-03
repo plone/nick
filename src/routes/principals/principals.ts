@@ -3,11 +3,14 @@
  * @module routes/principals/principals
  */
 
-import models from '../../models';
-import { RequestException } from '../../helpers/error/error';
-import { apiLimiter } from '../../helpers/limiter/limiter';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
+
+// Internal imports
+import { RequestException } from '../../helpers/error/error';
+import { apiLimiter } from '../../helpers/limiter/limiter';
+import models from '../../models';
 
 export default [
   {

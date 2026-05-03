@@ -3,8 +3,9 @@
  * @module models/permission/permission
  */
 
-import { Model } from '../_model/_model';
+// Internal imports
 import models from '../';
+import { Model } from '../_model/_model';
 
 /**
  * A model for Permission.

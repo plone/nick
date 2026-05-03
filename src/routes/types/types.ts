@@ -3,12 +3,16 @@
  * @module routes/types/types
  */
 
-import { omit } from 'es-toolkit/object';
-
-import { RequestException } from '../../helpers/error/error';
-import { translateSchema } from '../../helpers/schema/schema';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { omit } from 'es-toolkit/object';
+
+// Internal imports
+import { RequestException } from '../../helpers/error/error';
+import { translateSchema } from '../../helpers/schema/schema';
 import models from '../../models';
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {

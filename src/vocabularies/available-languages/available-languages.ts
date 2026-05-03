@@ -3,13 +3,17 @@
  * @module vocabularies/available-languages/available-languages
  */
 
+// Type imports
 import type { Knex } from 'knex';
+import type { Request, VocabularyTerm } from '../../types';
+
+// External imports
 import { pick } from 'es-toolkit/object';
 
-import models from '../../models';
+// Internal imports
 import languages from '../../constants/languages';
 import { objectToVocabulary } from '../../helpers/utils/utils';
-import type { Request, VocabularyTerm } from '../../types';
+import models from '../../models';
 
 /**
  * Returns the available languages vocabulary.

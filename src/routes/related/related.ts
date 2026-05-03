@@ -3,13 +3,15 @@
  * @module routes/related/related
  */
 
-import { getUrl } from '../../helpers/url/url';
-import models from '../../models';
+// Type imports
 import type { Request, Json } from '../../types';
 import type { Knex } from 'knex';
-import { RequestException } from '../../helpers/error/error';
 
+// Internal imports
 import config from '../../helpers/config/config';
+import { RequestException } from '../../helpers/error/error';
+import { getUrl } from '../../helpers/url/url';
+import models from '../../models';
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
   const Catalog = models.get('Catalog');

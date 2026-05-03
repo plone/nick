@@ -3,13 +3,18 @@
  * @module content_rules/actions/move_item
  */
 
-import { mapAsync, uniqueId } from '../../helpers/utils/utils';
-import { Knex } from 'knex';
-import models from '../../models';
+// Type imports
+import type { Params, Reference, Request } from '../../types';
+
+// External imports
 import { flattenDeep, uniq } from 'es-toolkit/array';
+import { Knex } from 'knex';
+
+// Internal imports
 import config from '../../helpers/config/config';
 import { removeFile } from '../../helpers/fs/fs';
-import type { Params, Request, Reference } from '../../types';
+import { mapAsync, uniqueId } from '../../helpers/utils/utils';
+import models from '../../models';
 
 export const move_item = {
   getTitle: (req: Request) => req.i18n('Move to folder'),

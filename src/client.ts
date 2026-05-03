@@ -3,18 +3,22 @@
  * @module client
  */
 
-import routes from './routes';
-import models from './models';
-import { i18n } from './middleware/i18n/i18n';
+// Type imports
 import type { Request } from './types';
-import { RequestException } from './helpers/error/error';
-import { Response, NextFunction } from 'express';
 
-import { callHandler } from './helpers/handler/handler';
+// External imports
+import { NextFunction, Response } from 'express';
+
+// Internal imports
 import { content_rules } from './events/content_rules/content_rules';
+import config from './helpers/config/config';
+import { RequestException } from './helpers/error/error';
+import { callHandler } from './helpers/handler/handler';
+import { i18n } from './middleware/i18n/i18n';
+import models from './models';
+import routes from './routes';
 
 // Add content rules events
-import config from './helpers/config/config';
 config.settings.events.register(content_rules);
 
 /**

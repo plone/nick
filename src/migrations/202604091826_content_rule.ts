@@ -1,3 +1,9 @@
+/**
+ * Content rule migration.
+ * @module migration/content_rule
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
 export const up = async (knex: Knex): Promise<void> => {

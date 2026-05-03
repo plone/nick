@@ -3,10 +3,13 @@
  * @module models/behavior/behavior
  */
 
+// Type imports
 import type { Knex } from 'knex';
-import { mergeSchemas } from '../../helpers/schema/schema';
-import { BehaviorCollection } from '../../collections/behavior/behavior';
+
+// Internal imports
 import { Model } from '../_model/_model';
+import { BehaviorCollection } from '../../collections/behavior/behavior';
+import { mergeSchemas } from '../../helpers/schema/schema';
 import type { Schema } from '../../types';
 
 /**

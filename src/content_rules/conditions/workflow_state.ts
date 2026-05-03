@@ -3,6 +3,7 @@
  * @module content_rules/conditions/workflow_state
  */
 
+// Type imports
 import type { Params, Request } from '../../types';
 
 export const workflow_state = {

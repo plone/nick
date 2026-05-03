@@ -3,10 +3,13 @@
  * @module models/version/version
  */
 
-import { Model } from '../_model/_model';
-import models from '../';
-import { getRootUrl, getUrl } from '../../helpers/url/url';
+// Type imports
 import type { Json, Request } from '../../types';
+
+// Internal imports
+import models from '../';
+import { Model } from '../_model/_model';
+import { getRootUrl, getUrl } from '../../helpers/url/url';
 
 /**
  * A model for Version.

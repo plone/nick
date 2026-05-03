@@ -3,8 +3,9 @@
  * @module helpers/fs/fs
  */
 
+// External imports
+import { isObject, mapKeys } from 'es-toolkit/compat';
 import { mapValues } from 'es-toolkit/object';
-import { mapKeys, isObject } from 'es-toolkit/compat';
 
 /**
  * Node of an object

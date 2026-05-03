@@ -3,11 +3,15 @@
  * @module models/vocabulary/vocabulary
  */
 
+// Type imports
+import type { Json, Request } from '../../types';
+
+// External imports
 import { mapValues } from 'es-toolkit/object';
 
+// Internal imports
 import { Model } from '../_model/_model';
 import { getRootUrl } from '../../helpers/url/url';
-import type { Json, Request } from '../../types';
 
 /**
  * A model for Vocabulary.

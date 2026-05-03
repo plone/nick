@@ -3,8 +3,10 @@
  * @module helpers/schema/schema
  */
 
+// External imports
 import { mapValues } from 'es-toolkit/object';
 
+// Internal imports
 import { Fieldset, Property, Schema, Request } from '../../types';
 
 /**

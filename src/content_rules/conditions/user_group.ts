@@ -3,8 +3,11 @@
  * @module content_rules/conditions/user_group
  */
 
-import { intersection } from 'es-toolkit/array';
+// Type imports
 import type { Params, Request } from '../../types';
+
+// External imports
+import { intersection } from 'es-toolkit/array';
 
 export const user_group = {
   getTitle: (req: Request) => req.i18n('User’s group'),

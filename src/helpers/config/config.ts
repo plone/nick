@@ -1,7 +1,17 @@
-import events from '../../events';
+/**
+ * Config helper.
+ * @module helpers/config/config
+ */
+
+// Type imports
 import type { ConfigSettings } from '../../types';
+
+// External imports
 import path from 'path';
 import { fileURLToPath } from 'url';
+
+// Internal imports
+import events from '../../events';
 
 export type ConfigType = InstanceType<typeof Config>;
 

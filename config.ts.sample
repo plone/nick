@@ -1,7 +1,15 @@
-import { fileURLToPath } from 'url';
+/**
+ * Config
+ * @module config
+ */
+
+// External imports
 import path from 'path';
-import events from './src/events';
+import { fileURLToPath } from 'url';
+
+// Internal imports
 import userschema from './src/constants/userschema';
+import events from './src/events';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

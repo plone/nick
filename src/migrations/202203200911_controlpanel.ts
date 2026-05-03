@@ -1,3 +1,9 @@
+/**
+ * Controlpanel migration.
+ * @module migration/controlpanel
+ */
+
+// Type imports
 import type { Knex } from 'knex';
 
 export const up = async (knex: Knex): Promise<void> => {

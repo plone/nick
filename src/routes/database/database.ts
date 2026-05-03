@@ -3,15 +3,18 @@
  * @module routes/database/database
  */
 
-import du from 'du';
-
-import models from '../../models';
-import { formatSize } from '../../helpers/format/format';
-import { getRootUrl } from '../../helpers/url/url';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
 
+// External imports
+import du from 'du';
+
+// Internal imports
 import config from '../../helpers/config/config';
+import { formatSize } from '../../helpers/format/format';
+import { getRootUrl } from '../../helpers/url/url';
+import models from '../../models';
 
 export default [
   {

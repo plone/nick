@@ -3,11 +3,14 @@
  * @module routes/sharing/sharing
  */
 
-import models from '../../models';
-import { mapAsync } from '../../helpers/utils/utils';
-import { apiLimiter } from '../../helpers/limiter/limiter';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// Internal imports
+import { apiLimiter } from '../../helpers/limiter/limiter';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 /**
  * Fetch principals

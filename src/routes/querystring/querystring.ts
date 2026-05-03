@@ -3,10 +3,13 @@
  * @module routes/actions/actions
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// Internal imports
 import { getUrl } from '../../helpers/url/url';
 import models from '../../models';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
 
 export default [
   {

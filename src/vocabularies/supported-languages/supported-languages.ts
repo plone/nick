@@ -3,10 +3,13 @@
  * @module vocabularies/supported-languages/supported-languages
  */
 
-import languages from '../../constants/languages';
-import { objectToVocabulary } from '../../helpers/utils/utils';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request, VocabularyTerm } from '../../types';
+
+// Internal imports
+import languages from '../../constants/languages';
+import { objectToVocabulary } from '../../helpers/utils/utils';
 
 /**
  * Returns the supported languages vocabulary.

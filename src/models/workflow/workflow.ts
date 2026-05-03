@@ -3,12 +3,16 @@
  * @module models/workflow/workflow
  */
 
+// Type imports
+import type { Json, Request } from '../../types';
+
+// External imports
 import { flatten } from 'es-toolkit/array';
 import { mapValues, pick, pickBy } from 'es-toolkit/object';
 
-import { getUrl } from '../../helpers/url/url';
+// Internal imports
 import { Model } from '../_model/_model';
-import type { Json, Request } from '../../types';
+import { getUrl } from '../../helpers/url/url';
 
 /**
  * A model for Workflow.

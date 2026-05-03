@@ -3,7 +3,10 @@
  * @module helpers/limiter/limiter
  */
 
+// External imports
 import { rateLimit } from 'express-rate-limit';
+
+// Internal imports
 import config from '../../helpers/config/config';
 
 export const apiLimiter = rateLimit({

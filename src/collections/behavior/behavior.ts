@@ -3,10 +3,15 @@
  * @module collection/behavior/behavior
  */
 
-import { Knex } from 'knex';
-import { mergeSchemas } from '../../helpers/schema/schema';
-import { Collection } from '../../collections/_collection/_collection';
+// Type imports
 import type { Model, Schema } from '../../types';
+
+// External imports
+import { Knex } from 'knex';
+
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
+import { mergeSchemas } from '../../helpers/schema/schema';
 
 interface BehaviorModel extends Model {
   fetchSchema: (trx: Knex.Transaction) => Promise<Schema>;

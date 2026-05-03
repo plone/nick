@@ -3,19 +3,22 @@
  * @module routes/users/users
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// External imports
 // @ts-expect-error bcrypt-promise does not have types
 import bcrypt from 'bcrypt-promise';
 import { omit } from 'es-toolkit/object';
 import jwt from 'jsonwebtoken';
 
-import models from '../../models';
-import { RequestException } from '../../helpers/error/error';
-import { sendMail } from '../../helpers/mail/mail';
-import { apiLimiter } from '../../helpers/limiter/limiter';
-import type { Knex } from 'knex';
-import type { Request } from '../../types';
-
+// Internal imports
 import config from '../../helpers/config/config';
+import { RequestException } from '../../helpers/error/error';
+import { apiLimiter } from '../../helpers/limiter/limiter';
+import { sendMail } from '../../helpers/mail/mail';
+import models from '../../models';
 
 const userFields = ['id', 'fullname', 'email'];
 

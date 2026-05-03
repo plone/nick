@@ -3,15 +3,19 @@
  * @module routes/workflow/workflow
  */
 
+// Type imports
+import type { Request } from '../../types';
+import type { Knex } from 'knex';
+
+// External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 
-dayjs.extend(utc);
-
+// Internal imports
 import { hasPermission } from '../../helpers/auth/auth';
 import { RequestException } from '../../helpers/error/error';
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
+
+dayjs.extend(utc);
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
   await req.type.fetchRelated('_workflow', trx);

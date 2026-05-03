@@ -1,12 +1,20 @@
+/**
+ * Handler helper.
+ * @module helpers/handler/handler
+ */
+
+// Type imports
+import type { Callback, Request, Route, View } from '../../types';
+
+// External imports
 import { compact, uniq } from 'es-toolkit/array';
 import type { Knex } from 'knex';
 
-import { RequestException } from '../error/error';
-import { getPath } from '../url/url';
+// Internal imports
 import { getUserId, hasPermission } from '../auth/auth';
-
+import { RequestException } from '../error/error';
 import models from '../../models';
-import type { Callback, Request, Route, View } from '../../types';
+import { getPath } from '../url/url';
 
 /**
  * Resolve and call handler

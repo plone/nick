@@ -1,8 +1,10 @@
 /**
  * Middleware to work better with Volto.
- * @module volto
+ * @module middleware/volto/volto
  */
-import { Request, Response, NextFunction } from 'express';
+
+// External imports
+import { NextFunction, Request, Response } from 'express';
 
 // Export middleware
 export function removeZopeVhosting(

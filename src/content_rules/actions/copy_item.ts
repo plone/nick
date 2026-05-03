@@ -3,10 +3,15 @@
  * @module content_rules/actions/copy_item
  */
 
-import { mapAsync, uniqueId } from '../../helpers/utils/utils';
-import { Knex } from 'knex';
-import models from '../../models';
+// Type imports
 import type { Params, Reference, Request } from '../../types';
+
+// External imports
+import { Knex } from 'knex';
+
+// Internal imports
+import { mapAsync, uniqueId } from '../../helpers/utils/utils';
+import models from '../../models';
 
 export const copy_item = {
   getTitle: (req: Request) => req.i18n('Copy to folder'),

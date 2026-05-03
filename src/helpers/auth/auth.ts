@@ -3,12 +3,15 @@
  * @module helpers/auth/auth
  */
 
+// Type imports
 import type { Request, User } from '../../types';
 
-import { Knex } from 'knex';
+// External imports
 import { isUndefined } from 'es-toolkit/predicate';
 import jwt from 'jsonwebtoken';
+import { Knex } from 'knex';
 
+// Internal imports
 import config from '../config/config';
 
 /**

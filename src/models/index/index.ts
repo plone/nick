@@ -3,11 +3,15 @@
  * @module models/index/index
  */
 
+// Type imports
+import type { Json, Request } from '../../types';
+
+// External imports
 import { mapValues } from 'es-toolkit/object';
 
+// Internal imports
 import { Model } from '../_model/_model';
 import { IndexCollection } from '../../collections/index/index';
-import type { Json, Request } from '../../types';
 
 /**
  * A model for Index.

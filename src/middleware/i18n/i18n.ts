@@ -1,17 +1,20 @@
 /**
  * I18n middleware.
- * @module i18n
+ * @module middleware/i18n/i18n
  */
 
-import { remove, zipObject } from 'es-toolkit/array';
-import { createIntl, createIntlCache, IntlShape } from '@formatjs/intl';
-import fs from 'fs';
-import type { Response, NextFunction } from 'express';
-
-import models from '../../models';
-
-import config from '../../helpers/config/config';
+// Type imports
 import type { Request } from '../../types';
+
+// External imports
+import { createIntl, createIntlCache, IntlShape } from '@formatjs/intl';
+import { remove, zipObject } from 'es-toolkit/array';
+import type { Response, NextFunction } from 'express';
+import fs from 'fs';
+
+// Internal imports
+import config from '../../helpers/config/config';
+import models from '../../models';
 
 // Get available language files
 const languages = remove(

@@ -3,17 +3,21 @@
  * @module routes/lock/lock
  */
 
-import { v4 as uuid } from 'uuid';
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-
-dayjs.extend(utc);
-
-import { getRootUrl } from '../../helpers/url/url';
-import { lockExpired } from '../../helpers/lock/lock';
-import { RequestException } from '../../helpers/error/error';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
+
+// External imports
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { v4 as uuid } from 'uuid';
+
+// Internal imports
+import { RequestException } from '../../helpers/error/error';
+import { lockExpired } from '../../helpers/lock/lock';
+import { getRootUrl } from '../../helpers/url/url';
+
+dayjs.extend(utc);
 
 export default [
   {

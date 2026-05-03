@@ -3,12 +3,16 @@
  * @module routes/site/site
  */
 
-import { last } from 'es-toolkit/array';
-
-import { getRootUrl } from '../../helpers/url/url';
-import config from '../../helpers/config/config';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { last } from 'es-toolkit/array';
+
+// Internal imports
+import config from '../../helpers/config/config';
+import { getRootUrl } from '../../helpers/url/url';
 import models from '../../models';
 
 export default [

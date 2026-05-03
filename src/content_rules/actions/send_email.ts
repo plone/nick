@@ -3,11 +3,16 @@
  * @module content_rules/actions/send_email
  */
 
+// Type imports
+import type { Params, Request } from '../../types';
+
+// External imports
 import { Knex } from 'knex';
+
+// Internal imports
 import { sendMail } from '../../helpers/mail/mail';
 import { stripNewlines } from '../../helpers/utils/utils';
 import models from '../../models';
-import type { Params, Request } from '../../types';
 
 export const send_email = {
   getTitle: (req: Request) => req.i18n('Send email'),

@@ -1,6 +1,12 @@
+/**
+ * Knexfile
+ * @module knexfile
+ */
+
+// External imports
+import config from '@robgietema/nick/src/helpers/config/config';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import config from '@robgietema/nick/src/helpers/config/config';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 

@@ -3,11 +3,14 @@
  * @module routes/contextnavigation/contextnavigation
  */
 
-import models from '../../models';
-import { getUrl } from '../../helpers/url/url';
-import { mapAsync } from '../../helpers/utils/utils';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// Internal imports
+import { getUrl } from '../../helpers/url/url';
+import { mapAsync } from '../../helpers/utils/utils';
+import models from '../../models';
 
 async function getItems(
   parentUuid: string,

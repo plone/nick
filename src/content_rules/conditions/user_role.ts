@@ -3,8 +3,11 @@
  * @module content_rules/conditions/user_role
  */
 
-import { intersection } from 'es-toolkit/array';
+// Type imports
 import type { Params, Request } from '../../types';
+
+// External imports
+import { intersection } from 'es-toolkit/array';
 
 export const user_role = {
   getTitle: (req: Request) => req.i18n('User’s role'),

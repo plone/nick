@@ -3,36 +3,36 @@
  * @module routes/content/content
  */
 
+// Type imports
+import type { Request } from '../../types';
+import type { Knex } from 'knex';
+
+// External imports
 import express from 'express';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-
-dayjs.extend(utc);
-
 import { drop, flattenDeep, intersection, uniq } from 'es-toolkit/array';
 import { omit, pick } from 'es-toolkit/object';
 import { v4 as uuid } from 'uuid';
 
-import { getRootUrl } from '../../helpers/url/url';
-import { lockExpired } from '../../helpers/lock/lock';
-import { mapAsync, uniqueId, bytesToNumber } from '../../helpers/utils/utils';
-import { readFile, removeFile } from '../../helpers/fs/fs';
+// Internal imports
 import { checkETag } from '../../helpers/cache/cache';
-import { RequestException } from '../../helpers/error/error';
-import { getComponents } from '../../helpers/content/content';
+import config from '../../helpers/config/config';
 import {
+  getComponents,
+  handleBlockReferences,
   handleFiles,
   handleImages,
   handleRelationLists,
-  handleBlockReferences,
 } from '../../helpers/content/content';
-
+import { RequestException } from '../../helpers/error/error';
+import { readFile, removeFile } from '../../helpers/fs/fs';
+import { lockExpired } from '../../helpers/lock/lock';
+import { getRootUrl } from '../../helpers/url/url';
+import { mapAsync, uniqueId, bytesToNumber } from '../../helpers/utils/utils';
 import models from '../../models';
 
-import type { Request } from '../../types';
-import type { Knex } from 'knex';
-
-import config from '../../helpers/config/config';
+dayjs.extend(utc);
 
 const omitProperties = ['@type', 'id', 'changeNote', 'language'];
 

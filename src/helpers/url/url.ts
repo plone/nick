@@ -3,8 +3,10 @@
  * @module helpers/url/url
  */
 
+// Type imports
 import type { Request } from '../../types';
 
+// Internal imports
 import config from '../../helpers/config/config';
 
 /**

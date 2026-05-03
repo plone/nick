@@ -3,10 +3,13 @@
  * @module collections/type/type
  */
 
-import { getRootUrl } from '../../helpers/url/url';
-import { hasPermission } from '../../helpers/auth/auth';
-import { Collection } from '../../collections/_collection/_collection';
+// Type imports
 import type { Json, Model, Request } from '../../types';
+
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
+import { hasPermission } from '../../helpers/auth/auth';
+import { getRootUrl } from '../../helpers/url/url';
 
 interface TypeModel extends Model {
   id: string;

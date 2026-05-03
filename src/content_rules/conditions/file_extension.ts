@@ -3,6 +3,7 @@
  * @module content_rules/conditions/file_extension
  */
 
+// Type imports
 import type { Params, Request } from '../../types';
 
 export const file_extension = {

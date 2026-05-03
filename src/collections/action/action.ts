@@ -3,11 +3,15 @@
  * @module collection/action/action
  */
 
-import { Collection } from '../../collections/_collection/_collection';
+// Type imports
+import type { Json, Model, Request } from '../../types';
+
+// External imports
 import { groupBy } from 'es-toolkit/array';
 import { mapValues, omit } from 'es-toolkit/object';
 
-import type { Json, Model, Request } from '../../types';
+// Internal imports
+import { Collection } from '../../collections/_collection/_collection';
 
 interface ActionModel extends Model {
   permission: string;

@@ -3,7 +3,10 @@
  * @module behaviors/id_from_title/id_from_title
  */
 
+// External imports
 import slugify from 'slugify';
+
+// Internal imports
 import { uniqueId } from '../../helpers/utils/utils';
 
 interface Document {

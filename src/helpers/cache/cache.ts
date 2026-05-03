@@ -3,10 +3,15 @@
  * @module helpers/cache/cache
  */
 
-import crypto from 'node:crypto';
-import https from 'node:https';
+// Type imports
 import type { Response } from 'express';
 import type { Request, Route, View } from '../../types';
+
+// External imports
+import crypto from 'node:crypto';
+import https from 'node:https';
+
+// Internal imports
 import config from '../config/config';
 
 /**

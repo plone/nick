@@ -3,11 +3,15 @@
  * @module routes/generate/generate
  */
 
-import { omit } from 'es-toolkit/object';
-import { PDFParse } from 'pdf-parse';
+// Type imports
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
 
+// External imports
+import { omit } from 'es-toolkit/object';
+import { PDFParse } from 'pdf-parse';
+
+// Internal imports
 import {
   chat,
   embed,
@@ -17,7 +21,6 @@ import {
   getEmbedFromPrompt,
 } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
-
 import { RequestException } from '../../helpers/error/error';
 
 export default [

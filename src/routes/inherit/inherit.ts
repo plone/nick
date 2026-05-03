@@ -3,12 +3,16 @@
  * @module routes/inherit/inherit
  */
 
-import { pick } from 'es-toolkit/object';
-
-import models from '../../models';
-import { getUrl, getUrlByPath } from '../../helpers/url/url';
+// Type imports
 import type { Request } from '../../types';
 import type { Knex } from 'knex';
+
+// External imports
+import { pick } from 'es-toolkit/object';
+
+// Internal imports
+import { getUrl, getUrlByPath } from '../../helpers/url/url';
+import models from '../../models';
 
 /**
  * Traverse path.

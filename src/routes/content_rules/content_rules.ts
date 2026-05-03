@@ -3,11 +3,13 @@
  * @module routes/content_rules/content_rules
  */
 
-import models from '../../models';
-import { apiLimiter } from '../../helpers/limiter/limiter';
-import type { Request } from '../../types';
+// Type imports
 import type { Knex } from 'knex';
-import content from '../content/content';
+import type { Request } from '../../types';
+
+// Internal imports
+import { apiLimiter } from '../../helpers/limiter/limiter';
+import models from '../../models';
 
 export default [
   {

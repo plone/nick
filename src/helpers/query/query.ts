@@ -3,16 +3,19 @@
  * @module helpers/query/query
  */
 
+// Type imports
+import type { Knex } from 'knex';
+import type { Request } from '../../types';
+
+// External imports
 import dayjs from 'dayjs';
 import { normalize } from 'path';
 
+// Internal imports
 import { embed } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
 import { getUrlByPath } from '../../helpers/url/url';
 import models from '../../models';
-
-import type { Knex } from 'knex';
-import type { Request } from '../../types';
 
 /**
  * Convert querystring to query.
