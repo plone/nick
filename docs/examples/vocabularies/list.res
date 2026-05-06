@@ -3,6 +3,10 @@ Content-Type: application/json
 
 [
   {
+    "@id": "http://localhost:8080/@vocabularies/Fields",
+    "title": "Fields"
+  },
+  {
     "@id": "http://localhost:8080/@vocabularies/actions",
     "title": "actions"
   },

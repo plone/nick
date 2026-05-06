@@ -47,6 +47,10 @@
   "engines": {
     "node": "^22 || ^24 || ^25"
   },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  },
   "devDependencies": {
     "@babel/core": "7.29.0",
     "@babel/plugin-transform-typescript": "7.28.6",
