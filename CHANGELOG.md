@@ -190,6 +190,7 @@
 - Fix error with language locator for languageroots @robgietema
 - Remove /++api++ from request url @robgietema
 - Fix markdown indexer bug @robgietema
+- Fix from address in email handlers @robgietema
 
 ### Internal
 
