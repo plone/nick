@@ -151,10 +151,10 @@ msgstr "관리자들"
 #. Default: "After N days in the future"
 #: src/profiles/core/catalog.json:89
 #: src/profiles/core/catalog.json:162
-#: src/profiles/core/catalog.json:498
-#: src/profiles/core/catalog.json:577
-#: src/profiles/core/catalog.json:650
-#: src/profiles/core/catalog.json:723
+#: src/profiles/core/catalog.json:504
+#: src/profiles/core/catalog.json:583
+#: src/profiles/core/catalog.json:656
+#: src/profiles/core/catalog.json:729
 msgctxt "Profiles|Core|Catalog"
 msgid "After N days in the future"
 msgstr "미래의 N일 후"
@@ -162,10 +162,10 @@ msgstr "미래의 N일 후"
 #. Default: "After date"
 #: src/profiles/core/catalog.json:118
 #: src/profiles/core/catalog.json:191
-#: src/profiles/core/catalog.json:527
-#: src/profiles/core/catalog.json:606
-#: src/profiles/core/catalog.json:679
-#: src/profiles/core/catalog.json:752
+#: src/profiles/core/catalog.json:533
+#: src/profiles/core/catalog.json:612
+#: src/profiles/core/catalog.json:685
+#: src/profiles/core/catalog.json:758
 msgctxt "Profiles|Core|Catalog"
 msgid "After date"
 msgstr "날짜 이후"
@@ -173,10 +173,10 @@ msgstr "날짜 이후"
 #. Default: "After relative date"
 #: src/profiles/core/catalog.json:88
 #: src/profiles/core/catalog.json:161
-#: src/profiles/core/catalog.json:497
-#: src/profiles/core/catalog.json:576
-#: src/profiles/core/catalog.json:649
-#: src/profiles/core/catalog.json:722
+#: src/profiles/core/catalog.json:503
+#: src/profiles/core/catalog.json:582
+#: src/profiles/core/catalog.json:655
+#: src/profiles/core/catalog.json:728
 msgctxt "Profiles|Core|Catalog"
 msgid "After relative date"
 msgstr "상대 날짜 이후"
@@ -184,10 +184,10 @@ msgstr "상대 날짜 이후"
 #. Default: "After the current day"
 #: src/profiles/core/catalog.json:95
 #: src/profiles/core/catalog.json:168
-#: src/profiles/core/catalog.json:504
-#: src/profiles/core/catalog.json:583
-#: src/profiles/core/catalog.json:656
-#: src/profiles/core/catalog.json:729
+#: src/profiles/core/catalog.json:510
+#: src/profiles/core/catalog.json:589
+#: src/profiles/core/catalog.json:662
+#: src/profiles/core/catalog.json:735
 msgctxt "Profiles|Core|Catalog"
 msgid "After the current day"
 msgstr "현재 날짜 이후"
@@ -195,10 +195,10 @@ msgstr "현재 날짜 이후"
 #. Default: "After today"
 #: src/profiles/core/catalog.json:94
 #: src/profiles/core/catalog.json:167
-#: src/profiles/core/catalog.json:503
-#: src/profiles/core/catalog.json:582
-#: src/profiles/core/catalog.json:655
-#: src/profiles/core/catalog.json:728
+#: src/profiles/core/catalog.json:509
+#: src/profiles/core/catalog.json:588
+#: src/profiles/core/catalog.json:661
+#: src/profiles/core/catalog.json:734
 msgctxt "Profiles|Core|Catalog"
 msgid "After today"
 msgstr "오늘 이후"
@@ -236,13 +236,13 @@ msgid "An item’s description"
 msgstr "항목 설명"
 
 #. Default: "An item’s type (e.g. Event)"
-#: src/profiles/core/catalog.json:428
+#: src/profiles/core/catalog.json:434
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s type (e.g. Event)"
 msgstr "항목 유형 (예: 이벤트)"
 
 #. Default: "An item’s workflow state (e.g.published)"
-#: src/profiles/core/catalog.json:447
+#: src/profiles/core/catalog.json:453
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s workflow state (e.g.published)"
 msgstr "항목의 워크플로 상태 (예: 게시됨)"
@@ -320,10 +320,10 @@ msgstr "기본 메타데이터"
 #. Default: "Before N days in the past"
 #: src/profiles/core/catalog.json:101
 #: src/profiles/core/catalog.json:174
-#: src/profiles/core/catalog.json:510
-#: src/profiles/core/catalog.json:589
-#: src/profiles/core/catalog.json:662
-#: src/profiles/core/catalog.json:735
+#: src/profiles/core/catalog.json:516
+#: src/profiles/core/catalog.json:595
+#: src/profiles/core/catalog.json:668
+#: src/profiles/core/catalog.json:741
 msgctxt "Profiles|Core|Catalog"
 msgid "Before N days in the past"
 msgstr "과거 N일 이전"
@@ -331,10 +331,10 @@ msgstr "과거 N일 이전"
 #. Default: "Before date"
 #: src/profiles/core/catalog.json:130
 #: src/profiles/core/catalog.json:203
-#: src/profiles/core/catalog.json:539
-#: src/profiles/core/catalog.json:618
-#: src/profiles/core/catalog.json:691
-#: src/profiles/core/catalog.json:764
+#: src/profiles/core/catalog.json:545
+#: src/profiles/core/catalog.json:624
+#: src/profiles/core/catalog.json:697
+#: src/profiles/core/catalog.json:770
 msgctxt "Profiles|Core|Catalog"
 msgid "Before date"
 msgstr "날짜 이전"
@@ -342,10 +342,10 @@ msgstr "날짜 이전"
 #. Default: "Before relative date"
 #: src/profiles/core/catalog.json:100
 #: src/profiles/core/catalog.json:173
-#: src/profiles/core/catalog.json:509
-#: src/profiles/core/catalog.json:588
-#: src/profiles/core/catalog.json:661
-#: src/profiles/core/catalog.json:734
+#: src/profiles/core/catalog.json:515
+#: src/profiles/core/catalog.json:594
+#: src/profiles/core/catalog.json:667
+#: src/profiles/core/catalog.json:740
 msgctxt "Profiles|Core|Catalog"
 msgid "Before relative date"
 msgstr "상대 날짜 이전"
@@ -353,10 +353,10 @@ msgstr "상대 날짜 이전"
 #. Default: "Before the current day"
 #: src/profiles/core/catalog.json:107
 #: src/profiles/core/catalog.json:180
-#: src/profiles/core/catalog.json:516
-#: src/profiles/core/catalog.json:595
-#: src/profiles/core/catalog.json:668
-#: src/profiles/core/catalog.json:741
+#: src/profiles/core/catalog.json:522
+#: src/profiles/core/catalog.json:601
+#: src/profiles/core/catalog.json:674
+#: src/profiles/core/catalog.json:747
 msgctxt "Profiles|Core|Catalog"
 msgid "Before the current day"
 msgstr "현재 날짜 이전"
@@ -364,10 +364,10 @@ msgstr "현재 날짜 이전"
 #. Default: "Before today"
 #: src/profiles/core/catalog.json:106
 #: src/profiles/core/catalog.json:179
-#: src/profiles/core/catalog.json:515
-#: src/profiles/core/catalog.json:594
-#: src/profiles/core/catalog.json:667
-#: src/profiles/core/catalog.json:740
+#: src/profiles/core/catalog.json:521
+#: src/profiles/core/catalog.json:600
+#: src/profiles/core/catalog.json:673
+#: src/profiles/core/catalog.json:746
 msgctxt "Profiles|Core|Catalog"
 msgid "Before today"
 msgstr "오늘 이전"
@@ -381,10 +381,10 @@ msgstr "동작"
 #. Default: "Between dates"
 #: src/profiles/core/catalog.json:112
 #: src/profiles/core/catalog.json:185
-#: src/profiles/core/catalog.json:521
-#: src/profiles/core/catalog.json:600
-#: src/profiles/core/catalog.json:673
-#: src/profiles/core/catalog.json:746
+#: src/profiles/core/catalog.json:527
+#: src/profiles/core/catalog.json:606
+#: src/profiles/core/catalog.json:679
+#: src/profiles/core/catalog.json:752
 msgctxt "Profiles|Core|Catalog"
 msgid "Between dates"
 msgstr "날짜 사이"
@@ -474,7 +474,7 @@ msgstr ""
 #: src/profiles/core/catalog.json:234
 #: src/profiles/core/catalog.json:253
 #: src/profiles/core/catalog.json:272
-#: src/profiles/core/catalog.json:472
+#: src/profiles/core/catalog.json:478
 msgctxt "Profiles|Core|Catalog"
 msgid "Contains"
 msgstr "포함"
@@ -548,19 +548,19 @@ msgid "Coverage"
 msgstr "범위"
 
 #. Default: "Creation date"
-#: src/profiles/core/catalog.json:642
+#: src/profiles/core/catalog.json:648
 msgctxt "Profiles|Core|Catalog"
 msgid "Creation date"
 msgstr "생성 날짜"
 
 #. Default: "Creator"
-#: src/profiles/core/catalog.json:396
+#: src/profiles/core/catalog.json:402
 msgctxt "Profiles|Core|Catalog"
 msgid "Creator"
 msgstr "작성자"
 
 #. Default: "Current logged in user"
-#: src/profiles/core/catalog.json:409
+#: src/profiles/core/catalog.json:415
 msgctxt "Profiles|Core|Catalog"
 msgid "Current logged in user"
 msgstr "현재 로그인한 사용자"
@@ -752,7 +752,7 @@ msgid "Editor"
 msgstr "에디터"
 
 #. Default: "Effective date"
-#: src/profiles/core/catalog.json:715
+#: src/profiles/core/catalog.json:721
 msgctxt "Profiles|Core|Catalog"
 msgid "Effective date"
 msgstr "유효 날짜"
@@ -821,7 +821,7 @@ msgstr ""
 
 #. Default: "Equals"
 #: src/profiles/core/catalog.json:57
-#: src/profiles/core/catalog.json:328
+#: src/profiles/core/catalog.json:334
 msgctxt "Profiles|Core|Catalog"
 msgid "Equals"
 msgstr "같음"
@@ -894,7 +894,7 @@ msgid "Expiration Date"
 msgstr "만료일"
 
 #. Default: "Expiration date"
-#: src/profiles/core/catalog.json:569
+#: src/profiles/core/catalog.json:575
 msgctxt "Profiles|Core|Catalog"
 msgid "Expiration date"
 msgstr "만료일"
@@ -937,13 +937,13 @@ msgid "Filter Contained Types"
 msgstr "포함된 유형 필터링"
 
 #. Default: "Find items related to the selected items"
-#: src/profiles/core/catalog.json:322
+#: src/profiles/core/catalog.json:328
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items related to the selected items"
 msgstr "선택한 항목과 관련된 항목 찾기"
 
 #. Default: "Find items that can contain other objects"
-#: src/profiles/core/catalog.json:341
+#: src/profiles/core/catalog.json:347
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items that can contain other objects"
 msgstr "다른 개체를 포함할 수 있는 항목 찾기"
@@ -955,7 +955,7 @@ msgid "Folder"
 msgstr "폴더"
 
 #. Default: "Folder-like"
-#: src/profiles/core/catalog.json:340
+#: src/profiles/core/catalog.json:346
 msgctxt "Profiles|Core|Catalog"
 msgid "Folder-like"
 msgstr "폴더 같은"
@@ -1096,8 +1096,8 @@ msgid "Invalid session"
 msgstr "유효하지 않은 세션"
 
 #. Default: "Is"
-#: src/profiles/core/catalog.json:384
-#: src/profiles/core/catalog.json:478
+#: src/profiles/core/catalog.json:390
+#: src/profiles/core/catalog.json:484
 msgctxt "Profiles|Core|Catalog"
 msgid "Is"
 msgstr "이다"
@@ -1278,9 +1278,9 @@ msgstr "모두 일치"
 
 #. Default: "Matches any condition"
 #: src/profiles/core/catalog.json:299
-#: src/profiles/core/catalog.json:403
-#: src/profiles/core/catalog.json:434
-#: src/profiles/core/catalog.json:453
+#: src/profiles/core/catalog.json:409
+#: src/profiles/core/catalog.json:440
+#: src/profiles/core/catalog.json:459
 msgctxt "Profiles|Core|Catalog"
 msgid "Matches any condition"
 msgstr "하나라도 일치"
@@ -1299,7 +1299,7 @@ msgid "Missing credentials"
 msgstr "자격 증명 누락"
 
 #. Default: "Modification date"
-#: src/profiles/core/catalog.json:490
+#: src/profiles/core/catalog.json:496
 msgctxt "Profiles|Core|Catalog"
 msgid "Modification date"
 msgstr "수정 날짜"
@@ -1387,7 +1387,7 @@ msgid "Nick generates email using this name as the email sender."
 msgstr ""
 
 #. Default: "No"
-#: src/profiles/core/catalog.json:347
+#: src/profiles/core/catalog.json:353
 #: src/profiles/core/vocabularies/boolean.json:6
 msgctxt "Profiles|Core|Catalog"
 msgid "No"
@@ -1535,14 +1535,14 @@ msgstr ""
 #: src/profiles/core/catalog.json:137
 #: src/profiles/core/catalog.json:198
 #: src/profiles/core/catalog.json:210
-#: src/profiles/core/catalog.json:534
-#: src/profiles/core/catalog.json:546
-#: src/profiles/core/catalog.json:613
-#: src/profiles/core/catalog.json:625
-#: src/profiles/core/catalog.json:686
-#: src/profiles/core/catalog.json:698
-#: src/profiles/core/catalog.json:759
-#: src/profiles/core/catalog.json:771
+#: src/profiles/core/catalog.json:540
+#: src/profiles/core/catalog.json:552
+#: src/profiles/core/catalog.json:619
+#: src/profiles/core/catalog.json:631
+#: src/profiles/core/catalog.json:692
+#: src/profiles/core/catalog.json:704
+#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:777
 msgctxt "Profiles|Core|Catalog"
 msgid "Please enter the number in days."
 msgstr "일수를 입력하세요."
@@ -1554,18 +1554,18 @@ msgstr "일수를 입력하세요."
 #: src/profiles/core/catalog.json:186
 #: src/profiles/core/catalog.json:192
 #: src/profiles/core/catalog.json:204
-#: src/profiles/core/catalog.json:522
 #: src/profiles/core/catalog.json:528
-#: src/profiles/core/catalog.json:540
-#: src/profiles/core/catalog.json:601
+#: src/profiles/core/catalog.json:534
+#: src/profiles/core/catalog.json:546
 #: src/profiles/core/catalog.json:607
-#: src/profiles/core/catalog.json:619
-#: src/profiles/core/catalog.json:674
+#: src/profiles/core/catalog.json:613
+#: src/profiles/core/catalog.json:625
 #: src/profiles/core/catalog.json:680
-#: src/profiles/core/catalog.json:692
-#: src/profiles/core/catalog.json:747
+#: src/profiles/core/catalog.json:686
+#: src/profiles/core/catalog.json:698
 #: src/profiles/core/catalog.json:753
-#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:759
+#: src/profiles/core/catalog.json:771
 msgctxt "Profiles|Core|Catalog"
 msgid "Please use YYYY/MM/DD."
 msgstr "YYYY/MM/DD 형식을 사용하세요."
@@ -1709,7 +1709,7 @@ msgid "Related Items"
 msgstr "관련 항목"
 
 #. Default: "Related To"
-#: src/profiles/core/catalog.json:321
+#: src/profiles/core/catalog.json:327
 msgctxt "Profiles|Core|Catalog"
 msgid "Related To"
 msgstr "관련 대상"
@@ -1751,7 +1751,7 @@ msgid "Review"
 msgstr "검토"
 
 #. Default: "Review state"
-#: src/profiles/core/catalog.json:446
+#: src/profiles/core/catalog.json:452
 msgctxt "Profiles|Core|Catalog"
 msgid "Review state"
 msgstr "검토 상태"
@@ -1880,7 +1880,7 @@ msgid "Short name"
 msgstr "짧은 이름"
 
 #. Default: "Short name (id)"
-#: src/profiles/core/catalog.json:377
+#: src/profiles/core/catalog.json:383
 msgctxt "Profiles|Core|Catalog"
 msgid "Short name (id)"
 msgstr "짧은 이름 (ID)"
@@ -1947,7 +1947,7 @@ msgid "Sitemap"
 msgstr "사이트맵"
 
 #. Default: "Sortable Title"
-#: src/profiles/core/catalog.json:465
+#: src/profiles/core/catalog.json:471
 msgctxt "Profiles|Core|Catalog"
 msgid "Sortable Title"
 msgstr "정렬 가능한 제목"
@@ -2125,16 +2125,16 @@ msgstr "탐색 및 사이트맵에 표시되어야 하는 콘텐츠 유형입니
 #. Default: "The current day"
 #: src/profiles/core/catalog.json:143
 #: src/profiles/core/catalog.json:216
-#: src/profiles/core/catalog.json:552
-#: src/profiles/core/catalog.json:631
-#: src/profiles/core/catalog.json:704
-#: src/profiles/core/catalog.json:777
+#: src/profiles/core/catalog.json:558
+#: src/profiles/core/catalog.json:637
+#: src/profiles/core/catalog.json:710
+#: src/profiles/core/catalog.json:783
 msgctxt "Profiles|Core|Catalog"
 msgid "The current day"
 msgstr "현재 날짜"
 
 #. Default: "The date an item was created"
-#: src/profiles/core/catalog.json:643
+#: src/profiles/core/catalog.json:649
 msgctxt "Profiles|Core|Catalog"
 msgid "The date an item was created"
 msgstr "항목이 생성된 날짜"
@@ -2171,7 +2171,7 @@ msgid "The following link takes you to a page where you can reset your password:
 msgstr ""
 
 #. Default: "The item’s title, transformed for sorting"
-#: src/profiles/core/catalog.json:466
+#: src/profiles/core/catalog.json:472
 msgctxt "Profiles|Core|Catalog"
 msgid "The item’s title, transformed for sorting"
 msgstr "정렬을 위해 변환된 항목의 제목"
@@ -2225,7 +2225,7 @@ msgid "The password for the ESMTP user account."
 msgstr "ESMTP 사용자 계정의 비밀번호입니다."
 
 #. Default: "The person that created an item"
-#: src/profiles/core/catalog.json:397
+#: src/profiles/core/catalog.json:403
 msgctxt "Profiles|Core|Catalog"
 msgid "The person that created an item"
 msgstr "항목을 생성한 사람"
@@ -2243,7 +2243,7 @@ msgid "The roles to check for."
 msgstr ""
 
 #. Default: "The short name of an item (used in the url)"
-#: src/profiles/core/catalog.json:378
+#: src/profiles/core/catalog.json:384
 msgctxt "Profiles|Core|Catalog"
 msgid "The short name of an item (used in the url)"
 msgstr "항목의 짧은 이름 (URL에서 사용됨)"
@@ -2261,19 +2261,19 @@ msgid "The start date and time of an event"
 msgstr "이벤트 시작 날짜 및 시간"
 
 #. Default: "The time and date an item was expired"
-#: src/profiles/core/catalog.json:570
+#: src/profiles/core/catalog.json:576
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was expired"
 msgstr "항목이 만료된 시간과 날짜"
 
 #. Default: "The time and date an item was first published"
-#: src/profiles/core/catalog.json:716
+#: src/profiles/core/catalog.json:722
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was first published"
 msgstr "항목이 처음 게시된 시간과 날짜"
 
 #. Default: "The time and date an item was last modified"
-#: src/profiles/core/catalog.json:491
+#: src/profiles/core/catalog.json:497
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was last modified"
 msgstr "항목이 마지막으로 수정된 시간과 날짜"
@@ -2285,7 +2285,7 @@ msgid "The topic of this item."
 msgstr "이 항목의 주제입니다."
 
 #. Default: "The user viewing the querystring results"
-#: src/profiles/core/catalog.json:410
+#: src/profiles/core/catalog.json:416
 msgctxt "Profiles|Core|Catalog"
 msgid "The user viewing the querystring results"
 msgstr "쿼리 문자열 결과를 보고 있는 사용자"
@@ -2343,11 +2343,11 @@ msgstr "이것은 브라우저의 제목 표시줄과 신디케이션 피드에 
 #. Default: "Tip: you can use * to autocomplete."
 #: src/profiles/core/catalog.json:291
 #: src/profiles/core/catalog.json:297
-#: src/profiles/core/catalog.json:385
-#: src/profiles/core/catalog.json:404
-#: src/profiles/core/catalog.json:435
-#: src/profiles/core/catalog.json:454
-#: src/profiles/core/catalog.json:479
+#: src/profiles/core/catalog.json:391
+#: src/profiles/core/catalog.json:410
+#: src/profiles/core/catalog.json:441
+#: src/profiles/core/catalog.json:460
+#: src/profiles/core/catalog.json:485
 msgctxt "Profiles|Core|Catalog"
 msgid "Tip: you can use * to autocomplete."
 msgstr "팁: *를 사용하여 자동 완성할 수 있습니다."
@@ -2369,10 +2369,10 @@ msgstr "받는 사람, 보낸 사람 및 메시지는 필수 필드입니다."
 #. Default: "Today"
 #: src/profiles/core/catalog.json:142
 #: src/profiles/core/catalog.json:215
-#: src/profiles/core/catalog.json:551
-#: src/profiles/core/catalog.json:630
-#: src/profiles/core/catalog.json:703
-#: src/profiles/core/catalog.json:776
+#: src/profiles/core/catalog.json:557
+#: src/profiles/core/catalog.json:636
+#: src/profiles/core/catalog.json:709
+#: src/profiles/core/catalog.json:782
 msgctxt "Profiles|Core|Catalog"
 msgid "Today"
 msgstr "오늘"
@@ -2398,7 +2398,7 @@ msgid "Transition workflow state"
 msgstr ""
 
 #. Default: "Type"
-#: src/profiles/core/catalog.json:427
+#: src/profiles/core/catalog.json:433
 msgctxt "Profiles|Core|Catalog"
 msgid "Type"
 msgstr "유형"
@@ -2592,10 +2592,10 @@ msgstr ""
 #. Default: "Within last"
 #: src/profiles/core/catalog.json:124
 #: src/profiles/core/catalog.json:197
-#: src/profiles/core/catalog.json:533
-#: src/profiles/core/catalog.json:612
-#: src/profiles/core/catalog.json:685
-#: src/profiles/core/catalog.json:758
+#: src/profiles/core/catalog.json:539
+#: src/profiles/core/catalog.json:618
+#: src/profiles/core/catalog.json:691
+#: src/profiles/core/catalog.json:764
 msgctxt "Profiles|Core|Catalog"
 msgid "Within last"
 msgstr "지난 ... 이내"
@@ -2603,10 +2603,10 @@ msgstr "지난 ... 이내"
 #. Default: "Within next"
 #: src/profiles/core/catalog.json:136
 #: src/profiles/core/catalog.json:209
-#: src/profiles/core/catalog.json:545
-#: src/profiles/core/catalog.json:624
-#: src/profiles/core/catalog.json:697
-#: src/profiles/core/catalog.json:770
+#: src/profiles/core/catalog.json:551
+#: src/profiles/core/catalog.json:630
+#: src/profiles/core/catalog.json:703
+#: src/profiles/core/catalog.json:776
 msgctxt "Profiles|Core|Catalog"
 msgid "Within next"
 msgstr "다음 ... 이내"
@@ -2638,7 +2638,7 @@ msgid "Wrong login and/or password."
 msgstr "로그인 및/또는 비밀번호가 잘못되었습니다."
 
 #. Default: "Yes"
-#: src/profiles/core/catalog.json:353
+#: src/profiles/core/catalog.json:359
 #: src/profiles/core/vocabularies/boolean.json:5
 msgctxt "Profiles|Core|Catalog"
 msgid "Yes"

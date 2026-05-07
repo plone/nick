@@ -151,10 +151,10 @@ msgstr "Administratori"
 #. Default: "After N days in the future"
 #: src/profiles/core/catalog.json:89
 #: src/profiles/core/catalog.json:162
-#: src/profiles/core/catalog.json:498
-#: src/profiles/core/catalog.json:577
-#: src/profiles/core/catalog.json:650
-#: src/profiles/core/catalog.json:723
+#: src/profiles/core/catalog.json:504
+#: src/profiles/core/catalog.json:583
+#: src/profiles/core/catalog.json:656
+#: src/profiles/core/catalog.json:729
 msgctxt "Profiles|Core|Catalog"
 msgid "After N days in the future"
 msgstr "Nakon N dana u budućnosti"
@@ -162,10 +162,10 @@ msgstr "Nakon N dana u budućnosti"
 #. Default: "After date"
 #: src/profiles/core/catalog.json:118
 #: src/profiles/core/catalog.json:191
-#: src/profiles/core/catalog.json:527
-#: src/profiles/core/catalog.json:606
-#: src/profiles/core/catalog.json:679
-#: src/profiles/core/catalog.json:752
+#: src/profiles/core/catalog.json:533
+#: src/profiles/core/catalog.json:612
+#: src/profiles/core/catalog.json:685
+#: src/profiles/core/catalog.json:758
 msgctxt "Profiles|Core|Catalog"
 msgid "After date"
 msgstr "Nakon datuma"
@@ -173,10 +173,10 @@ msgstr "Nakon datuma"
 #. Default: "After relative date"
 #: src/profiles/core/catalog.json:88
 #: src/profiles/core/catalog.json:161
-#: src/profiles/core/catalog.json:497
-#: src/profiles/core/catalog.json:576
-#: src/profiles/core/catalog.json:649
-#: src/profiles/core/catalog.json:722
+#: src/profiles/core/catalog.json:503
+#: src/profiles/core/catalog.json:582
+#: src/profiles/core/catalog.json:655
+#: src/profiles/core/catalog.json:728
 msgctxt "Profiles|Core|Catalog"
 msgid "After relative date"
 msgstr "Nakon relativnog datuma"
@@ -184,10 +184,10 @@ msgstr "Nakon relativnog datuma"
 #. Default: "After the current day"
 #: src/profiles/core/catalog.json:95
 #: src/profiles/core/catalog.json:168
-#: src/profiles/core/catalog.json:504
-#: src/profiles/core/catalog.json:583
-#: src/profiles/core/catalog.json:656
-#: src/profiles/core/catalog.json:729
+#: src/profiles/core/catalog.json:510
+#: src/profiles/core/catalog.json:589
+#: src/profiles/core/catalog.json:662
+#: src/profiles/core/catalog.json:735
 msgctxt "Profiles|Core|Catalog"
 msgid "After the current day"
 msgstr "Nakon tekućeg dana"
@@ -195,10 +195,10 @@ msgstr "Nakon tekućeg dana"
 #. Default: "After today"
 #: src/profiles/core/catalog.json:94
 #: src/profiles/core/catalog.json:167
-#: src/profiles/core/catalog.json:503
-#: src/profiles/core/catalog.json:582
-#: src/profiles/core/catalog.json:655
-#: src/profiles/core/catalog.json:728
+#: src/profiles/core/catalog.json:509
+#: src/profiles/core/catalog.json:588
+#: src/profiles/core/catalog.json:661
+#: src/profiles/core/catalog.json:734
 msgctxt "Profiles|Core|Catalog"
 msgid "After today"
 msgstr "Nakon danas"
@@ -236,13 +236,13 @@ msgid "An item’s description"
 msgstr "Opis stavke"
 
 #. Default: "An item’s type (e.g. Event)"
-#: src/profiles/core/catalog.json:428
+#: src/profiles/core/catalog.json:434
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s type (e.g. Event)"
 msgstr "Vrsta stavke (npr. Događaj)"
 
 #. Default: "An item’s workflow state (e.g.published)"
-#: src/profiles/core/catalog.json:447
+#: src/profiles/core/catalog.json:453
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s workflow state (e.g.published)"
 msgstr "Stanje tijeka rada stavke (npr. objavljeno)"
@@ -320,10 +320,10 @@ msgstr "Osnovni metapodaci"
 #. Default: "Before N days in the past"
 #: src/profiles/core/catalog.json:101
 #: src/profiles/core/catalog.json:174
-#: src/profiles/core/catalog.json:510
-#: src/profiles/core/catalog.json:589
-#: src/profiles/core/catalog.json:662
-#: src/profiles/core/catalog.json:735
+#: src/profiles/core/catalog.json:516
+#: src/profiles/core/catalog.json:595
+#: src/profiles/core/catalog.json:668
+#: src/profiles/core/catalog.json:741
 msgctxt "Profiles|Core|Catalog"
 msgid "Before N days in the past"
 msgstr "Prije N dana u prošlosti"
@@ -331,10 +331,10 @@ msgstr "Prije N dana u prošlosti"
 #. Default: "Before date"
 #: src/profiles/core/catalog.json:130
 #: src/profiles/core/catalog.json:203
-#: src/profiles/core/catalog.json:539
-#: src/profiles/core/catalog.json:618
-#: src/profiles/core/catalog.json:691
-#: src/profiles/core/catalog.json:764
+#: src/profiles/core/catalog.json:545
+#: src/profiles/core/catalog.json:624
+#: src/profiles/core/catalog.json:697
+#: src/profiles/core/catalog.json:770
 msgctxt "Profiles|Core|Catalog"
 msgid "Before date"
 msgstr "Prije datuma"
@@ -342,10 +342,10 @@ msgstr "Prije datuma"
 #. Default: "Before relative date"
 #: src/profiles/core/catalog.json:100
 #: src/profiles/core/catalog.json:173
-#: src/profiles/core/catalog.json:509
-#: src/profiles/core/catalog.json:588
-#: src/profiles/core/catalog.json:661
-#: src/profiles/core/catalog.json:734
+#: src/profiles/core/catalog.json:515
+#: src/profiles/core/catalog.json:594
+#: src/profiles/core/catalog.json:667
+#: src/profiles/core/catalog.json:740
 msgctxt "Profiles|Core|Catalog"
 msgid "Before relative date"
 msgstr "Prije relativnog datuma"
@@ -353,10 +353,10 @@ msgstr "Prije relativnog datuma"
 #. Default: "Before the current day"
 #: src/profiles/core/catalog.json:107
 #: src/profiles/core/catalog.json:180
-#: src/profiles/core/catalog.json:516
-#: src/profiles/core/catalog.json:595
-#: src/profiles/core/catalog.json:668
-#: src/profiles/core/catalog.json:741
+#: src/profiles/core/catalog.json:522
+#: src/profiles/core/catalog.json:601
+#: src/profiles/core/catalog.json:674
+#: src/profiles/core/catalog.json:747
 msgctxt "Profiles|Core|Catalog"
 msgid "Before the current day"
 msgstr "Prije tekućeg dana"
@@ -364,10 +364,10 @@ msgstr "Prije tekućeg dana"
 #. Default: "Before today"
 #: src/profiles/core/catalog.json:106
 #: src/profiles/core/catalog.json:179
-#: src/profiles/core/catalog.json:515
-#: src/profiles/core/catalog.json:594
-#: src/profiles/core/catalog.json:667
-#: src/profiles/core/catalog.json:740
+#: src/profiles/core/catalog.json:521
+#: src/profiles/core/catalog.json:600
+#: src/profiles/core/catalog.json:673
+#: src/profiles/core/catalog.json:746
 msgctxt "Profiles|Core|Catalog"
 msgid "Before today"
 msgstr "Prije danas"
@@ -381,10 +381,10 @@ msgstr "Ponašanja"
 #. Default: "Between dates"
 #: src/profiles/core/catalog.json:112
 #: src/profiles/core/catalog.json:185
-#: src/profiles/core/catalog.json:521
-#: src/profiles/core/catalog.json:600
-#: src/profiles/core/catalog.json:673
-#: src/profiles/core/catalog.json:746
+#: src/profiles/core/catalog.json:527
+#: src/profiles/core/catalog.json:606
+#: src/profiles/core/catalog.json:679
+#: src/profiles/core/catalog.json:752
 msgctxt "Profiles|Core|Catalog"
 msgid "Between dates"
 msgstr "Između datuma"
@@ -474,7 +474,7 @@ msgstr ""
 #: src/profiles/core/catalog.json:234
 #: src/profiles/core/catalog.json:253
 #: src/profiles/core/catalog.json:272
-#: src/profiles/core/catalog.json:472
+#: src/profiles/core/catalog.json:478
 msgctxt "Profiles|Core|Catalog"
 msgid "Contains"
 msgstr "Sadrži"
@@ -548,19 +548,19 @@ msgid "Coverage"
 msgstr "Pokrivenost"
 
 #. Default: "Creation date"
-#: src/profiles/core/catalog.json:642
+#: src/profiles/core/catalog.json:648
 msgctxt "Profiles|Core|Catalog"
 msgid "Creation date"
 msgstr "Datum stvaranja"
 
 #. Default: "Creator"
-#: src/profiles/core/catalog.json:396
+#: src/profiles/core/catalog.json:402
 msgctxt "Profiles|Core|Catalog"
 msgid "Creator"
 msgstr "Autor"
 
 #. Default: "Current logged in user"
-#: src/profiles/core/catalog.json:409
+#: src/profiles/core/catalog.json:415
 msgctxt "Profiles|Core|Catalog"
 msgid "Current logged in user"
 msgstr "Trenutno prijavljeni korisnik"
@@ -752,7 +752,7 @@ msgid "Editor"
 msgstr "Urednik"
 
 #. Default: "Effective date"
-#: src/profiles/core/catalog.json:715
+#: src/profiles/core/catalog.json:721
 msgctxt "Profiles|Core|Catalog"
 msgid "Effective date"
 msgstr "Datum stupanja na snagu"
@@ -821,7 +821,7 @@ msgstr ""
 
 #. Default: "Equals"
 #: src/profiles/core/catalog.json:57
-#: src/profiles/core/catalog.json:328
+#: src/profiles/core/catalog.json:334
 msgctxt "Profiles|Core|Catalog"
 msgid "Equals"
 msgstr "Jednako"
@@ -894,7 +894,7 @@ msgid "Expiration Date"
 msgstr "Datum isteka"
 
 #. Default: "Expiration date"
-#: src/profiles/core/catalog.json:569
+#: src/profiles/core/catalog.json:575
 msgctxt "Profiles|Core|Catalog"
 msgid "Expiration date"
 msgstr "Datum isteka"
@@ -937,13 +937,13 @@ msgid "Filter Contained Types"
 msgstr "Filtriraj sadržane vrste"
 
 #. Default: "Find items related to the selected items"
-#: src/profiles/core/catalog.json:322
+#: src/profiles/core/catalog.json:328
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items related to the selected items"
 msgstr "Pronađi stavke povezane s odabranim stavkama"
 
 #. Default: "Find items that can contain other objects"
-#: src/profiles/core/catalog.json:341
+#: src/profiles/core/catalog.json:347
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items that can contain other objects"
 msgstr "Pronađi stavke koje mogu sadržavati druge objekte"
@@ -955,7 +955,7 @@ msgid "Folder"
 msgstr "Mapa"
 
 #. Default: "Folder-like"
-#: src/profiles/core/catalog.json:340
+#: src/profiles/core/catalog.json:346
 msgctxt "Profiles|Core|Catalog"
 msgid "Folder-like"
 msgstr "Slično mapi"
@@ -1096,8 +1096,8 @@ msgid "Invalid session"
 msgstr "Neispravna sesija"
 
 #. Default: "Is"
-#: src/profiles/core/catalog.json:384
-#: src/profiles/core/catalog.json:478
+#: src/profiles/core/catalog.json:390
+#: src/profiles/core/catalog.json:484
 msgctxt "Profiles|Core|Catalog"
 msgid "Is"
 msgstr "Je"
@@ -1278,9 +1278,9 @@ msgstr "Podudara se sa svime"
 
 #. Default: "Matches any condition"
 #: src/profiles/core/catalog.json:299
-#: src/profiles/core/catalog.json:403
-#: src/profiles/core/catalog.json:434
-#: src/profiles/core/catalog.json:453
+#: src/profiles/core/catalog.json:409
+#: src/profiles/core/catalog.json:440
+#: src/profiles/core/catalog.json:459
 msgctxt "Profiles|Core|Catalog"
 msgid "Matches any condition"
 msgstr "Podudara se s bilo kojim"
@@ -1299,7 +1299,7 @@ msgid "Missing credentials"
 msgstr "Nedostaju vjerodajnice"
 
 #. Default: "Modification date"
-#: src/profiles/core/catalog.json:490
+#: src/profiles/core/catalog.json:496
 msgctxt "Profiles|Core|Catalog"
 msgid "Modification date"
 msgstr "Datum izmjene"
@@ -1387,7 +1387,7 @@ msgid "Nick generates email using this name as the email sender."
 msgstr ""
 
 #. Default: "No"
-#: src/profiles/core/catalog.json:347
+#: src/profiles/core/catalog.json:353
 #: src/profiles/core/vocabularies/boolean.json:6
 msgctxt "Profiles|Core|Catalog"
 msgid "No"
@@ -1535,14 +1535,14 @@ msgstr ""
 #: src/profiles/core/catalog.json:137
 #: src/profiles/core/catalog.json:198
 #: src/profiles/core/catalog.json:210
-#: src/profiles/core/catalog.json:534
-#: src/profiles/core/catalog.json:546
-#: src/profiles/core/catalog.json:613
-#: src/profiles/core/catalog.json:625
-#: src/profiles/core/catalog.json:686
-#: src/profiles/core/catalog.json:698
-#: src/profiles/core/catalog.json:759
-#: src/profiles/core/catalog.json:771
+#: src/profiles/core/catalog.json:540
+#: src/profiles/core/catalog.json:552
+#: src/profiles/core/catalog.json:619
+#: src/profiles/core/catalog.json:631
+#: src/profiles/core/catalog.json:692
+#: src/profiles/core/catalog.json:704
+#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:777
 msgctxt "Profiles|Core|Catalog"
 msgid "Please enter the number in days."
 msgstr "Molimo unesite broj dana."
@@ -1554,18 +1554,18 @@ msgstr "Molimo unesite broj dana."
 #: src/profiles/core/catalog.json:186
 #: src/profiles/core/catalog.json:192
 #: src/profiles/core/catalog.json:204
-#: src/profiles/core/catalog.json:522
 #: src/profiles/core/catalog.json:528
-#: src/profiles/core/catalog.json:540
-#: src/profiles/core/catalog.json:601
+#: src/profiles/core/catalog.json:534
+#: src/profiles/core/catalog.json:546
 #: src/profiles/core/catalog.json:607
-#: src/profiles/core/catalog.json:619
-#: src/profiles/core/catalog.json:674
+#: src/profiles/core/catalog.json:613
+#: src/profiles/core/catalog.json:625
 #: src/profiles/core/catalog.json:680
-#: src/profiles/core/catalog.json:692
-#: src/profiles/core/catalog.json:747
+#: src/profiles/core/catalog.json:686
+#: src/profiles/core/catalog.json:698
 #: src/profiles/core/catalog.json:753
-#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:759
+#: src/profiles/core/catalog.json:771
 msgctxt "Profiles|Core|Catalog"
 msgid "Please use YYYY/MM/DD."
 msgstr "Molimo koristite GGGG/MM/DD."
@@ -1709,7 +1709,7 @@ msgid "Related Items"
 msgstr "Povezane stavke"
 
 #. Default: "Related To"
-#: src/profiles/core/catalog.json:321
+#: src/profiles/core/catalog.json:327
 msgctxt "Profiles|Core|Catalog"
 msgid "Related To"
 msgstr "Povezano s"
@@ -1751,7 +1751,7 @@ msgid "Review"
 msgstr "Pregled"
 
 #. Default: "Review state"
-#: src/profiles/core/catalog.json:446
+#: src/profiles/core/catalog.json:452
 msgctxt "Profiles|Core|Catalog"
 msgid "Review state"
 msgstr "Stanje pregleda"
@@ -1880,7 +1880,7 @@ msgid "Short name"
 msgstr "Kratki naziv"
 
 #. Default: "Short name (id)"
-#: src/profiles/core/catalog.json:377
+#: src/profiles/core/catalog.json:383
 msgctxt "Profiles|Core|Catalog"
 msgid "Short name (id)"
 msgstr "Kratki naziv (id)"
@@ -1947,7 +1947,7 @@ msgid "Sitemap"
 msgstr "Karta stranice"
 
 #. Default: "Sortable Title"
-#: src/profiles/core/catalog.json:465
+#: src/profiles/core/catalog.json:471
 msgctxt "Profiles|Core|Catalog"
 msgid "Sortable Title"
 msgstr "Naslov koji se može sortirati"
@@ -2125,16 +2125,16 @@ msgstr "Vrste sadržaja koje bi trebale biti prikazane u navigaciji i karti stra
 #. Default: "The current day"
 #: src/profiles/core/catalog.json:143
 #: src/profiles/core/catalog.json:216
-#: src/profiles/core/catalog.json:552
-#: src/profiles/core/catalog.json:631
-#: src/profiles/core/catalog.json:704
-#: src/profiles/core/catalog.json:777
+#: src/profiles/core/catalog.json:558
+#: src/profiles/core/catalog.json:637
+#: src/profiles/core/catalog.json:710
+#: src/profiles/core/catalog.json:783
 msgctxt "Profiles|Core|Catalog"
 msgid "The current day"
 msgstr "Tekući dan"
 
 #. Default: "The date an item was created"
-#: src/profiles/core/catalog.json:643
+#: src/profiles/core/catalog.json:649
 msgctxt "Profiles|Core|Catalog"
 msgid "The date an item was created"
 msgstr "Datum kada je stavka stvorena"
@@ -2171,7 +2171,7 @@ msgid "The following link takes you to a page where you can reset your password:
 msgstr ""
 
 #. Default: "The item’s title, transformed for sorting"
-#: src/profiles/core/catalog.json:466
+#: src/profiles/core/catalog.json:472
 msgctxt "Profiles|Core|Catalog"
 msgid "The item’s title, transformed for sorting"
 msgstr "Naslov stavke, transformiran za sortiranje"
@@ -2225,7 +2225,7 @@ msgid "The password for the ESMTP user account."
 msgstr "Lozinka za ESMTP korisnički račun."
 
 #. Default: "The person that created an item"
-#: src/profiles/core/catalog.json:397
+#: src/profiles/core/catalog.json:403
 msgctxt "Profiles|Core|Catalog"
 msgid "The person that created an item"
 msgstr "Osoba koja je stvorila stavku"
@@ -2243,7 +2243,7 @@ msgid "The roles to check for."
 msgstr ""
 
 #. Default: "The short name of an item (used in the url)"
-#: src/profiles/core/catalog.json:378
+#: src/profiles/core/catalog.json:384
 msgctxt "Profiles|Core|Catalog"
 msgid "The short name of an item (used in the url)"
 msgstr "Kratki naziv stavke (koristi se u url-u)"
@@ -2261,19 +2261,19 @@ msgid "The start date and time of an event"
 msgstr "Datum i vrijeme početka događaja"
 
 #. Default: "The time and date an item was expired"
-#: src/profiles/core/catalog.json:570
+#: src/profiles/core/catalog.json:576
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was expired"
 msgstr "Vrijeme i datum kada je stavka istekla"
 
 #. Default: "The time and date an item was first published"
-#: src/profiles/core/catalog.json:716
+#: src/profiles/core/catalog.json:722
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was first published"
 msgstr "Vrijeme i datum kada je stavka prvi put objavljena"
 
 #. Default: "The time and date an item was last modified"
-#: src/profiles/core/catalog.json:491
+#: src/profiles/core/catalog.json:497
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was last modified"
 msgstr "Vrijeme i datum kada je stavka zadnji put izmijenjena"
@@ -2285,7 +2285,7 @@ msgid "The topic of this item."
 msgstr "Tema ove stavke."
 
 #. Default: "The user viewing the querystring results"
-#: src/profiles/core/catalog.json:410
+#: src/profiles/core/catalog.json:416
 msgctxt "Profiles|Core|Catalog"
 msgid "The user viewing the querystring results"
 msgstr "Korisnik koji pregledava rezultate upita"
@@ -2343,11 +2343,11 @@ msgstr "Ovo se pojavljuje u naslovnoj traci preglednika i u izvorima sindikacije
 #. Default: "Tip: you can use * to autocomplete."
 #: src/profiles/core/catalog.json:291
 #: src/profiles/core/catalog.json:297
-#: src/profiles/core/catalog.json:385
-#: src/profiles/core/catalog.json:404
-#: src/profiles/core/catalog.json:435
-#: src/profiles/core/catalog.json:454
-#: src/profiles/core/catalog.json:479
+#: src/profiles/core/catalog.json:391
+#: src/profiles/core/catalog.json:410
+#: src/profiles/core/catalog.json:441
+#: src/profiles/core/catalog.json:460
+#: src/profiles/core/catalog.json:485
 msgctxt "Profiles|Core|Catalog"
 msgid "Tip: you can use * to autocomplete."
 msgstr "Savjet: možete koristiti * za automatsko dovršavanje."
@@ -2369,10 +2369,10 @@ msgstr "Za, od i poruka su obavezna polja."
 #. Default: "Today"
 #: src/profiles/core/catalog.json:142
 #: src/profiles/core/catalog.json:215
-#: src/profiles/core/catalog.json:551
-#: src/profiles/core/catalog.json:630
-#: src/profiles/core/catalog.json:703
-#: src/profiles/core/catalog.json:776
+#: src/profiles/core/catalog.json:557
+#: src/profiles/core/catalog.json:636
+#: src/profiles/core/catalog.json:709
+#: src/profiles/core/catalog.json:782
 msgctxt "Profiles|Core|Catalog"
 msgid "Today"
 msgstr "Danas"
@@ -2398,7 +2398,7 @@ msgid "Transition workflow state"
 msgstr ""
 
 #. Default: "Type"
-#: src/profiles/core/catalog.json:427
+#: src/profiles/core/catalog.json:433
 msgctxt "Profiles|Core|Catalog"
 msgid "Type"
 msgstr "Vrsta"
@@ -2592,10 +2592,10 @@ msgstr ""
 #. Default: "Within last"
 #: src/profiles/core/catalog.json:124
 #: src/profiles/core/catalog.json:197
-#: src/profiles/core/catalog.json:533
-#: src/profiles/core/catalog.json:612
-#: src/profiles/core/catalog.json:685
-#: src/profiles/core/catalog.json:758
+#: src/profiles/core/catalog.json:539
+#: src/profiles/core/catalog.json:618
+#: src/profiles/core/catalog.json:691
+#: src/profiles/core/catalog.json:764
 msgctxt "Profiles|Core|Catalog"
 msgid "Within last"
 msgstr "Unutar zadnjih"
@@ -2603,10 +2603,10 @@ msgstr "Unutar zadnjih"
 #. Default: "Within next"
 #: src/profiles/core/catalog.json:136
 #: src/profiles/core/catalog.json:209
-#: src/profiles/core/catalog.json:545
-#: src/profiles/core/catalog.json:624
-#: src/profiles/core/catalog.json:697
-#: src/profiles/core/catalog.json:770
+#: src/profiles/core/catalog.json:551
+#: src/profiles/core/catalog.json:630
+#: src/profiles/core/catalog.json:703
+#: src/profiles/core/catalog.json:776
 msgctxt "Profiles|Core|Catalog"
 msgid "Within next"
 msgstr "Unutar sljedećih"
@@ -2638,7 +2638,7 @@ msgid "Wrong login and/or password."
 msgstr "Pogrešna prijava i/ili lozinka."
 
 #. Default: "Yes"
-#: src/profiles/core/catalog.json:353
+#: src/profiles/core/catalog.json:359
 #: src/profiles/core/vocabularies/boolean.json:5
 msgctxt "Profiles|Core|Catalog"
 msgid "Yes"
