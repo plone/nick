@@ -1,6 +1,6 @@
 /**
- * Action route.
- * @module routes/actions/actions
+ * Querystring route.
+ * @module routes/querystring/querystring
  */
 
 // Type imports

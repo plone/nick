@@ -120,6 +120,7 @@
 - Add fields vocabulary @robgietema
 - Add form support @robgietema
 - Add is referencing catalog index @robgietema
+- Add link integrity endpoint @robgietema
 
 ### Bugfix
 

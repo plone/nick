@@ -21,6 +21,7 @@ import form from './form/form';
 import groups from './groups/groups';
 import history from './history/history';
 import inherit from './inherit/inherit';
+import linkintegrity from './linkintegrity/linkintegrity';
 import lock from './lock/lock';
 import navigation from './navigation/navigation';
 import navroot from './navroot/navroot';
@@ -57,6 +58,7 @@ export default [
   ...groups,
   ...history,
   ...inherit,
+  ...linkintegrity,
   ...lock,
   ...navigation,
   ...navroot,
