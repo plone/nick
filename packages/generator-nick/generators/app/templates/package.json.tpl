@@ -32,7 +32,7 @@
     "preinstall": "if [ -f $(pwd)/node_modules/.bin/missdev ]; then pnpm develop; else pnpm develop:npx; fi"
   },
   "engines": {
-    "node": "^22 || ^24 || ^25"
+    "node": "^22 || ^24 || ^25 || ^26"
   },
   "devDependencies": {
     "@babel/core": "7.29.0",

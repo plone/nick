@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [25.x]
+        node-version: [26.x]
 
     services:
       postgres:

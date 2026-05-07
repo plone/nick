@@ -45,7 +45,7 @@
     "test": "AUTH_RATE_LIMIT=1000 vitest"
   },
   "engines": {
-    "node": "^22 || ^24 || ^25"
+    "node": "^22 || ^24 || ^25 || ^26"
   },
   "prettier": {
     "trailingComma": "all",

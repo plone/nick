@@ -31,7 +31,7 @@
     "cms"
   ],
   "engines": {
-    "node": "^22 || ^24 || ^25"
+    "node": "^22 || ^24 || ^25 || ^26"
   },
   "dependencies": {
     "update-notifier": "7.3.1",
