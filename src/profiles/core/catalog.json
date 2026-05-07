@@ -310,7 +310,7 @@
     },
     {
       "name": "isReferencing",
-      "type": "string[]",
+      "type": "uuid[]",
       "attr": "isReferencing",
       "enabled": false
     },
