@@ -3,5 +3,5 @@
   "title": "Nick Core",
   "description": "Core functionality of Nick",
   "version": 1003,
-  "upgrade": "Add commenting permissions and roles."
+  "upgrade": "Add form control panel."
 }

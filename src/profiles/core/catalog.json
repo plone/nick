@@ -309,6 +309,12 @@
       "enabled": false
     },
     {
+      "name": "isReferencing",
+      "type": "string[]",
+      "attr": "isReferencing",
+      "enabled": false
+    },
+    {
       "name": "block_types",
       "type": "string[]",
       "attr": "getBlockTypes",

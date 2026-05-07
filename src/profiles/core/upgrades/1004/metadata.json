@@ -2,5 +2,6 @@
   "id": "@robgietema/nick:core",
   "title": "Nick Core",
   "description": "Core functionality of Nick",
-  "version": 1004
+  "version": 1004,
+  "upgrade": "Add is referencing catalog index."
 }

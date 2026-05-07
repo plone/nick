@@ -1,0 +1,11 @@
+{
+  "indexes": [
+    {
+      "name": "isReferencing",
+      "type": "string[]",
+      "attr": "isReferencing",
+      "enabled": false
+    }
+  ],
+  "metadata": []
+}

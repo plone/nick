@@ -1019,6 +1019,19 @@ export class Document extends Model {
   }
 
   /**
+   * List of documents that are referenced by this document
+   * @method isReferencing
+   * @param {Knex.Transaction} trx Transaction object.
+   * @return {Promise<string[]>} List of documents.
+   */
+  async isReferencing(trx?: Knex.Transaction): Promise<string[]> {
+    const self: any = this;
+
+    // Return allowed
+    return [];
+  }
+
+  /**
    * Has preview image
    * @method hasPreviewImage
    * @return {Boolean} True if has preview image

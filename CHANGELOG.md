@@ -119,6 +119,7 @@
 - Add commenting @robgietema
 - Add fields vocabulary @robgietema
 - Add form support @robgietema
+- Add is referencing catalog index @robgietema
 
 ### Bugfix
 
