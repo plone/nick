@@ -210,9 +210,8 @@ export async function handleRelationLists(
   // Strip all but the UID from the document data
   await mapAsync(relationListFields, async (field) => {
     if (fields[field]) {
-      fields[field] = Object.keys(fields[field]).map(
-        (document: { UID: string } | string) =>
-          typeof document === 'object' ? document.UID : document,
+      fields[field] = fields[field].map((document: { UID: string } | string) =>
+        typeof document === 'object' ? document.UID : document,
       );
     }
   });
