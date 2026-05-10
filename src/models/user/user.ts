@@ -21,6 +21,14 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class User extends Model {
+  // Declare properties
+  declare id: string;
+  declare fullname: string;
+  declare email: string;
+  declare json: any;
+  declare _roles: any[];
+  declare _groups: any[];
+
   // Set relation mappings
   static get relationMappings(): any {
     const Role = models.get('Role');
@@ -73,7 +81,7 @@ export class User extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof User> = this;
     return {
       '@id': `${getRootUrl(req)}/@users/${self.id}`,
       id: self.id,
@@ -91,7 +99,7 @@ export class User extends Model {
    * @returns {string[]} Array of groups.
    */
   getGroups(): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof User> = this;
     return self._groups ? self._groups.map((group: any) => group.id) : [];
   }
 
@@ -101,7 +109,7 @@ export class User extends Model {
    * @returns {string[]} Array of roles.
    */
   getRoles(): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof User> = this;
     // Add anonymous or authenticated role based on user
     let roles: string[] =
       self.id === 'anonymous' ? ['Anonymous'] : ['Authenticated'];
@@ -135,7 +143,7 @@ export class User extends Model {
     document: string,
     trx?: Knex.Transaction,
   ): Promise<string[]> {
-    const self: any = this;
+    const self: InstanceType<typeof User> = this;
     const rows: any[] = await self.$relatedQuery('_documentRoles', trx).where({
       'user_role_document.document': document,
     });
@@ -170,7 +178,7 @@ export class User extends Model {
    * @returns {VocabularyTerm} Vocabulary term.
    */
   getVocabularyTerm(req: Request): VocabularyTerm {
-    const self: any = this;
+    const self: InstanceType<typeof User> = this;
     return {
       title: req.i18n(self.fullname),
       token: self.id,

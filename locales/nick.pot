@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-05-10T15:53:10.981Z\n"
+"POT-Creation-Date: 2026-05-10T19:26:49.559Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -201,7 +201,7 @@ msgid "After today"
 msgstr ""
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:147
+#: src/models/type/type.ts:156
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr ""
@@ -370,7 +370,7 @@ msgid "Before today"
 msgstr ""
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:130
+#: src/models/type/type.ts:139
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr ""
@@ -653,7 +653,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:154
+#: src/models/type/type.ts:163
 #: src/profiles/core/catalog.json:227
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -928,7 +928,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:160
+#: src/models/type/type.ts:169
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr ""
@@ -1100,7 +1100,7 @@ msgid "Is"
 msgstr ""
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:161
+#: src/models/type/type.ts:170
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr ""
@@ -2401,7 +2401,7 @@ msgid "Type"
 msgstr ""
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:169
+#: src/models/type/type.ts:178
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr ""

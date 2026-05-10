@@ -4,7 +4,7 @@
  */
 
 // Type imports
-import type { Json, Request } from '../../types';
+import type { Json, Request, VocabularyTerm } from '../../types';
 
 // External imports
 import { mapValues } from 'es-toolkit/object';
@@ -19,6 +19,10 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Vocabulary extends Model {
+  // Declare properties.
+  declare id: string;
+  declare items: VocabularyTerm[];
+
   static get jsonSchema(): any {
     return {
       type: 'object',
@@ -38,7 +42,7 @@ export class Vocabulary extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Vocabulary> = this;
     return {
       '@id': `${getRootUrl(req)}/@vocabularies/${self.id}`,
       items: mapValues(self.items || {}, (item: any) => ({

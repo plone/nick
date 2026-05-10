@@ -23,6 +23,15 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Type extends Model {
+  // Declare properties.
+  declare schema: Schema;
+  declare _schema: Schema;
+  declare id: string;
+  declare title: string;
+  declare description: string;
+  declare allowed_content_types: string[];
+  declare filter_content_types: string[];
+
   static collection: (typeof Model)['collection'] =
     TypeCollection as unknown as (typeof Model)['collection'];
 
@@ -47,7 +56,7 @@ export class Type extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async cacheSchema(trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Type> = this;
     const Behavior = models.get('Behavior');
     let schema: any;
     if (self.schema?.behaviors && self.schema.behaviors.length > 0) {
@@ -103,7 +112,7 @@ export class Type extends Model {
     req: Request,
     trx?: Knex.Transaction,
   ): Promise<Json> {
-    const self: any = this;
+    const self: InstanceType<typeof Type> = this;
     const Behavior = models.get('Behavior');
     const behaviors = await Behavior.fetchAll({}, {}, trx);
 
@@ -207,7 +216,7 @@ export class Type extends Model {
    * @returns {string[]} Array of fields with given factory.
    */
   getFactoryFields(factory: string): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof Type> = this;
     const properties = (self._schema && self._schema.properties) || {};
 
     // Get factory fields

@@ -204,7 +204,7 @@ msgid "After today"
 msgstr "Po dnešku"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:147
+#: src/models/type/type.ts:156
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "Povolené typy obsahu"
@@ -373,7 +373,7 @@ msgid "Before today"
 msgstr "Před dneškem"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:130
+#: src/models/type/type.ts:139
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "Chování"
@@ -656,7 +656,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:154
+#: src/models/type/type.ts:163
 #: src/profiles/core/catalog.json:227
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -931,7 +931,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:160
+#: src/models/type/type.ts:169
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "Filtrovat obsažené typy"
@@ -1103,7 +1103,7 @@ msgid "Is"
 msgstr "Je"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:161
+#: src/models/type/type.ts:170
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "Položky tohoto typu mohou fungovat jako složka obsahující jiné položky. Jaké typy obsahu by měly být uvnitř povoleny?"
@@ -2404,7 +2404,7 @@ msgid "Type"
 msgstr "Typ"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:169
+#: src/models/type/type.ts:178
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "Název typu"

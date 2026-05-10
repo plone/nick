@@ -65,6 +65,35 @@ export interface Reference {
   UID?: string;
 }
 
+export interface IndexOperator {
+  title: string;
+  description: string;
+  operation: string;
+  widget?: string;
+}
+
+export interface WorkflowState {
+  title: string;
+  description: string;
+  permissions: { [key: string]: WorkflowPermission };
+  transitions: string[];
+}
+
+export type WorkflowPermission = string[];
+
+export interface WorkflowTransition {
+  [key: string]: {
+    title: string;
+    new_state: string;
+    permission: string;
+  };
+}
+
+export interface WorkflowType {
+  states: { [key: string]: WorkflowState };
+  transitions: { [key: string]: WorkflowTransition };
+}
+
 export interface ContentRuleAction {
   getTitle(req: Request): string;
   getDescription(req: Request): string;

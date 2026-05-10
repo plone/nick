@@ -21,6 +21,13 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Group extends Model {
+  // Declare properties
+  declare id: string;
+  declare title: string;
+  declare description: string;
+  declare email: string;
+  declare _roles: any[];
+
   // Set relation mappings
   static get relationMappings() {
     const Role = models.get('Role');
@@ -74,7 +81,7 @@ export class Group extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Group> = this;
     return {
       '@id': `${getRootUrl(req)}/@groups/${self.id}`,
       id: self.id,
@@ -118,7 +125,7 @@ export class Group extends Model {
     document: string,
     trx?: Knex.Transaction,
   ): Promise<string[]> {
-    const self: any = this;
+    const self: InstanceType<typeof Group> = this;
     const rows: any[] = await self.$relatedQuery('_documentRoles', trx).where({
       'group_role_document.document': document,
     });

@@ -4,7 +4,7 @@
  */
 
 // Type imports
-import type { Json, Request } from '../../types';
+import type { Json, Request, Schema } from '../../types';
 
 // External imports
 import { compact } from 'es-toolkit/array';
@@ -20,6 +20,13 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Controlpanel extends Model {
+  // Declare properties
+  declare id: string;
+  declare title: string;
+  declare group: string;
+  declare data: { [key: string]: any };
+  declare schema: Schema;
+
   /**
    * Returns JSON data.
    * @method toJson
@@ -28,7 +35,7 @@ export class Controlpanel extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request, extend = false): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Controlpanel> = this;
     // Get basic data
     const json = {
       '@id': `${getRootUrl(req)}/@controlpanels/${self.id}`,
@@ -53,7 +60,7 @@ export class Controlpanel extends Model {
    * @returns {string[]} Array of fields with given factory.
    */
   getFactoryFields(factory: string): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof Controlpanel> = this;
     const properties = (self.schema && self.schema.properties) || {};
 
     // Get factory fields

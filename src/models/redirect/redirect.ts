@@ -22,6 +22,13 @@ export class Redirect extends Model {
     return ['document', 'path'];
   }
 
+  // Declare properties.
+  declare path: string;
+  declare manual: boolean;
+  declare datetime: string;
+  declare 'redirect-to': string;
+  declare _document: any;
+
   // Set relation mappings
   static get relationMappings() {
     const Document = models.get('Document');
@@ -43,8 +50,8 @@ export class Redirect extends Model {
    * @param {Request} req Request object.
    * @returns {Json} JSON object.
    */
-  toJson(req: Request): Json {
-    const self: any = this;
+  toJson(_req: Request): Json {
+    const self: InstanceType<typeof Redirect> = this;
     return {
       path: self.path,
       manual: self.manual,

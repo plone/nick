@@ -6,6 +6,9 @@
 // Type imports
 import type { Json, Request } from '../../types';
 
+// External imports
+import { isObject } from 'es-toolkit/compat';
+
 // Internal imports
 import models from '../';
 import { Model } from '../_model/_model';
@@ -17,6 +20,14 @@ import { getRootUrl, getUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Version extends Model {
+  // Declare properties.
+  declare version: number;
+  declare created: string;
+  declare _actor: any;
+  declare json: {
+    changeNote: string;
+  };
+
   // Set relation mappings
   static get relationMappings() {
     const User = models.get('User');
@@ -46,7 +57,7 @@ export class Version extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Version> = this;
     return {
       '@id': `${getUrl(req)}/@history/${self.version}`,
       action: 'Edited',
@@ -56,7 +67,7 @@ export class Version extends Model {
         id: self._actor?.id,
         username: self._actor?.id,
       },
-      comments: (self.json || {}).changeNote,
+      comments: isObject(self.json) ? self.json.changeNote : null,
       may_revert: true,
       time: self.created,
       transition_title: 'Edited',

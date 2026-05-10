@@ -48,6 +48,51 @@ export class Document extends Model {
 
   static idColumn: string = 'uuid';
 
+  // Declare properties.
+  declare uuid: string;
+  declare parent: string;
+  declare id: string;
+  declare path: string;
+  declare created: string;
+  declare modified: string;
+  declare type: string;
+  declare position_in_parent: number;
+  declare version: number;
+  declare owner: string;
+  declare json: any;
+  declare lock: {
+    locked: boolean;
+    stealable: boolean;
+    created: number;
+    timeout: number;
+  };
+  declare inherit_roles: boolean;
+  declare workflow_state: string;
+  declare workflow_history: {
+    time: string;
+    actor: string;
+    action: string;
+    state_title: string;
+    review_state: string;
+    transition_title: string;
+  }[];
+  declare translation_group: string;
+  declare language: string;
+  declare _type: any;
+  declare _version: any;
+  declare _children: Document[];
+  declare _parent: Document;
+  declare _owner: any;
+  declare _restrictedChildren: Document[];
+  declare _relationLists: {
+    [key: string]: Document[];
+  };
+  declare _behaviors: boolean;
+  declare _cache: any;
+  declare _versions: any;
+  declare _userRoles: any;
+  declare _groupRoles: any;
+
   // Set relation mappings
   static get relationMappings() {
     const User = models.get('User');
@@ -162,8 +207,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async fetchVersion(version: any, trx?: Knex.Transaction): Promise<void> {
-    (this as any)._version = await (this as any)
-      .$relatedQuery('_versions', trx)
+    this._version = await this.$relatedQuery('_versions', trx)
       .where({ version })
       .first();
   }
@@ -174,7 +218,7 @@ export class Document extends Model {
    * @method applyBehaviors
    */
   async applyBehaviors(trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // If type not found fetch type
     if (!self._type) {
       await self.fetchRelated('_type', trx);
@@ -194,7 +238,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async restrictChildren(req: Request, trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     const Catalog = models.get('Catalog');
     const paths = (self._children || []).map((child: any) => child.path);
     const items = await Catalog.fetchAllRestricted(
@@ -215,7 +259,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async fetchRelationLists(trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // Check if version data
     const version = self._version ? { ...self._version.json } : {};
 
@@ -258,7 +302,7 @@ export class Document extends Model {
    * @returns {string} Url
    */
   getUrl(req: Request): string {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return `${getRootUrl(req)}${self.path === '/' ? '' : self.path}`;
   }
 
@@ -336,7 +380,7 @@ export class Document extends Model {
    * @returns {Promise} A Promise that resolves when the ordering has been done.
    */
   async reorder(id: string, delta: any, trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     let to: number;
     const from = (self._children || []).findIndex(
       (child: any) => child.id === id,
@@ -363,7 +407,7 @@ export class Document extends Model {
    * @returns {Promise} A Promise that resolves when the ordering has been done.
    */
   async fixOrder(trx?: Knex.Transaction): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return await Promise.all(
       self._children.map(
         async (child: any, index: number) =>
@@ -379,7 +423,7 @@ export class Document extends Model {
    * @returns {Promise<Json>} JSON object.
    */
   async toJson(req: Request, components: any = {}): Promise<Json> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // Check if version data
     const version = self._version
       ? {
@@ -523,7 +567,7 @@ export class Document extends Model {
     navroot: any,
     trx?: Knex.Transaction,
   ): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // Check if at leaf node
     if (slugs.length === 0) {
       // Add owner to roles if current document owned by user
@@ -625,7 +669,7 @@ export class Document extends Model {
     trx: Knex.Transaction,
     req: Request,
   ): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
 
     // Fetch type and workflow
     if (!self._type) {
@@ -728,7 +772,7 @@ export class Document extends Model {
     id: string,
     trx?: Knex.Transaction,
   ): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // Get json
     let json: any = self.json;
 
@@ -862,7 +906,7 @@ export class Document extends Model {
    * @return {boolean} True if folderish
    */
   isFolderish(): boolean {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return self._type._schema.behaviors.includes('folderish');
   }
 
@@ -872,7 +916,7 @@ export class Document extends Model {
    * @return {string} Summary text
    */
   async getSummary(): Promise<string> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // If no AI model enabled, return empty string
     if (!config.settings.ai?.models?.llm?.enabled) {
       return '';
@@ -900,7 +944,7 @@ export class Document extends Model {
    * @return {string} Body text
    */
   async getBodytext(): Promise<string> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     // Cache result
     if (self._cache?.bodytext) {
       return self._cache.bodytext;
@@ -968,7 +1012,7 @@ export class Document extends Model {
    * @return {string} Mime type of the object
    */
   mimeType(): string | undefined {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     const imageFields = self._type.getFactoryFields('Image');
     if (imageFields.length > 0) {
       return self.json[imageFields[0]]?.['content-type'];
@@ -996,7 +1040,7 @@ export class Document extends Model {
    * @return {Promise<string[]>} List of allowed users and groups.
    */
   async allowedUsersGroupsRoles(trx?: Knex.Transaction): Promise<string[]> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     const Permission = models.get('Permission');
     // Get global roles
     const view: any = await Permission.fetchById('View', {}, trx);
@@ -1025,7 +1069,7 @@ export class Document extends Model {
    * @return {Promise<string[]>} List of documents.
    */
   async isReferencing(trx?: Knex.Transaction): Promise<any[]> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
 
     // Get file fields
     const relationListFields =
@@ -1043,7 +1087,7 @@ export class Document extends Model {
    * @return {Boolean} True if has preview image
    */
   hasPreviewImage(): boolean {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return isObject(self.json.preview_image) ||
       isObject(self.json.preview_image_link)
       ? true
@@ -1056,7 +1100,7 @@ export class Document extends Model {
    * @return {Array} Array with block types
    */
   getBlockTypes(): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return self.json.blocks
       ? uniq(
           flatten(
@@ -1080,7 +1124,7 @@ export class Document extends Model {
    * @return {String} Image field
    */
   getImageField(): string {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     if (self._type._schema.properties.preview_image_link) {
       return 'preview_image_link';
     } else if (self._type._schema.properties.preview_image) {
@@ -1099,7 +1143,7 @@ export class Document extends Model {
    * @return {Object} Image scales object.
    */
   async getImageScales(trx?: Knex.Transaction): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     const image_scales: any = {};
     const relationChoiceFields = self._type.getFactoryFields('Relation Choice');
     const imageFields = self._type.getFactoryFields('Image');
@@ -1155,7 +1199,7 @@ export class Document extends Model {
     viewRoles: string[],
     trx?: Knex.Transaction,
   ): Promise<string[]> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     let localUsersGroups: string[] = [];
 
     // Fetch local user and group roles
@@ -1195,7 +1239,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async reindexChildren(trx?: Knex.Transaction): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return mapAsync(
       self._children,
       async (child: any) => await child.index(trx, false),
@@ -1208,7 +1252,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    */
   async indexChildren(trx?: Knex.Transaction): Promise<any> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     return mapAsync(
       self._children,
       async (child: any) => await child.index(trx),
@@ -1231,7 +1275,7 @@ export class Document extends Model {
    * @param {boolean} insert Insert or update.
    */
   async index(trx?: Knex.Transaction, insert = true): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     let fields: any = {};
 
     // If type not found fetch type
@@ -1330,7 +1374,7 @@ export class Document extends Model {
    * @return {Promise<void>} No return value.
    */
   async fetchChildren(_req: Request, trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     await self.fetchRelated('[_children(order)._type, _type]', trx);
   }
 
@@ -1342,7 +1386,7 @@ export class Document extends Model {
    * @return {Promise<void>} No return value.
    */
   async fetchReference(field: string, trx?: Knex.Transaction): Promise<void> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     self.json[`_${field}`] = await Document.fetchOne(
       { uuid: self.json[field][0].UID },
       {},
@@ -1358,7 +1402,7 @@ export class Document extends Model {
    * @return {Promise<string>} RSS string
    */
   async toRSS(req: Request, trx: Knex.Transaction): Promise<string> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     await self.fetchRelated('_owner', trx);
 
     return `<?xml version="1.0" encoding="utf-8"?>
@@ -1393,7 +1437,7 @@ ${self._restrictedChildren
    * @return {Promise<string>} ICS string
    */
   async toICS(req: Request, trx: Knex.Transaction): Promise<string> {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
     const Controlpanel = models.get('Controlpanel');
 
     // Fetch settings
@@ -1421,7 +1465,7 @@ END:VCALENDAR`;
    * @return {string | null} ICS string or null if start or end date is missing
    */
   toICSEvent(): string | null {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
 
     // Check if start date is available
     if (!self.json.start) {
@@ -1464,7 +1508,7 @@ END:VEVENT`;
    * @returns {string} Markdown string
    */
   toMarkdown(): string {
-    const self: any = this;
+    const self: InstanceType<typeof Document> = this;
 
     return (self.json.blocks_layout?.items || [])
       .map((block: any) => {

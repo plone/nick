@@ -18,6 +18,24 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class ContentRule extends Model {
+  // Declare properties
+  declare id: string;
+  declare title: string;
+  declare description: string;
+  declare enabled: boolean;
+  declare event: string;
+  declare _documents: any[];
+  declare json: {
+    actions: {
+      type: string;
+    }[];
+    conditions: {
+      type: string;
+    }[];
+    cascading: boolean;
+    stop: boolean;
+  };
+
   // Set relation mappings
   static get relationMappings() {
     const Document = models.get('Document');
@@ -47,7 +65,7 @@ export class ContentRule extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request, extend: boolean = false): Json {
-    const self: any = this;
+    const self: InstanceType<typeof ContentRule> = this;
     return {
       '@id': `${getRootUrl(req)}/@controlpanels/content-rules/${self.id}`,
       id: self.id,

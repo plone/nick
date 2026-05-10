@@ -28,6 +28,18 @@ dayjs.extend(utc);
 export class Catalog extends Model {
   static idColumn: string = 'document';
 
+  // Declare properties
+  declare similarity: number;
+  declare path: string;
+  declare Type: string;
+  declare Title: string;
+  declare start: string;
+  declare UID: string;
+  declare created: string;
+  declare modified: string;
+  declare end: string;
+  declare recurrence: string;
+
   /**
    * Returns JSON data.
    * @method toJson
@@ -35,7 +47,7 @@ export class Catalog extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Catalog> = this;
     const metadata = req.indexes.models.filter(
       (index: any) => index.metadata === true && index.enabled !== false,
     );
@@ -134,7 +146,7 @@ export class Catalog extends Model {
    * @returns {VocabularyTerm} Vocabulary term.
    */
   getVocabularyTerm(req: Request): VocabularyTerm {
-    const self: any = this;
+    const self: InstanceType<typeof Catalog> = this;
     return {
       title: req.i18n(self.Title),
       token: self.Title,
@@ -147,7 +159,7 @@ export class Catalog extends Model {
    * @return {string | null} ICS string or null if start or end date is missing
    */
   toICSEvent(): string | null {
-    const self: any = this;
+    const self: InstanceType<typeof Catalog> = this;
 
     // Check if start date is available
     if (!self.start) {

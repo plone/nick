@@ -4,10 +4,11 @@
  */
 
 // Type imports
-import type { Json, Request } from '../../types';
+import type { Json, Request, WorkflowType } from '../../types';
 
 // External imports
 import { flatten } from 'es-toolkit/array';
+import { isObject } from 'es-toolkit/compat';
 import { mapValues, pick, pickBy } from 'es-toolkit/object';
 
 // Internal imports
@@ -20,6 +21,9 @@ import { getUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Workflow extends Model {
+  // Declare properties
+  declare json: WorkflowType;
+
   /**
    * Returns JSON data.
    * @method toJson
@@ -27,7 +31,7 @@ export class Workflow extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Workflow> = this;
     const current_state_id = req.document.workflow_state;
     const current_state = (self.json.states || {})[current_state_id] || {};
 
@@ -63,10 +67,12 @@ export class Workflow extends Model {
    * @returns {string[]} Array of permissions.
    */
   getPermissions(state: string, roles: string[]): string[] {
-    const self: any = this;
+    const self: InstanceType<typeof Workflow> = this;
     return flatten(
-      roles.map(
-        (role) => (self.json.states || {})[state]?.permissions?.[role] || [],
+      roles.map((role) =>
+        isObject(self.json.states)
+          ? self.json.states[state]?.permissions?.[role] || []
+          : [],
       ),
     );
   }

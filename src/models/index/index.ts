@@ -4,7 +4,7 @@
  */
 
 // Type imports
-import type { Json, Request } from '../../types';
+import type { IndexOperator, Json, Request } from '../../types';
 
 // External imports
 import { mapValues } from 'es-toolkit/object';
@@ -22,7 +22,14 @@ export class Index extends Model {
   static collection: (typeof Model)['collection'] =
     IndexCollection as unknown as (typeof Model)['collection'];
 
-  // Declare type of index field.
+  // Declare properties.
+  declare title: string;
+  declare description: string;
+  declare group: string;
+  declare enabled: boolean;
+  declare sortable: boolean;
+  declare vocabulary: string;
+  declare operators: IndexOperator[];
   declare type:
     | 'string'
     | 'integer'
@@ -41,7 +48,7 @@ export class Index extends Model {
    * @returns {Promise<Json>} JSON object.
    */
   async toJson(req: Request): Promise<Json> {
-    const self: any = this;
+    const self: InstanceType<typeof Index> = this;
     return {
       title: req.i18n(self.title),
       description: req.i18n(self.description),

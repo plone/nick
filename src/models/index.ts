@@ -24,12 +24,34 @@ import { Version } from './version/version';
 import { Vocabulary } from './vocabulary/vocabulary';
 import { Workflow } from './workflow/workflow';
 
+type Model =
+  | typeof Action
+  | typeof Behavior
+  | typeof Catalog
+  | typeof ContentRule
+  | typeof Controlpanel
+  | typeof Document
+  | typeof File
+  | typeof Form
+  | typeof Group
+  | typeof Index
+  | typeof Permission
+  | typeof Profile
+  | typeof Redirect
+  | typeof Role
+  | typeof Type
+  | typeof User
+  | typeof Version
+  | typeof Vocabulary
+  | typeof Workflow;
+type Handler = () => Model;
+
 /**
  * A model registry.
  * @class Models
  */
 class Models {
-  public models: any;
+  public models: { [key: string]: Handler };
   static instance: Models;
 
   /**
@@ -49,18 +71,37 @@ class Models {
   /**
    * Register a model.
    * @param {string} name The name of the model.
-   * @param {any} model The model to register.
+   * @param {Handler} model The model to register.
    */
-  register(name: string, model: any) {
+  register(name: string, model: Handler) {
     this.models[name] = model;
   }
 
   /**
    * Get a model.
    * @param {string} name The name of the model.
-   * @returns {any} The model.
+   * @returns {ModelClass} The model.
    */
-  get(name: string): any {
+  get(name: 'Action'): typeof Action;
+  get(name: 'Behavior'): typeof Behavior;
+  get(name: 'Catalog'): typeof Catalog;
+  get(name: 'ContentRule'): typeof ContentRule;
+  get(name: 'Controlpanel'): typeof Controlpanel;
+  get(name: 'Document'): typeof Document;
+  get(name: 'File'): typeof File;
+  get(name: 'Form'): typeof Form;
+  get(name: 'Group'): typeof Group;
+  get(name: 'Index'): typeof Index;
+  get(name: 'Permission'): typeof Permission;
+  get(name: 'Profile'): typeof Profile;
+  get(name: 'Redirect'): typeof Redirect;
+  get(name: 'Role'): typeof Role;
+  get(name: 'Type'): typeof Type;
+  get(name: 'User'): typeof User;
+  get(name: 'Version'): typeof Version;
+  get(name: 'Vocabulary'): typeof Vocabulary;
+  get(name: 'Workflow'): typeof Workflow;
+  get(name: string): Model {
     return this.models[name]();
   }
 }

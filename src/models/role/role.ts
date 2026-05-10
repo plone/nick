@@ -21,6 +21,10 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Role extends Model {
+  // Declare properties
+  declare id: string;
+  declare title: string;
+
   // Set relation mappings
   static get relationMappings() {
     const Permission = models.get('Permission');
@@ -47,7 +51,7 @@ export class Role extends Model {
    * @returns {Json} JSON object.
    */
   toJson(req: Request): Json {
-    const self: any = this;
+    const self: InstanceType<typeof Role> = this;
     return {
       '@id': `${getRootUrl(req)}/@roles/${self.id}`,
       '@type': 'role',
