@@ -66,6 +66,7 @@ vi.mocked(uuid).mockReturnValue('a95388f2-e4b3-4292-98aa-62656cbd5b9c' as any);
 // Mock dayjs
 vi.spyOn(dayjs, 'utc').mockReturnValue({
   format: () => '2022-04-08T16:00:00.000Z',
+  unix: () => 1649433600000,
 } as any);
 
 beforeAll(async () => {

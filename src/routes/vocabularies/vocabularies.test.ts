@@ -45,11 +45,23 @@ describe('Vocabularies', () => {
   it('should return a workflow states vocabulary', () =>
     testRequest(app, 'vocabularies/get_workflow_states'));
 
+  it('should return a workflow transitions vocabulary', () =>
+    testRequest(app, 'vocabularies/get_workflow_transitions'));
+
   it('should return a workflows vocabulary', () =>
     testRequest(app, 'vocabularies/get_workflows'));
 
   it('should return a boolean vocabulary', () =>
     testRequest(app, 'vocabularies/get_boolean'));
+
+  it('should return a captcha-providers vocabulary', () =>
+    testRequest(app, 'vocabularies/get_captcha_providers'));
+
+  it('should return a fields vocabulary', () =>
+    testRequest(app, 'vocabularies/get_fields'));
+
+  it('should return a available languages vocabulary', () =>
+    testRequest(app, 'vocabularies/get_available_languages'));
 
   it('should return a 404 if the vocabulary does not exist', () =>
     testRequest(app, 'vocabularies/get_notfound'));
