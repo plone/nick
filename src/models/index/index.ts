@@ -22,6 +22,18 @@ export class Index extends Model {
   static collection: (typeof Model)['collection'] =
     IndexCollection as unknown as (typeof Model)['collection'];
 
+  // Declare type of index field.
+  declare type:
+    | 'string'
+    | 'integer'
+    | 'path'
+    | 'uuid'
+    | 'boolean'
+    | 'date'
+    | 'string[]'
+    | 'uuid[]'
+    | 'text';
+
   /**
    * Returns JSON data.
    * @method toJSON

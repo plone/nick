@@ -4,13 +4,16 @@
  * @module scripts/i18n
  */
 
+// Types imports
+import type { PluginObject } from '@babel/core';
+
+// External imports
+import { transformSync } from '@babel/core';
 import { uniq, zipObject } from 'es-toolkit/array';
 import { upperFirst } from 'es-toolkit/string';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { sync as glob } from 'glob';
 import Pofile from 'pofile';
-// @ts-expect-error Babel core does not have types for transformSync
-import { transformSync } from '@babel/core';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 
 /**
  * Convert path to context
@@ -165,7 +168,7 @@ ${pot.items
 function extractMessages() {
   const messages = {} as any;
 
-  const plugin = (file: string) => ({
+  const plugin = (file: string): PluginObject => ({
     visitor: {
       CallExpression(path: any) {
         const callee = path.node.callee;
@@ -208,15 +211,15 @@ function extractMessages() {
 
   // Read js files
   glob('src/**/*.ts').map((file) => {
-    transformSync(readFileSync(file), {
-      plugins: ['@babel/plugin-transform-typescript', plugin(file)],
+    transformSync(readFileSync(file).toString(), {
+      plugins: ['@babel/plugin-transform-typescript', () => plugin(file)],
     });
   });
 
   // Read json files
   glob('src/**/*.json').map((file) => {
     transformSync(`export default ${readFileSync(file)}`, {
-      plugins: [plugin(file)],
+      plugins: [() => plugin(file)],
     });
   });
 

@@ -163,6 +163,42 @@ export interface Route {
   handler?: any;
 }
 
+export interface QueryFilter {
+  i: string; // index name
+  o: string; // operator
+  v: string | [string, string]; // value
+}
+
+export interface QueryOrder {
+  column: string;
+  reverse: boolean;
+}
+
+export interface QueryOptions {
+  offset: number;
+  limit: number;
+  order: QueryOrder;
+  select: (string | Knex.Raw)[] | undefined;
+}
+
+export type WhereClause = Record<string, string | [string, string]>;
+
+export interface QueryString {
+  query: QueryFilter[];
+  sort_on?: string;
+  sort_order?: string;
+  'path.depth'?: number;
+  b_size?: string;
+  b_start?: string;
+  meta_fields?: string;
+}
+
+export interface QueryParam {
+  [key: string]: string;
+}
+
+export type QueryResult = [WhereClause, QueryOptions];
+
 export interface CachePolicy {
   method: 'public' | 'private' | 'no-cache';
   maxAge?: number;

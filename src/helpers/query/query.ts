@@ -5,7 +5,14 @@
 
 // Type imports
 import type { Knex } from 'knex';
-import type { Request } from '../../types';
+import type {
+  QueryOptions,
+  QueryParam,
+  QueryResult,
+  QueryString,
+  Request,
+  WhereClause,
+} from '../../types';
 
 // External imports
 import dayjs from 'dayjs';
@@ -16,6 +23,12 @@ import { embed } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
 import { getUrlByPath } from '../../helpers/url/url';
 import models from '../../models';
+import { Index } from '../../models/index/index';
+
+/**
+ * Index map keyed by index name.
+ */
+type IndexMap = Record<string, InstanceType<typeof Index>>;
 
 /**
  * Convert querystring to query.
@@ -27,33 +40,35 @@ import models from '../../models';
  * @returns {Object} Query.
  */
 export const querystringToQuery = async (
-  querystring = {} as any,
+  querystring = {} as QueryString,
   path = '/',
   req: Request,
   trx: Knex.Transaction,
-) => {
+): Promise<QueryResult> => {
   const Index = models.get('Index');
 
   // Get root url
   const root = path.endsWith('/') ? path : `${path}/`;
 
   // Get indexes
-  const indexes = {} as any;
-  (await Index.fetchAll({ metadata: false }, {}, trx)).map((index: any) => {
-    indexes[index.name] = index;
-  });
+  const indexes: IndexMap = {} as IndexMap;
+  (await Index.fetchAll({ metadata: false }, {}, trx)).map(
+    (index: InstanceType<typeof Index>) => {
+      indexes[index.name] = index;
+    },
+  );
 
-  const where = {} as any;
+  const where: WhereClause = {};
 
   // Default options
-  const options = {
+  const options: QueryOptions = {
     offset: 0,
     limit: 100,
     order: {
       column: 'UID',
       reverse: false,
     },
-    select: undefined as any[] | undefined,
+    select: undefined,
   };
 
   // Add query
@@ -209,36 +224,38 @@ export const querystringToQuery = async (
  * @returns {Object} Query.
  */
 export const queryparamToQuery = async (
-  queryparam: any,
+  queryparam: QueryParam,
   path = '/',
   req: Request,
   trx: Knex.Transaction,
-) => {
+): Promise<QueryResult> => {
   const Index = models.get('Index');
 
   // Get root url
   const root = path.endsWith('/') ? path : `${path}/`;
 
   // Get indexes
-  const indexes = {} as any;
-  (await Index.fetchAll({ metadata: false }, {}, trx)).map((index: any) => {
-    indexes[index.name] = index;
-  });
+  const indexes: IndexMap = {} as IndexMap;
+  (await Index.fetchAll({ metadata: false }, {}, trx)).map(
+    (index: InstanceType<typeof Index>) => {
+      indexes[index.name] = index;
+    },
+  );
 
   // Set path search
-  const where = {
+  const where: WhereClause = {
     _path: ['~', `^${path}`],
-  } as any;
+  };
 
   // Default option
-  const options = {
+  const options: QueryOptions = {
     offset: 0,
     limit: 100,
     order: {
       column: 'UID',
       reverse: false,
     },
-    select: undefined as any[] | undefined,
+    select: undefined,
   };
 
   // Loop through query params
@@ -302,7 +319,7 @@ export const queryparamToQuery = async (
         case 'path.depth':
           where['_path'] = [
             '~',
-            `^${root}[^/]+${'(/[^/]+)?'.repeat(value - 1)}$`,
+            `^${root}[^/]+${'(/[^/]+)?'.repeat(parseInt(value, 10) - 1)}$`,
           ];
           break;
         case 'b_size':
