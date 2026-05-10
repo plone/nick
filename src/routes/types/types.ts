@@ -4,7 +4,7 @@
  */
 
 // Type imports
-import type { Request } from '../../types';
+import type { Request, Schema } from '../../types';
 import type { Knex } from 'knex';
 
 // External imports
@@ -46,7 +46,7 @@ export default [
       }
       return {
         json: {
-          ...translateSchema(omit(type._schema, ['behaviors']) as any, req),
+          ...translateSchema(omit(type._schema, ['behaviors']) as Schema, req),
           layouts: type._schema.layouts || [],
           title: req.i18n(type.title),
         },

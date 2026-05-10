@@ -12,6 +12,20 @@ import { getUrlByPath } from '../../helpers/url/url';
 import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
+interface Breach {
+  '@id': string;
+  '@type': string;
+  title: string;
+  description: string;
+  review_state: string;
+  breaches: Array<{
+    '@id': string;
+    uid: string;
+    title: string;
+  }>;
+  items_total: number;
+}
+
 export default [
   {
     op: 'get',
@@ -30,7 +44,7 @@ export default [
         .models;
 
       // Get children
-      await mapAsync(items, async (item: any) => {
+      await mapAsync(items, async (item: InstanceType<typeof Catalog>) => {
         const subitems = (
           await Catalog.fetchAll(
             {
@@ -44,14 +58,14 @@ export default [
       });
 
       // Create documents object
-      const documents: any = {};
-      items.map((item: any) => {
+      const documents: { [key: string]: InstanceType<typeof Catalog> } = {};
+      items.map((item: InstanceType<typeof Catalog>) => {
         documents[item._UID] = item;
       });
 
       // Find breaches
-      const output: any = [];
-      await mapAsync(items, async (item: any) => {
+      const output: Breach[] = [];
+      await mapAsync(items, async (item: InstanceType<typeof Catalog>) => {
         const breaches = (
           await Catalog.fetchAll(
             {
@@ -70,7 +84,7 @@ export default [
             title: item.Title,
             description: item.Description,
             review_state: item.review_state,
-            breaches: breaches.map((breach: any) => ({
+            breaches: breaches.map((breach: InstanceType<typeof Catalog>) => ({
               '@id': getUrlByPath(req, breach._path),
               uid: breach.UID,
               title: breach.Title,

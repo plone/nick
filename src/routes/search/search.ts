@@ -18,6 +18,12 @@ import {
 import { getUrl } from '../../helpers/url/url';
 import models from '../../models';
 
+interface ChatResult {
+  message: {
+    content: string;
+  };
+}
+
 export default [
   {
     op: 'get',
@@ -48,26 +54,28 @@ export default [
       }
 
       // Check if AI response requested
-      let ai: any = null;
+      let ai: ChatResult | null = null;
       if (
         config.settings.ai?.models?.embed?.enabled &&
         req.query.use_ai === '1'
       ) {
         const prompt = req.query.SearchableText.replaceAll(/\*/g, '') || '';
-        ai = await chat(
+        ai = (await chat(
           prompt,
           [],
           {},
           [],
           'Please give a short description of the terms provided in the query',
-        );
+        )) as unknown as ChatResult;
       }
 
       // Return JSON response
       return {
         json: {
           '@id': `${getUrl(req)}/@search`,
-          items: items.map((item: any) => item.toJson(req)),
+          items: items.map((item: InstanceType<typeof Catalog>) =>
+            item.toJson(req),
+          ),
           items_total: items.getLength(),
           ...(ai ? { ai: ai.message.content } : {}),
         },
@@ -106,7 +114,9 @@ export default [
       return {
         json: {
           '@id': `${getUrl(req)}/@search`,
-          items: items.map((item: any) => item.toJson(req)),
+          items: items.map((item: InstanceType<typeof Catalog>) =>
+            item.toJson(req),
+          ),
           items_total: items.getLength(),
         },
       };

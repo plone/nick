@@ -18,6 +18,11 @@ import models from '../../models';
 
 dayjs.extend(utc);
 
+interface RedirectItem {
+  path: string;
+  'redirect-to': string;
+}
+
 export default [
   {
     op: 'get',
@@ -80,7 +85,7 @@ export default [
       const root = req.document.uuid === req.navroot.uuid;
 
       const items = req.body.items || [];
-      await mapAsync(items, async (item: any) => {
+      await mapAsync(items, async (item: RedirectItem) => {
         const document = root
           ? (await Document.fetchOne({ path: item['redirect-to'] }, {}, trx))
               .uuid
@@ -112,7 +117,7 @@ export default [
     handler: async (req: Request, trx: Knex.Transaction) => {
       const Redirect = models.get('Redirect');
       const items = req.body.items || [];
-      await mapAsync(items, async (item: any) => {
+      await mapAsync(items, async (item: RedirectItem) => {
         await Redirect.delete(
           { document: req.document.uuid, path: item.path },
           trx,

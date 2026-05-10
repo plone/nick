@@ -75,8 +75,10 @@ export default [
     handler: async (req: Request, trx: Knex.Transaction) => {
       const ContentRule = models.get('ContentRule');
       const blacklist = await ContentRule.fetchAll({}, {}, trx).then(
-        (content_rules: any) =>
-          content_rules.map((content_rule: any) => content_rule.id),
+        (content_rules: InstanceType<typeof ContentRule>[]) =>
+          content_rules.map(
+            (content_rule: InstanceType<typeof ContentRule>) => content_rule.id,
+          ),
       );
       const content_rule = await ContentRule.create(
         {
@@ -124,15 +126,15 @@ export default [
             .select('type')
             .count()
             .groupBy('type');
-          const counts = {} as any;
-          documents.map((document: any) => {
+          const counts: { [key: string]: number } = {};
+          documents.map((document: InstanceType<typeof Document>) => {
             counts[document.type] = parseInt(document.count);
           });
 
           return {
             json: {
               '@id': `${path}/@controlpanels/dexterity-types`,
-              items: types.map((type: any) => ({
+              items: types.map((type: InstanceType<typeof Type>) => ({
                 '@id': `${path}/@controlpanels/dexterity-types/${type.id}`,
                 '@type': type.id,
                 title: type.title,

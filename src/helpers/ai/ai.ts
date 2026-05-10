@@ -132,7 +132,7 @@ export async function chat(
   params: Params = {},
   tools = [],
   prompt: string = 'Please provide an answer to the question and use the given page and site content if needed.',
-): Promise<string> {
+): Promise<Json> {
   const response = await fetch(config.settings.ai?.models?.llm?.api, {
     method: 'POST',
     headers: {

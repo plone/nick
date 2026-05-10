@@ -30,7 +30,11 @@ export default [
     permission: 'AI',
     client: 'generate',
     cache: 'manage',
-    handler: async (req: Request, trx: Knex.Transaction, callback: any) => {
+    handler: async (
+      req: Request,
+      trx: Knex.Transaction,
+      callback: (token: string) => void,
+    ) => {
       // Check if required field provided
       if (!req.body.prompt) {
         throw new RequestException(400, {
@@ -80,7 +84,11 @@ export default [
     permission: 'AI',
     client: 'chat',
     cache: 'manage',
-    handler: async (req: Request, trx: Knex.Transaction, callback: any) => {
+    handler: async (
+      req: Request,
+      trx: Knex.Transaction,
+      callback: (token: string) => void,
+    ) => {
       // Check if required field provided
       if (!req.body.prompt) {
         throw new RequestException(400, {

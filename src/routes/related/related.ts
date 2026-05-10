@@ -47,7 +47,7 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
     json: {
       '@id': `${baseUrl}/@related`,
       items: items
-        .map((item: any) => item.toJson(req))
+        .map((item: InstanceType<typeof Catalog>) => item.toJson(req))
         .filter((item: any) => item.UID !== req.document._catalog.UID),
     },
   };

@@ -34,15 +34,17 @@ async function getItems(
   );
 
   // Omit exclude from nav items
-  items.filter((item: any) => !item.exclude_from_nav);
+  items.filter((item: InstanceType<typeof Catalog>) => !item.exclude_from_nav);
 
   // Omit by type
-  items.filter((item: any) => displayed_types.includes(item.Type));
+  items.filter((item: InstanceType<typeof Catalog>) =>
+    displayed_types.includes(item.Type),
+  );
 
   // Get output
   const output = await items.toJson(req);
 
-  await mapAsync(output, async (item: any) => {
+  await mapAsync(output, async (item: InstanceType<typeof Catalog>) => {
     item.items =
       depth < maxDepth - 1
         ? await getItems(
@@ -60,7 +62,6 @@ async function getItems(
 }
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
-  const Catalog = models.get('Catalog');
   const Controlpanel = models.get('Controlpanel');
   const Index = models.get('Index');
 

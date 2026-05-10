@@ -27,10 +27,12 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
   return {
     json: {
       '@id': `${getUrl(req)}/@translations`,
-      items: documents.models.map((document: any) => ({
-        '@id': getUrlByPath(req, document.path),
-        language: document.language,
-      })),
+      items: documents.models.map(
+        (document: InstanceType<typeof Document>) => ({
+          '@id': getUrlByPath(req, document.path),
+          language: document.language,
+        }),
+      ),
       root: Object.fromEntries(
         settings.available_languages.map((language: string) => [
           language,

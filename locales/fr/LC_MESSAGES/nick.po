@@ -55,8 +55,8 @@ msgstr "IA"
 
 #. Default: "AI is disabled."
 #: src/routes/related/related.ts:22
-#: src/routes/ai/ai.ts:47
-#: src/routes/ai/ai.ts:97
+#: src/routes/ai/ai.ts:51
+#: src/routes/ai/ai.ts:105
 msgctxt "Routes|Related"
 msgid "AI is disabled."
 msgstr "L'IA est désactivée."
@@ -480,13 +480,13 @@ msgid "Contains"
 msgstr "Contient"
 
 #. Default: "Content"
-#: src/routes/controlpanels/controlpanels.ts:145
+#: src/routes/controlpanels/controlpanels.ts:147
 msgctxt "Routes|Controlpanels"
 msgid "Content"
 msgstr "Contenu"
 
 #. Default: "Content Types"
-#: src/routes/controlpanels/controlpanels.ts:144
+#: src/routes/controlpanels/controlpanels.ts:146
 #: src/profiles/core/controlpanels/dexterity-types.json:3
 msgctxt "Routes|Controlpanels"
 msgid "Content Types"
@@ -704,7 +704,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:740
+#: src/routes/content/content.ts:746
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Document verrouillé"
@@ -1083,8 +1083,8 @@ msgid "Invalid credentials"
 msgstr "Identifiants invalides"
 
 #. Default: "Invalid move."
-#: src/routes/controlpanels/controlpanels.ts:516
-#: src/routes/controlpanels/controlpanels.ts:569
+#: src/routes/controlpanels/controlpanels.ts:518
+#: src/routes/controlpanels/controlpanels.ts:571
 msgctxt "Routes|Controlpanels"
 msgid "Invalid move."
 msgstr ""
@@ -1422,22 +1422,22 @@ msgid "Not allowed"
 msgstr "Non autorisé"
 
 #. Default: "Not found."
-#: src/routes/vocabularies/vocabularies.ts:66
+#: src/routes/vocabularies/vocabularies.ts:68
 #: src/routes/users/users.ts:147
 #: src/routes/types/types.ts:45
 #: src/routes/groups/groups.ts:33
 #: src/routes/email/email.ts:75
-#: src/routes/controlpanels/controlpanels.ts:156
-#: src/routes/controlpanels/controlpanels.ts:354
-#: src/routes/controlpanels/controlpanels.ts:391
-#: src/routes/controlpanels/controlpanels.ts:423
-#: src/routes/controlpanels/controlpanels.ts:442
-#: src/routes/controlpanels/controlpanels.ts:473
-#: src/routes/controlpanels/controlpanels.ts:509
-#: src/routes/controlpanels/controlpanels.ts:561
-#: src/routes/controlpanels/controlpanels.ts:609
-#: src/routes/controlpanels/controlpanels.ts:656
-#: src/routes/controlpanels/controlpanels.ts:694
+#: src/routes/controlpanels/controlpanels.ts:158
+#: src/routes/controlpanels/controlpanels.ts:356
+#: src/routes/controlpanels/controlpanels.ts:393
+#: src/routes/controlpanels/controlpanels.ts:425
+#: src/routes/controlpanels/controlpanels.ts:444
+#: src/routes/controlpanels/controlpanels.ts:475
+#: src/routes/controlpanels/controlpanels.ts:511
+#: src/routes/controlpanels/controlpanels.ts:563
+#: src/routes/controlpanels/controlpanels.ts:611
+#: src/routes/controlpanels/controlpanels.ts:658
+#: src/routes/controlpanels/controlpanels.ts:696
 msgctxt "Routes|Vocabularies"
 msgid "Not found."
 msgstr "Non trouvé."
@@ -1614,8 +1614,8 @@ msgid "Prompt"
 msgstr "Prompt"
 
 #. Default: "Prompt is a required field."
-#: src/routes/ai/ai.ts:37
-#: src/routes/ai/ai.ts:87
+#: src/routes/ai/ai.ts:41
+#: src/routes/ai/ai.ts:95
 msgctxt "Routes|Ai"
 msgid "Prompt is a required field."
 msgstr "Prompt est un champ obligatoire."
@@ -1733,7 +1733,7 @@ msgid "Rename"
 msgstr "Renommer"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:554
+#: src/routes/content/content.ts:558
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Champ(s) obligatoire(s) manquant(s)."
@@ -1989,31 +1989,31 @@ msgid "Submit for publication"
 msgstr "Soumettre à la publication"
 
 #. Default: "Successfully assigned the content rule {rule}"
-#: src/routes/content_rules/content_rules.ts:116
+#: src/routes/content_rules/content_rules.ts:123
 msgctxt "Routes|Content rules"
 msgid "Successfully assigned the content rule {rule}"
 msgstr ""
 
 #. Default: "Successfully disabled rules {rules}"
-#: src/routes/content_rules/content_rules.ts:163
+#: src/routes/content_rules/content_rules.ts:170
 msgctxt "Routes|Content rules"
 msgid "Successfully disabled rules {rules}"
 msgstr ""
 
 #. Default: "Successfully disabled rules {rules} to subfolders"
-#: src/routes/content_rules/content_rules.ts:206
+#: src/routes/content_rules/content_rules.ts:213
 msgctxt "Routes|Content rules"
 msgid "Successfully disabled rules {rules} to subfolders"
 msgstr ""
 
 #. Default: "Successfully enabled rules {rules}"
-#: src/routes/content_rules/content_rules.ts:143
+#: src/routes/content_rules/content_rules.ts:150
 msgctxt "Routes|Content rules"
 msgid "Successfully enabled rules {rules}"
 msgstr ""
 
 #. Default: "Successfully enabled rules {rules} to subfolders"
-#: src/routes/content_rules/content_rules.ts:183
+#: src/routes/content_rules/content_rules.ts:190
 msgctxt "Routes|Content rules"
 msgid "Successfully enabled rules {rules} to subfolders"
 msgstr ""
@@ -2416,7 +2416,7 @@ msgid "Type of the current document is not found."
 msgstr "Le type du document actuel n'a pas été trouvé."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:543
+#: src/routes/content/content.ts:547
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2682,7 +2682,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:737
+#: src/routes/content/content.ts:743
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Tu n'as pas la permission de sauvegarder ce document car il est verrouillé par un autre utilisateur."

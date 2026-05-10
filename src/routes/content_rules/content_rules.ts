@@ -28,15 +28,19 @@ export default [
       );
 
       // Create lookup for content rules
-      const contentRuleLookup: { [key: string]: any } = {};
-      content_rules.models.forEach((content_rule: any) => {
-        contentRuleLookup[content_rule.id] = content_rule;
-      });
+      const contentRuleLookup: {
+        [key: string]: InstanceType<typeof ContentRule>;
+      } = {};
+      content_rules.models.forEach(
+        (content_rule: InstanceType<typeof ContentRule>) => {
+          contentRuleLookup[content_rule.id] = content_rule;
+        },
+      );
 
       // Fetch content rules for this document
       await req.document.fetchRelated('_contentRules', trx);
       const assignedContentRuleIds = req.document._contentRules.map(
-        (content_rule: any) => content_rule.id,
+        (content_rule: InstanceType<typeof ContentRule>) => content_rule.id,
       );
 
       // Fetch acquired content rules
@@ -49,18 +53,20 @@ export default [
 
           await document.fetchRelated('_contentRules', trx);
 
-          document._contentRules.forEach((content_rule: any) => {
-            if (assignedContentRuleIds.includes(content_rule.id)) {
-              return;
-            }
-            acquiredContentRules.push({
-              id: content_rule.id,
-              title: content_rule.title,
-              description: content_rule.description,
-              enabled: content_rule.enabled,
-              trigger: content_rule.event,
-            });
-          });
+          document._contentRules.forEach(
+            (content_rule: InstanceType<typeof ContentRule>) => {
+              if (assignedContentRuleIds.includes(content_rule.id)) {
+                return;
+              }
+              acquiredContentRules.push({
+                id: content_rule.id,
+                title: content_rule.title,
+                description: content_rule.description,
+                enabled: content_rule.enabled,
+                trigger: content_rule.event,
+              });
+            },
+          );
         } while (document.parent);
       }
 
@@ -70,18 +76,19 @@ export default [
             acquired_rules: acquiredContentRules,
             assignable_rules: content_rules.models
               .filter(
-                (content_rule: any) =>
+                (content_rule: InstanceType<typeof ContentRule>) =>
                   !req.document._contentRules.some(
-                    (contentRule: any) => contentRule.id === content_rule.id,
+                    (contentRule: InstanceType<typeof ContentRule>) =>
+                      contentRule.id === content_rule.id,
                   ),
               )
-              .map((content_rule: any) => ({
+              .map((content_rule: InstanceType<typeof ContentRule>) => ({
                 id: content_rule.id,
                 title: content_rule.title,
                 description: content_rule.description,
               })),
             assigned_rules: req.document._contentRules.map(
-              (content_rule: any) => ({
+              (content_rule: InstanceType<typeof ContentRule>) => ({
                 id: content_rule.id,
                 title: content_rule.title,
                 description: content_rule.description,

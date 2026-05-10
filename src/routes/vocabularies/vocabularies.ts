@@ -34,10 +34,12 @@ export default [
               '@id': `${getUrl(req)}/@vocabularies/${vocabulary}`,
               title: vocabulary,
             })),
-            ...profileVocabularies.map((vocabulary: any) => ({
-              '@id': `${getUrl(req)}/@vocabularies/${vocabulary.id}`,
-              title: vocabulary.title,
-            })),
+            ...profileVocabularies.map(
+              (vocabulary: InstanceType<typeof Vocabulary>) => ({
+                '@id': `${getUrl(req)}/@vocabularies/${vocabulary.id}`,
+                title: vocabulary.title,
+              }),
+            ),
           ],
           'title',
         ),

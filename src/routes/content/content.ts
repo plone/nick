@@ -48,7 +48,9 @@ export default [
 
       // Get children
       await req.document.fetchRelated('_children', trx);
-      const childIds = req.document._children.map((child: any) => child.id);
+      const childIds = req.document._children.map(
+        (child: InstanceType<typeof Document>) => child.id,
+      );
 
       // Return items
       const items = [] as { source: string; target: string }[];
@@ -145,7 +147,9 @@ export default [
 
       // Get children
       await req.document.fetchRelated('_children', trx);
-      const childIds = req.document._children.map((child: any) => child.id);
+      const childIds = req.document._children.map(
+        (child: InstanceType<typeof Document>) => child.id,
+      );
 
       // Return items
       const items = [] as { source: string; target: string }[];
@@ -620,7 +624,9 @@ export default [
       // Set id
       document.setId(
         req.body.id,
-        req.document._children.map((item: any) => item.id),
+        req.document._children.map(
+          (item: InstanceType<typeof Document>) => item.id,
+        ),
       );
 
       // Set path
@@ -752,7 +758,9 @@ export default [
         req.body.id && req.body.id !== req.document.id
           ? uniqueId(
               id,
-              req.document._parent._children.map((sibling: any) => sibling.id),
+              req.document._parent._children.map(
+                (sibling: InstanceType<typeof Document>) => sibling.id,
+              ),
             )
           : id;
       const newPath =
