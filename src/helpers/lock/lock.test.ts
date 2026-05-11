@@ -4,7 +4,7 @@
  */
 
 // External imports
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 // Internal imports
 import { lockExpired } from './lock';

@@ -14,7 +14,6 @@ import { PDFParse } from 'pdf-parse';
 // Internal imports
 import {
   chat,
-  embed,
   generate,
   streamChat,
   streamGenerate,

@@ -4,7 +4,7 @@
  */
 
 // Type imports
-import type { Request, Json } from '../../types';
+import type { Request } from '../../types';
 import type { Knex } from 'knex';
 
 // Internal imports

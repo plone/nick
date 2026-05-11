@@ -3,9 +3,6 @@
  * @module helpers/format/format
  */
 
-// External imports
-import { isUndefined } from 'es-toolkit/compat';
-
 /**
  * Format size
  * @method formatSize
