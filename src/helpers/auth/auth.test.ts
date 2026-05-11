@@ -3,16 +3,16 @@
  * @module helpers/auth/auth.test
  */
 
+// Type imports
+import type { Request, User } from '../../types';
+
 // External imports
 import jwt from 'jsonwebtoken';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 // Internal imports
-import { hasPermission, getUserId, addToken, removeToken } from './auth';
 import * as configModule from '../config/config';
-
-// Type imports
-import type { Request, User } from '../../types';
+import { hasPermission, getUserId, addToken, removeToken } from './auth';
 
 describe('Auth', () => {
   const testSecret = 'test-secret-key';

@@ -1367,9 +1367,9 @@ msgid "Navigation path"
 msgstr "Navigationssti"
 
 #. Default: "News"
-#: src/helpers/i18n/i18n.test.ts:6
-#: src/helpers/i18n/i18n.test.ts:9
-#: src/helpers/i18n/i18n.test.ts:12
+#: src/helpers/i18n/i18n.test.ts:14
+#: src/helpers/i18n/i18n.test.ts:17
+#: src/helpers/i18n/i18n.test.ts:20
 msgctxt "Helpers|I18n|I18n.test"
 msgid "News"
 msgstr ""

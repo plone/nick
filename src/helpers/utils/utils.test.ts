@@ -1,4 +1,12 @@
+/**
+ * Utils helper tests.
+ * @module helpers/utils/utils.test
+ */
+
+// External imports
 import { describe, it, expect } from 'vitest';
+
+// Internal imports
 import {
   mapAsync,
   mapSync,

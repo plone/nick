@@ -1,4 +1,12 @@
+/**
+ * I18n helper tests.
+ * @module helpers/i18n/i18n.test
+ */
+
+// External imports
 import { describe, it, expect } from 'vitest';
+
+// Internal imports
 import { stripI18n } from './i18n';
 
 describe('I18n', () => {

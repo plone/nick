@@ -1,4 +1,12 @@
+/**
+ * Markdown helper tests.
+ * @module helpers/markdown/markdown.test
+ */
+
+// External imports
 import { describe, it, expect } from 'vitest';
+
+// Internal imports
 import { slateToMarkdown } from './markdown';
 
 describe('slateToMarkdown', () => {

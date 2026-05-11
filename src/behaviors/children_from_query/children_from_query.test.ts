@@ -8,8 +8,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 // Internal imports
 import { children_from_query } from './children_from_query';
-import * as modelsModule from '../../models';
 import * as queryModule from '../../helpers/query/query';
+import * as modelsModule from '../../models';
 
 describe('children_from_query', () => {
   let mockCatalog: any;

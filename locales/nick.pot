@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-05-10T19:26:49.559Z\n"
+"POT-Creation-Date: 2026-05-11T20:33:38.553Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -1364,9 +1364,9 @@ msgid "Navigation path"
 msgstr ""
 
 #. Default: "News"
-#: src/helpers/i18n/i18n.test.ts:6
-#: src/helpers/i18n/i18n.test.ts:9
-#: src/helpers/i18n/i18n.test.ts:12
+#: src/helpers/i18n/i18n.test.ts:14
+#: src/helpers/i18n/i18n.test.ts:17
+#: src/helpers/i18n/i18n.test.ts:20
 msgctxt "Helpers|I18n|I18n.test"
 msgid "News"
 msgstr ""

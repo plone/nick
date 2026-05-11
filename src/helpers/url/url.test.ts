@@ -1,6 +1,16 @@
-import { describe, it, expect } from 'vitest';
-import { getUrl, getRootUrl, getUrlByPath, getPath, stripPath } from './url';
+/**
+ * Url helper tests.
+ * @module helpers/url/url.test
+ */
+
+// Type imports
 import type { Request } from '../../types';
+
+// External imports
+import { describe, it, expect } from 'vitest';
+
+// Internal imports
+import { getUrl, getRootUrl, getUrlByPath, getPath, stripPath } from './url';
 
 describe('Url', () => {
   it('should get the url of a document', () =>

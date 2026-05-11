@@ -1,5 +1,13 @@
-import { describe, it, vi, beforeEach, expect } from 'vitest';
+/**
+ * Mail helper tests.
+ * @module helpers/mail/mail.test
+ */
+
+// External imports
 import nodemailer from 'nodemailer';
+import { describe, it, vi, beforeEach, expect } from 'vitest';
+
+// Internal imports
 import * as mail from './mail';
 
 vi.mock('../../log/log', () => ({

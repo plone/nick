@@ -1,6 +1,16 @@
+/**
+ * Schema helper tests.
+ * @module helpers/schema/schema.test
+ */
+
+// Type imports
+import type { Request, Schema } from '../../types';
+
+// External imports
 import { describe, it, expect, vi } from 'vitest';
+
+// Internal imports
 import { mergeSchemas, translateSchema, schemaToHtml } from './schema';
-import { Schema, Request } from '../../types';
 
 describe('schema', () => {
   describe('mergeSchemas', () => {

@@ -1,5 +1,12 @@
+/**
+ * Lock helper tests.
+ * @module helpers/lock/lock.test
+ */
+
+// External imports
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
+// Internal imports
 import { lockExpired } from './lock';
 
 describe('lockExpired', () => {

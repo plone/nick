@@ -1,4 +1,12 @@
+/**
+ * Format helper tests.
+ * @module helpers/format/format.test
+ */
+
+// External imports
 import { describe, it, expect } from 'vitest';
+
+// Internal imports
 import { formatSize, formatAttribute, formatTemplate } from './format';
 
 describe('Format', () => {
