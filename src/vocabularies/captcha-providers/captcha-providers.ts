@@ -17,13 +17,13 @@ const providers = {
 /**
  * Returns the captcha providers vocabulary.
  * @method captchaProviders
- * @param {Request} req Request object
- * @param {Knex.Transaction} trx Transaction object
+ * @param {Request} _req Request object
+ * @param {Knex.Transaction} _trx Transaction object
  * @returns {Promise<VocabularyTerm[]>} Array of terms.
  */
 export async function captchaProviders(
-  req: Request,
-  trx: Knex.Transaction,
+  _req: Request,
+  _trx: Knex.Transaction,
 ): Promise<VocabularyTerm[]> {
   return objectToVocabulary(providers);
 }

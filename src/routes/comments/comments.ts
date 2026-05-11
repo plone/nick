@@ -50,7 +50,7 @@ export default [
     permission: 'View Comments',
     client: 'getComments',
     cache: 'content',
-    handler: async (req: Request, trx: Knex.Transaction) => {
+    handler: async (req: Request, _trx: Knex.Transaction) => {
       const base_url = `${getUrl(req)}/@comments`;
       const comments = req.document.json.comments || [];
       const modify =
@@ -200,7 +200,6 @@ export default [
     client: 'updateComment',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
-      const created = dayjs.utc().format();
       const comments = req.document.json.comments || [];
       const index = comments.findIndex(
         (comment: Comment) => comment.id === req.params.id,
@@ -256,7 +255,6 @@ export default [
     client: 'deleteComment',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
-      const created = dayjs.utc().format();
       const comments = req.document.json.comments || [];
       const index = comments.findIndex(
         (comment: Comment) => comment.id === req.params.id,

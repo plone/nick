@@ -918,7 +918,6 @@ export class Document extends Model {
    * @return {string} Summary text
    */
   async getSummary(): Promise<string> {
-    const self: InstanceType<typeof Document> = this;
     // If no AI model enabled, return empty string
     if (!config.settings.ai?.models?.llm?.enabled) {
       return '';
@@ -1070,7 +1069,7 @@ export class Document extends Model {
    * @param {Knex.Transaction} trx Transaction object.
    * @return {Promise<string[]>} List of documents.
    */
-  async isReferencing(trx?: Knex.Transaction): Promise<any[]> {
+  async isReferencing(_trx?: Knex.Transaction): Promise<any[]> {
     const self: InstanceType<typeof Document> = this;
 
     // Get file fields

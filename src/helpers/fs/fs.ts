@@ -80,7 +80,7 @@ export async function readFile(
     }
     try {
       return await readFilePromise(`${config.settings.blobsDir}/${uuid}`);
-    } catch (err) {
+    } catch (_err) {
       throw `Can not read file`;
     }
   }
@@ -100,7 +100,7 @@ export async function readProfileFile(
   const file = `${profile}${path}`;
   try {
     return await readFilePromise(file, { encoding: 'base64' });
-  } catch (err) {
+  } catch (_err) {
     throw `Can not read file: ${file}`;
   }
 }

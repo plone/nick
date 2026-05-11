@@ -9,7 +9,7 @@ import type { Knex } from 'knex';
 // External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-import { isObject, now, values } from 'es-toolkit/compat';
+import { isObject } from 'es-toolkit/compat';
 import { v4 as uuid } from 'uuid';
 
 // Internal imports

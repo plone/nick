@@ -187,7 +187,7 @@ routes.map((route: Route) => {
               // Try to commit the transaction
               try {
                 await trx.commit();
-              } catch (err) {
+              } catch (_err) {
                 throw new RequestException(500, {
                   message: req.i18n('Transaction error.'),
                 });
@@ -200,7 +200,7 @@ routes.map((route: Route) => {
           // Try to commit the transaction
           try {
             await trx.commit();
-          } catch (err) {
+          } catch (_err) {
             throw new RequestException(500, {
               message: req.i18n('Transaction error.'),
             });

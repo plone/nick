@@ -37,7 +37,7 @@ function renderNode(
   const children =
     'children' in node
       ? node.children
-          .map((child, i) => {
+          .map((child) => {
             if ('type' in child && child.type === 'li') {
               count = count += 1;
             }

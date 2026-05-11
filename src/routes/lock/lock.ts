@@ -26,7 +26,7 @@ export default [
     permission: 'View',
     client: 'getLock',
     cache: 'manage',
-    handler: async (req: Request, trx: Knex.Transaction) => {
+    handler: async (req: Request, _trx: Knex.Transaction) => {
       if (req.document.lock.locked && lockExpired(req.document)) {
         return {
           json: {
@@ -157,7 +157,7 @@ export default [
     permission: 'Modify',
     client: 'deleteLock',
     cache: 'alter',
-    handler: async (req: Request, trx: Knex.Transaction) => {
+    handler: async (req: Request, _trx: Knex.Transaction) => {
       const lock = req.document.lock;
 
       // If not locked just send lock status

@@ -65,7 +65,7 @@ export class Model extends mixin(ObjectionModel, [
    * @param {Request} req Request object.
    * @returns {Json} JSON object.
    */
-  toJson(req?: Request): any {
+  toJson(_req?: Request): any {
     return this.toJSON();
   }
 
@@ -312,7 +312,7 @@ export class Model extends mixin(ObjectionModel, [
    */
   static async create(
     data: any,
-    options: QueryOptions = {},
+    _options: QueryOptions = {},
     trx?: Knex.Transaction,
   ): Promise<any> {
     const relations = Object.keys(this.getRelations());
@@ -417,7 +417,7 @@ export class Model extends mixin(ObjectionModel, [
               // Ignore insert related errors
               try {
                 await model.$relatedQuery(related, trx).relate(item);
-              } catch (e) {
+              } catch (_err) {
                 log.warn(`Can not relate ${item} to ${id}`);
               }
             }),
@@ -429,7 +429,7 @@ export class Model extends mixin(ObjectionModel, [
                 // Ignore insert related errors
                 try {
                   await model.$relatedQuery(related, trx).relate(key);
-                } catch (e) {
+                } catch (_err) {
                   log.warn(`Can not relate ${key} to ${id}`);
                 }
               } else {

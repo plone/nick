@@ -50,7 +50,12 @@ export const user_group = {
     required: ['group_names'],
     type: 'object',
   },
-  handler: async (params: Params, document: any, user: any, contentRule: any) =>
+  handler: async (
+    params: Params,
+    _document: any,
+    user: any,
+    _contentRule: any,
+  ) =>
     intersection(
       params.group_names,
       user._groups.map((group: any) => group.id),

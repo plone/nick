@@ -44,7 +44,7 @@ export function getUserId(req: Request): string | undefined {
       decoded = jwt.verify(req.token, config.settings.secret, {
         algorithms: ['HS256'],
       });
-    } catch (err) {
+    } catch (_err) {
       return 'anonymous';
     }
 
@@ -72,7 +72,7 @@ export async function addToken(
     try {
       jwt.verify(token, config.settings.secret);
       return true;
-    } catch (e) {
+    } catch (_err) {
       return false;
     }
   });
