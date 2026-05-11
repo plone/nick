@@ -23,12 +23,6 @@ import { embed } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
 import { getUrlByPath } from '../../helpers/url/url';
 import models from '../../models';
-import { Index } from '../../models/index/index';
-
-/**
- * Index map keyed by index name.
- */
-type IndexMap = Record<string, InstanceType<typeof Index>>;
 
 /**
  * Convert querystring to query.
@@ -45,10 +39,12 @@ export const querystringToQuery = async (
   req: Request,
   trx: Knex.Transaction,
 ): Promise<QueryResult> => {
-  const Index = models.get('Index');
-
   // Get root url
   const root = path.endsWith('/') ? path : `${path}/`;
+
+  // Models
+  const Index = models.get('Index');
+  type IndexMap = Record<string, InstanceType<typeof Index>>;
 
   // Get indexes
   const indexes: IndexMap = {} as IndexMap;
@@ -230,6 +226,7 @@ export const queryparamToQuery = async (
   trx: Knex.Transaction,
 ): Promise<QueryResult> => {
   const Index = models.get('Index');
+  type IndexMap = Record<string, InstanceType<typeof Index>>;
 
   // Get root url
   const root = path.endsWith('/') ? path : `${path}/`;

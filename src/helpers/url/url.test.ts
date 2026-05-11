@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getUrl, getRootUrl } from './url';
+import { getUrl, getRootUrl, getUrlByPath, getPath, stripPath } from './url';
 import type { Request } from '../../types';
 
 describe('Url', () => {
@@ -25,4 +25,22 @@ describe('Url', () => {
         apiPath: 'http://localhost:8080',
       } as Request),
     ).toBe('http://localhost:8080'));
+
+  it('should get the url by path', () =>
+    expect(
+      getUrlByPath({ apiPath: 'http://localhost:8080' } as Request, '/news'),
+    ).toBe('http://localhost:8080/news'));
+
+  it('should get the url by root path', () =>
+    expect(
+      getUrlByPath({ apiPath: 'http://localhost:8080' } as Request, '/'),
+    ).toBe('http://localhost:8080'));
+
+  it('should get the path', () =>
+    expect(getPath({ documentPath: '/api/news' } as Request)).toBe(
+      '/api/news',
+    ));
+
+  it('should strip the path', () =>
+    expect(stripPath('/api/news')).toBe('/api/news'));
 });

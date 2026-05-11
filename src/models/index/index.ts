@@ -25,6 +25,7 @@ export class Index extends Model {
   // Declare properties.
   declare title: string;
   declare description: string;
+  declare name: string;
   declare group: string;
   declare enabled: boolean;
   declare sortable: boolean;
