@@ -55,8 +55,8 @@ msgstr "UI"
 
 #. Default: "AI is disabled."
 #: src/routes/related/related.ts:22
-#: src/routes/ai/ai.ts:51
-#: src/routes/ai/ai.ts:105
+#: src/routes/ai/ai.ts:50
+#: src/routes/ai/ai.ts:104
 msgctxt "Routes|Related"
 msgid "AI is disabled."
 msgstr "UI je onemogućena."
@@ -1614,8 +1614,8 @@ msgid "Prompt"
 msgstr "Upit"
 
 #. Default: "Prompt is a required field."
-#: src/routes/ai/ai.ts:41
-#: src/routes/ai/ai.ts:95
+#: src/routes/ai/ai.ts:40
+#: src/routes/ai/ai.ts:94
 msgctxt "Routes|Ai"
 msgid "Prompt is a required field."
 msgstr "Upit je obavezno polje."
