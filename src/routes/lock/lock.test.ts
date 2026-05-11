@@ -1,7 +1,15 @@
-import { describe, beforeEach, afterEach, it, vi } from 'vitest';
+/**
+ * Locking tests.
+ * @module routes/lock/lock
+ */
+
+// External imports
+import { afterEach, beforeEach, describe, it, vi } from 'vitest';
+
+// Internal imports
 import app from '../../app';
-import { testRequest } from '../../helpers/tests/tests';
 import * as lock from '../../helpers/lock/lock';
+import { testRequest } from '../../helpers/tests/tests';
 
 // Mock lockExpired
 vi.spyOn(lock, 'lockExpired').mockReturnValue(false);

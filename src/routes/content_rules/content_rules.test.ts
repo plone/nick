@@ -1,4 +1,12 @@
+/**
+ * Content Rules tests.
+ * @module routes/content_rules/content_rules
+ */
+
+// External imports
 import { describe, it } from 'vitest';
+
+// Internal imports
 import app from '../../app';
 import { testRequest } from '../../helpers/tests/tests';
 

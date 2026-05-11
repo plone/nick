@@ -1,4 +1,12 @@
+/**
+ * Types tests.
+ * @module routes/types/types
+ */
+
+// External imports
 import { describe, it } from 'vitest';
+
+// Internal imports
 import app from '../../app';
 import { testRequest } from '../../helpers/tests/tests';
 

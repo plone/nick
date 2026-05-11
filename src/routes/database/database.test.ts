@@ -1,4 +1,12 @@
+/**
+ * Database tests.
+ * @module routes/database/database
+ */
+
+// External imports
 import { describe, it, vi } from 'vitest';
+
+// Internal imports
 import app from '../../app';
 import { testRequest } from '../../helpers/tests/tests';
 

@@ -1,6 +1,13 @@
-import { beforeEach, afterEach, describe, it, vi } from 'vitest';
-import { v4 as uuid } from 'uuid';
+/**
+ * Content tests.
+ * @module routes/content/content
+ */
 
+// External imports
+import { v4 as uuid } from 'uuid';
+import { afterEach, beforeEach, describe, it, vi } from 'vitest';
+
+// Internal imports
 import app from '../../app';
 import { testRequest } from '../../helpers/tests/tests';
 

@@ -1,4 +1,12 @@
+/**
+ * User tests.
+ * @module routes/users/users
+ */
+
+// External imports
 import { describe, it, afterEach } from 'vitest';
+
+// Internal imports
 import app from '../../app';
 import { testRequest } from '../../helpers/tests/tests';
 
