@@ -85,11 +85,11 @@ importers:
         version: 14.0.0
     devDependencies:
       '@babel/core':
-        specifier: 8.0.0-rc.4
-        version: 8.0.0-rc.4
+        specifier: 8.0.0-rc.5
+        version: 8.0.0-rc.5
       '@babel/plugin-transform-typescript':
-        specifier: 8.0.0-rc.4
-        version: 8.0.0-rc.4(@babel/core@8.0.0-rc.4)
+        specifier: 8.0.0-rc.5
+        version: 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
       '@eslint/eslintrc':
         specifier: 3.3.5
         version: 3.3.5
@@ -170,9 +170,9 @@ packages:
     resolution: {integrity: sha512-9Hx303H/a0nNan4z0kEX0HGP7gzn3LsP7wVyn0PO7mByIoGG+/opvXG1k9bdo6wAOKrAmJwPWup51IvMfWeNvw==}
     engines: {node: ^22.18.0 || >=24.11.0}
 
-  '@babel/core@8.0.0-rc.4':
-    resolution: {integrity: sha512-VhCk07qH2rgkEW6rdOI8nlRd359a+TdnxXqsl3cynjtvkxbdbHVaW+3NUt+BXv4IYy6tjjZihPo5PWg65c7EJQ==}
-    engines: {node: ^20.19.0 || >=22.12.0}
+  '@babel/core@8.0.0-rc.5':
+    resolution: {integrity: sha512-/lVf0AAYFvdHFYm5nc1LsUCs/o2eDCRhHK/uuhTeyu3ZDPJBusxakSB5dMqfvrvXzQrohr0Bb2zlnDT2UJg5jg==}
+    engines: {node: ^22.18.0 || >=24.11.0}
     peerDependencies:
       '@babel/preset-typescript': ^8.0.0-0
     peerDependenciesMeta:
@@ -265,11 +265,11 @@ packages:
     peerDependencies:
       '@babel/core': ^8.0.0-rc.5
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.4':
-    resolution: {integrity: sha512-W1WPezLZFzT5k1t4EMkwlZ78CHR2hZltULqtGEl96/SWdpvQN6gx20nyTJH4xdX8p2SD5MztVa/YlenhZ3vMyg==}
-    engines: {node: ^20.19.0 || >=22.12.0}
+  '@babel/plugin-transform-typescript@8.0.0-rc.5':
+    resolution: {integrity: sha512-LAP7JYiRn5624BZjJo5DyJeWtq/A73SHQCOD0YSzTI9KNmKTq/LBXA2ujZtFwbQCiwRWeo7wcJts0gxwgqS+/A==}
+    engines: {node: ^22.18.0 || >=24.11.0}
     peerDependencies:
-      '@babel/core': ^8.0.0-rc.4
+      '@babel/core': ^8.0.0-rc.5
 
   '@babel/template@8.0.0-rc.5':
     resolution: {integrity: sha512-HZR8YfmymiFnKHATCeMkysF7iweLxdgQ6OAjzfZMPJ7wMGGgwVZv7CoPa2exi9AmBXyjKeDP4t0G3tsox2Ya8w==}
@@ -2589,7 +2589,7 @@ snapshots:
 
   '@babel/compat-data@8.0.0-rc.5': {}
 
-  '@babel/core@8.0.0-rc.4':
+  '@babel/core@8.0.0-rc.5':
     dependencies:
       '@babel/code-frame': 8.0.0-rc.5
       '@babel/generator': 8.0.0-rc.5
@@ -2628,13 +2628,13 @@ snapshots:
       lru-cache: 7.18.3
       semver: 7.8.0
 
-  '@babel/helper-create-class-features-plugin@8.0.0-rc.5(@babel/core@8.0.0-rc.4)':
+  '@babel/helper-create-class-features-plugin@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
     dependencies:
-      '@babel/core': 8.0.0-rc.4
+      '@babel/core': 8.0.0-rc.5
       '@babel/helper-annotate-as-pure': 8.0.0-rc.5
       '@babel/helper-member-expression-to-functions': 8.0.0-rc.5
       '@babel/helper-optimise-call-expression': 8.0.0-rc.5
-      '@babel/helper-replace-supers': 8.0.0-rc.5(@babel/core@8.0.0-rc.4)
+      '@babel/helper-replace-supers': 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0-rc.5
       '@babel/traverse': 8.0.0-rc.5
       semver: 7.8.0
@@ -2650,13 +2650,13 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.0-rc.5
 
-  '@babel/helper-plugin-utils@8.0.0-rc.5(@babel/core@8.0.0-rc.4)':
+  '@babel/helper-plugin-utils@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
     dependencies:
-      '@babel/core': 8.0.0-rc.4
+      '@babel/core': 8.0.0-rc.5
 
-  '@babel/helper-replace-supers@8.0.0-rc.5(@babel/core@8.0.0-rc.4)':
+  '@babel/helper-replace-supers@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
     dependencies:
-      '@babel/core': 8.0.0-rc.4
+      '@babel/core': 8.0.0-rc.5
       '@babel/helper-member-expression-to-functions': 8.0.0-rc.5
       '@babel/helper-optimise-call-expression': 8.0.0-rc.5
       '@babel/traverse': 8.0.0-rc.5
@@ -2689,19 +2689,19 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.0-rc.5
 
-  '@babel/plugin-syntax-typescript@8.0.0-rc.5(@babel/core@8.0.0-rc.4)':
+  '@babel/plugin-syntax-typescript@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
     dependencies:
-      '@babel/core': 8.0.0-rc.4
-      '@babel/helper-plugin-utils': 8.0.0-rc.5(@babel/core@8.0.0-rc.4)
+      '@babel/core': 8.0.0-rc.5
+      '@babel/helper-plugin-utils': 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.4(@babel/core@8.0.0-rc.4)':
+  '@babel/plugin-transform-typescript@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
     dependencies:
-      '@babel/core': 8.0.0-rc.4
+      '@babel/core': 8.0.0-rc.5
       '@babel/helper-annotate-as-pure': 8.0.0-rc.5
-      '@babel/helper-create-class-features-plugin': 8.0.0-rc.5(@babel/core@8.0.0-rc.4)
-      '@babel/helper-plugin-utils': 8.0.0-rc.5(@babel/core@8.0.0-rc.4)
+      '@babel/helper-create-class-features-plugin': 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
+      '@babel/helper-plugin-utils': 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0-rc.5
-      '@babel/plugin-syntax-typescript': 8.0.0-rc.5(@babel/core@8.0.0-rc.4)
+      '@babel/plugin-syntax-typescript': 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
 
   '@babel/template@8.0.0-rc.5':
     dependencies:
