@@ -79,8 +79,8 @@
     "vitest": "5.0.0-beta.2"
   },
   "dependencies": {
-    "@formatjs/cli": "6.14.5",
-    "@formatjs/intl": "4.1.9",
+    "@formatjs/cli": "6.15.0",
+    "@formatjs/intl": "4.1.10",
     "bcrypt": "6.0.0",
     "bcrypt-promise": "2.0.0",
     "dayjs": "1.11.20",
