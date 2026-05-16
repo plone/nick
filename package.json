@@ -60,7 +60,7 @@
     "@types/express": "5.0.6",
     "@types/jsonwebtoken": "9.0.10",
     "@types/mime-types": "3.0.1",
-    "@types/node": "25.7.0",
+    "@types/node": "25.8.0",
     "@types/nodemailer": "8.0.0",
     "@types/pdf-parse": "1.1.5",
     "@types/supertest": "7.2.0",
@@ -79,8 +79,8 @@
     "vitest": "5.0.0-beta.2"
   },
   "dependencies": {
-    "@formatjs/cli": "6.15.0",
-    "@formatjs/intl": "4.1.10",
+    "@formatjs/cli": "6.16.0",
+    "@formatjs/intl": "4.1.11",
     "bcrypt": "6.0.0",
     "bcrypt-promise": "2.0.0",
     "dayjs": "1.11.20",
