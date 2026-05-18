@@ -871,6 +871,8 @@ export default [
     client: 'deleteContent',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
+      const Document = models.get('Document');
+
       // Get parent
       await req.document.fetchRelated('_parent', trx);
       const parent = req.document._parent;
@@ -883,16 +885,35 @@ export default [
         trx,
         req.document._parent,
       );
+      // Set deletion time
+      const deleted = dayjs.utc().format();
 
       // If recycle bin enabled move to recycle bin else delete permanently
       if (config.settings.recyclebin) {
-        // Mark document document as deleted
-        await req.document.updateAndFetch(
-          {
-            deleted: true,
-          },
+        // Get document and children to be deleted
+        const documents = await Document.fetchAll(
+          { path: ['~', `^${req.document.path}`] },
+          {},
           trx,
         );
+
+        // Move documents to recycle bin
+        await mapAsync(documents.models, async (document: any) => {
+          await document.update(
+            {
+              deleted: true,
+              workflow_history: JSON.stringify([
+                ...document.workflow_history,
+                {
+                  time: deleted,
+                  type: 'delete',
+                  actor: req.user.id,
+                },
+              ]),
+            },
+            trx,
+          );
+        });
       } else {
         // Get file and image fields
         const fileFields = req.type.getFactoryFields('File');

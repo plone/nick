@@ -648,7 +648,7 @@ export class Document extends Model {
             username: user.id,
           },
           comments: '',
-          type: 'workflow',
+          type: item.type || 'workflow',
         };
       }),
     );
@@ -743,7 +743,7 @@ export class Document extends Model {
 
     // If children not found fetch children
     if (!self._children) {
-      await self.fetchRelated('_children', trx);
+      await self.fetchChildren({}, trx, false);
     }
 
     // Change workflow of children
