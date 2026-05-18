@@ -115,6 +115,7 @@ class Config {
           TRUST_PROXY || config.rateLimit?.trustProxy || '1',
         ),
       },
+      recyclebin: config.recyclebin || false,
       events: config.events || events,
       routes: config.routes || false,
       tasks: config.tasks || false,

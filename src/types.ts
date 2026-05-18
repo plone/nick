@@ -273,6 +273,7 @@ export type ConfigSettings = {
     auth: number;
     trustProxy: number;
   };
+  recyclebin: boolean;
   events: any;
   routes: boolean;
   tasks: boolean;

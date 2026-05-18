@@ -44,6 +44,12 @@
       "enabled": false
     },
     {
+      "name": "deleted",
+      "type": "boolean",
+      "attr": "deleted",
+      "enabled": false
+    },
+    {
       "name": "getObjPositionInParent",
       "type": "integer",
       "attr": "position_in_parent",
@@ -938,6 +944,11 @@
       "name": "recurrence",
       "type": "string",
       "attr": "recurrence"
+    },
+    {
+      "name": "deleted",
+      "type": "boolean",
+      "attr": "deleted"
     },
     {
       "name": "hasPreviewImage",

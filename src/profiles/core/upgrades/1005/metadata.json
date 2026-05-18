@@ -2,5 +2,6 @@
   "id": "@robgietema/nick:core",
   "title": "Nick Core",
   "description": "Core functionality of Nick",
-  "version": 1005
+  "version": 1005,
+  "upgrade": "Add is deleted catalog index."
 }

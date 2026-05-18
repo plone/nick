@@ -42,6 +42,8 @@ export class Catalog extends Model {
   declare recurrence: string;
   declare image_field: string;
   declare image_scales: any;
+  declare exclude_from_nav: boolean;
+  declare items: any[];
 
   /**
    * Returns JSON data.

@@ -1,0 +1,17 @@
+{
+  "indexes": [
+    {
+      "name": "deleted",
+      "type": "boolean",
+      "attr": "deleted",
+      "enabled": false
+    }
+  ],
+  "metadata": [
+    {
+      "name": "deleted",
+      "type": "boolean",
+      "attr": "deleted"
+    }
+  ]
+}

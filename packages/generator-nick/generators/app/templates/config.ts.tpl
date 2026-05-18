@@ -69,6 +69,7 @@ export const config = {
     auth: 5,
     trustProxy: 1,
   },
+  recyclebin: false,
   events,
   routes: false,
   tasks: false,
