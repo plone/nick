@@ -121,6 +121,7 @@
 - Add form support @robgietema
 - Add is referencing catalog index @robgietema
 - Add link integrity endpoint @robgietema
+- Add recycle bin functionality @robgietema
 
 ### Bugfix
 

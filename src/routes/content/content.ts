@@ -871,8 +871,6 @@ export default [
     client: 'deleteContent',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
-      const Document = models.get('Document');
-
       // Get parent
       await req.document.fetchRelated('_parent', trx);
       const parent = req.document._parent;
@@ -886,36 +884,47 @@ export default [
         req.document._parent,
       );
 
-      // Get file and image fields
-      const fileFields = req.type.getFactoryFields('File');
-      const imageFields = req.type.getFactoryFields('Image');
-
-      // If file fields exist
-      if (fileFields.length > 0 || imageFields.length > 0) {
-        // Get versions
-        await req.document.fetchRelated('_versions', trx);
-
-        // Get all file uuids from all versions and all fields
-        const files = uniq(
-          flattenDeep(
-            req.document._versions.map((version: any) => [
-              ...fileFields.map((field: string) => version.json[field].uuid),
-              ...imageFields.map((field: string) => [
-                version.json[field].uuid,
-                ...Object.keys(config.settings.imageScales).map(
-                  (scale) => version.json[field].scales[scale].uuid,
-                ),
-              ]),
-            ]),
-          ),
+      // If recycle bin enabled move to recycle bin else delete permanently
+      if (config.settings.recyclebin) {
+        // Mark document document as deleted
+        await req.document.updateAndFetch(
+          {
+            deleted: true,
+          },
+          trx,
         );
+      } else {
+        // Get file and image fields
+        const fileFields = req.type.getFactoryFields('File');
+        const imageFields = req.type.getFactoryFields('Image');
 
-        // Remove files
-        await mapAsync(files, async (file: any) => await removeFile(file));
+        // If file fields exist
+        if (fileFields.length > 0 || imageFields.length > 0) {
+          // Get versions
+          await req.document.fetchRelated('_versions', trx);
+
+          // Get all file uuids from all versions and all fields
+          const files = uniq(
+            flattenDeep(
+              req.document._versions.map((version: any) => [
+                ...fileFields.map((field: string) => version.json[field].uuid),
+                ...imageFields.map((field: string) => [
+                  version.json[field].uuid,
+                  ...Object.keys(config.settings.imageScales).map(
+                    (scale) => version.json[field].scales[scale].uuid,
+                  ),
+                ]),
+              ]),
+            ),
+          );
+
+          // Remove files
+          await mapAsync(files, async (file: any) => await removeFile(file));
+        }
+
+        // Remove document (versions will be cascaded)
+        await req.document.delete(trx);
       }
-
-      // Remove document (versions will be cascaded)
-      await req.document.delete(trx);
 
       // Fix order in parent
       await parent.fetchChildren({}, trx, false);
