@@ -54,6 +54,7 @@ export class Document extends Model {
   declare id: string;
   declare path: string;
   declare created: string;
+  declare deleted: boolean;
   declare modified: string;
   declare type: string;
   declare position_in_parent: number;
@@ -888,7 +889,7 @@ export class Document extends Model {
     );
 
     // Copy children
-    await self.fetchRelated('_children', trx);
+    await self.fetchChildren({}, trx, false);
     await Promise.all(
       self._children.map(async (child: any) => {
         await child.copy(document.uuid, `${path}/${child.id}`, child.id, trx);
@@ -1370,13 +1371,25 @@ export class Document extends Model {
   /**
    * Fetch children.
    * @method fetchChildren
-   * @param {Request} req Request object.
+   * @param {Any} req Request object.
    * @param {Knex.Transaction} trx Transaction object.
+   * @param {boolean} types Flag to include types in the output.
    * @return {Promise<void>} No return value.
    */
-  async fetchChildren(_req: Request, trx?: Knex.Transaction): Promise<void> {
+  async fetchChildren(
+    _req: any,
+    trx?: Knex.Transaction,
+    types: boolean = true,
+  ): Promise<void> {
     const self: InstanceType<typeof Document> = this;
-    await self.fetchRelated('[_children(order)._type, _type]', trx);
+    if (types) {
+      await self.fetchRelated('[_children(order)._type, _type]', trx);
+    } else {
+      await self.fetchRelated('_children(order)', trx);
+    }
+    self._children.filter(
+      (item: InstanceType<typeof Document>) => item.deleted,
+    );
   }
 
   /**

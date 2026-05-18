@@ -60,7 +60,7 @@ export const move_item = {
       const targetParent = await Document.fetchOne({ path: targetFolder.path });
 
       // Get children
-      await targetParent.fetchRelated('_children', trx);
+      await targetParent.fetchChildren({}, trx, false);
       const childIds = targetParent._children.map((child: any) => child.id);
 
       // Calculate new id and path
@@ -78,7 +78,7 @@ export const move_item = {
       await copiedDocument.fetchRelated('_parent', trx);
 
       // Fetch new children and fix order
-      await targetParent.fetchRelated('_children', trx);
+      await targetParent.fetchChildren({}, trx, false);
       await targetParent.fixOrder(trx);
 
       // Reindex children
@@ -125,7 +125,7 @@ export const move_item = {
       await document.delete(trx);
 
       // Fix order in parent
-      await parent.fetchRelated('_children(order)', trx);
+      await parent.fetchChildren({}, trx, false);
       await parent.fixOrder(trx);
 
       // Reindex children

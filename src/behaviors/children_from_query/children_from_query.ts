@@ -31,12 +31,14 @@ export const children_from_query = {
    * @method fetchChildren
    * @param {Object} req Request object
    * @param {Knex.Transaction} trx Transaction object.
+   * @param {boolean} types Flag to include types in the output.
    * @return {Promise<void>} No return value.
    */
   fetchChildren: async function (
     this: DocumentType,
     req: Request,
     trx: Knex.Transaction,
+    _types: boolean = true,
   ): Promise<void> {
     const Catalog = models.get('Catalog');
     const Document = models.get('Document');

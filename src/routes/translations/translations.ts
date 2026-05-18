@@ -16,7 +16,7 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
   const Controlpanel = models.get('Controlpanel');
   const documents = req.document.translation_group
     ? await Document.fetchAll(
-        { translation_group: req.document.translation_group },
+        { translation_group: req.document.translation_group, deleted: false },
         {},
         trx,
       )
@@ -132,6 +132,7 @@ export default [
         {
           translation_group: parent.translation_group,
           language: req.query.target_language,
+          deleted: false,
         },
         {},
         trx,

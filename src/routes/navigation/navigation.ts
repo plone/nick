@@ -34,7 +34,10 @@ async function getItems(
   );
 
   // Omit exclude from nav items
-  items.filter((item: InstanceType<typeof Catalog>) => !item.exclude_from_nav);
+  items.filter(
+    (item: InstanceType<typeof Catalog>) =>
+      !item.exclude_from_nav || item.deleted,
+  );
 
   // Omit by type
   items.filter((item: InstanceType<typeof Catalog>) =>

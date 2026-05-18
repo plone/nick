@@ -82,7 +82,8 @@ export default [
       );
 
       // Get id and path variables of document, parent and siblings
-      await req.document.fetchRelated('_parent._children', trx);
+      await req.document.fetchRelated('_parent', trx);
+      await req.document._parent.fetchChildren({}, trx, false);
       const id = version.id;
       const path = req.document.path;
 

@@ -76,7 +76,7 @@ export const delete_item = {
     await document.delete(trx);
 
     // Fix order in parent
-    await parent.fetchRelated('_children(order)', trx);
+    await parent.fetchChildren({}, trx, false);
     await parent.fixOrder(trx);
 
     // Reindex children

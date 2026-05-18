@@ -56,7 +56,7 @@ export const copy_item = {
       const targetParent = await Document.fetchOne({ path: targetFolder.path });
 
       // Get children
-      await targetParent.fetchRelated('_children', trx);
+      await targetParent.fetchChildren({}, trx, false);
       const childIds = targetParent._children.map((child: any) => child.id);
 
       // Calculate new id and path
@@ -74,7 +74,7 @@ export const copy_item = {
       await copiedDocument.fetchRelated('_parent', trx);
 
       // Fetch new children and fix order
-      await targetParent.fetchRelated('_children', trx);
+      await targetParent.fetchChildren({}, trx, false);
       await targetParent.fixOrder(trx);
 
       // Reindex children

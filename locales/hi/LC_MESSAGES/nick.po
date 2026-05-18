@@ -149,39 +149,6 @@ msgid "Administrators"
 msgstr "प्रशासक गण"
 
 #. Default: "After N days in the future"
-#: src/profiles/core/catalog.json:89
-#: src/profiles/core/catalog.json:162
-#: src/profiles/core/catalog.json:504
-#: src/profiles/core/catalog.json:583
-#: src/profiles/core/catalog.json:656
-#: src/profiles/core/catalog.json:729
-msgctxt "Profiles|Core|Catalog"
-msgid "After N days in the future"
-msgstr "भविष्य में N दिनों के बाद"
-
-#. Default: "After date"
-#: src/profiles/core/catalog.json:118
-#: src/profiles/core/catalog.json:191
-#: src/profiles/core/catalog.json:533
-#: src/profiles/core/catalog.json:612
-#: src/profiles/core/catalog.json:685
-#: src/profiles/core/catalog.json:758
-msgctxt "Profiles|Core|Catalog"
-msgid "After date"
-msgstr "तारीख के बाद"
-
-#. Default: "After relative date"
-#: src/profiles/core/catalog.json:88
-#: src/profiles/core/catalog.json:161
-#: src/profiles/core/catalog.json:503
-#: src/profiles/core/catalog.json:582
-#: src/profiles/core/catalog.json:655
-#: src/profiles/core/catalog.json:728
-msgctxt "Profiles|Core|Catalog"
-msgid "After relative date"
-msgstr "सापेक्ष तिथि के बाद"
-
-#. Default: "After the current day"
 #: src/profiles/core/catalog.json:95
 #: src/profiles/core/catalog.json:168
 #: src/profiles/core/catalog.json:510
@@ -189,16 +156,49 @@ msgstr "सापेक्ष तिथि के बाद"
 #: src/profiles/core/catalog.json:662
 #: src/profiles/core/catalog.json:735
 msgctxt "Profiles|Core|Catalog"
-msgid "After the current day"
-msgstr "वर्तमान दिन के बाद"
+msgid "After N days in the future"
+msgstr "भविष्य में N दिनों के बाद"
 
-#. Default: "After today"
+#. Default: "After date"
+#: src/profiles/core/catalog.json:124
+#: src/profiles/core/catalog.json:197
+#: src/profiles/core/catalog.json:539
+#: src/profiles/core/catalog.json:618
+#: src/profiles/core/catalog.json:691
+#: src/profiles/core/catalog.json:764
+msgctxt "Profiles|Core|Catalog"
+msgid "After date"
+msgstr "तारीख के बाद"
+
+#. Default: "After relative date"
 #: src/profiles/core/catalog.json:94
 #: src/profiles/core/catalog.json:167
 #: src/profiles/core/catalog.json:509
 #: src/profiles/core/catalog.json:588
 #: src/profiles/core/catalog.json:661
 #: src/profiles/core/catalog.json:734
+msgctxt "Profiles|Core|Catalog"
+msgid "After relative date"
+msgstr "सापेक्ष तिथि के बाद"
+
+#. Default: "After the current day"
+#: src/profiles/core/catalog.json:101
+#: src/profiles/core/catalog.json:174
+#: src/profiles/core/catalog.json:516
+#: src/profiles/core/catalog.json:595
+#: src/profiles/core/catalog.json:668
+#: src/profiles/core/catalog.json:741
+msgctxt "Profiles|Core|Catalog"
+msgid "After the current day"
+msgstr "वर्तमान दिन के बाद"
+
+#. Default: "After today"
+#: src/profiles/core/catalog.json:100
+#: src/profiles/core/catalog.json:173
+#: src/profiles/core/catalog.json:515
+#: src/profiles/core/catalog.json:594
+#: src/profiles/core/catalog.json:667
+#: src/profiles/core/catalog.json:740
 msgctxt "Profiles|Core|Catalog"
 msgid "After today"
 msgstr "आज के बाद"
@@ -230,19 +230,19 @@ msgid "An entity responsible for making this item available."
 msgstr "इस आइटम को उपलब्ध कराने के लिए जिम्मेदार इकाई।"
 
 #. Default: "An item’s description"
-#: src/profiles/core/catalog.json:228
+#: src/profiles/core/catalog.json:234
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s description"
 msgstr "आइटम का विवरण"
 
 #. Default: "An item’s type (e.g. Event)"
-#: src/profiles/core/catalog.json:434
+#: src/profiles/core/catalog.json:440
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s type (e.g. Event)"
 msgstr "आइटम का प्रकार (जैसे ईवेंट)"
 
 #. Default: "An item’s workflow state (e.g.published)"
-#: src/profiles/core/catalog.json:453
+#: src/profiles/core/catalog.json:459
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s workflow state (e.g.published)"
 msgstr "आइटम की कार्यप्रवाह स्थिति (जैसे प्रकाशित)"
@@ -318,39 +318,6 @@ msgid "Basic metadata"
 msgstr "मूल मेटाडेटा"
 
 #. Default: "Before N days in the past"
-#: src/profiles/core/catalog.json:101
-#: src/profiles/core/catalog.json:174
-#: src/profiles/core/catalog.json:516
-#: src/profiles/core/catalog.json:595
-#: src/profiles/core/catalog.json:668
-#: src/profiles/core/catalog.json:741
-msgctxt "Profiles|Core|Catalog"
-msgid "Before N days in the past"
-msgstr "पिछले N दिनों से पहले"
-
-#. Default: "Before date"
-#: src/profiles/core/catalog.json:130
-#: src/profiles/core/catalog.json:203
-#: src/profiles/core/catalog.json:545
-#: src/profiles/core/catalog.json:624
-#: src/profiles/core/catalog.json:697
-#: src/profiles/core/catalog.json:770
-msgctxt "Profiles|Core|Catalog"
-msgid "Before date"
-msgstr "तारीख से पहले"
-
-#. Default: "Before relative date"
-#: src/profiles/core/catalog.json:100
-#: src/profiles/core/catalog.json:173
-#: src/profiles/core/catalog.json:515
-#: src/profiles/core/catalog.json:594
-#: src/profiles/core/catalog.json:667
-#: src/profiles/core/catalog.json:740
-msgctxt "Profiles|Core|Catalog"
-msgid "Before relative date"
-msgstr "सापेक्ष तिथि से पहले"
-
-#. Default: "Before the current day"
 #: src/profiles/core/catalog.json:107
 #: src/profiles/core/catalog.json:180
 #: src/profiles/core/catalog.json:522
@@ -358,16 +325,49 @@ msgstr "सापेक्ष तिथि से पहले"
 #: src/profiles/core/catalog.json:674
 #: src/profiles/core/catalog.json:747
 msgctxt "Profiles|Core|Catalog"
-msgid "Before the current day"
-msgstr "वर्तमान दिन से पहले"
+msgid "Before N days in the past"
+msgstr "पिछले N दिनों से पहले"
 
-#. Default: "Before today"
+#. Default: "Before date"
+#: src/profiles/core/catalog.json:136
+#: src/profiles/core/catalog.json:209
+#: src/profiles/core/catalog.json:551
+#: src/profiles/core/catalog.json:630
+#: src/profiles/core/catalog.json:703
+#: src/profiles/core/catalog.json:776
+msgctxt "Profiles|Core|Catalog"
+msgid "Before date"
+msgstr "तारीख से पहले"
+
+#. Default: "Before relative date"
 #: src/profiles/core/catalog.json:106
 #: src/profiles/core/catalog.json:179
 #: src/profiles/core/catalog.json:521
 #: src/profiles/core/catalog.json:600
 #: src/profiles/core/catalog.json:673
 #: src/profiles/core/catalog.json:746
+msgctxt "Profiles|Core|Catalog"
+msgid "Before relative date"
+msgstr "सापेक्ष तिथि से पहले"
+
+#. Default: "Before the current day"
+#: src/profiles/core/catalog.json:113
+#: src/profiles/core/catalog.json:186
+#: src/profiles/core/catalog.json:528
+#: src/profiles/core/catalog.json:607
+#: src/profiles/core/catalog.json:680
+#: src/profiles/core/catalog.json:753
+msgctxt "Profiles|Core|Catalog"
+msgid "Before the current day"
+msgstr "वर्तमान दिन से पहले"
+
+#. Default: "Before today"
+#: src/profiles/core/catalog.json:112
+#: src/profiles/core/catalog.json:185
+#: src/profiles/core/catalog.json:527
+#: src/profiles/core/catalog.json:606
+#: src/profiles/core/catalog.json:679
+#: src/profiles/core/catalog.json:752
 msgctxt "Profiles|Core|Catalog"
 msgid "Before today"
 msgstr "आज से पहले"
@@ -379,12 +379,12 @@ msgid "Behaviors"
 msgstr "व्यवहार"
 
 #. Default: "Between dates"
-#: src/profiles/core/catalog.json:112
-#: src/profiles/core/catalog.json:185
-#: src/profiles/core/catalog.json:527
-#: src/profiles/core/catalog.json:606
-#: src/profiles/core/catalog.json:679
-#: src/profiles/core/catalog.json:752
+#: src/profiles/core/catalog.json:118
+#: src/profiles/core/catalog.json:191
+#: src/profiles/core/catalog.json:533
+#: src/profiles/core/catalog.json:612
+#: src/profiles/core/catalog.json:685
+#: src/profiles/core/catalog.json:758
 msgctxt "Profiles|Core|Catalog"
 msgid "Between dates"
 msgstr "तिथियों के बीच"
@@ -471,10 +471,10 @@ msgid "Contact Phone"
 msgstr ""
 
 #. Default: "Contains"
-#: src/profiles/core/catalog.json:234
-#: src/profiles/core/catalog.json:253
-#: src/profiles/core/catalog.json:272
-#: src/profiles/core/catalog.json:478
+#: src/profiles/core/catalog.json:240
+#: src/profiles/core/catalog.json:259
+#: src/profiles/core/catalog.json:278
+#: src/profiles/core/catalog.json:484
 msgctxt "Profiles|Core|Catalog"
 msgid "Contains"
 msgstr "शामिल है"
@@ -548,19 +548,19 @@ msgid "Coverage"
 msgstr "कवरेज"
 
 #. Default: "Creation date"
-#: src/profiles/core/catalog.json:648
+#: src/profiles/core/catalog.json:654
 msgctxt "Profiles|Core|Catalog"
 msgid "Creation date"
 msgstr "निर्माण की तारीख"
 
 #. Default: "Creator"
-#: src/profiles/core/catalog.json:402
+#: src/profiles/core/catalog.json:408
 msgctxt "Profiles|Core|Catalog"
 msgid "Creator"
 msgstr "निर्माता"
 
 #. Default: "Current logged in user"
-#: src/profiles/core/catalog.json:415
+#: src/profiles/core/catalog.json:421
 msgctxt "Profiles|Core|Catalog"
 msgid "Current logged in user"
 msgstr "वर्तमान में लॉग इन उपयोगकर्ता"
@@ -657,7 +657,7 @@ msgstr ""
 
 #. Default: "Description"
 #: src/models/type/type.ts:163
-#: src/profiles/core/catalog.json:227
+#: src/profiles/core/catalog.json:233
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
 msgctxt "Models|Type"
@@ -752,7 +752,7 @@ msgid "Editor"
 msgstr "संपादक"
 
 #. Default: "Effective date"
-#: src/profiles/core/catalog.json:721
+#: src/profiles/core/catalog.json:727
 msgctxt "Profiles|Core|Catalog"
 msgid "Effective date"
 msgstr "प्रभावी तिथि"
@@ -820,8 +820,8 @@ msgid "Enter your new password."
 msgstr ""
 
 #. Default: "Equals"
-#: src/profiles/core/catalog.json:57
-#: src/profiles/core/catalog.json:334
+#: src/profiles/core/catalog.json:63
+#: src/profiles/core/catalog.json:340
 msgctxt "Profiles|Core|Catalog"
 msgid "Equals"
 msgstr "बराबर है"
@@ -851,7 +851,7 @@ msgid "Event URL"
 msgstr ""
 
 #. Default: "Event end date"
-#: src/profiles/core/catalog.json:154
+#: src/profiles/core/catalog.json:160
 msgctxt "Profiles|Core|Catalog"
 msgid "Event end date"
 msgstr "ईवेंट समाप्ति तिथि"
@@ -863,7 +863,7 @@ msgid "Event lasts whole day."
 msgstr ""
 
 #. Default: "Event start date"
-#: src/profiles/core/catalog.json:81
+#: src/profiles/core/catalog.json:87
 msgctxt "Profiles|Core|Catalog"
 msgid "Event start date"
 msgstr "ईवेंट आरंभ तिथि"
@@ -894,7 +894,7 @@ msgid "Expiration Date"
 msgstr "समाप्ति तिथि"
 
 #. Default: "Expiration date"
-#: src/profiles/core/catalog.json:575
+#: src/profiles/core/catalog.json:581
 msgctxt "Profiles|Core|Catalog"
 msgid "Expiration date"
 msgstr "समाप्ति तिथि"
@@ -937,13 +937,13 @@ msgid "Filter Contained Types"
 msgstr "निहित प्रकारों को फ़िल्टर करें"
 
 #. Default: "Find items related to the selected items"
-#: src/profiles/core/catalog.json:328
+#: src/profiles/core/catalog.json:334
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items related to the selected items"
 msgstr "चयनित आइटम से संबंधित आइटम खोजें"
 
 #. Default: "Find items that can contain other objects"
-#: src/profiles/core/catalog.json:347
+#: src/profiles/core/catalog.json:353
 msgctxt "Profiles|Core|Catalog"
 msgid "Find items that can contain other objects"
 msgstr "ऐसे आइटम खोजें जिनमें अन्य ऑब्जेक्ट हो सकते हैं"
@@ -955,7 +955,7 @@ msgid "Folder"
 msgstr "फ़ोल्डर"
 
 #. Default: "Folder-like"
-#: src/profiles/core/catalog.json:346
+#: src/profiles/core/catalog.json:352
 msgctxt "Profiles|Core|Catalog"
 msgid "Folder-like"
 msgstr "फ़ोल्डर-जैसा"
@@ -1096,8 +1096,8 @@ msgid "Invalid session"
 msgstr "अमान्य सत्र"
 
 #. Default: "Is"
-#: src/profiles/core/catalog.json:390
-#: src/profiles/core/catalog.json:484
+#: src/profiles/core/catalog.json:396
+#: src/profiles/core/catalog.json:490
 msgctxt "Profiles|Core|Catalog"
 msgid "Is"
 msgstr "है"
@@ -1122,7 +1122,7 @@ msgid "Language root"
 msgstr ""
 
 #. Default: "Larger than"
-#: src/profiles/core/catalog.json:63
+#: src/profiles/core/catalog.json:69
 msgctxt "Profiles|Core|Catalog"
 msgid "Larger than"
 msgstr "से बड़ा"
@@ -1134,7 +1134,7 @@ msgid "Layout"
 msgstr "लेआउट"
 
 #. Default: "Less than"
-#: src/profiles/core/catalog.json:69
+#: src/profiles/core/catalog.json:75
 msgctxt "Profiles|Core|Catalog"
 msgid "Less than"
 msgstr "से कम"
@@ -1271,16 +1271,16 @@ msgid "Many users?"
 msgstr ""
 
 #. Default: "Matches all conditions"
-#: src/profiles/core/catalog.json:293
+#: src/profiles/core/catalog.json:299
 msgctxt "Profiles|Core|Catalog"
 msgid "Matches all conditions"
 msgstr "सभी से मेल खाता है"
 
 #. Default: "Matches any condition"
-#: src/profiles/core/catalog.json:299
-#: src/profiles/core/catalog.json:409
-#: src/profiles/core/catalog.json:440
-#: src/profiles/core/catalog.json:459
+#: src/profiles/core/catalog.json:305
+#: src/profiles/core/catalog.json:415
+#: src/profiles/core/catalog.json:446
+#: src/profiles/core/catalog.json:465
 msgctxt "Profiles|Core|Catalog"
 msgid "Matches any condition"
 msgstr "किसी से भी मेल खाता है"
@@ -1299,7 +1299,7 @@ msgid "Missing credentials"
 msgstr "लापता क्रेडेंशियल"
 
 #. Default: "Modification date"
-#: src/profiles/core/catalog.json:496
+#: src/profiles/core/catalog.json:502
 msgctxt "Profiles|Core|Catalog"
 msgid "Modification date"
 msgstr "संशोधन तिथि"
@@ -1387,7 +1387,7 @@ msgid "Nick generates email using this name as the email sender."
 msgstr ""
 
 #. Default: "No"
-#: src/profiles/core/catalog.json:353
+#: src/profiles/core/catalog.json:359
 #: src/profiles/core/vocabularies/boolean.json:6
 msgctxt "Profiles|Core|Catalog"
 msgid "No"
@@ -1455,7 +1455,7 @@ msgid "Open End"
 msgstr ""
 
 #. Default: "Order in folder"
-#: src/profiles/core/catalog.json:50
+#: src/profiles/core/catalog.json:56
 msgctxt "Profiles|Core|Catalog"
 msgid "Order in folder"
 msgstr "फ़ोल्डर में क्रम"
@@ -1531,41 +1531,41 @@ msgid "Phone number to contact about this event."
 msgstr ""
 
 #. Default: "Please enter the number in days."
-#: src/profiles/core/catalog.json:125
-#: src/profiles/core/catalog.json:137
-#: src/profiles/core/catalog.json:198
-#: src/profiles/core/catalog.json:210
-#: src/profiles/core/catalog.json:540
-#: src/profiles/core/catalog.json:552
-#: src/profiles/core/catalog.json:619
-#: src/profiles/core/catalog.json:631
-#: src/profiles/core/catalog.json:692
-#: src/profiles/core/catalog.json:704
-#: src/profiles/core/catalog.json:765
-#: src/profiles/core/catalog.json:777
+#: src/profiles/core/catalog.json:131
+#: src/profiles/core/catalog.json:143
+#: src/profiles/core/catalog.json:204
+#: src/profiles/core/catalog.json:216
+#: src/profiles/core/catalog.json:546
+#: src/profiles/core/catalog.json:558
+#: src/profiles/core/catalog.json:625
+#: src/profiles/core/catalog.json:637
+#: src/profiles/core/catalog.json:698
+#: src/profiles/core/catalog.json:710
+#: src/profiles/core/catalog.json:771
+#: src/profiles/core/catalog.json:783
 msgctxt "Profiles|Core|Catalog"
 msgid "Please enter the number in days."
 msgstr "कृपया दिनों की संख्या दर्ज करें।"
 
 #. Default: "Please use YYYY/MM/DD."
-#: src/profiles/core/catalog.json:113
 #: src/profiles/core/catalog.json:119
-#: src/profiles/core/catalog.json:131
-#: src/profiles/core/catalog.json:186
+#: src/profiles/core/catalog.json:125
+#: src/profiles/core/catalog.json:137
 #: src/profiles/core/catalog.json:192
-#: src/profiles/core/catalog.json:204
-#: src/profiles/core/catalog.json:528
+#: src/profiles/core/catalog.json:198
+#: src/profiles/core/catalog.json:210
 #: src/profiles/core/catalog.json:534
-#: src/profiles/core/catalog.json:546
-#: src/profiles/core/catalog.json:607
+#: src/profiles/core/catalog.json:540
+#: src/profiles/core/catalog.json:552
 #: src/profiles/core/catalog.json:613
-#: src/profiles/core/catalog.json:625
-#: src/profiles/core/catalog.json:680
+#: src/profiles/core/catalog.json:619
+#: src/profiles/core/catalog.json:631
 #: src/profiles/core/catalog.json:686
-#: src/profiles/core/catalog.json:698
-#: src/profiles/core/catalog.json:753
+#: src/profiles/core/catalog.json:692
+#: src/profiles/core/catalog.json:704
 #: src/profiles/core/catalog.json:759
-#: src/profiles/core/catalog.json:771
+#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:777
 msgctxt "Profiles|Core|Catalog"
 msgid "Please use YYYY/MM/DD."
 msgstr "कृपया YYYY/MM/DD का उपयोग करें।"
@@ -1709,7 +1709,7 @@ msgid "Related Items"
 msgstr "संबंधित आइटम"
 
 #. Default: "Related To"
-#: src/profiles/core/catalog.json:327
+#: src/profiles/core/catalog.json:333
 msgctxt "Profiles|Core|Catalog"
 msgid "Related To"
 msgstr "से संबंधित"
@@ -1751,7 +1751,7 @@ msgid "Review"
 msgstr "समीक्षा"
 
 #. Default: "Review state"
-#: src/profiles/core/catalog.json:452
+#: src/profiles/core/catalog.json:458
 msgctxt "Profiles|Core|Catalog"
 msgid "Review state"
 msgstr "समीक्षा स्थिति"
@@ -1806,7 +1806,7 @@ msgid "SMTP server"
 msgstr "SMTP सर्वर"
 
 #. Default: "Searchable text"
-#: src/profiles/core/catalog.json:246
+#: src/profiles/core/catalog.json:252
 msgctxt "Profiles|Core|Catalog"
 msgid "Searchable text"
 msgstr "खोजने योग्य पाठ"
@@ -1880,7 +1880,7 @@ msgid "Short name"
 msgstr "संक्षिप्त नाम"
 
 #. Default: "Short name (id)"
-#: src/profiles/core/catalog.json:383
+#: src/profiles/core/catalog.json:389
 msgctxt "Profiles|Core|Catalog"
 msgid "Short name (id)"
 msgstr "संक्षिप्त नाम (आईडी)"
@@ -1947,7 +1947,7 @@ msgid "Sitemap"
 msgstr "साइटमैप"
 
 #. Default: "Sortable Title"
-#: src/profiles/core/catalog.json:471
+#: src/profiles/core/catalog.json:477
 msgctxt "Profiles|Core|Catalog"
 msgid "Sortable Title"
 msgstr "क्रमबद्ध करने योग्य शीर्षक"
@@ -2031,7 +2031,7 @@ msgid "System users"
 msgstr "सिस्टम उपयोगकर्ता"
 
 #. Default: "Tag"
-#: src/profiles/core/catalog.json:284
+#: src/profiles/core/catalog.json:290
 msgctxt "Profiles|Core|Catalog"
 msgid "Tag"
 msgstr "टैग"
@@ -2043,7 +2043,7 @@ msgid "Tags"
 msgstr "टैग्स"
 
 #. Default: "Tags are used for organization of content"
-#: src/profiles/core/catalog.json:285
+#: src/profiles/core/catalog.json:291
 msgctxt "Profiles|Core|Catalog"
 msgid "Tags are used for organization of content"
 msgstr "टैग का उपयोग सामग्री के संगठन के लिए किया जाता है"
@@ -2069,13 +2069,13 @@ msgid "Text is required to modify a comment."
 msgstr ""
 
 #. Default: "Text search of an item’s contents"
-#: src/profiles/core/catalog.json:247
+#: src/profiles/core/catalog.json:253
 msgctxt "Profiles|Core|Catalog"
 msgid "Text search of an item’s contents"
 msgstr "आइटम की सामग्री की पाठ खोज"
 
 #. Default: "Text search of an item’s title"
-#: src/profiles/core/catalog.json:266
+#: src/profiles/core/catalog.json:272
 msgctxt "Profiles|Core|Catalog"
 msgid "Text search of an item’s title"
 msgstr "आइटम के शीर्षक की पाठ खोज"
@@ -2123,18 +2123,18 @@ msgid "The content types that should be shown in the navigation and site map."
 msgstr "नेविगेशन और साइट मैप में दिखाए जाने वाले सामग्री प्रकार।"
 
 #. Default: "The current day"
-#: src/profiles/core/catalog.json:143
-#: src/profiles/core/catalog.json:216
-#: src/profiles/core/catalog.json:558
-#: src/profiles/core/catalog.json:637
-#: src/profiles/core/catalog.json:710
-#: src/profiles/core/catalog.json:783
+#: src/profiles/core/catalog.json:149
+#: src/profiles/core/catalog.json:222
+#: src/profiles/core/catalog.json:564
+#: src/profiles/core/catalog.json:643
+#: src/profiles/core/catalog.json:716
+#: src/profiles/core/catalog.json:789
 msgctxt "Profiles|Core|Catalog"
 msgid "The current day"
 msgstr "वर्तमान दिन"
 
 #. Default: "The date an item was created"
-#: src/profiles/core/catalog.json:649
+#: src/profiles/core/catalog.json:655
 msgctxt "Profiles|Core|Catalog"
 msgid "The date an item was created"
 msgstr "वह तिथि जब कोई आइटम बनाया गया था"
@@ -2152,7 +2152,7 @@ msgid "The email where you want to send this message. To send it to different em
 msgstr ""
 
 #. Default: "The end date and time of an event"
-#: src/profiles/core/catalog.json:155
+#: src/profiles/core/catalog.json:161
 msgctxt "Profiles|Core|Catalog"
 msgid "The end date and time of an event"
 msgstr "किसी ईवेंट की समाप्ति तिथि और समय"
@@ -2171,7 +2171,7 @@ msgid "The following link takes you to a page where you can reset your password:
 msgstr ""
 
 #. Default: "The item’s title, transformed for sorting"
-#: src/profiles/core/catalog.json:472
+#: src/profiles/core/catalog.json:478
 msgctxt "Profiles|Core|Catalog"
 msgid "The item’s title, transformed for sorting"
 msgstr "आइटम का शीर्षक, छँटाई के लिए रूपांतरित"
@@ -2213,7 +2213,7 @@ msgid "The name of the group."
 msgstr ""
 
 #. Default: "The order of an item in its parent folder"
-#: src/profiles/core/catalog.json:51
+#: src/profiles/core/catalog.json:57
 msgctxt "Profiles|Core|Catalog"
 msgid "The order of an item in its parent folder"
 msgstr "अपने मूल फ़ोल्डर में किसी आइटम का क्रम"
@@ -2225,7 +2225,7 @@ msgid "The password for the ESMTP user account."
 msgstr "ESMTP उपयोगकर्ता खाते के लिए पासवर्ड।"
 
 #. Default: "The person that created an item"
-#: src/profiles/core/catalog.json:403
+#: src/profiles/core/catalog.json:409
 msgctxt "Profiles|Core|Catalog"
 msgid "The person that created an item"
 msgstr "वह व्यक्ति जिसने आइटम बनाया"
@@ -2243,7 +2243,7 @@ msgid "The roles to check for."
 msgstr ""
 
 #. Default: "The short name of an item (used in the url)"
-#: src/profiles/core/catalog.json:384
+#: src/profiles/core/catalog.json:390
 msgctxt "Profiles|Core|Catalog"
 msgid "The short name of an item (used in the url)"
 msgstr "आइटम का संक्षिप्त नाम (URL में उपयोग किया जाता है)"
@@ -2255,25 +2255,25 @@ msgid "The spatial or temporal topic of this item, spatial applicability of this
 msgstr "इस आइटम का स्थानिक या लौकिक विषय, इस आइटम की स्थानिक प्रयोज्यता, या वह अधिकार क्षेत्र जिसके तहत यह आइटम प्रासंगिक है।"
 
 #. Default: "The start date and time of an event"
-#: src/profiles/core/catalog.json:82
+#: src/profiles/core/catalog.json:88
 msgctxt "Profiles|Core|Catalog"
 msgid "The start date and time of an event"
 msgstr "किसी ईवेंट की आरंभ तिथि और समय"
 
 #. Default: "The time and date an item was expired"
-#: src/profiles/core/catalog.json:576
+#: src/profiles/core/catalog.json:582
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was expired"
 msgstr "वह समय और तिथि जब कोई आइटम समाप्त हो गया था"
 
 #. Default: "The time and date an item was first published"
-#: src/profiles/core/catalog.json:722
+#: src/profiles/core/catalog.json:728
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was first published"
 msgstr "वह समय और तिथि जब कोई आइटम पहली बार प्रकाशित हुआ था"
 
 #. Default: "The time and date an item was last modified"
-#: src/profiles/core/catalog.json:497
+#: src/profiles/core/catalog.json:503
 msgctxt "Profiles|Core|Catalog"
 msgid "The time and date an item was last modified"
 msgstr "वह समय और तिथि जब किसी आइटम को अंतिम बार संशोधित किया गया था"
@@ -2285,7 +2285,7 @@ msgid "The topic of this item."
 msgstr "इस आइटम का विषय।"
 
 #. Default: "The user viewing the querystring results"
-#: src/profiles/core/catalog.json:416
+#: src/profiles/core/catalog.json:422
 msgctxt "Profiles|Core|Catalog"
 msgid "The user viewing the querystring results"
 msgstr "क्वेरीस्ट्रिंग परिणाम देखने वाला उपयोगकर्ता"
@@ -2341,19 +2341,19 @@ msgid "This shows up in the title bar of browsers and in syndication feeds."
 msgstr "यह ब्राउज़र के शीर्षक बार और सिंडिकेशन फ़ीड में दिखाई देता है।"
 
 #. Default: "Tip: you can use * to autocomplete."
-#: src/profiles/core/catalog.json:291
 #: src/profiles/core/catalog.json:297
-#: src/profiles/core/catalog.json:391
-#: src/profiles/core/catalog.json:410
-#: src/profiles/core/catalog.json:441
-#: src/profiles/core/catalog.json:460
-#: src/profiles/core/catalog.json:485
+#: src/profiles/core/catalog.json:303
+#: src/profiles/core/catalog.json:397
+#: src/profiles/core/catalog.json:416
+#: src/profiles/core/catalog.json:447
+#: src/profiles/core/catalog.json:466
+#: src/profiles/core/catalog.json:491
 msgctxt "Profiles|Core|Catalog"
 msgid "Tip: you can use * to autocomplete."
 msgstr "सुझाव: आप स्वतः पूर्ण करने के लिए * का उपयोग कर सकते हैं।"
 
 #. Default: "Title"
-#: src/profiles/core/catalog.json:265
+#: src/profiles/core/catalog.json:271
 #: src/profiles/core/behaviors/basic.json:22
 #: src/profiles/ai/controlpanels/ai.json:29
 msgctxt "Profiles|Core|Catalog"
@@ -2367,12 +2367,12 @@ msgid "To, from and message are required fields."
 msgstr "प्रति, से और संदेश आवश्यक फ़ील्ड हैं।"
 
 #. Default: "Today"
-#: src/profiles/core/catalog.json:142
-#: src/profiles/core/catalog.json:215
-#: src/profiles/core/catalog.json:557
-#: src/profiles/core/catalog.json:636
-#: src/profiles/core/catalog.json:709
-#: src/profiles/core/catalog.json:782
+#: src/profiles/core/catalog.json:148
+#: src/profiles/core/catalog.json:221
+#: src/profiles/core/catalog.json:563
+#: src/profiles/core/catalog.json:642
+#: src/profiles/core/catalog.json:715
+#: src/profiles/core/catalog.json:788
 msgctxt "Profiles|Core|Catalog"
 msgid "Today"
 msgstr "आज"
@@ -2398,7 +2398,7 @@ msgid "Transition workflow state"
 msgstr ""
 
 #. Default: "Type"
-#: src/profiles/core/catalog.json:433
+#: src/profiles/core/catalog.json:439
 msgctxt "Profiles|Core|Catalog"
 msgid "Type"
 msgstr "प्रकार"
@@ -2590,23 +2590,23 @@ msgid "Whole Day"
 msgstr ""
 
 #. Default: "Within last"
-#: src/profiles/core/catalog.json:124
-#: src/profiles/core/catalog.json:197
-#: src/profiles/core/catalog.json:539
-#: src/profiles/core/catalog.json:618
-#: src/profiles/core/catalog.json:691
-#: src/profiles/core/catalog.json:764
+#: src/profiles/core/catalog.json:130
+#: src/profiles/core/catalog.json:203
+#: src/profiles/core/catalog.json:545
+#: src/profiles/core/catalog.json:624
+#: src/profiles/core/catalog.json:697
+#: src/profiles/core/catalog.json:770
 msgctxt "Profiles|Core|Catalog"
 msgid "Within last"
 msgstr "पिछले ... के भीतर"
 
 #. Default: "Within next"
-#: src/profiles/core/catalog.json:136
-#: src/profiles/core/catalog.json:209
-#: src/profiles/core/catalog.json:551
-#: src/profiles/core/catalog.json:630
-#: src/profiles/core/catalog.json:703
-#: src/profiles/core/catalog.json:776
+#: src/profiles/core/catalog.json:142
+#: src/profiles/core/catalog.json:215
+#: src/profiles/core/catalog.json:557
+#: src/profiles/core/catalog.json:636
+#: src/profiles/core/catalog.json:709
+#: src/profiles/core/catalog.json:782
 msgctxt "Profiles|Core|Catalog"
 msgid "Within next"
 msgstr "अगले ... के भीतर"
@@ -2638,7 +2638,7 @@ msgid "Wrong login and/or password."
 msgstr "गलत लॉगिन और/या पासवर्ड।"
 
 #. Default: "Yes"
-#: src/profiles/core/catalog.json:359
+#: src/profiles/core/catalog.json:365
 #: src/profiles/core/vocabularies/boolean.json:5
 msgctxt "Profiles|Core|Catalog"
 msgid "Yes"

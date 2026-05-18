@@ -98,7 +98,7 @@ export default [
           );
 
           // Fetch children of previous parent
-          await parent.fetchRelated('_children', trx);
+          await parent.fetchChildren({}, trx, false);
           await parent.fixOrder(trx);
 
           // Reindex siblings
@@ -122,7 +122,7 @@ export default [
       });
 
       // Fetch new children and fix order
-      await req.document.fetchRelated('_children', trx);
+      await req.document.fetchChildren({}, trx, false);
       await req.document.fixOrder(trx);
 
       // Reindex children
@@ -146,7 +146,7 @@ export default [
       const Document = models.get('Document');
 
       // Get children
-      await req.document.fetchRelated('_children', trx);
+      await req.document.fetchChildren({}, trx, false);
       const childIds = req.document._children.map(
         (child: InstanceType<typeof Document>) => child.id,
       );
@@ -204,7 +204,7 @@ export default [
       });
 
       // Fetch new children and fix order
-      await req.document.fetchRelated('_children', trx);
+      await req.document.fetchChildren({}, trx, false);
       await req.document.fixOrder(trx);
 
       // Reindex children
@@ -225,7 +225,7 @@ export default [
     client: 'getHistoryVersion',
     cache: 'manage',
     handler: async (req: Request, trx: Knex.Transaction) => {
-      await req.document.fetchRelated('[_children._type, _type]', trx);
+      await req.document.fetchChildren({}, trx);
       await req.document.fetchVersion(parseInt(req.params.version, 10), trx);
       await req.document.fetchRelationLists(trx);
       return {
@@ -563,7 +563,7 @@ export default [
       const created = dayjs.utc().format();
 
       // Get child nodes
-      await req.document.fetchRelated('_children', trx);
+      await req.document.fetchChildren({}, trx);
 
       // Get json data
       const properties = type._schema.properties;
@@ -715,7 +715,7 @@ export default [
       // Check if ordering request
       if (typeof req.body?.ordering !== 'undefined') {
         // Get children and reorder
-        await req.document.fetchRelated('_children(order)', trx);
+        await req.document.fetchChildren({}, trx);
         await req.document.reorder(
           req.body.ordering.obj_id,
           req.body.ordering.delta,
@@ -749,7 +749,8 @@ export default [
       }
 
       // Get id and path variables of document, parent and siblings
-      await req.document.fetchRelated('_parent._children', trx);
+      await req.document.fetchRelated('_parent', trx);
+      await req.document._parent.fetchChildren({}, trx, false);
       const id = req.body.id || req.document.id;
       const path = req.document.path;
 
@@ -870,6 +871,21 @@ export default [
     client: 'deleteContent',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
+      const Document = models.get('Document');
+
+      // Get parent
+      await req.document.fetchRelated('_parent', trx);
+      const parent = req.document._parent;
+
+      // Trigger onBeforeDelete
+      await config.settings.events.trigger(
+        'onBeforeDelete',
+        req.document,
+        req.user,
+        trx,
+        req.document._parent,
+      );
+
       // Get file and image fields
       const fileFields = req.type.getFactoryFields('File');
       const imageFields = req.type.getFactoryFields('Image');
@@ -898,24 +914,11 @@ export default [
         await mapAsync(files, async (file: any) => await removeFile(file));
       }
 
-      // Get parent
-      await req.document.fetchRelated('_parent', trx);
-      const parent = req.document._parent;
-
-      // Trigger onBeforeDelete
-      await config.settings.events.trigger(
-        'onBeforeDelete',
-        req.document,
-        req.user,
-        trx,
-        req.document._parent,
-      );
-
       // Remove document (versions will be cascaded)
       await req.document.delete(trx);
 
       // Fix order in parent
-      await parent.fetchRelated('_children(order)', trx);
+      await parent.fetchChildren({}, trx, false);
       await parent.fixOrder(trx);
 
       // Reindex children

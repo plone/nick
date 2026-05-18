@@ -40,6 +40,7 @@ export class Catalog extends Model {
   declare modified: string;
   declare end: string;
   declare recurrence: string;
+  declare deleted: boolean;
   declare image_field: string;
   declare image_scales: any;
   declare exclude_from_nav: boolean;
@@ -104,7 +105,11 @@ export class Catalog extends Model {
 
     // Fetch data
     return this.fetchAll(
-      { ...where, _allowedUsersGroupsRoles: ['&&', userGroupsRoles] },
+      {
+        ...where,
+        _allowedUsersGroupsRoles: ['&&', userGroupsRoles],
+        _deleted: false,
+      },
       options,
       trx,
     );
@@ -128,7 +133,7 @@ export class Catalog extends Model {
   ): Promise<any> {
     // Fetch data
     return this.fetchAllRestricted(
-      {},
+      { deleted: false },
       {
         select: [
           '*',
