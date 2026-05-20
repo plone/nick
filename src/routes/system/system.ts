@@ -26,12 +26,17 @@ export default [
       return {
         json: {
           '@id': `${getRootUrl(req)}/@system`,
-          nick_version: packageJson.version,
-          node_version: getNodeVersion(),
-          express_version: packageJson.dependencies.express,
-          objection_version: packageJson.dependencies.objection,
-          knex_version: packageJson.dependencies.knex,
-          postgres_version: postgresVersion,
+          items: [
+            { label: 'Nick', value: packageJson.version },
+            { label: 'Node.js', value: getNodeVersion() },
+            { label: 'Express', value: packageJson.dependencies.express },
+            {
+              label: 'Objection.js',
+              value: packageJson.dependencies.objection,
+            },
+            { label: 'Knex', value: packageJson.dependencies.knex },
+            { label: 'PostgreSQL', value: postgresVersion },
+          ],
         },
       };
     },

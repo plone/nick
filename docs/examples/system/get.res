@@ -3,10 +3,30 @@ Content-Type: application/json
 
 {
   "@id": "http://localhost:8080/@system",
-  "nick_version": "2.8.0",
-  "node_version": "v26.1.0",
-  "express_version": "5.2.1",
-  "objection_version": "3.1.5",
-  "knex_version": "3.2.10",
-  "postgres_version": "18.3"
+   "items": [
+    {
+      "label": "Nick",
+      "value": "2.8.0"
+    },
+    {
+      "label": "Node.js",
+      "value": "v26.1.0"
+    },
+    {
+      "label": "Express",
+      "value": "5.2.1"
+    },
+    {
+      "label": "Objection.js",
+      "value": "3.1.5"
+    },
+    {
+      "label": "Knex",
+      "value": "3.2.10"
+    },
+    {
+      "label": "PostgreSQL",
+      "value": "18.3"
+    }
+  ]
 }

@@ -123,6 +123,7 @@
 - Add link integrity endpoint @robgietema
 - Add recycle bin functionality @robgietema
 - Add recycle bin endpoints @robgietema
+- Change format of system endpoint @robgietema
 
 ### Bugfix
 
