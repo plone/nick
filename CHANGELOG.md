@@ -122,6 +122,7 @@
 - Add is referencing catalog index @robgietema
 - Add link integrity endpoint @robgietema
 - Add recycle bin functionality @robgietema
+- Add recycle bin endpoints @robgietema
 
 ### Bugfix
 

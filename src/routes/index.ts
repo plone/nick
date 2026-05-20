@@ -28,6 +28,7 @@ import navroot from './navroot/navroot';
 import nick from './nick/nick';
 import principals from './principals/principals';
 import querystring from './querystring/querystring';
+import recyclebin from './recyclebin/recyclebin';
 import related from './related/related';
 import roles from './roles/roles';
 import search from './search/search';
@@ -65,6 +66,7 @@ export default [
   ...nick,
   ...principals,
   ...querystring,
+  ...recyclebin,
   ...related,
   ...roles,
   ...search,

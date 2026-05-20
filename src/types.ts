@@ -15,12 +15,18 @@ export type Json = JsonPrimative | JsonComposite;
 
 export interface Model {
   toJson: (req: Request) => any | Promise<any>;
+  toRecyclebinJson: (req: Request) => any | Promise<any>;
   getVocabularyTerm: (req: Request) => VocabularyTerm;
 }
 
 export type Params = { [key: string]: any };
 
 export type Callback = (...args: any[]) => any;
+
+export interface DeleteInfo {
+  actor: string;
+  time: string;
+}
 
 export interface View {
   status: number;

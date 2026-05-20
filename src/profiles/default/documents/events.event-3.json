@@ -1,0 +1,51 @@
+{
+  "uuid": "455ca717-0c68-43a0-88ac-629a72658675",
+  "type": "Event",
+  "title": "Event 3",
+  "owner": "admin",
+  "workflow_state": "published",
+  "created": "2023-04-02T20:10:00.000Z",
+  "modified": "2023-04-02T20:10:00.000Z",
+  "effective": "2023-04-02T20:10:00.000Z",
+  "end": "2025-04-08T12:49:11.379Z",
+  "start": "2025-04-01T12:49:09.565Z",
+  "open_end": false,
+  "attendies": [],
+  "whole_day": false,
+  "recurrence": "DTSTART:20250401T124909Z\nRRULE:FREQ=DAILY;INTERVAL=1;UNTIL=20250408T124900Z",
+  "subjects": ["event"],
+  "language": "en",
+  "blocks": {
+    "79ba8858-1dd3-4719-b731-5951e32fbf79": {
+      "@type": "title"
+    },
+    "1d61035e-1fd3-435a-85a8-c44863f3a2dd": {
+      "@type": "slate",
+      "value": [
+        {
+          "type": "p",
+          "children": [
+            {
+              "text": "This is the first event."
+            }
+          ]
+        }
+      ],
+      "plaintext": "This is the first event."
+    }
+  },
+  "blocks_layout": {
+    "items": [
+      "79ba8858-1dd3-4719-b731-5951e32fbf79",
+      "1d61035e-1fd3-435a-85a8-c44863f3a2dd"
+    ]
+  },
+  "workflow_history": [
+    {
+      "time": "2023-04-02T20:10:00.000Z",
+      "type": "delete",
+      "actor": "admin"
+    }
+  ],
+  "deleted": true
+}

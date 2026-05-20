@@ -160,7 +160,7 @@ routes.map((route: Route) => {
   app[route.op](
     `${regExpEscape(config.settings.prefix)}{*path}${route.view}`,
     route.middleware ||
-      ((req: Request, res: Response, next: NextFunction) => next()),
+      ((_req: Request, _res: Response, next: NextFunction) => next()),
     async (req: any, res: Response): Promise<any> => {
       // Start transaction
       const Document = models.get('Document');

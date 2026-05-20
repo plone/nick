@@ -5,12 +5,20 @@
 
 // Type imports
 import type { Knex } from 'knex';
-import type { Json, Request } from '../../types';
+import type { DeleteInfo, Json, Request } from '../../types';
 
 // External imports
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
-import { compact, drop, flatten, head, last, uniq } from 'es-toolkit/array';
+import {
+  compact,
+  drop,
+  flatten,
+  flattenDeep,
+  head,
+  last,
+  uniq,
+} from 'es-toolkit/array';
 import { isEmpty, isObject } from 'es-toolkit/compat';
 import { mapValues, omit, omitBy, pick, pickBy } from 'es-toolkit/object';
 import { isFunction, isUndefined } from 'es-toolkit/predicate';
@@ -24,7 +32,7 @@ import { DocumentCollection } from '../../collections/document/document';
 import languages from '../../constants/languages';
 import { generate, embed } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
-import { copyFile } from '../../helpers/fs/fs';
+import { copyFile, removeFile } from '../../helpers/fs/fs';
 import { lockExpired } from '../../helpers/lock/lock';
 import { slateToMarkdown } from '../../helpers/markdown/markdown';
 import { getRootUrl } from '../../helpers/url/url';
@@ -72,10 +80,11 @@ export class Document extends Model {
   declare workflow_history: {
     time: string;
     actor: string;
-    action: string;
-    state_title: string;
-    review_state: string;
-    transition_title: string;
+    type?: string;
+    action?: string;
+    state_title?: string;
+    review_state?: string;
+    transition_title?: string;
   }[];
   declare translation_group: string;
   declare language: string;
@@ -417,6 +426,38 @@ export class Document extends Model {
           await child.update({ position_in_parent: index }, trx),
       ),
     );
+  }
+  /**
+   * Returns Recyclebin JSON data.
+   * @method toRecyclebinJson
+   * @param {Request} req Request object.
+   * @returns {Promise<Json>} JSON object.
+   */
+  async toRecyclebinJson(req: Request): Promise<Json> {
+    const self: InstanceType<typeof Document> = this;
+    const deleteInfo: DeleteInfo = self.workflow_history.at(-1) || {
+      actor: '',
+      time: '',
+    };
+
+    return {
+      '@id': `${self.getUrl(req)}/@recyclebin/${self.uuid}`,
+      '@type': self.type,
+      actions: [
+        { purge: `${self.getUrl(req)}/@recyclebin/${self.uuid}` },
+        { restore: `${self.getUrl(req)}/@recyclebin/${self.uuid}/restore` },
+      ],
+      deleted_by: deleteInfo.actor,
+      deletion_date: deleteInfo.time,
+      has_children: self._children ? self._children.length > 0 : false,
+      id: self.id,
+      language: self.language,
+      parent_path: self.path.split('/').slice(0, -1).join('/') || '/',
+      path: self.path,
+      recycle_id: self.uuid,
+      review_state: self.workflow_state,
+      title: self.getTitle(),
+    };
   }
 
   /**
@@ -1387,8 +1428,8 @@ export class Document extends Model {
     } else {
       await self.fetchRelated('_children(order)', trx);
     }
-    self._children.filter(
-      (item: InstanceType<typeof Document>) => item.deleted,
+    self._children = self._children.filter(
+      (item: InstanceType<typeof Document>) => !item.deleted,
     );
   }
 
@@ -1515,6 +1556,46 @@ ${Object.keys(event)
   .map((key) => `${key}:${event[key]}`)
   .join('\n')}
 END:VEVENT`;
+  }
+
+  /**
+   * Delete files and images associated with the document
+   * @param {Knex.Transaction} trx
+   * @return {*}  {Promise<void>}
+   */
+  async deleteFilesAndImages(trx: Knex.Transaction): Promise<void> {
+    const self: InstanceType<typeof Document> = this;
+    if (!self._type) {
+      await self.fetchRelated('_type', trx);
+    }
+
+    // Get file and image fields
+    const fileFields = self._type.getFactoryFields('File');
+    const imageFields = self._type.getFactoryFields('Image');
+
+    // If file fields exist
+    if (fileFields.length > 0 || imageFields.length > 0) {
+      // Get versions
+      await self.fetchRelated('_versions', trx);
+
+      // Get all file uuids from all versions and all fields
+      const files = uniq(
+        flattenDeep(
+          self._versions.map((version: any) => [
+            ...fileFields.map((field: string) => version.json[field].uuid),
+            ...imageFields.map((field: string) => [
+              version.json[field].uuid,
+              ...Object.keys(config.settings.imageScales).map(
+                (scale) => version.json[field].scales[scale].uuid,
+              ),
+            ]),
+          ]),
+        ),
+      );
+
+      // Remove files
+      await mapAsync(files, async (file: any) => await removeFile(file));
+    }
   }
 
   /**

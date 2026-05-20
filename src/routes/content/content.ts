@@ -915,33 +915,8 @@ export default [
           );
         });
       } else {
-        // Get file and image fields
-        const fileFields = req.type.getFactoryFields('File');
-        const imageFields = req.type.getFactoryFields('Image');
-
-        // If file fields exist
-        if (fileFields.length > 0 || imageFields.length > 0) {
-          // Get versions
-          await req.document.fetchRelated('_versions', trx);
-
-          // Get all file uuids from all versions and all fields
-          const files = uniq(
-            flattenDeep(
-              req.document._versions.map((version: any) => [
-                ...fileFields.map((field: string) => version.json[field].uuid),
-                ...imageFields.map((field: string) => [
-                  version.json[field].uuid,
-                  ...Object.keys(config.settings.imageScales).map(
-                    (scale) => version.json[field].scales[scale].uuid,
-                  ),
-                ]),
-              ]),
-            ),
-          );
-
-          // Remove files
-          await mapAsync(files, async (file: any) => await removeFile(file));
-        }
+        // Delete files and images of document and versions
+        await req.document.deleteFilesAndImages(trx);
 
         // Remove document (versions will be cascaded)
         await req.document.delete(trx);

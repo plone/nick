@@ -124,6 +124,7 @@ export default [
           const path = getUrl(req);
           const documents = await Document.buildQuery({}, {}, trx)
             .select('type')
+            .where('deleted', false)
             .count()
             .groupBy('type');
           const counts: { [key: string]: number } = {};
