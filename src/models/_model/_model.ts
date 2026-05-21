@@ -4,21 +4,21 @@
  */
 
 // Type imports
-import type { Request, VocabularyTerm } from "../../types";
+import type { Request, VocabularyTerm } from '../../types';
 
 // External imports
-import { difference } from "es-toolkit/array";
-import { isEmpty, isObject } from "es-toolkit/compat";
-import { mapKeys, omit } from "es-toolkit/object";
-import type { Knex } from "knex";
-import { Model as ObjectionModel } from "objection";
+import { difference } from 'es-toolkit/array';
+import { isEmpty, isObject } from 'es-toolkit/compat';
+import { mapKeys, omit } from 'es-toolkit/object';
+import type { Knex } from 'knex';
+import { Model as ObjectionModel } from 'objection';
 
 // Internal imports
-import { Collection } from "../../collections/_collection/_collection";
-import { formatAttribute } from "../../helpers/format/format";
-import { knex } from "../../helpers/knex/knex";
-import { log } from "../../helpers/log/log";
-import { removeUndefined } from "../../helpers/utils/utils";
+import { Collection } from '../../collections/_collection/_collection';
+import { formatAttribute } from '../../helpers/format/format';
+import { knex } from '../../helpers/knex/knex';
+import { log } from '../../helpers/log/log';
+import { removeUndefined } from '../../helpers/utils/utils';
 
 // Give the knex instance to objection.
 ObjectionModel.knex(knex);
@@ -93,23 +93,23 @@ export class Model extends ObjectionModel {
       mapKeys(where, (value: any, key: string | number) => {
         // user and group are reserved words so need to be wrapper in quotes
         const attribute = formatAttribute(`${key}`);
-        let operator = Array.isArray(value) ? value[0] : "=";
+        let operator = Array.isArray(value) ? value[0] : '=';
         const values = Array.isArray(value) ? value[1] : value;
         let valueWrapper =
-          Array.isArray(values) && operator !== "&&" ? "any(?)" : "?";
-        if (Array.isArray(values) && operator === "all") {
-          operator = "=";
-          valueWrapper = "all(?)";
+          Array.isArray(values) && operator !== '&&' ? 'any(?)' : '?';
+        if (Array.isArray(values) && operator === 'all') {
+          operator = '=';
+          valueWrapper = 'all(?)';
         }
-        if (operator === "@@") {
-          valueWrapper = "to_tsquery(?)";
+        if (operator === '@@') {
+          valueWrapper = 'to_tsquery(?)';
         }
         if (values === null) {
           query =
-            operator === "is not"
+            operator === 'is not'
               ? query.whereNotNull(`${key}`)
               : query.whereNull(`${key}`);
-        } else if (operator === "raw") {
+        } else if (operator === 'raw') {
           query = query.whereRaw(values);
         } else {
           query = query.whereRaw(`${attribute} ${operator} ${valueWrapper}`, [
@@ -130,7 +130,7 @@ export class Model extends ObjectionModel {
      */
     if (options.order) {
       // Check if default order
-      if (typeof options.order === "string") {
+      if (typeof options.order === 'string') {
         query = query.orderByRaw(formatAttribute(options.order));
       } else if (Array.isArray(options.order)) {
         query = query.orderBy(
@@ -139,7 +139,7 @@ export class Model extends ObjectionModel {
           })),
         );
       } else {
-        let order = "";
+        let order = '';
         const orderOption = options.order as OrderOption;
         // Check if values are defined
         if (orderOption.values) {
@@ -148,13 +148,13 @@ export class Model extends ObjectionModel {
               (value: string, index: number) =>
                 `when ${orderOption.column} = '${value}' then ${index}`,
             )
-            .join(" ")} end`;
+            .join(' ')} end`;
         } else {
           // Order by column
-          order = formatAttribute(orderOption.column || "");
+          order = formatAttribute(orderOption.column || '');
         }
         query = query.orderByRaw(
-          `${order}${orderOption.reverse ? " DESC" : ""}`,
+          `${order}${orderOption.reverse ? ' DESC' : ''}`,
         );
       }
     }
@@ -288,7 +288,10 @@ export class Model extends ObjectionModel {
    * @param {Knex.Transaction} trx Transaction object.
    * @returns {Promise<boolean>} True if model deleted.
    */
-  static async deleteById(id: string, trx?: Knex.Transaction): Promise<boolean> {
+  static async deleteById(
+    id: string,
+    trx?: Knex.Transaction,
+  ): Promise<boolean> {
     const numDeleted = await this.query(trx).deleteById(id);
     return numDeleted > 0;
   }
