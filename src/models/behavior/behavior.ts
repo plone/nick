@@ -18,6 +18,8 @@ import type { Schema } from '../../types';
  * @extends Model
  */
 export class Behavior extends Model {
+  static tableName: string = 'behavior';
+
   // Declare properties
   declare id: string;
   declare schema: Schema;

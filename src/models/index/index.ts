@@ -19,6 +19,7 @@ import { IndexCollection } from '../../collections/index/index';
  * @extends Model
  */
 export class Index extends Model {
+  static tableName: string = 'index';
   static collection: (typeof Model)['collection'] =
     IndexCollection as unknown as (typeof Model)['collection'];
 

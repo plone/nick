@@ -204,7 +204,7 @@ msgid "After today"
 msgstr "Tar éis an lae inniu"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:156
+#: src/models/type/type.ts:158
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "Cineálacha Ábhair atá Ceadaithe"
@@ -373,7 +373,7 @@ msgid "Before today"
 msgstr "Roimh an lá inniu"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:139
+#: src/models/type/type.ts:141
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "Iompraíochtaí"
@@ -656,7 +656,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:163
+#: src/models/type/type.ts:165
 #: src/profiles/core/catalog.json:233
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -937,7 +937,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:169
+#: src/models/type/type.ts:171
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "Scag Cineálacha atá san Áireamh"
@@ -1109,7 +1109,7 @@ msgid "Is"
 msgstr "Is"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:170
+#: src/models/type/type.ts:172
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "Is féidir le míreanna den chineál seo feidhmiú mar fhillteán ina bhfuil míreanna eile. Cad iad na cineálacha ábhair ba cheart a cheadú istigh?"
@@ -2419,7 +2419,7 @@ msgid "Type"
 msgstr "Cineál"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:178
+#: src/models/type/type.ts:180
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "Ainm Cineáil"

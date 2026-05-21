@@ -204,7 +204,7 @@ msgid "After today"
 msgstr "今日以降"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:156
+#: src/models/type/type.ts:158
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "許可されたコンテンツタイプ"
@@ -373,7 +373,7 @@ msgid "Before today"
 msgstr "今日より前"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:139
+#: src/models/type/type.ts:141
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "振る舞い"
@@ -656,7 +656,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:163
+#: src/models/type/type.ts:165
 #: src/profiles/core/catalog.json:233
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -937,7 +937,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:169
+#: src/models/type/type.ts:171
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "含まれるタイプをフィルタリング"
@@ -1109,7 +1109,7 @@ msgid "Is"
 msgstr "である"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:170
+#: src/models/type/type.ts:172
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "このタイプのアイテムは、他のアイテムを含むフォルダーとして機能できます。内部で許可するコンテンツタイプは何ですか？"
@@ -2419,7 +2419,7 @@ msgid "Type"
 msgstr "タイプ"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:178
+#: src/models/type/type.ts:180
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "タイプ名"

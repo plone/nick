@@ -23,6 +23,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Type extends Model {
+  static tableName: string = 'type';
+
   // Declare properties.
   declare schema: Schema;
   declare _schema: Schema;

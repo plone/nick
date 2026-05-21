@@ -13,6 +13,8 @@ import { Model } from '../_model/_model';
  * @extends Model
  */
 export class Permission extends Model {
+  static tableName: string = 'permission';
+
   // Set relation mappings
   static get relationMappings() {
     const Role = models.get('Role');

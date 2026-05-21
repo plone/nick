@@ -21,6 +21,8 @@ import { getUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Workflow extends Model {
+  static tableName: string = 'workflow';
+
   // Declare properties
   declare json: WorkflowType;
 

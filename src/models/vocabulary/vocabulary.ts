@@ -19,6 +19,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Vocabulary extends Model {
+  static tableName: string = 'vocabulary';
+
   // Declare properties.
   declare id: string;
   declare items: VocabularyTerm[];

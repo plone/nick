@@ -18,6 +18,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class ContentRule extends Model {
+  static tableName: string = 'content_rule';
+
   // Declare properties
   declare id: string;
   declare title: string;

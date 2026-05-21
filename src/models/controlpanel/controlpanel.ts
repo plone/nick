@@ -20,6 +20,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Controlpanel extends Model {
+  static tableName: string = 'controlpanel';
+
   // Declare properties
   declare id: string;
   declare title: string;

@@ -204,7 +204,7 @@ msgid "After today"
 msgstr "Después de hoy"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:156
+#: src/models/type/type.ts:158
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "Tipos de contenido permitidos"
@@ -373,7 +373,7 @@ msgid "Before today"
 msgstr "Antes de hoy"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:139
+#: src/models/type/type.ts:141
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "Comportamientos"
@@ -656,7 +656,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:163
+#: src/models/type/type.ts:165
 #: src/profiles/core/catalog.json:233
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -937,7 +937,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:169
+#: src/models/type/type.ts:171
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "Filtrar tipos contenidos"
@@ -1109,7 +1109,7 @@ msgid "Is"
 msgstr "Es"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:170
+#: src/models/type/type.ts:172
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "Los elementos de este tipo pueden actuar como una carpeta que contiene otros elementos. ¿Qué tipos de contenido deberían permitirse dentro?"
@@ -2419,7 +2419,7 @@ msgid "Type"
 msgstr "Tipo"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:178
+#: src/models/type/type.ts:180
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "Nombre del tipo"

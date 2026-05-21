@@ -12,5 +12,6 @@ import { Model } from '../_model/_model';
  * @extends Model
  */
 export class File extends Model {
+  static tableName: string = 'file';
   static idColumn: string = 'uuid';
 }

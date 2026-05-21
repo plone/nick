@@ -11,4 +11,6 @@ import { Model } from '../_model/_model';
  * @class Profile
  * @extends Model
  */
-export class Profile extends Model {}
+export class Profile extends Model {
+  static tableName: string = 'profile';
+}

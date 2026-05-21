@@ -51,6 +51,7 @@ dayjs.extend(utc);
  * @extends Model
  */
 export class Document extends Model {
+  static tableName: string = 'document';
   static collection: (typeof Model)['collection'] =
     DocumentCollection as unknown as (typeof Model)['collection'];
 

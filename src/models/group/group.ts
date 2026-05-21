@@ -21,6 +21,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Group extends Model {
+  static tableName: string = 'group';
+
   // Declare properties
   declare id: string;
   declare title: string;

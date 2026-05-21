@@ -17,7 +17,7 @@ import { Model } from '../_model/_model';
  * @extends Model
  */
 export class Redirect extends Model {
-  // Id column
+  static tableName: string = 'redirect';
   static get idColumn(): string[] {
     return ['document', 'path'];
   }

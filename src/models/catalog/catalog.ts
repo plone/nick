@@ -26,6 +26,7 @@ dayjs.extend(utc);
  * @extends Model
  */
 export class Catalog extends Model {
+  static tableName: string = 'catalog';
   static idColumn: string = 'document';
 
   // Declare properties

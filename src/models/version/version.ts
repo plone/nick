@@ -20,6 +20,8 @@ import { getRootUrl, getUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Version extends Model {
+  static tableName: string = 'version';
+
   // Declare properties.
   declare version: number;
   declare created: string;

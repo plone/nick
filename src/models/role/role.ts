@@ -21,6 +21,8 @@ import { getRootUrl } from '../../helpers/url/url';
  * @extends Model
  */
 export class Role extends Model {
+  static tableName: string = 'role';
+
   // Declare properties
   declare id: string;
   declare title: string;
