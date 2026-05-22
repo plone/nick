@@ -62,11 +62,11 @@ export const config = {
   prefix: '',
   userRegistration: false,
   profiles: [
-    `${__dirname}/src/profiles/core`,
-    /* `${__dirname}/src/profiles/ai`, */
-    `${__dirname}/src/profiles/default`,
-    /* `${__dirname}/src/profiles/multilingual`, */
-    /* `${__dirname}/src/profiles/multilingualcontent`, */
+    '@robgietema/nick:core',
+    /* '@robgietema/nick:ai', */
+    '@robgietema/nick:default',
+    /* '@robgietema/nick:multilingual', */
+    /* '@robgietema/nick:multilingualcontent', */
   ],
   push: {
     enabled: false,
