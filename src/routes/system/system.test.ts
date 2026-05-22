@@ -16,7 +16,7 @@ vi.mock('../../helpers/utils/utils', async () => {
   return {
     __esModule: true,
     ...originalModule,
-    getNodeVersion: () => 'v26.1.0',
+    getNodeVersion: () => 'v26.2.0',
   };
 });
 

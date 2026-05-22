@@ -10,7 +10,7 @@ Content-Type: application/json
     },
     {
       "label": "Node.js",
-      "value": "v26.1.0"
+      "value": "v26.2.0"
     },
     {
       "label": "Express",
