@@ -1,47 +1,10 @@
-.vscode/
-logs
-*.log
-npm-debug.log*
-.DS_Store
-
 # Node
 node_modules
 coverage
-jsdoc
-webpack-assets.json
-webpack-stats.json
-npm-debug.log
-dist
-junit.xml
-eslint.xml
-yarn-error.log
-build
-locales/translations.json
 
 # Other
 .DS_Store
-.idea
-lighthouse-report.html
 .vscode/
-.#*
-*~
-
-/var/blobstorage
-
-# Tests
-/tests/bin
-/tests/develop-eggs
-/tests/parts
-/tests/.installed.cfg
-*.pyc
-geckodriver.log
-log.html
-output.xml
-report.html
-selenium-screenshot-*.png
-/selenium/
-cypress/videos/
-cypress/screenshots
 
 # Local environment setup
 .env
@@ -50,16 +13,7 @@ cypress/screenshots
 .env.test.local
 .env.production.local
 
-data
-omelette
-
-public/critical.css
-src/addons/*
-
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
-
+# Project specific
 /config.ts
+/var/blobstorage
+/var/log
