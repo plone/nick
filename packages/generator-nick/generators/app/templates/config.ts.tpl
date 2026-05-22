@@ -49,9 +49,11 @@ export const config = {
   prefix: '',
   userRegistration: true,
   profiles: [
-    `${__dirname}/src/develop/nick/src/profiles/core`,
-    /* `${__dirname}/src/develop/nick/src/profiles/ai`, */
-    `${__dirname}/src/profiles/default`,
+    '@robgietema/nick:core',
+    /* '@robgietema/nick:ai', */
+    '@robgietema/nick:default',
+    /* '@robgietema/nick:multilingual', */
+    /* '@robgietema/nick:multilingualcontent', */
   ],
   push: {
     enabled: false,

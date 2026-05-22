@@ -4,31 +4,35 @@
  * @module scripts/seed
  */
 
-import { last } from 'es-toolkit/array';
+// Type imports
+import type { Knex } from 'knex';
 
+// External imports
+import { last } from 'es-toolkit/array';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Internal imports
 import config from '../src/helpers/config/config';
-import models from '../src/models';
 import { fileExists } from '../src/helpers/fs/fs';
+import { stripI18n } from '../src/helpers/i18n/i18n';
 import { knex } from '../src/helpers/knex/knex';
 import { mapAsync } from '../src/helpers/utils/utils';
-import { stripI18n } from '../src/helpers/i18n/i18n';
-
-import { seedProfile } from '../src/seeds/profile/profile';
-import { seedPermission } from '../src/seeds/permission/permission';
-import { seedRole } from '../src/seeds/role/role';
-import { seedGroup } from '../src/seeds/group/group';
-import { seedUser } from '../src/seeds/user/user';
-import { seedWorkflow } from '../src/seeds/workflow/workflow';
-import { seedType } from '../src/seeds/type/type';
-import { seedCatalog } from '../src/seeds/catalog/catalog';
-import { seedDocument } from '../src/seeds/document/document';
-import { seedRedirect } from '../src/seeds/redirect/redirect';
+import models from '../src/models';
 import { seedAction } from '../src/seeds/action/action';
-import { seedControlpanel } from '../src/seeds/controlpanel/controlpanel';
-import { seedVocabulary } from '../src/seeds/vocabulary/vocabulary';
+import { seedCatalog } from '../src/seeds/catalog/catalog';
 import { seedContentRule } from '../src/seeds/content_rule/content_rule';
-
-import type { Knex } from 'knex';
+import { seedControlpanel } from '../src/seeds/controlpanel/controlpanel';
+import { seedDocument } from '../src/seeds/document/document';
+import { seedGroup } from '../src/seeds/group/group';
+import { seedPermission } from '../src/seeds/permission/permission';
+import { seedProfile } from '../src/seeds/profile/profile';
+import { seedRole } from '../src/seeds/role/role';
+import { seedRedirect } from '../src/seeds/redirect/redirect';
+import { seedType } from '../src/seeds/type/type';
+import { seedUser } from '../src/seeds/user/user';
+import { seedVocabulary } from '../src/seeds/vocabulary/vocabulary';
+import { seedWorkflow } from '../src/seeds/workflow/workflow';
 
 const reset = '\x1b[0m';
 const underline = '\x1b[4m';
@@ -61,7 +65,14 @@ async function main() {
   const Profile = models.get('Profile');
 
   try {
-    await mapAsync(config.settings.profiles, async (profilePath, index) => {
+    await mapAsync(config.settings.profiles, async (profile, index) => {
+      const [packageName, profileName] = profile.split(':');
+      const packageEntry = fileURLToPath(import.meta.resolve(packageName));
+      const profilePath = path.resolve(
+        path.dirname(packageEntry),
+        `./profiles/${profileName}`,
+      );
+
       if (await fileExists(`${profilePath}/metadata`)) {
         const metadata = stripI18n(await import(`${profilePath}/metadata`));
         const profile = await Profile.fetchOne({ id: metadata.id }, {}, trx);

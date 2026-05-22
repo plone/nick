@@ -124,6 +124,7 @@
 - Add recycle bin functionality @robgietema
 - Add recycle bin endpoints @robgietema
 - Change format of system endpoint @robgietema
+- Profiles are now specified by package name and profile name @robgietema
 
 ### Bugfix
 

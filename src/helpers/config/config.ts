@@ -98,8 +98,8 @@ class Config {
       prefix: config.prefix || '',
       userRegistration: config.userRegistration || false,
       profiles: config.profiles || [
-        `${__dirname}/src/profiles/core`,
-        `${__dirname}/src/profiles/default`,
+        '@robgietema/nick:core',
+        '@robgietema/nick:default',
       ],
       requestLimit: config.requestLimit || {
         api: '1mb',
