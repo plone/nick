@@ -507,14 +507,56 @@ export default [
     client: 'getContent',
     cache: 'content',
     handler: async (req: Request, trx: Knex.Transaction) => {
+      // Fetch data
       await req.document.fetchRelationLists(trx);
       await req.document.fetchChildren(req, trx);
       await req.document.restrictChildren(req, trx);
+
+      // Check if calender accept
+      if (req.headers.accept === 'text/calendar') {
+        const ics = await req.document.toICS(req, trx);
+        return {
+          headers: {
+            'content-type': 'text/calendar',
+            'content-disposition': `attachment; filename="${req.document.id}.ics"`,
+          },
+          xkeys: [req.document.uuid],
+          html: ics,
+        };
+      }
+
+      // Check if rss accept
+      if (req.headers.accept === 'application/rss+xml') {
+        const rss = await req.document.toRSS(req, trx);
+        return {
+          headers: {
+            'content-type': 'application/rss+xml',
+            'content-disposition': `attachment; filename="${req.document.id}.rss"`,
+          },
+          xkeys: [req.document.uuid],
+          html: rss,
+        };
+      }
+
+      // Check if rss accept
+      if (req.headers.accept === 'text/markdown') {
+        const markdown = await req.document.toMarkdown();
+        return {
+          headers: {
+            'content-type': 'text/markdown',
+            'content-disposition': `attachment; filename="${req.document.id}.md"`,
+          },
+          xkeys: [req.document.uuid],
+          html: markdown,
+        };
+      }
+
       const json = await req.document.toJson(
         req,
         await getComponents(req, trx, req.query?.expand?.split(',') || []),
       );
       return {
+        xkeys: [req.document.uuid],
         json: await handleBlockReferences(json, trx),
       };
     },
