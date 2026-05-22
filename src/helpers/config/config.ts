@@ -37,9 +37,9 @@ const {
 //   ? (await import(REGISTRYCONFIG)).nick
 //   : (await import(`${process.cwd()}/config`)).config;
 
-const config = {}
-  const nickEntry = fileURLToPath(import.meta.resolve('@robgietema/nick'));
-  const nickRoot = path.dirname(nickEntry);
+const config = {};
+const nickEntry = fileURLToPath(import.meta.resolve('@robgietema/nick'));
+const nickRoot = path.dirname(nickEntry);
 /**
  * A model for the config.
  * @class Config
