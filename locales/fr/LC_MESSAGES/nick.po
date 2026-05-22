@@ -704,7 +704,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:746
+#: src/routes/content/content.ts:788
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Document verrouillé"
@@ -1742,7 +1742,7 @@ msgid "Rename"
 msgstr "Renommer"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:558
+#: src/routes/content/content.ts:600
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Champ(s) obligatoire(s) manquant(s)."
@@ -2431,7 +2431,7 @@ msgid "Type of the current document is not found."
 msgstr "Le type du document actuel n'a pas été trouvé."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:547
+#: src/routes/content/content.ts:589
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2700,7 +2700,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:743
+#: src/routes/content/content.ts:785
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Tu n'as pas la permission de sauvegarder ce document car il est verrouillé par un autre utilisateur."
