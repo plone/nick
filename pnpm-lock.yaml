@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@formatjs/cli':
-        specifier: 6.16.2
-        version: 6.16.2
+        specifier: 6.16.3
+        version: 6.16.3
       '@formatjs/intl':
         specifier: 4.1.12
         version: 4.1.12
@@ -54,8 +54,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1
       nodemailer:
-        specifier: 8.0.7
-        version: 8.0.7
+        specifier: 8.0.8
+        version: 8.0.8
       nodemon:
         specifier: 3.1.14
         version: 3.1.14
@@ -518,8 +518,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@formatjs/cli@6.16.2':
-    resolution: {integrity: sha512-XnM4kqifDh1+7/ryNdoNlSE9a2LlmccVpH0MiXBO+1r47Gjobb8hGlBr2/1BUQbNI+tA9PKDLRIBxB1vrQYSrg==}
+  '@formatjs/cli@6.16.3':
+    resolution: {integrity: sha512-AN6uZR1xnl3V215HHJiKiA+DvNMrO/XfQ7hOyq3gXfHJwKSgLLQFtSFxw9A1O0SaGC2E2Kwo4mqwS1ZCLGe/qw==}
     engines: {node: '>= 20.12.0'}
     hasBin: true
     peerDependencies:
@@ -2017,8 +2017,8 @@ packages:
     resolution: {integrity: sha512-GYVXHE2KnrzAfsAjl4uP++evGFCrAU1jta4ubEjIG7YWt/64Gqv66a30yKwWczVjA6j3bM4nBwH7Pk1JmDHaxQ==}
     engines: {node: '>=18'}
 
-  nodemailer@8.0.7:
-    resolution: {integrity: sha512-pkjE4mkBzQjdJT4/UmlKl3pX0rC9fZmjh7c6C9o7lv66Ac6w9WCnzPzhbPNxwZAzlF4mdq4CSWB5+FbK6FWCow==}
+  nodemailer@8.0.8:
+    resolution: {integrity: sha512-p+XsnzXGdtIHXUu2ugxdfG+eX2nehsGhMjW9h0CWj1BhE30hrFz0kh0yIM0/VjUgVsRrDj+80ZO+I1nSkGE4tA==}
     engines: {node: '>=6.0.0'}
 
   nodemon@3.1.14:
@@ -2370,8 +2370,8 @@ packages:
   tinybench@2.9.0:
     resolution: {integrity: sha512-0+DUvqWMValLmha6lr4kD8iAMK1HzV0/aKnCtWb9v9641TnP/MFb7Pc2bxoxQjTXAErryXVgUOfv2YqNllqGeg==}
 
-  tinyexec@1.1.2:
-    resolution: {integrity: sha512-dAqSqE/RabpBKI8+h26GfLq6Vb3JVXs30XYQjdMjaj/c2tS8IYYMbIzP599KtRj7c57/wYApb3QjgRgXmrCukA==}
+  tinyexec@1.2.2:
+    resolution: {integrity: sha512-M/Q0B2cp4K7kynaT/vnED1j8TlLY+Pp7C6Wl2bl/7u/F0mUVwdyOpwomQb8JpYLitHUssAJRmLZdMCGsrx7i+g==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.16:
@@ -2877,7 +2877,7 @@ snapshots:
   '@formatjs/cli-native-win32-x64@1.1.1':
     optional: true
 
-  '@formatjs/cli@6.16.2':
+  '@formatjs/cli@6.16.3':
     optionalDependencies:
       '@formatjs/cli-native-darwin-arm64': 1.1.0
       '@formatjs/cli-native-linux-arm64': 1.2.0
@@ -4220,7 +4220,7 @@ snapshots:
 
   node-releases@2.0.46: {}
 
-  nodemailer@8.0.7: {}
+  nodemailer@8.0.8: {}
 
   nodemon@3.1.14:
     dependencies:
@@ -4622,7 +4622,7 @@ snapshots:
 
   tinybench@2.9.0: {}
 
-  tinyexec@1.1.2: {}
+  tinyexec@1.2.2: {}
 
   tinyglobby@0.2.16:
     dependencies:
@@ -4730,7 +4730,7 @@ snapshots:
       picomatch: 4.0.4
       std-env: 4.1.0
       tinybench: 2.9.0
-      tinyexec: 1.1.2
+      tinyexec: 1.2.2
       tinyglobby: 0.2.16
       tinyrainbow: 3.1.0
       vite: 8.0.11(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.3)
