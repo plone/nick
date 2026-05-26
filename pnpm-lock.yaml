@@ -82,11 +82,11 @@ importers:
         version: 14.0.0
     devDependencies:
       '@babel/core':
-        specifier: 8.0.0-rc.5
-        version: 8.0.0-rc.5
+        specifier: 8.0.0-rc.6
+        version: 8.0.0-rc.6
       '@babel/plugin-transform-typescript':
-        specifier: 8.0.0-rc.5
-        version: 8.0.0-rc.5(@babel/core@8.0.0-rc.5)
+        specifier: 8.0.0-rc.6
+        version: 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
       '@eslint/eslintrc':
         specifier: 3.3.5
         version: 3.3.5
@@ -167,14 +167,9 @@ packages:
     resolution: {integrity: sha512-9ikfbIp7PCtV/mo8NYrzag1TYInVJAKLwpSoA28+3Bl5z1KVYt5ZGvBZD57yJlf/0HsCntlTlHHodu+eMpUffQ==}
     engines: {node: ^22.18.0 || >=24.11.0}
 
-  '@babel/core@8.0.0-rc.5':
-    resolution: {integrity: sha512-/lVf0AAYFvdHFYm5nc1LsUCs/o2eDCRhHK/uuhTeyu3ZDPJBusxakSB5dMqfvrvXzQrohr0Bb2zlnDT2UJg5jg==}
+  '@babel/core@8.0.0-rc.6':
+    resolution: {integrity: sha512-89SVbTu7p+M/W052SFC7R5QuQYgypfuO6HmBBbhA/Kzl6gME8Ly2QrVpIegvTxmcQKOzAPIxiEIfNk+Jxd26mw==}
     engines: {node: ^22.18.0 || >=24.11.0}
-    peerDependencies:
-      '@babel/preset-typescript': ^8.0.0-0
-    peerDependenciesMeta:
-      '@babel/preset-typescript':
-        optional: true
 
   '@babel/generator@8.0.0-rc.6':
     resolution: {integrity: sha512-6mIzgVK8DgEzvIapoQwhXTMnnkuE4STQmVv9H03i/tZ2ml8oev3TRvZJgTenK2Bsq0YWNtzOrFdTyNzCMFtjJQ==}
@@ -262,11 +257,11 @@ packages:
     peerDependencies:
       '@babel/core': ^8.0.0-rc.6
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.5':
-    resolution: {integrity: sha512-LAP7JYiRn5624BZjJo5DyJeWtq/A73SHQCOD0YSzTI9KNmKTq/LBXA2ujZtFwbQCiwRWeo7wcJts0gxwgqS+/A==}
+  '@babel/plugin-transform-typescript@8.0.0-rc.6':
+    resolution: {integrity: sha512-dCs2FcdGkauwKbs7w7hXATlq8T8e6QZz1F/PIO6xAyhyxk/iaqMXqgdhfIrWQQkzvjeYgW43WW8SVX1zpyFLjA==}
     engines: {node: ^22.18.0 || >=24.11.0}
     peerDependencies:
-      '@babel/core': ^8.0.0-rc.5
+      '@babel/core': ^8.0.0-rc.6
 
   '@babel/template@8.0.0-rc.6':
     resolution: {integrity: sha512-CZFjZblLiIUEFghbB3sKs3rpYrwo65rLIklw/gNpwBm326cU6TH/xzvJZlZ+H9HpDi00eDXqNJR8CtEKW3oc/A==}
@@ -1526,6 +1521,10 @@ packages:
     resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
     engines: {node: '>= 18.0.0'}
 
+  find-up-simple@1.0.1:
+    resolution: {integrity: sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ==}
+    engines: {node: '>=18'}
+
   find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
     engines: {node: '>=10'}
@@ -2581,7 +2580,7 @@ snapshots:
 
   '@babel/compat-data@8.0.0-rc.6': {}
 
-  '@babel/core@8.0.0-rc.5':
+  '@babel/core@8.0.0-rc.6':
     dependencies:
       '@babel/code-frame': 8.0.0-rc.6
       '@babel/generator': 8.0.0-rc.6
@@ -2593,6 +2592,7 @@ snapshots:
       '@babel/types': 8.0.0-rc.6
       '@types/gensync': 1.0.5
       convert-source-map: 2.0.0
+      find-up-simple: 1.0.1
       gensync: 1.0.0-beta.2
       import-meta-resolve: 4.2.0
       json5: 2.2.3
@@ -2620,13 +2620,13 @@ snapshots:
       lru-cache: 7.18.3
       semver: 7.8.1
 
-  '@babel/helper-create-class-features-plugin@8.0.0-rc.6(@babel/core@8.0.0-rc.5)':
+  '@babel/helper-create-class-features-plugin@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
     dependencies:
-      '@babel/core': 8.0.0-rc.5
+      '@babel/core': 8.0.0-rc.6
       '@babel/helper-annotate-as-pure': 8.0.0-rc.6
       '@babel/helper-member-expression-to-functions': 8.0.0-rc.6
       '@babel/helper-optimise-call-expression': 8.0.0-rc.6
-      '@babel/helper-replace-supers': 8.0.0-rc.6(@babel/core@8.0.0-rc.5)
+      '@babel/helper-replace-supers': 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0-rc.6
       '@babel/traverse': 8.0.0-rc.6
       semver: 7.8.1
@@ -2642,13 +2642,13 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.0-rc.6
 
-  '@babel/helper-plugin-utils@8.0.0-rc.6(@babel/core@8.0.0-rc.5)':
+  '@babel/helper-plugin-utils@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
     dependencies:
-      '@babel/core': 8.0.0-rc.5
+      '@babel/core': 8.0.0-rc.6
 
-  '@babel/helper-replace-supers@8.0.0-rc.6(@babel/core@8.0.0-rc.5)':
+  '@babel/helper-replace-supers@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
     dependencies:
-      '@babel/core': 8.0.0-rc.5
+      '@babel/core': 8.0.0-rc.6
       '@babel/helper-member-expression-to-functions': 8.0.0-rc.6
       '@babel/helper-optimise-call-expression': 8.0.0-rc.6
       '@babel/traverse': 8.0.0-rc.6
@@ -2681,19 +2681,19 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.0-rc.6
 
-  '@babel/plugin-syntax-typescript@8.0.0-rc.6(@babel/core@8.0.0-rc.5)':
+  '@babel/plugin-syntax-typescript@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
     dependencies:
-      '@babel/core': 8.0.0-rc.5
-      '@babel/helper-plugin-utils': 8.0.0-rc.6(@babel/core@8.0.0-rc.5)
+      '@babel/core': 8.0.0-rc.6
+      '@babel/helper-plugin-utils': 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.5(@babel/core@8.0.0-rc.5)':
+  '@babel/plugin-transform-typescript@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
     dependencies:
-      '@babel/core': 8.0.0-rc.5
+      '@babel/core': 8.0.0-rc.6
       '@babel/helper-annotate-as-pure': 8.0.0-rc.6
-      '@babel/helper-create-class-features-plugin': 8.0.0-rc.6(@babel/core@8.0.0-rc.5)
-      '@babel/helper-plugin-utils': 8.0.0-rc.6(@babel/core@8.0.0-rc.5)
+      '@babel/helper-create-class-features-plugin': 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
+      '@babel/helper-plugin-utils': 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0-rc.6
-      '@babel/plugin-syntax-typescript': 8.0.0-rc.6(@babel/core@8.0.0-rc.5)
+      '@babel/plugin-syntax-typescript': 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
 
   '@babel/template@8.0.0-rc.6':
     dependencies:
@@ -3814,6 +3814,8 @@ snapshots:
       statuses: 2.0.2
     transitivePeerDependencies:
       - supports-color
+
+  find-up-simple@1.0.1: {}
 
   find-up@5.0.0:
     dependencies:

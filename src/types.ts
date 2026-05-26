@@ -285,7 +285,6 @@ export type ConfigSettings = {
     trustProxy: number;
   };
   recyclebin: boolean;
-  events: any;
   routes: boolean;
   tasks: boolean;
   cache: {
