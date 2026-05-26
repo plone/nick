@@ -18,7 +18,7 @@ import { Collection } from '../../collections/_collection/_collection';
 import { formatAttribute } from '../../helpers/format/format';
 import { knex } from '../../helpers/knex/knex';
 import { log } from '../../helpers/log/log';
-import { removeUndefined } from '../../helpers/utils/utils';
+import { mapAsync, removeUndefined } from '../../helpers/utils/utils';
 
 // Give the knex instance to objection.
 ObjectionModel.knex(knex);
@@ -313,18 +313,15 @@ export class Model extends ObjectionModel {
     const relations = Object.keys(this.getRelations());
     const own = omit(data, relations);
     const model = await this.query(trx).insertAndFetch(own);
-    await Promise.all(
-      relations.map(async (related: string) => {
-        if (data[related] && Array.isArray(data[related])) {
-          await Promise.all(
-            data[related].map(
-              async (item: any) =>
-                await model.$relatedQuery(related, trx).relate(item),
-            ),
-          );
-        }
-      }),
-    );
+    await mapAsync(relations, async (related: string) => {
+      if (data[related] && Array.isArray(data[related])) {
+        await mapAsync(
+          data[related],
+          async (item: any) =>
+            await model.$relatedQuery(related, trx).relate(item),
+        );
+      }
+    });
     return model;
   }
 

@@ -9,6 +9,7 @@ import type { Knex } from 'knex';
 // Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 export const seedRedirect = async (
@@ -23,11 +24,9 @@ export const seedRedirect = async (
     if (profile.purge) {
       await Redirect.delete({}, trx);
     }
-    await Promise.all(
-      profile.redirects.map(
-        async (redirects: any) => await Redirect.create(redirects, {}, trx),
-      ),
-    );
+    await mapAsync(profile.redirects, async (redirect: any) => {
+      await Redirect.create(redirect, {}, trx);
+    });
     console.log('Redirects imported');
   }
 };

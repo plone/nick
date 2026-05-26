@@ -12,6 +12,7 @@ import { omit } from 'es-toolkit/object';
 // Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 export const seedGroup = async (
@@ -24,18 +25,16 @@ export const seedGroup = async (
     if (profile.purge) {
       await Group.delete({}, trx);
     }
-    await Promise.all(
-      profile.groups.map(async (group: any) => {
-        await Group.create(
-          {
-            ...omit(group, ['roles']),
-            _roles: group.roles,
-          },
-          {},
-          trx,
-        );
-      }),
-    );
+    await mapAsync(profile.groups, async (group: any) => {
+      await Group.create(
+        {
+          ...omit(group, ['roles']),
+          _roles: group.roles,
+        },
+        {},
+        trx,
+      );
+    });
     console.log('Groups imported');
   }
 };

@@ -3,19 +3,44 @@
  */
 
 // Internal imports
+import config from '../../helpers/config/config';
+
+// Blocks
 import blocks from '../../blocks';
 import { slate } from '../../blocks/slate/slate';
 import { title } from '../../blocks/title/title';
+
+// Events
 import events from '../../events';
 import { purge } from '../../events/cache/cache';
 import { content_rules } from '../../events/content_rules/content_rules';
 import { push } from '../../events/push/push';
-import config from '../../helpers/config/config';
+
+// Middleware
 import middleware from '../../middleware';
 import { accessLogger } from '../../middleware/access-logger/access-logger';
 import { cors } from '../../middleware/cors/cors';
 import { i18n } from '../../middleware/i18n/i18n';
 import { removeZopeVhosting } from '../../middleware/volto/volto';
+
+// Seeds
+import seeds from '../../seeds';
+import { seedAction } from '../../seeds/action/action';
+import { seedCatalog } from '../../seeds/catalog/catalog';
+import { seedContentRule } from '../../seeds/content_rule/content_rule';
+import { seedControlpanel } from '../../seeds/controlpanel/controlpanel';
+import { seedDocument } from '../../seeds/document/document';
+import { seedGroup } from '../../seeds/group/group';
+import { seedPermission } from '../../seeds/permission/permission';
+import { seedProfile } from '../../seeds/profile/profile';
+import { seedRole } from '../../seeds/role/role';
+import { seedRedirect } from '../../seeds/redirect/redirect';
+import { seedType } from '../../seeds/type/type';
+import { seedUser } from '../../seeds/user/user';
+import { seedVocabulary } from '../../seeds/vocabulary/vocabulary';
+import { seedWorkflow } from '../../seeds/workflow/workflow';
+
+// Vocabularies
 import vocabularies from '../../vocabularies';
 import { actions } from '../../vocabularies/actions/actions';
 import { availableLanguages } from '../../vocabularies/available-languages/available-languages';
@@ -79,4 +104,20 @@ export function init(): void {
   middleware.register(cors);
   middleware.register(i18n);
   middleware.register(removeZopeVhosting);
+
+  // Register seeds
+  seeds.register(seedProfile);
+  seeds.register(seedPermission);
+  seeds.register(seedRole);
+  seeds.register(seedGroup);
+  seeds.register(seedUser);
+  seeds.register(seedWorkflow);
+  seeds.register(seedType);
+  seeds.register(seedCatalog);
+  seeds.register(seedContentRule);
+  seeds.register(seedDocument);
+  seeds.register(seedRedirect);
+  seeds.register(seedAction);
+  seeds.register(seedControlpanel);
+  seeds.register(seedVocabulary);
 }

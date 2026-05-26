@@ -14,6 +14,7 @@ import { omit } from 'es-toolkit/object';
 // Internal imports
 import { fileExists } from '../../helpers/fs/fs';
 import { stripI18n } from '../../helpers/i18n/i18n';
+import { mapAsync } from '../../helpers/utils/utils';
 import models from '../../models';
 
 const userFields = ['id', 'fullname', 'email'];
@@ -29,32 +30,30 @@ export const seedUser = async (
     if (profile.purge) {
       await User.delete({}, trx);
     }
-    await Promise.all(
-      profile.users.map(async (user: any) => {
-        // Insert user
-        await User.create(
-          {
-            id: user.id,
-            fullname: user.fullname,
-            email: user.email,
-            json: omit(user, [
-              ...userFields,
-              'password',
-              'roles',
-              'groups',
-              'id',
-              'fullname',
-              'email',
-            ]),
-            password: await bcrypt.hash(user.password, 10),
-            _roles: user.roles,
-            _groups: user.groups,
-          },
-          {},
-          trx,
-        );
-      }),
-    );
+    await mapAsync(profile.users, async (user: any) => {
+      // Insert user
+      await User.create(
+        {
+          id: user.id,
+          fullname: user.fullname,
+          email: user.email,
+          json: omit(user, [
+            ...userFields,
+            'password',
+            'roles',
+            'groups',
+            'id',
+            'fullname',
+            'email',
+          ]),
+          password: await bcrypt.hash(user.password, 10),
+          _roles: user.roles,
+          _groups: user.groups,
+        },
+        {},
+        trx,
+      );
+    });
     console.log('Users imported');
   }
 };

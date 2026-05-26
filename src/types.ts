@@ -24,6 +24,11 @@ export type Params = { [key: string]: any };
 
 export type Callback = (...args: any[]) => any;
 
+export type SeedHandler = (
+  trx: Knex.Transaction,
+  profilePath: string,
+) => Promise<void>;
+
 export type MiddlewareHandler = (
   req: Request,
   res: Response,
