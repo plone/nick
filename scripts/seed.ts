@@ -14,7 +14,7 @@ import { last } from 'es-toolkit/array';
 import { fileExists } from '../src/helpers/fs/fs';
 import { stripI18n } from '../src/helpers/i18n/i18n';
 import { knex } from '../src/helpers/knex/knex';
-import { mapProfiles } from '../src/helpers/profiles/profiles';
+import { initProfiles, mapProfiles } from '../src/helpers/profiles/profiles';
 import { mapAsync } from '../src/helpers/utils/utils';
 import models from '../src/models';
 import { seedAction } from '../src/seeds/action/action';
@@ -36,6 +36,7 @@ const reset = '\x1b[0m';
 const underline = '\x1b[4m';
 
 const seed = async (trx: Knex.Transaction, profilePath: string) => {
+  await initProfiles();
   await seedProfile(trx, profilePath);
   await seedPermission(trx, profilePath);
   await seedRole(trx, profilePath);
