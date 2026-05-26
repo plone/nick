@@ -8,7 +8,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Internal imports
-import events from './src/events';
 import userschema from './src/develop/nick/src/constants/userschema';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -72,7 +71,6 @@ export const config = {
     trustProxy: 1,
   },
   recyclebin: false,
-  events,
   routes: false,
   tasks: false,
   cache: {

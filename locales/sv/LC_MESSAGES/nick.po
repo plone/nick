@@ -704,7 +704,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:788
+#: src/routes/content/content.ts:778
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Dokument låst"
@@ -1075,15 +1075,15 @@ msgid "Information about rights held in and over this item."
 msgstr "Information om rättigheter som innehas i och över detta objekt."
 
 #. Default: "Internal server error"
-#: src/app.ts:264
-#: src/app.ts:274
+#: src/app.ts:248
+#: src/app.ts:258
 msgctxt "App"
 msgid "Internal server error"
 msgstr "Internt serverfel"
 
 #. Default: "Invalid credentials"
-#: src/routes/authentication/authentication.ts:84
-#: src/routes/authentication/authentication.ts:98
+#: src/routes/authentication/authentication.ts:85
+#: src/routes/authentication/authentication.ts:99
 msgctxt "Routes|Authentication"
 msgid "Invalid credentials"
 msgstr "Ogiltiga inloggningsuppgifter"
@@ -1096,7 +1096,7 @@ msgid "Invalid move."
 msgstr ""
 
 #. Default: "Invalid session"
-#: src/routes/authentication/authentication.ts:133
+#: src/routes/authentication/authentication.ts:134
 msgctxt "Routes|Authentication"
 msgid "Invalid session"
 msgstr "Ogiltig session"
@@ -1220,7 +1220,7 @@ msgid "Login"
 msgstr "Inloggning"
 
 #. Default: "Login and password must be provided in body."
-#: src/routes/authentication/authentication.ts:63
+#: src/routes/authentication/authentication.ts:64
 msgctxt "Routes|Authentication"
 msgid "Login and password must be provided in body."
 msgstr "Inloggning och lösenord måste anges i begäran."
@@ -1299,7 +1299,7 @@ msgid "Message"
 msgstr ""
 
 #. Default: "Missing credentials"
-#: src/routes/authentication/authentication.ts:62
+#: src/routes/authentication/authentication.ts:63
 msgctxt "Routes|Authentication"
 msgid "Missing credentials"
 msgstr "Saknade inloggningsuppgifter"
@@ -1429,12 +1429,12 @@ msgstr "Inte tillåtet"
 
 #. Default: "Not found."
 #: src/routes/vocabularies/vocabularies.ts:68
-#: src/routes/users/users.ts:147
+#: src/routes/users/users.ts:148
 #: src/routes/types/types.ts:45
 #: src/routes/recyclebin/recyclebin.ts:35
 #: src/routes/recyclebin/recyclebin.ts:104
 #: src/routes/recyclebin/recyclebin.ts:202
-#: src/routes/groups/groups.ts:33
+#: src/routes/groups/groups.ts:34
 #: src/routes/email/email.ts:75
 #: src/routes/controlpanels/controlpanels.ts:159
 #: src/routes/controlpanels/controlpanels.ts:357
@@ -1502,15 +1502,15 @@ msgid "Password"
 msgstr ""
 
 #. Default: "Password reset request"
-#: src/routes/users/users.ts:107
-#: src/routes/users/users.ts:255
+#: src/routes/users/users.ts:108
+#: src/routes/users/users.ts:256
 msgctxt "Routes|Users"
 msgid "Password reset request"
 msgstr "Begäran om lösenordsåterställning"
 
 #. Default: "Password should be at least 8 characters long."
-#: src/routes/users/users.ts:43
-#: src/routes/users/users.ts:201
+#: src/routes/users/users.ts:44
+#: src/routes/users/users.ts:202
 msgctxt "Routes|Users"
 msgid "Password should be at least 8 characters long."
 msgstr ""
@@ -1673,9 +1673,9 @@ msgid "Query"
 msgstr ""
 
 #. Default: "Query must be at least 2 characters long."
-#: src/routes/users/users.ts:168
+#: src/routes/users/users.ts:169
 #: src/routes/principals/principals.ts:30
-#: src/routes/groups/groups.ts:54
+#: src/routes/groups/groups.ts:55
 msgctxt "Routes|Users"
 msgid "Query must be at least 2 characters long."
 msgstr ""
@@ -1742,7 +1742,7 @@ msgid "Rename"
 msgstr "Byt namn"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:600
+#: src/routes/content/content.ts:590
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Obligatoriskt fält saknas."
@@ -2028,13 +2028,13 @@ msgid "Successfully enabled rules {rules} to subfolders"
 msgstr ""
 
 #. Default: "System group"
-#: src/routes/groups/groups.ts:151
+#: src/routes/groups/groups.ts:142
 msgctxt "Routes|Groups"
 msgid "System group"
 msgstr "Systemgrupp"
 
 #. Default: "System users"
-#: src/routes/users/users.ts:335
+#: src/routes/users/users.ts:326
 msgctxt "Routes|Users"
 msgid "System users"
 msgstr "Systemanvändare"
@@ -2179,8 +2179,8 @@ msgid "The file extension to check for"
 msgstr ""
 
 #. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
-#: src/routes/users/users.ts:108
-#: src/routes/users/users.ts:256
+#: src/routes/users/users.ts:109
+#: src/routes/users/users.ts:257
 msgctxt "Routes|Users"
 msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 msgstr ""
@@ -2393,9 +2393,9 @@ msgid "Today"
 msgstr "Idag"
 
 #. Default: "Transaction error."
-#: src/client.ts:86
-#: src/app.ts:200
-#: src/app.ts:213
+#: src/client.ts:81
+#: src/app.ts:184
+#: src/app.ts:197
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "Transaktionsfel."
@@ -2431,7 +2431,7 @@ msgid "Type of the current document is not found."
 msgstr "Typen för det aktuella dokumentet hittades inte."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:589
+#: src/routes/content/content.ts:579
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2463,13 +2463,13 @@ msgid "User created"
 msgstr ""
 
 #. Default: "User doesn’t exist or invalid credentials."
-#: src/routes/users/users.ts:68
+#: src/routes/users/users.ts:69
 msgctxt "Routes|Users"
 msgid "User doesn’t exist or invalid credentials."
 msgstr "Användaren finns inte eller ogiltiga inloggningsuppgifter."
 
 #. Default: "User is not logged in."
-#: src/routes/authentication/authentication.ts:134
+#: src/routes/authentication/authentication.ts:135
 msgctxt "Routes|Authentication"
 msgid "User is not logged in."
 msgstr "Användaren är inte inloggad."
@@ -2646,8 +2646,8 @@ msgid "Workflow states are: {states}"
 msgstr ""
 
 #. Default: "Wrong login and/or password."
-#: src/routes/authentication/authentication.ts:85
-#: src/routes/authentication/authentication.ts:99
+#: src/routes/authentication/authentication.ts:86
+#: src/routes/authentication/authentication.ts:100
 msgctxt "Routes|Authentication"
 msgid "Wrong login and/or password."
 msgstr "Fel inloggning och/eller lösenord."
@@ -2675,13 +2675,13 @@ msgid "You are not authorized to access this resource."
 msgstr "Du har inte behörighet att komma åt denna resurs."
 
 #. Default: "You can’t delete system groups."
-#: src/routes/groups/groups.ts:150
+#: src/routes/groups/groups.ts:141
 msgctxt "Routes|Groups"
 msgid "You can’t delete system groups."
 msgstr "Du kan inte ta bort systemgrupper."
 
 #. Default: "You can’t delete system users."
-#: src/routes/users/users.ts:334
+#: src/routes/users/users.ts:325
 msgctxt "Routes|Users"
 msgid "You can’t delete system users."
 msgstr "Du kan inte ta bort systemanvändare."
@@ -2700,7 +2700,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:785
+#: src/routes/content/content.ts:775
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Du har inte behörighet att spara detta dokument eftersom det är låst av en annan användare."
@@ -2712,13 +2712,13 @@ msgid "You don’t have permission to unlock this document."
 msgstr "Du har inte behörighet att låsa upp detta dokument."
 
 #. Default: "You don’t have permissions to add a user."
-#: src/routes/users/users.ts:194
+#: src/routes/users/users.ts:195
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
 msgstr ""
 
 #. Default: "You don’t have permissions to view this user."
-#: src/routes/users/users.ts:135
+#: src/routes/users/users.ts:136
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to view this user."
 msgstr ""

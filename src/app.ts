@@ -14,9 +14,6 @@ import helmet from 'helmet';
 import cron from 'node-cron';
 
 // Internal imports
-import { purge } from './events/cache/cache';
-import { content_rules } from './events/content_rules/content_rules';
-import { push } from './events/push/push';
 import { applyCache } from './helpers/cache/cache';
 import config from './helpers/config/config';
 import { RequestException } from './helpers/error/error';
@@ -94,19 +91,6 @@ if (process.env.NODE_ENV === 'production') {
 
 // Create app
 const app = express();
-
-// Add purge events if enabled
-if (config.settings.cache.enabled && config.settings.cache.purge) {
-  config.settings.events.register(purge);
-}
-
-// Add content rules events
-config.settings.events.register(content_rules);
-
-// Add push events if enabled
-if (config.settings.push?.enabled) {
-  config.settings.events.register(push);
-}
 
 // Add middleware
 app.use(

@@ -9,7 +9,6 @@ import { fileURLToPath } from 'url';
 
 // Internal imports
 import userschema from './src/constants/userschema';
-import events from './src/events';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -84,7 +83,6 @@ export const config = {
     auth: AUTH_RATE_LIMIT || 5,
     trustProxy: TRUST_PROXY || 1,
   },
-  events,
   cache: {
     enabled: false,
     anonymousOnly: true,

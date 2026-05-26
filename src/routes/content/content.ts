@@ -16,6 +16,7 @@ import { omit, pick } from 'es-toolkit/object';
 import { v4 as uuid } from 'uuid';
 
 // Internal imports
+import events from '../../events';
 import { checkETag } from '../../helpers/cache/cache';
 import config from '../../helpers/config/config';
 import {
@@ -105,13 +106,7 @@ export default [
           await parent.reindexChildren(trx);
 
           // Trigger on after move
-          await config.settings.events.trigger(
-            'onAfterMove',
-            document,
-            req.user,
-            trx,
-            source,
-          );
+          await events.trigger('onAfterMove', document, req.user, trx, source);
 
           // Add items to return array
           items.push({
@@ -171,12 +166,7 @@ export default [
         childIds.push(newId);
 
         // Trigger on before copy
-        await config.settings.events.trigger(
-          'onBeforeCopy',
-          document,
-          req.user,
-          trx,
-        );
+        await events.trigger('onBeforeCopy', document, req.user, trx);
 
         // Copy object
         const copiedDocument = await document.copy(
@@ -188,7 +178,7 @@ export default [
         await copiedDocument.fetchRelated('_parent', trx);
 
         // Trigger on after copy
-        await config.settings.events.trigger(
+        await events.trigger(
           'onAfterCopy',
           copiedDocument,
           req.user,
@@ -677,7 +667,7 @@ export default [
       }`;
 
       // Trigger onBeforeAdd
-      await config.settings.events.trigger(
+      await events.trigger(
         'onBeforeAdd',
         document,
         req.user,
@@ -722,7 +712,7 @@ export default [
       await document.fetchRelationLists(trx);
 
       // Trigger onAfterAdd
-      await config.settings.events.trigger(
+      await events.trigger(
         'onAfterAdd',
         document,
         req.user,
@@ -850,13 +840,11 @@ export default [
       }
 
       // Trigger onBeforeAdd
-      await config.settings.events.trigger(
-        'onBeforeModify',
-        req.document,
-        req.user,
-        trx,
-        { ...json, id: newId, path: newPath },
-      );
+      await events.trigger('onBeforeModify', req.document, req.user, trx, {
+        ...json,
+        id: newId,
+        path: newPath,
+      });
 
       // Save document with new values
       await req.document.updateAndFetch(
@@ -892,13 +880,7 @@ export default [
       );
 
       // Trigger onAfterModified
-      await config.settings.events.trigger(
-        'onAfterModified',
-        req.document,
-        req.user,
-        trx,
-        req,
-      );
+      await events.trigger('onAfterModified', req.document, req.user, trx, req);
 
       // Send ok
       return {
@@ -920,7 +902,7 @@ export default [
       const parent = req.document._parent;
 
       // Trigger onBeforeDelete
-      await config.settings.events.trigger(
+      await events.trigger(
         'onBeforeDelete',
         req.document,
         req.user,
@@ -975,7 +957,7 @@ export default [
       await parent.reindex(trx);
 
       // Trigger onAfterDelete
-      await config.settings.events.trigger(
+      await events.trigger(
         'onAfterDelete',
         req.document,
         req.user,

@@ -9,6 +9,7 @@ import type { Knex } from 'knex';
 
 // Internal imports
 import config from '../../helpers/config/config';
+import events from '../../events';
 import { RequestException } from '../../helpers/error/error';
 import { apiLimiter } from '../../helpers/limiter/limiter';
 import models from '../../models';
@@ -87,12 +88,7 @@ export default [
       );
 
       // Trigger on after add group
-      await config.settings.events.trigger(
-        'onAfterAddGroup',
-        req.document,
-        group,
-        trx,
-      );
+      await events.trigger('onAfterAddGroup', req.document, group, trx);
 
       // Send created
       return {
@@ -123,12 +119,7 @@ export default [
       );
 
       // Trigger on after update group
-      await config.settings.events.trigger(
-        'onAfterUpdateGroup',
-        req.document,
-        group,
-        trx,
-      );
+      await events.trigger('onAfterUpdateGroup', req.document, group, trx);
 
       // Send ok
       return {
@@ -154,7 +145,7 @@ export default [
       }
 
       // Trigger on before delete group
-      await config.settings.events.trigger(
+      await events.trigger(
         'onBeforeDeleteGroup',
         req.document,
         req.user,
@@ -165,7 +156,7 @@ export default [
       await Group.deleteById(req.params.id, trx);
 
       // Trigger on after delete group
-      await config.settings.events.trigger(
+      await events.trigger(
         'onAfterDeleteGroup',
         req.document,
         req.user,

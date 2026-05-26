@@ -704,7 +704,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:788
+#: src/routes/content/content.ts:778
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "문서가 잠김"
@@ -1075,15 +1075,15 @@ msgid "Information about rights held in and over this item."
 msgstr "이 항목에 대한 권한 정보입니다."
 
 #. Default: "Internal server error"
-#: src/app.ts:264
-#: src/app.ts:274
+#: src/app.ts:248
+#: src/app.ts:258
 msgctxt "App"
 msgid "Internal server error"
 msgstr "내부 서버 오류"
 
 #. Default: "Invalid credentials"
-#: src/routes/authentication/authentication.ts:84
-#: src/routes/authentication/authentication.ts:98
+#: src/routes/authentication/authentication.ts:85
+#: src/routes/authentication/authentication.ts:99
 msgctxt "Routes|Authentication"
 msgid "Invalid credentials"
 msgstr "잘못된 자격 증명"
@@ -1096,7 +1096,7 @@ msgid "Invalid move."
 msgstr ""
 
 #. Default: "Invalid session"
-#: src/routes/authentication/authentication.ts:133
+#: src/routes/authentication/authentication.ts:134
 msgctxt "Routes|Authentication"
 msgid "Invalid session"
 msgstr "유효하지 않은 세션"
@@ -1220,7 +1220,7 @@ msgid "Login"
 msgstr "로그인"
 
 #. Default: "Login and password must be provided in body."
-#: src/routes/authentication/authentication.ts:63
+#: src/routes/authentication/authentication.ts:64
 msgctxt "Routes|Authentication"
 msgid "Login and password must be provided in body."
 msgstr "본문에 로그인 및 비밀번호를 제공해야 합니다."
@@ -1299,7 +1299,7 @@ msgid "Message"
 msgstr ""
 
 #. Default: "Missing credentials"
-#: src/routes/authentication/authentication.ts:62
+#: src/routes/authentication/authentication.ts:63
 msgctxt "Routes|Authentication"
 msgid "Missing credentials"
 msgstr "자격 증명 누락"
@@ -1429,12 +1429,12 @@ msgstr "허용되지 않음"
 
 #. Default: "Not found."
 #: src/routes/vocabularies/vocabularies.ts:68
-#: src/routes/users/users.ts:147
+#: src/routes/users/users.ts:148
 #: src/routes/types/types.ts:45
 #: src/routes/recyclebin/recyclebin.ts:35
 #: src/routes/recyclebin/recyclebin.ts:104
 #: src/routes/recyclebin/recyclebin.ts:202
-#: src/routes/groups/groups.ts:33
+#: src/routes/groups/groups.ts:34
 #: src/routes/email/email.ts:75
 #: src/routes/controlpanels/controlpanels.ts:159
 #: src/routes/controlpanels/controlpanels.ts:357
@@ -1502,15 +1502,15 @@ msgid "Password"
 msgstr ""
 
 #. Default: "Password reset request"
-#: src/routes/users/users.ts:107
-#: src/routes/users/users.ts:255
+#: src/routes/users/users.ts:108
+#: src/routes/users/users.ts:256
 msgctxt "Routes|Users"
 msgid "Password reset request"
 msgstr "비밀번호 재설정 요청"
 
 #. Default: "Password should be at least 8 characters long."
-#: src/routes/users/users.ts:43
-#: src/routes/users/users.ts:201
+#: src/routes/users/users.ts:44
+#: src/routes/users/users.ts:202
 msgctxt "Routes|Users"
 msgid "Password should be at least 8 characters long."
 msgstr ""
@@ -1673,9 +1673,9 @@ msgid "Query"
 msgstr ""
 
 #. Default: "Query must be at least 2 characters long."
-#: src/routes/users/users.ts:168
+#: src/routes/users/users.ts:169
 #: src/routes/principals/principals.ts:30
-#: src/routes/groups/groups.ts:54
+#: src/routes/groups/groups.ts:55
 msgctxt "Routes|Users"
 msgid "Query must be at least 2 characters long."
 msgstr ""
@@ -1742,7 +1742,7 @@ msgid "Rename"
 msgstr "이름 바꾸기"
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:600
+#: src/routes/content/content.ts:590
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "필수 필드가 누락되었습니다."
@@ -2028,13 +2028,13 @@ msgid "Successfully enabled rules {rules} to subfolders"
 msgstr ""
 
 #. Default: "System group"
-#: src/routes/groups/groups.ts:151
+#: src/routes/groups/groups.ts:142
 msgctxt "Routes|Groups"
 msgid "System group"
 msgstr "시스템 그룹"
 
 #. Default: "System users"
-#: src/routes/users/users.ts:335
+#: src/routes/users/users.ts:326
 msgctxt "Routes|Users"
 msgid "System users"
 msgstr "시스템 사용자"
@@ -2179,8 +2179,8 @@ msgid "The file extension to check for"
 msgstr ""
 
 #. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
-#: src/routes/users/users.ts:108
-#: src/routes/users/users.ts:256
+#: src/routes/users/users.ts:109
+#: src/routes/users/users.ts:257
 msgctxt "Routes|Users"
 msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 msgstr ""
@@ -2393,9 +2393,9 @@ msgid "Today"
 msgstr "오늘"
 
 #. Default: "Transaction error."
-#: src/client.ts:86
-#: src/app.ts:200
-#: src/app.ts:213
+#: src/client.ts:81
+#: src/app.ts:184
+#: src/app.ts:197
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "트랜잭션 오류."
@@ -2431,7 +2431,7 @@ msgid "Type of the current document is not found."
 msgstr "현재 문서의 유형을 찾을 수 없습니다."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:589
+#: src/routes/content/content.ts:579
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2463,13 +2463,13 @@ msgid "User created"
 msgstr ""
 
 #. Default: "User doesn’t exist or invalid credentials."
-#: src/routes/users/users.ts:68
+#: src/routes/users/users.ts:69
 msgctxt "Routes|Users"
 msgid "User doesn’t exist or invalid credentials."
 msgstr "사용자가 존재하지 않거나 자격 증명이 유효하지 않습니다."
 
 #. Default: "User is not logged in."
-#: src/routes/authentication/authentication.ts:134
+#: src/routes/authentication/authentication.ts:135
 msgctxt "Routes|Authentication"
 msgid "User is not logged in."
 msgstr "사용자가 로그인하지 않았습니다."
@@ -2646,8 +2646,8 @@ msgid "Workflow states are: {states}"
 msgstr ""
 
 #. Default: "Wrong login and/or password."
-#: src/routes/authentication/authentication.ts:85
-#: src/routes/authentication/authentication.ts:99
+#: src/routes/authentication/authentication.ts:86
+#: src/routes/authentication/authentication.ts:100
 msgctxt "Routes|Authentication"
 msgid "Wrong login and/or password."
 msgstr "로그인 및/또는 비밀번호가 잘못되었습니다."
@@ -2675,13 +2675,13 @@ msgid "You are not authorized to access this resource."
 msgstr "이 리소스에 액세스할 권한이 없습니다."
 
 #. Default: "You can’t delete system groups."
-#: src/routes/groups/groups.ts:150
+#: src/routes/groups/groups.ts:141
 msgctxt "Routes|Groups"
 msgid "You can’t delete system groups."
 msgstr "시스템 그룹은 삭제할 수 없습니다."
 
 #. Default: "You can’t delete system users."
-#: src/routes/users/users.ts:334
+#: src/routes/users/users.ts:325
 msgctxt "Routes|Users"
 msgid "You can’t delete system users."
 msgstr "시스템 사용자는 삭제할 수 없습니다."
@@ -2700,7 +2700,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:785
+#: src/routes/content/content.ts:775
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "다른 사용자가 잠갔으므로 이 문서를 저장할 권한이 없습니다."
@@ -2712,13 +2712,13 @@ msgid "You don’t have permission to unlock this document."
 msgstr "이 문서의 잠금을 해제할 권한이 없습니다."
 
 #. Default: "You don’t have permissions to add a user."
-#: src/routes/users/users.ts:194
+#: src/routes/users/users.ts:195
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
 msgstr ""
 
 #. Default: "You don’t have permissions to view this user."
-#: src/routes/users/users.ts:135
+#: src/routes/users/users.ts:136
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to view this user."
 msgstr ""

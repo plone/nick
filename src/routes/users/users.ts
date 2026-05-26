@@ -15,6 +15,7 @@ import jwt from 'jsonwebtoken';
 
 // Internal imports
 import config from '../../helpers/config/config';
+import events from '../../events';
 import { RequestException } from '../../helpers/error/error';
 import { apiLimiter } from '../../helpers/limiter/limiter';
 import { sendMail } from '../../helpers/mail/mail';
@@ -263,12 +264,7 @@ export default [
       }
 
       // Trigger on after add user
-      await config.settings.events.trigger(
-        'onAfterAddUser',
-        req.document,
-        user,
-        trx,
-      );
+      await events.trigger('onAfterAddUser', req.document, user, trx);
 
       // Send created
       return {
@@ -307,12 +303,7 @@ export default [
       );
 
       // Trigger on after update user
-      await config.settings.events.trigger(
-        'onAfterUpdateUser',
-        req.document,
-        user,
-        trx,
-      );
+      await events.trigger('onAfterUpdateUser', req.document, user, trx);
 
       // Send ok
       return {
@@ -343,22 +334,12 @@ export default [
       // Check if user exists
       if (user) {
         // Trigger on before delete user
-        await config.settings.events.trigger(
-          'onBeforeDeleteUser',
-          req.document,
-          user,
-          trx,
-        );
+        await events.trigger('onBeforeDeleteUser', req.document, user, trx);
 
         await User.deleteById(req.params.id, trx);
 
         // Trigger on after delete user
-        await config.settings.events.trigger(
-          'onAfterDeleteUser',
-          req.document,
-          user,
-          trx,
-        );
+        await events.trigger('onAfterDeleteUser', req.document, user, trx);
       }
 
       return {

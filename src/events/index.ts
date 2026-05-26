@@ -21,49 +21,76 @@ interface EventPlugin {
   [eventName: string]: EventHandler;
 }
 
-interface Events {
-  register: (plugin: EventPlugin, position?: number | 'bottom') => void;
-  trigger: (
-    event: string,
-    document: any,
-    user: any,
-    trx: Knex.Transaction,
-    ...params: any[]
-  ) => Promise<void>;
-  events: {
+/**
+ * An event registry.
+ * @class Events
+ */
+class Events {
+  public events: {
     [eventName: string]: EventHandler[];
   };
-}
+  static instance: Events;
 
-const events: Events = {
-  events: {},
-  register: (plugin: EventPlugin, position: number | 'bottom' = 'bottom') => {
+  /**
+   * Construct a Config.
+   * @constructs Config
+   */
+  constructor() {
+    this.events = {};
+
+    if (!Events.instance) {
+      Events.instance = this;
+    }
+
+    return Events.instance;
+  }
+
+  /**
+   * Register an event.
+   * @param {EventPlugin} plugin Plugin with events.
+   * @param {number | 'bottom'} position Position to insert
+   */
+  register(plugin: EventPlugin, position: number | 'bottom' = 'bottom') {
+    const self = this;
     mapKeys(plugin, (handler, event) => {
-      if (!Array.isArray(events.events[event])) {
-        events.events[event] = [];
+      if (!Array.isArray(self.events[event])) {
+        self.events[event] = [];
       }
       if (position === 'bottom') {
-        events.events[event].push(handler);
+        self.events[event].push(handler);
       } else {
-        events.events[event].splice(position as number, 0, handler);
+        self.events[event].splice(position as number, 0, handler);
       }
       return event;
     });
-  },
+  }
 
-  trigger: async (
+  /**
+   * Trigger an event.
+   * @param {string} name The name of the event.
+   * @param {Object} document The document related to the event.
+   * @param {Object} user The user related to the event.
+   * @param {Knex.Transaction} trx The transaction related to the event.
+   * @param {...any} params Additional parameters to pass to the event handlers.
+   * @returns {Promise<void>} A promise that resolves when all event handlers have been executed.
+   */
+  async trigger(
     event: string,
     document: any,
     user: any,
     trx: Knex.Transaction,
     ...params: any[]
-  ): Promise<void> => {
-    if (!events.events[event]) return;
+  ): Promise<void> {
+    const self = this;
+    if (!self.events[event]) return;
     await mapAsync(
-      events.events[event],
+      self.events[event],
       async (handler) => await handler(document, user, trx, ...params),
     );
-  },
-};
+  }
+}
+
+// Create an instance of the Events registry
+const events = new Events();
 
 export default events;

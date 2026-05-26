@@ -13,12 +13,13 @@ import bcrypt from 'bcrypt-promise';
 import jwt from 'jsonwebtoken';
 
 // Internal imports
-import models from '../../models';
+import events from '../../events';
 import { addToken, removeToken } from '../../helpers/auth/auth';
 import config from '../../helpers/config/config';
 import { RequestException } from '../../helpers/error/error';
 import { authLimiter } from '../../helpers/limiter/limiter';
 import { log } from '../../helpers/log/log';
+import models from '../../models';
 
 /**
  * Generate and store jwt token
@@ -107,7 +108,7 @@ export default [
       );
 
       // Trigger on login
-      await config.settings.events.trigger('onLogin', req.document, user, trx);
+      await events.trigger('onLogin', req.document, user, trx);
 
       // Return ok
       return {
@@ -153,12 +154,7 @@ export default [
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
       // Trigger on logout
-      await config.settings.events.trigger(
-        'onLogout',
-        req.document,
-        req.user,
-        trx,
-      );
+      await events.trigger('onLogout', req.document, req.user, trx);
 
       // Remove token from user
       if (req.token) {

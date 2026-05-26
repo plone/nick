@@ -27,15 +27,14 @@ import { v4 as uuid } from 'uuid';
 // Internal imports
 import models from '../';
 import blocks from '../../blocks';
-import { Model } from '../_model/_model';
 import behaviors from '../../behaviors';
 import { DocumentCollection } from '../../collections/document/document';
 import languages from '../../constants/languages';
+import events from '../../events';
 import { generate, embed } from '../../helpers/ai/ai';
 import config from '../../helpers/config/config';
 import { copyFile, removeFile } from '../../helpers/fs/fs';
 import { lockExpired } from '../../helpers/lock/lock';
-import { slateToMarkdown } from '../../helpers/markdown/markdown';
 import { getRootUrl } from '../../helpers/url/url';
 import {
   isPromise,
@@ -43,6 +42,7 @@ import {
   mapSync,
   uniqueId,
 } from '../../helpers/utils/utils';
+import { Model } from '../_model/_model';
 
 dayjs.extend(utc);
 
@@ -745,7 +745,7 @@ export class Document extends Model {
       });
 
       // Trigger on before change workflow
-      await config.settings.events.trigger(
+      await events.trigger(
         'onBeforeChangeWorkflow',
         self,
         actor,
@@ -768,7 +768,7 @@ export class Document extends Model {
       await self.reindex(trx);
 
       // Trigger on after change workflow
-      await config.settings.events.trigger(
+      await events.trigger(
         'onAfterChangeWorkflow',
         self,
         actor,
