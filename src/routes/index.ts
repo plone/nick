@@ -3,6 +3,9 @@
  * @module routes
  */
 
+// Type imports
+import type { Route } from '../types';
+
 // Internal imports
 import actions from './actions/actions';
 import ai from './ai/ai';
@@ -80,4 +83,4 @@ export default [
   ...vocabularies,
   ...workflow,
   ...content, // Always keep the content routes last since this is the fallback
-];
+] as Route[];

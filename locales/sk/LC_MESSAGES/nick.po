@@ -1075,8 +1075,8 @@ msgid "Information about rights held in and over this item."
 msgstr "Informácie o právach k tejto položke."
 
 #. Default: "Internal server error"
-#: src/app.ts:231
-#: src/app.ts:241
+#: src/app.ts:225
+#: src/app.ts:235
 msgctxt "App"
 msgid "Internal server error"
 msgstr "Interná chyba servera"
@@ -1428,7 +1428,7 @@ msgid "Not allowed"
 msgstr "Nepovolené"
 
 #. Default: "Not found."
-#: src/routes/vocabularies/vocabularies.ts:66
+#: src/routes/vocabularies/vocabularies.ts:65
 #: src/routes/users/users.ts:148
 #: src/routes/types/types.ts:45
 #: src/routes/recyclebin/recyclebin.ts:35
@@ -2394,8 +2394,8 @@ msgstr "Dnes"
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:167
-#: src/app.ts:180
+#: src/app.ts:161
+#: src/app.ts:174
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "Chyba transakcie."

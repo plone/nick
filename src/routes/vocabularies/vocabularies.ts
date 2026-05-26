@@ -11,7 +11,6 @@ import type { Knex } from 'knex';
 import { sortBy } from 'es-toolkit/compat';
 
 // Internal imports
-import config from '../../helpers/config/config';
 import { RequestException } from '../../helpers/error/error';
 import { getUrl } from '../../helpers/url/url';
 import models from '../../models';

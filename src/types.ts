@@ -308,7 +308,6 @@ export type ConfigSettings = {
     trustProxy: number;
   };
   recyclebin: boolean;
-  routes: boolean;
   cache: {
     enabled: boolean;
     anonymousOnly: boolean;

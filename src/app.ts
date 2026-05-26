@@ -22,18 +22,12 @@ import { log } from './helpers/log/log';
 import { initProfiles } from './helpers/profiles/profiles';
 import { regExpEscape } from './helpers/utils/utils';
 import models from './models';
-import globalRoutes from './routes';
+import routes from './routes';
 import tasks from './tasks';
 import middleware from './middleware';
 
 // Init profiles
 await initProfiles();
-
-const localRoutes = config.settings.routes
-  ? (await import(`${process.cwd()}/src/routes`)).default
-  : [];
-
-const routes = [...localRoutes, ...globalRoutes];
 
 // Initialize i18n
 initI18n();
