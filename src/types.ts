@@ -184,6 +184,11 @@ export interface VocabularyTerm {
 
 export type Vocabulary = VocabularyTerm[];
 
+export type VocabularyHandler = (
+  req: Request,
+  trx: Knex.Transaction,
+) => Promise<Vocabulary>;
+
 export interface Route {
   view: string;
   op: 'get' | 'post' | 'put' | 'delete' | 'patch';
@@ -335,7 +340,6 @@ export type ConfigSettings = {
     };
   };
   behaviors?: Record<string, any>;
-  vocabularies?: Record<string, any>;
   requestLimit?: {
     files: string;
     api: string;

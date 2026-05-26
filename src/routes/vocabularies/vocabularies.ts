@@ -15,7 +15,7 @@ import config from '../../helpers/config/config';
 import { RequestException } from '../../helpers/error/error';
 import { getUrl } from '../../helpers/url/url';
 import models from '../../models';
-import { vocabularies } from '../../vocabularies';
+import vocabularies from '../../vocabularies';
 
 export default [
   {
@@ -27,10 +27,11 @@ export default [
     handler: async (req: Request, trx: Knex.Transaction) => {
       const Vocabulary = models.get('Vocabulary');
       const profileVocabularies = await Vocabulary.fetchAll({}, {}, trx);
+
       return {
         json: sortBy(
           [
-            ...Object.keys(vocabularies).map((vocabulary) => ({
+            ...Object.keys(vocabularies.vocabularies).map((vocabulary) => ({
               '@id': `${getUrl(req)}/@vocabularies/${vocabulary}`,
               title: vocabulary,
             })),
@@ -54,10 +55,7 @@ export default [
     cache: 'dynamic',
     handler: async (req: Request, trx: Knex.Transaction) => {
       // Check if vocabulary is available
-      if (
-        !Object.keys(vocabularies).includes(req.params.id) &&
-        !Object.keys(config.settings.vocabularies || {}).includes(req.params.id)
-      ) {
+      if (!vocabularies.exists(req.params.id)) {
         const Vocabulary = models.get('Vocabulary');
         const id =
           req.params.id === 'plone.contentrules.events'
@@ -79,12 +77,9 @@ export default [
       }
 
       // Get items
-      const items = Object.keys(vocabularies).includes(req.params.id)
-        ? await vocabularies[req.params.id](req)
-        : config.settings.vocabularies &&
-            config.settings.vocabularies[req.params.id]
-          ? await config.settings.vocabularies[req.params.id](req)
-          : [];
+      const items = vocabularies.exists(req.params.id)
+        ? await vocabularies.get(req.params.id)(req, trx)
+        : [];
 
       // Return data
       return {

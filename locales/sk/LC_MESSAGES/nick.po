@@ -1428,7 +1428,7 @@ msgid "Not allowed"
 msgstr "Nepovolené"
 
 #. Default: "Not found."
-#: src/routes/vocabularies/vocabularies.ts:68
+#: src/routes/vocabularies/vocabularies.ts:66
 #: src/routes/users/users.ts:148
 #: src/routes/types/types.ts:45
 #: src/routes/recyclebin/recyclebin.ts:35

@@ -244,6 +244,7 @@
 - Upgrade node versions to supported versions @robgietema
 - Refactor events to use profile init @robgietema
 - Refactor tasks to use profile init @robgietema
+- Refactor vocabularies to use profile init @robgietema
 
 ### Documentation
 
