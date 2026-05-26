@@ -95,7 +95,7 @@
     "bcrypt-promise": "2.0.0",
     "dayjs": "1.11.20",
     "du": "1.0.0",
-    "es-toolkit": "1.46.1",
+    "es-toolkit": "1.47.0",
     "express": "5.2.1",
     "express-rate-limit": "8.5.2",
     "helmet": "8.2.0",
