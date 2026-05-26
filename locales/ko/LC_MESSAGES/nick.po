@@ -1075,8 +1075,8 @@ msgid "Information about rights held in and over this item."
 msgstr "이 항목에 대한 권한 정보입니다."
 
 #. Default: "Internal server error"
+#: src/app.ts:231
 #: src/app.ts:241
-#: src/app.ts:251
 msgctxt "App"
 msgid "Internal server error"
 msgstr "내부 서버 오류"
@@ -2394,8 +2394,8 @@ msgstr "오늘"
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:177
-#: src/app.ts:190
+#: src/app.ts:167
+#: src/app.ts:180
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "트랜잭션 오류."

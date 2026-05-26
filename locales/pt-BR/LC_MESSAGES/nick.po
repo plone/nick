@@ -1075,8 +1075,8 @@ msgid "Information about rights held in and over this item."
 msgstr "Informações sobre os direitos relativos a este item."
 
 #. Default: "Internal server error"
+#: src/app.ts:231
 #: src/app.ts:241
-#: src/app.ts:251
 msgctxt "App"
 msgid "Internal server error"
 msgstr "Erro interno do servidor"
@@ -2394,8 +2394,8 @@ msgstr "Hoje"
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:177
-#: src/app.ts:190
+#: src/app.ts:167
+#: src/app.ts:180
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "Erro de transação."

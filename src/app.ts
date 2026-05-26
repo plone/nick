@@ -21,23 +21,16 @@ import { initI18n } from './helpers/i18n/i18n';
 import { log } from './helpers/log/log';
 import { initProfiles } from './helpers/profiles/profiles';
 import { regExpEscape } from './helpers/utils/utils';
-import { accessLogger } from './middleware/access-logger/access-logger';
-import { cors } from './middleware/cors/cors';
-import { i18n } from './middleware/i18n/i18n';
-import { removeZopeVhosting } from './middleware/volto/volto';
 import models from './models';
 import globalRoutes from './routes';
 import tasks from './tasks';
+import middleware from './middleware';
 
 // Init profiles
 await initProfiles();
 
 const localRoutes = config.settings.routes
   ? (await import(`${process.cwd()}/src/routes`)).default
-  : [];
-
-const localTasks = config.settings.tasks
-  ? (await import(`${process.cwd()}/src/tasks`)).default
   : [];
 
 const routes = [...localRoutes, ...globalRoutes];
@@ -131,12 +124,9 @@ app.use(
   }),
 );
 app.use(express.json({ limit: config.settings.requestLimit?.api || '1mb' }));
-app.use(removeZopeVhosting);
-// @ts-expect-error Request type is extended with custom properties, but Express types do not know about them
-app.use(accessLogger);
-// @ts-expect-error Request type is extended with custom properties, but Express types do not know about them
-app.use(i18n);
-app.use(cors);
+
+// Use middleware
+middleware.use(app);
 
 app.set('trust proxy', config.settings.rateLimit.trustProxy || 1);
 

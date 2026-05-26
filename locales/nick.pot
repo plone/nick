@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-05-26T19:01:54.451Z\n"
+"POT-Creation-Date: 2026-05-26T19:33:59.271Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -1072,8 +1072,8 @@ msgid "Information about rights held in and over this item."
 msgstr ""
 
 #. Default: "Internal server error"
+#: src/app.ts:231
 #: src/app.ts:241
-#: src/app.ts:251
 msgctxt "App"
 msgid "Internal server error"
 msgstr ""
@@ -2391,8 +2391,8 @@ msgstr ""
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:177
-#: src/app.ts:190
+#: src/app.ts:167
+#: src/app.ts:180
 msgctxt "Client"
 msgid "Transaction error."
 msgstr ""

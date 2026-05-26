@@ -245,6 +245,7 @@
 - Refactor events to use profile init @robgietema
 - Refactor tasks to use profile init @robgietema
 - Refactor vocabularies to use profile init @robgietema
+- Refactor middleware to use profile init @robgietema
 
 ### Documentation
 

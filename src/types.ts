@@ -6,6 +6,7 @@
 // External imports
 import express from 'express';
 import { Knex } from 'knex';
+import { NextFunction } from 'express';
 
 export type JsonPrimative = string | number | boolean | null;
 export type JsonArray = Json[];
@@ -22,6 +23,12 @@ export interface Model {
 export type Params = { [key: string]: any };
 
 export type Callback = (...args: any[]) => any;
+
+export type MiddlewareHandler = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => void;
 
 export type Block = {
   toMarkdown: (self: any, document: any) => string;

@@ -11,6 +11,11 @@ import { purge } from '../../events/cache/cache';
 import { content_rules } from '../../events/content_rules/content_rules';
 import { push } from '../../events/push/push';
 import config from '../../helpers/config/config';
+import middleware from '../../middleware';
+import { accessLogger } from '../../middleware/access-logger/access-logger';
+import { cors } from '../../middleware/cors/cors';
+import { i18n } from '../../middleware/i18n/i18n';
+import { removeZopeVhosting } from '../../middleware/volto/volto';
 import vocabularies from '../../vocabularies';
 import { actions } from '../../vocabularies/actions/actions';
 import { availableLanguages } from '../../vocabularies/available-languages/available-languages';
@@ -68,4 +73,10 @@ export function init(): void {
   vocabularies.register('workflows', workflows);
   vocabularies.register('workflowStates', workflowStates);
   vocabularies.register('workflowTransitions', workflowTransitions);
+
+  // Register middleware
+  middleware.register(accessLogger);
+  middleware.register(cors);
+  middleware.register(i18n);
+  middleware.register(removeZopeVhosting);
 }
