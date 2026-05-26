@@ -11,7 +11,6 @@ import { isObject } from 'es-toolkit/compat';
 import express, { NextFunction, Response } from 'express';
 import { existsSync, mkdirSync } from 'fs';
 import helmet from 'helmet';
-import cron from 'node-cron';
 
 // Internal imports
 import { applyCache } from './helpers/cache/cache';
@@ -28,7 +27,7 @@ import { i18n } from './middleware/i18n/i18n';
 import { removeZopeVhosting } from './middleware/volto/volto';
 import models from './models';
 import globalRoutes from './routes';
-import globalTasks from './tasks';
+import tasks from './tasks';
 
 // Init profiles
 await initProfiles();
@@ -42,18 +41,12 @@ const localTasks = config.settings.tasks
   : [];
 
 const routes = [...localRoutes, ...globalRoutes];
-const tasks = [...localTasks, ...globalTasks];
 
 // Initialize i18n
 initI18n();
 
 // Run scheduled tasks
-tasks.forEach((task) => {
-  cron.schedule(task.schedule, async () => {
-    log.info(`Running scheduled task: ${task.name}`);
-    await task.handler();
-  });
-});
+tasks.run();
 
 // Create blob dir if it doesn’t exist
 if (config.settings.blobs === 'file' && !existsSync(config.settings.blobsDir)) {

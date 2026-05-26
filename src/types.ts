@@ -236,6 +236,12 @@ export interface QueryParam {
   [key: string]: string;
 }
 
+export type Task = {
+  name: string;
+  schedule: string;
+  handler: () => Promise<void>;
+};
+
 export type QueryResult = [WhereClause, QueryOptions];
 
 export interface CachePolicy {

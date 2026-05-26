@@ -1075,8 +1075,8 @@ msgid "Information about rights held in and over this item."
 msgstr "Információk az elemhez fűződő jogokról."
 
 #. Default: "Internal server error"
-#: src/app.ts:248
-#: src/app.ts:258
+#: src/app.ts:241
+#: src/app.ts:251
 msgctxt "App"
 msgid "Internal server error"
 msgstr "Belső szerverhiba"
@@ -2394,8 +2394,8 @@ msgstr "Ma"
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:184
-#: src/app.ts:197
+#: src/app.ts:177
+#: src/app.ts:190
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "Tranzakciós hiba."

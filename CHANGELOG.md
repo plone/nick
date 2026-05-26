@@ -243,6 +243,7 @@
 - Pass remaining params in client to params object @robgietema
 - Upgrade node versions to supported versions @robgietema
 - Refactor events to use profile init @robgietema
+- Refactor tasks to use profile init @robgietema
 
 ### Documentation
 
