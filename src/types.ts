@@ -350,7 +350,6 @@ export type ConfigSettings = {
       };
     };
   };
-  behaviors?: Record<string, any>;
   requestLimit?: {
     files: string;
     api: string;

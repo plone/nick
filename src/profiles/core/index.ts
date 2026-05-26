@@ -66,6 +66,21 @@ import behaviors from '../../behaviors';
 import { children_from_query } from '../../behaviors/children_from_query/children_from_query';
 import { id_from_title } from '../../behaviors/id_from_title/id_from_title';
 
+// Content rules
+import contentRules from '../../content_rules';
+import { copy_item } from '../../content_rules/actions/copy_item';
+import { delete_item } from '../../content_rules/actions/delete_item';
+import { logger } from '../../content_rules/actions/logger';
+import { move_item } from '../../content_rules/actions/move_item';
+import { send_email } from '../../content_rules/actions/send_email';
+import { transition_workflow } from '../../content_rules/actions/transition_workflow';
+import { version_item } from '../../content_rules/actions/version_item';
+import { content_type } from '../../content_rules/conditions/content_type';
+import { file_extension } from '../../content_rules/conditions/file_extension';
+import { user_group } from '../../content_rules/conditions/user_group';
+import { user_role } from '../../content_rules/conditions/user_role';
+import { workflow_state } from '../../content_rules/conditions/workflow_state';
+
 export function init(): void {
   // Register blocks
   blocks.register('title', title);
@@ -129,4 +144,19 @@ export function init(): void {
   // Register behaviors
   behaviors.register('children_from_query', children_from_query);
   behaviors.register('id_from_title', id_from_title);
+
+  // Register content rules
+  contentRules.registerAction('copy_item', copy_item);
+  contentRules.registerAction('delete_item', delete_item);
+  contentRules.registerAction('logger', logger);
+  contentRules.registerAction('move_item', move_item);
+  contentRules.registerAction('send_email', send_email);
+  contentRules.registerAction('transition_workflow', transition_workflow);
+  contentRules.registerAction('version_item', version_item);
+
+  contentRules.registerCondition('content_type', content_type);
+  contentRules.registerCondition('file_extension', file_extension);
+  contentRules.registerCondition('user_group', user_group);
+  contentRules.registerCondition('user_role', user_role);
+  contentRules.registerCondition('workflow_state', workflow_state);
 }
