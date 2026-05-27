@@ -14,13 +14,13 @@ This check includes content objects that are located within a content object ("f
 You can call the `/@linkintegrity` endpoint on the site root with a GET request and a list of content UIDs as a query parameter:
 
 ```http
-{% include_relative ../../examples/linkintegrity/get.req %}
+{% include_relative examples/linkintegrity/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/linkintegrity/get.ts %}
+{% include_relative examples/linkintegrity/get.ts %}
 ```
 
 The endpoint accepts a single parameter:
@@ -30,7 +30,7 @@ The endpoint accepts a single parameter:
 The server will respond with the result:
 
 ```http
-{% include_relative ../../examples/linkintegrity/get.res %}
+{% include_relative examples/linkintegrity/get.res %}
 ```
 
 The result includes a list of objects corresponding to the UIDs that were requested. Each result object includes:

@@ -26,35 +26,35 @@ The following is a list of components that support expansion.
 You can also get the list expandable components by inspecting the @components attribute in the response of any content GET request, as shown in the following example.
 
 ```http
-{% include_relative ../examples/translations/get_expansion.req %}
+{% include_relative examples/expansion/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/translations/get_expansion.ts %}
+{% include_relative examples/expansion/get.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../examples/translations/get_expansion.res %}
+{% include_relative examples/expansion/get.res %}
 ```
 
 In order to expand and embed the translations component, use the `GET` parameter expand with the value translations.
 
 ```http
-{% include_relative ../examples/translations/get_expansion_expanded.req %}
+{% include_relative examples/expansion/get_expanded.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/translations/get_expansion_expanded.ts %}
+{% include_relative examples/expansion/get_expanded.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../examples/translations/get_expansion_expanded.res %}
+{% include_relative examples/expansion/get_expanded.res %}
 ```

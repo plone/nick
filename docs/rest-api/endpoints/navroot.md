@@ -12,17 +12,17 @@ This navigation root information is different depending on the context of the re
 To get the information about the navigation root, the REST API has a `@navroot` contextual endpoint. For instance, send a `GET` request to the `@navroot` endpoint at the root of the site:
 
 ```http
-{% include_relative ../../examples/navroot/get.req %}
+{% include_relative examples/navroot/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/navroot/get.ts %}
+{% include_relative examples/navroot/get.ts %}
 ```
 
 The response will contain the navigation root information for the site:
 
 ```http
-{% include_relative ../../examples/navroot/get.res %}
+{% include_relative examples/navroot/get.res %}
 ```

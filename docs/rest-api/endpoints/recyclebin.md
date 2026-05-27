@@ -14,19 +14,19 @@ Reading or writing recycle bin data requires the `Manage Site` permission or be 
 A list of all items in the recycle bin can be retrieved by sending a `GET` request to the `@recyclebin` endpoint:
 
 ```http
-{% include_relative ../../examples/recyclebin/list.req %}
+{% include_relative examples/recyclebin/list.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/list.ts %}
+{% include_relative examples/recyclebin/list.ts %}
 ```
 
 The server will respond with a list of all recyclebin items in the site:
 
 ```http
-{% include_relative ../../examples/recyclebin/list.res %}
+{% include_relative examples/recyclebin/list.res %}
 ```
 
 ## Get individual item from recycle bin
@@ -35,19 +35,19 @@ To retrieve detailed information about a specific item in the recycle bin, inclu
 The response includes an `items` list with all flattened descendants.
 
 ```http
-{% include_relative ../../examples/recyclebin/get.req %}
+{% include_relative examples/recyclebin/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/get.ts %}
+{% include_relative examples/recyclebin/get.ts %}
 ```
 
 The server will respond with the recyclebin item:
 
 ```http
-{% include_relative ../../examples/recyclebin/get.res %}
+{% include_relative examples/recyclebin/get.res %}
 ```
 
 ## Restore an item from the recycle bin
@@ -55,19 +55,19 @@ The server will respond with the recyclebin item:
 An item can be restored to its original location by issuing a `POST` to `@recyclebin/{item uuid}/restore`:
 
 ```http
-{% include_relative ../../examples/recyclebin/post.req %}
+{% include_relative examples/recyclebin/post.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/post.ts %}
+{% include_relative examples/recyclebin/post.ts %}
 ```
 
 The server will respond with the restored recyclebin item:
 
 ```http
-{% include_relative ../../examples/recyclebin/post.res %}
+{% include_relative examples/recyclebin/post.res %}
 ```
 
 ### Restore to a specific location
@@ -75,19 +75,19 @@ The server will respond with the restored recyclebin item:
 Pass a `target_path` in the request body to restore the item to a different folder:
 
 ```http
-{% include_relative ../../examples/recyclebin/post_target.req %}
+{% include_relative examples/recyclebin/post_target.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/post_target.ts %}
+{% include_relative examples/recyclebin/post_target.ts %}
 ```
 
 The server will respond with the restored recyclebin item:
 
 ```http
-{% include_relative ../../examples/recyclebin/post_target.res %}
+{% include_relative examples/recyclebin/post_target.res %}
 ```
 
 ## Purge a specific item from the recycle bin
@@ -95,19 +95,19 @@ The server will respond with the restored recyclebin item:
 To permanently delete a specific item, send a `DELETE` request to `@recyclebin/{item uuid}`:
 
 ```http
-{% include_relative ../../examples/recyclebin/delete.req %}
+{% include_relative examples/recyclebin/delete.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/delete.ts %}
+{% include_relative examples/recyclebin/delete.ts %}
 ```
 
 The server will respond with an ok message:
 
 ```http
-{% include_relative ../../examples/recyclebin/delete.res %}
+{% include_relative examples/recyclebin/delete.res %}
 ```
 
 ## Empty the entire recycle bin
@@ -115,17 +115,17 @@ The server will respond with an ok message:
 To permanently delete all items, send a `DELETE` request to `@recyclebin`:
 
 ```http
-{% include_relative ../../examples/recyclebin/delete_all.req %}
+{% include_relative examples/recyclebin/delete_all.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/recyclebin/delete_all.ts %}
+{% include_relative examples/recyclebin/delete_all.ts %}
 ```
 
 The server will respond with an ok message:
 
 ```http
-{% include_relative ../../examples/recyclebin/delete_all.res %}
+{% include_relative examples/recyclebin/delete_all.res %}
 ```

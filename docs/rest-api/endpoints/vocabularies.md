@@ -20,19 +20,19 @@ Vocabularies can be context-sensitive, meaning that they take the context into a
 To retrieve a list of all the available vocabularies, send a `GET` request to the `@vocabularies` endpoint:
 
 ```http
-{% include_relative ../../examples/vocabularies/list.req %}
+{% include_relative examples/vocabularies/list.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/vocabularies/list.ts %}
+{% include_relative examples/vocabularies/list.ts %}
 ```
 
 The response will include a list with the URL (`@id`) and the names (`title`) of all the available vocabularies:
 
 ```http
-{% include_relative ../../examples/vocabularies/list.res %}
+{% include_relative examples/vocabularies/list.res %}
 ```
 
 ## Get a vocabulary
@@ -40,17 +40,17 @@ The response will include a list with the URL (`@id`) and the names (`title`) of
 To enumerate the terms of a particular vocabulary, use the `@vocabularies` endpoint with the name of the vocabulary, e.g. `/@vocabularies/roles`. The endpoint can be used with the site root and content objects.
 
 ```http
-{% include_relative ../../examples/vocabularies/get.req %}
+{% include_relative examples/vocabularies/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/vocabularies/get.ts %}
+{% include_relative examples/vocabularies/get.ts %}
 ```
 
 The server will respond with a list of terms. The title is purely for display purposes. The token is what should be sent to the server to address that term.
 
 ```http
-{% include_relative ../../examples/vocabularies/get.res %}
+{% include_relative examples/vocabularies/get.res %}
 ```

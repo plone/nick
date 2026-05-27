@@ -14,19 +14,19 @@ You can retrieve a list of all existing comments, add new comments, reply to exi
 You can list the existing comment on a content object by sending a `GET` request to the URL of the content object and appending `/@comments`:
 
 ```http
-{% include_relative ../../examples/comments/get.req %}
+{% include_relative examples/comments/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/comments/get.ts %}
+{% include_relative examples/comments/get.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../../examples/comments/get.res %}
+{% include_relative examples/comments/get.res %}
 ```
 
 The following fields are returned.
@@ -52,19 +52,19 @@ The items attribute returns a list of comments. Each comment provides the follow
 To add a new comment to a content object, send a `POST` request to the URL of the content object and append `/@comments` to the URL. The body of the request needs to contain a JSON structure with a `text` attribute that contains the comment text:
 
 ```http
-{% include_relative ../../examples/comments/post.req %}
+{% include_relative examples/comments/post.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/comments/post.ts %}
+{% include_relative examples/comments/post.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../../examples/comments/post.res %}
+{% include_relative examples/comments/post.res %}
 ```
 
 ## Replying to a Comment
@@ -72,19 +72,19 @@ Example response:
 To add a direct reply to an existing comment, send a `POST` request to the URL of the comment to which you want to reply. The body of the request needs to contain a JSON structure with a `text` attribute that contains the comment text:
 
 ```http
-{% include_relative ../../examples/comments/post_reply.req %}
+{% include_relative examples/comments/post_reply.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/comments/post_reply.ts %}
+{% include_relative examples/comments/post_reply.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../../examples/comments/post_reply.res %}
+{% include_relative examples/comments/post_reply.res %}
 ```
 
 ## Updating a Comment
@@ -92,19 +92,19 @@ Example response:
 An existing comment can be updated by sending a `PATCH` request to the URL of the comment. The request body needs to contain a JSON structure with at least a `text` attribute:
 
 ```http
-{% include_relative ../../examples/comments/patch.req %}
+{% include_relative examples/comments/patch.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/comments/patch.ts %}
+{% include_relative examples/comments/patch.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../../examples/comments/patch.res %}
+{% include_relative examples/comments/patch.res %}
 ```
 
 ## Deleting a Comment
@@ -112,17 +112,17 @@ Example response:
 An existing comment can be deleted by sending a `DELETE` request to the URL of the comment.
 
 ```http
-{% include_relative ../../examples/comments/delete.req %}
+{% include_relative examples/comments/delete.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/comments/delete.ts %}
+{% include_relative examples/comments/delete.ts %}
 ```
 
 Example response:
 
 ```http
-{% include_relative ../../examples/comments/delete.res %}
+{% include_relative examples/comments/delete.res %}
 ```

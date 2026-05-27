@@ -24,19 +24,19 @@ By default, Nick automatically creates a new alias when an object is renamed or 
 To create a new alias, send a `POST` request to the `/@aliases` endpoint:
 
 ```http
-{% include_relative ../../examples/aliases/post.req %}
+{% include_relative examples/aliases/post.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/post.ts %}
+{% include_relative examples/aliases/post.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/post.res %}
+{% include_relative examples/aliases/post.res %}
 ```
 
 ## Listing URL aliases of a Page
@@ -44,19 +44,19 @@ Response:
 To list aliases, you can send a `GET` request to the `/@aliases` endpoint:
 
 ```http
-{% include_relative ../../examples/aliases/list.req %}
+{% include_relative examples/aliases/list.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/list.ts %}
+{% include_relative examples/aliases/list.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/list.res %}
+{% include_relative examples/aliases/list.res %}
 ```
 
 ## Removing URL aliases of a Page
@@ -64,19 +64,19 @@ Response:
 To remove aliases, send a `DELETE` request to the `/@aliases` endpoint:
 
 ```http
-{% include_relative ../../examples/aliases/delete.req %}
+{% include_relative examples/aliases/delete.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/delete.ts %}
+{% include_relative examples/aliases/delete.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/delete.res %}
+{% include_relative examples/aliases/delete.res %}
 ```
 
 ## Adding URL aliases in bulk
@@ -85,19 +85,19 @@ You can add multiple URL aliases for multiple pages by sending a `POST` request 
 **datetime** parameter is optional:
 
 ```http
-{% include_relative ../../examples/aliases/post_root.req %}
+{% include_relative examples/aliases/post_root.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/post_root.ts %}
+{% include_relative examples/aliases/post_root.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/post_root.res %}
+{% include_relative examples/aliases/post_root.res %}
 ```
 
 ## Listing all available aliases
@@ -105,19 +105,19 @@ Response:
 To list all aliases, send a `GET` request to the `/@aliases` endpoint on site `root`:
 
 ```http
-{% include_relative ../../examples/aliases/list_root.req %}
+{% include_relative examples/aliases/list_root.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/list_root.ts %}
+{% include_relative examples/aliases/list_root.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/list_root.res %}
+{% include_relative examples/aliases/list_root.res %}
 ```
 
 ## Filter aliases
@@ -138,19 +138,19 @@ All of the following parameters are optional.
 To search for specific aliases, send a `GET` request to the `@aliases` endpoint with one or more of the above named parameters as shown in the following example.
 
 ```http
-{% include_relative ../../examples/aliases/list_query.req %}
+{% include_relative examples/aliases/list_query.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/list_query.ts %}
+{% include_relative examples/aliases/list_query.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/list_query.res %}
+{% include_relative examples/aliases/list_query.res %}
 ```
 
 ## Bulk removing aliases
@@ -158,17 +158,17 @@ Response:
 To bulk remove aliases send a `DELETE` request to the `/@aliases` endpoint on site `root`:
 
 ```http
-{% include_relative ../../examples/aliases/delete.req %}
+{% include_relative examples/aliases/delete.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/aliases/delete.ts %}
+{% include_relative examples/aliases/delete.ts %}
 ```
 
 Response:
 
 ```http
-{% include_relative ../../examples/aliases/delete.res %}
+{% include_relative examples/aliases/delete.res %}
 ```

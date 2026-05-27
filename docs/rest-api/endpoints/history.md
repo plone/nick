@@ -12,17 +12,17 @@ The `@history` endpoint exposes history and versioning information on previous v
 Listing versions and history of a resource:
 
 ```http
-{% include_relative ../../examples/history/get.req %}
+{% include_relative examples/history/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/history/get.ts %}
+{% include_relative examples/history/get.ts %}
 ```
 
 ```http
-{% include_relative ../../examples/history/get.res %}
+{% include_relative examples/history/get.res %}
 ```
 
 This following fields are returned:
@@ -42,13 +42,13 @@ This following fields are returned:
 Older versions of a resource can be retrieved by appending version to the `@history` endpoint url.
 
 ```http
-{% include_relative ../../examples/history/get_version.req %}
+{% include_relative examples/history/get_version.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/history/get_version.ts %}
+{% include_relative examples/history/get_version.ts %}
 ```
 
 ## Revert to a Historical Version
@@ -56,15 +56,15 @@ Or use the client directly:
 Reverting to an older versions of a resource can be done by sending a PATCH request to the `@history` endpoint and appending the version you want to revert to.
 
 ```http
-{% include_relative ../../examples/history/patch.req %}
+{% include_relative examples/history/patch.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../../examples/history/patch.ts %}
+{% include_relative examples/history/patch.ts %}
 ```
 
 ```http
-{% include_relative ../../examples/history/patch.res %}
+{% include_relative examples/history/patch.res %}
 ```

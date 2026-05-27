@@ -16,17 +16,17 @@ The available actions for the currently logged in user can be retrieved by calli
 To list the available actions, send a GET request to the `@actions` endpoint on a specific content object:
 
 ```http
-{% include_relative /examples/actions/get_authenticated.req %}
+{% include_relative examples/actions/get_authenticated.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative /examples/actions/get_authenticated.ts %}
+{% include_relative examples/actions/get_authenticated.ts %}
 ```
 
 The server will respond with a 200 OK status code. The JSON response contains the available actions categories (object, object_buttons, user) on the top level. Each category contains a list of the available actions in that category:
 
 ```http
-{% include_relative /examples/actions/get_authenticated.res %}
+{% include_relative examples/actions/get_authenticated.res %}
 ```

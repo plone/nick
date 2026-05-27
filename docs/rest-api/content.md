@@ -22,13 +22,13 @@ Manipulating resources across the network by using HTTP as an application protoc
 To create a new resource, we send a `POST` request to the resource container. If we want to create a new document within an existing folder, we send a `POST` request to that folder:
 
 ```http
-{% include_relative ../examples/content/post.req %}
+{% include_relative examples/content/post.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/post.ts %}
+{% include_relative examples/content/post.ts %}
 ```
 
 By setting the 'Accept' header, we tell the server that we would like to receive the response in the 'application/json' representation format.
@@ -42,7 +42,7 @@ The request body contains the minimal necessary information needed to create a d
 If a resource has been created, the server responds with the `201 Created` status code. The 'Location' header contains the URL of the newly created resource and the resource representation in the payload:
 
 ```http
-{% include_relative ../examples/content/post.res %}
+{% include_relative examples/content/post.res %}
 ```
 
 ### Unsuccessful Response (400 Bad Request)
@@ -50,7 +50,7 @@ If a resource has been created, the server responds with the `201 Created` statu
 If the resource could not be created, for instance because the title was missing in the request, the server responds with `400 Bad Request`:
 
 ```http
-{% include_relative ../examples/content/post_badrequest.res %}
+{% include_relative examples/content/post_badrequest.res %}
 ```
 
 The response body can contain information about why the request failed.
@@ -60,13 +60,13 @@ The response body can contain information about why the request failed.
 After a successful POST, we can access the resource by sending a GET request to the resource URL:
 
 ```http
-{% include_relative ../examples/content/get.req %}
+{% include_relative examples/content/get.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/get.ts %}
+{% include_relative examples/content/get.ts %}
 ```
 
 ### Successful Response (200 OK)
@@ -74,7 +74,7 @@ Or use the client directly:
 If a resource has been retrieved successfully, the server responds with `200 OK`:
 
 ```http
-{% include_relative ../examples/content/get.res %}
+{% include_relative examples/content/get.res %}
 ```
 
 For folderish types, their childrens are automatically included in the response as items.
@@ -84,7 +84,7 @@ For folderish types, their childrens are automatically included in the response 
 If a resource could not be found, the server will respond with `404 Not Found`:
 
 ```http
-{% include_relative ../examples/content/get_notfound.res %}
+{% include_relative examples/content/get_notfound.res %}
 ```
 
 ### GET Responses
@@ -102,13 +102,13 @@ To update an existing resource we send a `PATCH` request to the server. `PATCH` 
 If you send the value `null` for a field, the field's content will be deleted. Note that this is not possible if the field is required.
 
 ```http
-{% include_relative ../examples/content/patch.req %}
+{% include_relative examples/content/patch.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/patch.ts %}
+{% include_relative examples/content/patch.ts %}
 ```
 
 ### Successful Response (204 No Content)
@@ -116,7 +116,7 @@ Or use the client directly:
 A successful response to a PATCH request will be indicated by a `204 No Content` response by default:
 
 ```http
-{% include_relative ../examples/content/patch.res %}
+{% include_relative examples/content/patch.res %}
 ```
 
 ## Removing a Resource with DELETE
@@ -124,19 +124,19 @@ A successful response to a PATCH request will be indicated by a `204 No Content`
 We can delete an existing resource by sending a DELETE request:
 
 ```http
-{% include_relative ../examples/content/delete.req %}
+{% include_relative examples/content/delete.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/delete.ts %}
+{% include_relative examples/content/delete.ts %}
 ```
 
 A successful response will be indicated by a `204 No Content` response:
 
 ```http
-{% include_relative ../examples/content/delete.res %}
+{% include_relative examples/content/delete.res %}
 ```
 
 ### DELETE Repsonses
@@ -153,13 +153,13 @@ The resources contained within a resource can be reordered using the `ordering` 
 Use the `obj_id` subkey to specify which resource to reorder. The subkey `delta` can be 'top', 'bottom', or a negative or positive integer for moving up or down.
 
 ```http
-{% include_relative ../examples/content/patch_reorder.req %}
+{% include_relative examples/content/patch_reorder.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/patch_reorder.ts %}
+{% include_relative examples/content/patch_reorder.ts %}
 ```
 
 ## Exporting a Resource with GET
@@ -167,13 +167,13 @@ Or use the client directly:
 We can use the `@export` endpoint to export the content to a `json`-file to be used for migrations or external services. We can export the resource by sending a GET request to the resource URL:
 
 ```http
-{% include_relative ../examples/content/export.req %}
+{% include_relative examples/content/export.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/export.ts %}
+{% include_relative examples/content/export.ts %}
 ```
 
 ### Successful Response (200 OK)
@@ -181,7 +181,7 @@ Or use the client directly:
 If a resource has been retrieved successfully, the server responds with `200 OK`:
 
 ```http
-{% include_relative ../examples/content/export.res %}
+{% include_relative examples/content/export.res %}
 ```
 
 ## Exporting ICS format
@@ -189,13 +189,13 @@ If a resource has been retrieved successfully, the server responds with `200 OK`
 We can use the `ics_view` endpoint to export the event content to an iCalendar file to be used for external services. We can export the data by sending a GET request to the resource URL:
 
 ```http
-{% include_relative ../examples/content/ics.req %}
+{% include_relative examples/content/ics.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/ics.ts %}
+{% include_relative examples/content/ics.ts %}
 ```
 
 ### Successful Response (200 OK)
@@ -203,7 +203,7 @@ Or use the client directly:
 If a resource has been retrieved successfully, the server responds with `200 OK`:
 
 ```http
-{% include_relative ../examples/content/ics.res %}
+{% include_relative examples/content/ics.res %}
 ```
 
 ## Exporting ICS format on a path
@@ -211,13 +211,13 @@ If a resource has been retrieved successfully, the server responds with `200 OK`
 We can also use the `ics_view` endpoint to export multiple events. When we call the `ics_view` on a path it will fetch all events from this path down in an iCalendar file. We can export the data by sending a GET request to the resource URL:
 
 ```http
-{% include_relative ../examples/content/ics_folder.req %}
+{% include_relative examples/content/ics_folder.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/ics_folder.ts %}
+{% include_relative examples/content/ics_folder.ts %}
 ```
 
 ### Successful Response (200 OK)
@@ -225,7 +225,7 @@ Or use the client directly:
 If a resource has been retrieved successfully, the server responds with `200 OK`:
 
 ```http
-{% include_relative ../examples/content/ics_folder.res %}
+{% include_relative examples/content/ics_folder.res %}
 ```
 
 # Exporting RSS format on a path
@@ -233,13 +233,13 @@ If a resource has been retrieved successfully, the server responds with `200 OK`
 We can call the `rss_view` endpoint to export the content in RSS format. When we call the `rss_view` on a path it will fetch all content from this path down in a RSS file. We can export the data by sending a GET request to the resource URL:
 
 ```http
-{% include_relative ../examples/content/rss.req %}
+{% include_relative examples/content/rss.req %}
 ```
 
 Or use the client directly:
 
 ```ts
-{% include_relative ../examples/content/rss.ts %}
+{% include_relative examples/content/rss.ts %}
 ```
 
 ## Successful Response (200 OK)
@@ -247,5 +247,5 @@ Or use the client directly:
 If a resource has been retrieved successfully, the server responds with `200 OK`:
 
 ```http
-{% include_relative ../examples/content/rss.res %}
+{% include_relative examples/content/rss.res %}
 ```
