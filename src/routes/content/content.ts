@@ -503,7 +503,7 @@ export default [
       await req.document.restrictChildren(req, trx);
 
       // Check if calender accept
-      if (req.headers.accept === 'text/calendar') {
+      if (req.headers?.accept === 'text/calendar') {
         const ics = await req.document.toICS(req, trx);
         return {
           headers: {
@@ -516,7 +516,7 @@ export default [
       }
 
       // Check if rss accept
-      if (req.headers.accept === 'application/rss+xml') {
+      if (req.headers?.accept === 'application/rss+xml') {
         const rss = await req.document.toRSS(req, trx);
         return {
           headers: {
@@ -529,7 +529,7 @@ export default [
       }
 
       // Check if rss accept
-      if (req.headers.accept === 'text/markdown') {
+      if (req.headers?.accept === 'text/markdown') {
         const markdown = await req.document.toMarkdown();
         return {
           headers: {
