@@ -260,6 +260,8 @@
 - Add expansion documentation @robgietema
 - Add multilingual documention @robgietema
 - Extended search docs with extra examples @robgietema
+- Restructure documentation in to admin and dev docs @robgietema
+- Write developer docs for all possible customizations @robgietema
 
 ## 2.8.0 (2022-07-17)
 

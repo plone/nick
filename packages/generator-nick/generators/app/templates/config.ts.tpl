@@ -47,7 +47,7 @@ export const config = {
   profiles: [
     '@robgietema/nick:core',
     /* '@robgietema/nick:ai', */
-    '@robgietema/nick:default',
+    '<%= projectName %>:default',
     /* '@robgietema/nick:multilingual', */
     /* '@robgietema/nick:multilingualcontent', */
   ],
