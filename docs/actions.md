@@ -1,6 +1,6 @@
 ---
 nav_order: 1
-permalink: /endpoints/actions
+permalink: /rest-api/endpoints/actions
 parent: Endpoints
 ---
 

@@ -1,6 +1,6 @@
 ---
 nav_order: 2
-permalink: /endpoints/aliases
+permalink: /rest-api/endpoints/aliases
 parent: Endpoints
 ---
 

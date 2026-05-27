@@ -1,6 +1,7 @@
 ---
-nav_order: 6
-permalink: /endpoints
+nav_order: 5
+permalink: /rest-api/endpoints
+partent: REST API
 ---
 
 # Endpoints
