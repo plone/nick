@@ -1,6 +1,6 @@
 ---
 nav_order: 7
-permalink: /endpoints/content_rules
+permalink: /endpoints/content-rules
 parent: Endpoints
 ---
 

@@ -1,7 +1,7 @@
 ---
-nav_order: 7
-permalink: /usage/ai
-parent: Usage
+nav_order: 3
+permalink: /admin-guide/ai
+parent: Admin guide
 ---
 
 # AI Support
@@ -34,9 +34,9 @@ Next step is setup the AI models in the config. You can do so by adding followin
 export const config = {
   ...
   profiles: [
-    `${__dirname}/src/profiles/core`,
-    `${__dirname}/src/profiles/ai`,
-    `${__dirname}/src/profiles/default`,
+    '@robgietema/nick:core',
+    '@robgietema/nick:ai',
+    '@robgietema/nick:default',
   ],
   ...
   ai: {

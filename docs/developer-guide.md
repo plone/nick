@@ -1,10 +1,9 @@
 ---
-nav_order: 8
-permalink: /usage/development
-parent: Usage
+nav_order: 4
+permalink: /developer-guide
 ---
 
-# Development
+# Developer guide
 
 To develop the core of Nick use the following steps to get started.
 

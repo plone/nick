@@ -1,7 +1,7 @@
 ---
-nav_order: 6
-permalink: /usage/multilingual
-parent: Usage
+nav_order: 2
+permalink: /admin-guide/multilingual
+parent: Admin guide
 ---
 
 # Multilingual
@@ -14,9 +14,9 @@ To setup multilingual support add the following change to your `config.js` file:
 export const config = {
   ...
   profiles: [
-    `${__dirname}/src/profiles/core`,
-    `${__dirname}/src/profiles/multilingual`,
-    `${__dirname}/src/profiles/multilingualcontent`,
+    '@robgietema/nick:core',
+    '@robgietema/nick:multilingual',
+    '@robgietema/nick:multilingualcontent',
   ],
   ...
 };

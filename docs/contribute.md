@@ -1,14 +1,13 @@
 ---
-nav_order: 4
+nav_order: 7
 permalink: /contribute
 ---
 
 # Contribute
 
-I'm really glad you're reading this, because we could use some volunteers to
-help this project forward!
+I'm really glad you're reading this, because contributions are always welcome!
 
-Here are some important resources you can use get get familiar with Nick:
+Here are some important resources you can use to get familiar with Nick:
 
 - [Official Website](https://nickcms.org) contains generic information
 - [Documentation](https://docs.nickcms.org) has our Rest API documentation
@@ -18,7 +17,7 @@ Here are some important resources you can use get get familiar with Nick:
 
 ## Translations
 
-Currently Nick is available in _English_ and _Dutch_. Feel free add missing
+Currently Nick is available in multiple languages. Feel free add missing
 translations or add a new language. The translations can be found in the
 `locales` folder and you can extract new translatable text using the `pnpm i18n`
 command. This command also builds the language files for use with Nick.

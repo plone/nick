@@ -1,7 +1,7 @@
 ---
-nav_order: 3
-permalink: /usage/content
-parent: Usage
+nav_order: 2
+permalink: /rest-api/content
+parent: REST API
 ---
 
 # Content Manipulation

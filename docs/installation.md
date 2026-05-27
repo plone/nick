@@ -1,7 +1,7 @@
 ---
 nav_order: 1
-permalink: /usage/installation
-parent: Usage
+permalink: /admin-guide/installation
+parent: Admin guide
 ---
 
 # Installation

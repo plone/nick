@@ -1,7 +1,7 @@
 ---
-nav_order: 2
-permalink: /usage/authentication
-parent: Usage
+nav_order: 1
+permalink: /rest-api/authentication
+parent: REST API
 ---
 
 # Authentication
@@ -132,7 +132,7 @@ The server responds with an error message:
 
 ### Invalidating a token
 
-The `@logout` endpoint can be used to invalidate tokens. However by default tokens are not persisted on the server and thus can not be invalidated.
+The `@logout` endpoint can be used to invalidate tokens. Tokens are persisted on the server and thus can be invalidated.
 
 The logout request must contain the existing token in the `Authorization` header.
 

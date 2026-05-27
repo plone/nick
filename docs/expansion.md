@@ -1,7 +1,7 @@
 ---
-nav_order: 4
-permalink: /usage/expansion
-parent: Usage
+nav_order: 3
+permalink: /rest-api/expansion
+parent: REST API
 ---
 
 # Expansion

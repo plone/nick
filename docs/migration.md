@@ -1,7 +1,7 @@
 ---
-nav_order: 9
-permalink: /usage/migration
-parent: Usage
+nav_order: 4
+permalink: /admin-guide/migration
+parent: Admin guide
 ---
 
 # Migration
