@@ -93,7 +93,7 @@
     "@formatjs/intl": "4.1.12",
     "bcrypt": "6.0.0",
     "bcrypt-promise": "2.0.0",
-    "dayjs": "1.11.20",
+    "dayjs": "1.11.21",
     "du": "1.0.0",
     "es-toolkit": "1.47.0",
     "express": "5.2.1",
