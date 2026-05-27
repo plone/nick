@@ -41,7 +41,9 @@ interface ResponseData {
 function readFile(filename: string): FileData {
   // Read request file
   const data: string[] = fs
-    .readFileSync(`${process.cwd()}/docs/examples/${filename}`)
+    .readFileSync(
+      `${process.cwd()}/docs/rest-api/endpoints/examples/${filename}`,
+    )
     .toString()
     .split(/\r?\n/);
 

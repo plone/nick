@@ -19,5 +19,5 @@ describe('Types', () => {
     testRequest(app, 'types/get_notfound'));
 
   it('should return a list of types in a different language', () =>
-    testRequest(app, 'types/list_i18n'));
+    testRequest(app, 'i18n/list'));
 });

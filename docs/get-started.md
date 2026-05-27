@@ -1,4 +1,6 @@
 ---
+title: Get started
+nav_order: 2
 permalink: /get-started
 ---
 

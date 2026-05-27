@@ -1,4 +1,5 @@
 ---
+title: Contribute
 nav_order: 7
 permalink: /contribute
 ---
