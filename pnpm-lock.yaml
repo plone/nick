@@ -54,8 +54,8 @@ importers:
         specifier: 4.2.1
         version: 4.2.1
       nodemailer:
-        specifier: 8.0.8
-        version: 8.0.8
+        specifier: 8.0.9
+        version: 8.0.9
       nodemon:
         specifier: 3.1.14
         version: 3.1.14
@@ -1339,8 +1339,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.361:
-    resolution: {integrity: sha512-Q6Hts7N9FnJc5LeGRINFvLhCI9xZmNtTDe5ZbcVezQz7cU4a8Aua3GH1b8J2XY8Al9PF+OCwYqhgsOOheMdvkA==}
+  electron-to-chromium@1.5.362:
+    resolution: {integrity: sha512-PUY2DrLvkjkUuWqq+KPL2iWshrJsZOcIojzRQ7eXFacc9dWga7MGMJAa15VbiejSZB1PAXaRLAiKgruHP8LB1w==}
 
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
@@ -2016,8 +2016,8 @@ packages:
     resolution: {integrity: sha512-GYVXHE2KnrzAfsAjl4uP++evGFCrAU1jta4ubEjIG7YWt/64Gqv66a30yKwWczVjA6j3bM4nBwH7Pk1JmDHaxQ==}
     engines: {node: '>=18'}
 
-  nodemailer@8.0.8:
-    resolution: {integrity: sha512-p+XsnzXGdtIHXUu2ugxdfG+eX2nehsGhMjW9h0CWj1BhE30hrFz0kh0yIM0/VjUgVsRrDj+80ZO+I1nSkGE4tA==}
+  nodemailer@8.0.9:
+    resolution: {integrity: sha512-5ofa7BUN8+C+Hckh5V2GjeeOGRQBx0CJQA6KxrvuZfC8iU4/q7sLn8XrtEEhJkjV6HdyIiQs7Bba6bTao8JhkA==}
     engines: {node: '>=6.0.0'}
 
   nodemon@3.1.14:
@@ -3472,7 +3472,7 @@ snapshots:
     dependencies:
       baseline-browser-mapping: 2.10.32
       caniuse-lite: 1.0.30001793
-      electron-to-chromium: 1.5.361
+      electron-to-chromium: 1.5.362
       node-releases: 2.0.46
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -3585,7 +3585,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.361: {}
+  electron-to-chromium@1.5.362: {}
 
   encodeurl@2.0.0: {}
 
@@ -4222,7 +4222,7 @@ snapshots:
 
   node-releases@2.0.46: {}
 
-  nodemailer@8.0.8: {}
+  nodemailer@8.0.9: {}
 
   nodemon@3.1.14:
     dependencies:
