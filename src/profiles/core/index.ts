@@ -17,10 +17,12 @@ import { File } from '../../models/file/file';
 import { Form } from '../../models/form/form';
 import { Group } from '../../models/group/group';
 import { Index } from '../../models/index/index';
+import { Job } from '../../models/job/job';
 import { Permission } from '../../models/permission/permission';
 import { Profile } from '../../models/profile/profile';
 import { Redirect } from '../../models/redirect/redirect';
 import { Role } from '../../models/role/role';
+import { ScheduledJob } from '../../models/scheduled_job/scheduled_job';
 import { Type } from '../../models/type/type';
 import { User } from '../../models/user/user';
 import { Version } from '../../models/version/version';
@@ -57,6 +59,7 @@ import { seedPermission } from '../../seeds/permission/permission';
 import { seedProfile } from '../../seeds/profile/profile';
 import { seedRole } from '../../seeds/role/role';
 import { seedRedirect } from '../../seeds/redirect/redirect';
+import { seedScheduledJob } from '../../seeds/scheduled_job/scheduled_job';
 import { seedType } from '../../seeds/type/type';
 import { seedUser } from '../../seeds/user/user';
 import { seedVocabulary } from '../../seeds/vocabulary/vocabulary';
@@ -103,6 +106,10 @@ import { user_group } from '../../content_rules/conditions/user_group';
 import { user_role } from '../../content_rules/conditions/user_role';
 import { workflow_state } from '../../content_rules/conditions/workflow_state';
 
+// Scheduled jobs
+import scheduledJobs from '../../scheduled_jobs';
+import { reindex } from '../../scheduled_jobs/actions/reindex';
+
 // Routes
 import routes from '../../routes';
 import actionsRoutes from '../../routes/actions/actions';
@@ -122,6 +129,7 @@ import formRoutes from '../../routes/form/form';
 import groupsRoutes from '../../routes/groups/groups';
 import historyRoutes from '../../routes/history/history';
 import inheritRoutes from '../../routes/inherit/inherit';
+import jobsRoutes from '../../routes/jobs/jobs';
 import linkintegrityRoutes from '../../routes/linkintegrity/linkintegrity';
 import lockRoutes from '../../routes/lock/lock';
 import navigationRoutes from '../../routes/navigation/navigation';
@@ -132,6 +140,7 @@ import querystringRoutes from '../../routes/querystring/querystring';
 import recyclebinRoutes from '../../routes/recyclebin/recyclebin';
 import relatedRoutes from '../../routes/related/related';
 import rolesRoutes from '../../routes/roles/roles';
+import scheduledJobsRoutes from '../../routes/scheduled_jobs/scheduled_jobs';
 import searchRoutes from '../../routes/search/search';
 import sharingRoutes from '../../routes/sharing/sharing';
 import siteRoutes from '../../routes/site/site';
@@ -155,10 +164,12 @@ export function init(): void {
   models.register('Form', () => Form);
   models.register('Group', () => Group);
   models.register('Index', () => Index);
+  models.register('Job', () => Job);
   models.register('Permission', () => Permission);
   models.register('Profile', () => Profile);
   models.register('Redirect', () => Redirect);
   models.register('Role', () => Role);
+  models.register('ScheduledJob', () => ScheduledJob);
   models.register('Type', () => Type);
   models.register('User', () => User);
   models.register('Version', () => Version);
@@ -218,6 +229,7 @@ export function init(): void {
   seeds.register(seedType);
   seeds.register(seedCatalog);
   seeds.register(seedContentRule);
+  seeds.register(seedScheduledJob);
   seeds.register(seedDocument);
   seeds.register(seedRedirect);
   seeds.register(seedAction);
@@ -244,6 +256,9 @@ export function init(): void {
   contentRules.registerCondition('user_role', user_role);
   contentRules.registerCondition('workflow_state', workflow_state);
 
+  // Register scheduled job actions
+  scheduledJobs.registerAction('reindex', reindex);
+
   // Routes
   routes.register(contentRoutes); // Register content routes first as they are the fallback
   routes.register(actionsRoutes);
@@ -262,6 +277,7 @@ export function init(): void {
   routes.register(groupsRoutes);
   routes.register(historyRoutes);
   routes.register(inheritRoutes);
+  routes.register(jobsRoutes);
   routes.register(linkintegrityRoutes);
   routes.register(lockRoutes);
   routes.register(navigationRoutes);
@@ -273,6 +289,7 @@ export function init(): void {
   routes.register(relatedRoutes);
   routes.register(rolesRoutes);
   routes.register(searchRoutes);
+  routes.register(scheduledJobsRoutes);
   routes.register(sharingRoutes);
   routes.register(siteRoutes);
   routes.register(systemRoutes);

@@ -1,0 +1,15 @@
+{
+  "purge": true,
+  "scheduled_jobs": [
+    {
+      "id": "reindex-events",
+      "title": "Reindex Events",
+      "description": "Reindex all events",
+      "action": "reindex",
+      "params": {
+        "type": "Event"
+      },
+      "schedule": "0 0 * * *"
+    }
+  ]
+}

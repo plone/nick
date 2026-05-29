@@ -32,7 +32,6 @@ export class Client {
    */
   static initialize = ({ token: initToken, apiPath }: any): any => {
     initI18n();
-    initProfiles();
     const client = new Client() as any;
     const Document = models.get('Document');
 
@@ -50,6 +49,7 @@ export class Client {
             ...rest
           } = {} as any,
         ) => {
+          await initProfiles();
           const req = {
             token: initToken || token,
             apiPath,

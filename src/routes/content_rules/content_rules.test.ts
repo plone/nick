@@ -1,6 +1,6 @@
 /**
  * Content Rules tests.
- * @module routes/content_rules/content_rules
+ * @module routes/content_rules/content_rules.test
  */
 
 // External imports

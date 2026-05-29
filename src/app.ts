@@ -23,7 +23,7 @@ import { initProfiles } from './helpers/profiles/profiles';
 import { regExpEscape } from './helpers/utils/utils';
 import models from './models';
 import routes from './routes';
-import tasks from './tasks';
+import scheduledJobs from './scheduled_jobs';
 import middleware from './middleware';
 
 // Init profiles
@@ -33,7 +33,7 @@ await initProfiles();
 initI18n();
 
 // Run scheduled tasks
-tasks.run();
+await scheduledJobs.refreshTasks();
 
 // Create blob dir if it doesn’t exist
 if (config.settings.blobs === 'file' && !existsSync(config.settings.blobsDir)) {

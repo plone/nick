@@ -53,7 +53,7 @@ Both require metadata methods (`getTitle`, `getDescription`, `getSummary`) and a
 ## Creating an action
 
 ```ts
-// src/content_rules/actions/my-action/my-action.ts
+// src/content_rules/actions/my-action.ts
 import type { Params, Request } from '../../types';
 import { Knex } from 'knex';
 
@@ -91,7 +91,7 @@ export const myAction = {
 ## Creating a condition
 
 ```ts
-// src/content_rules/conditions/my-condition/my-condition.ts
+// src/content_rules/conditions/n/my-condition.ts
 import type { Params, Request } from '../../types';
 
 export const myCondition = {
@@ -132,8 +132,8 @@ In a profile's `init()` function:
 
 ```ts
 import contentRules from '../../content_rules';
-import { myAction } from '../../content_rules/actions/my-action/my-action';
-import { myCondition } from '../../content_rules/conditions/my-condition/my-condition';
+import { myAction } from '../../content_rules/actions/my-action';
+import { myCondition } from '../../content_rules/conditions/my-condition';
 
 // In init():
 contentRules.registerAction('myAction', myAction);

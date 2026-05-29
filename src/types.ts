@@ -116,6 +116,14 @@ export interface WorkflowType {
   transitions: { [key: string]: WorkflowTransition };
 }
 
+export interface ScheduledJobAction {
+  getTitle(req: Request): string;
+  getDescription(req: Request): string;
+  getSummary(req: Request, params: Params): string;
+  schema: Json;
+  handler(params: Params, actor: any, trx: Knex.Transaction): Promise<any>;
+}
+
 export interface ContentRuleAction {
   getTitle(req: Request): string;
   getDescription(req: Request): string;
@@ -128,6 +136,13 @@ export interface ContentRuleAction {
     contentRule: any,
     trx: Knex.Transaction,
   ): Promise<void>;
+}
+
+export interface ScheduledJobActionJson {
+  addview: string;
+  title: string;
+  description: string;
+  '@schema': Schema;
 }
 
 export interface ContentRuleActionJson {
@@ -157,6 +172,10 @@ export interface ContentRuleConditionJson {
   description: string;
   '@schema': Schema;
 }
+
+export type ScheduledJobActions = {
+  [key: string]: ScheduledJobAction;
+};
 
 export type ContentRuleActions = {
   [key: string]: ContentRuleAction;

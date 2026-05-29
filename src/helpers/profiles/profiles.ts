@@ -12,6 +12,9 @@ import config from '../config/config';
 import { fileExists } from '../fs/fs';
 import { log } from '../log/log';
 
+// Set initalization state
+let initialized = false;
+
 /**
  * Map asynchronous but in order through profiles
  * @method mapProfiles
@@ -48,16 +51,19 @@ export async function mapProfiles(
  * @returns {Promise<void>} Promise which returns when all init steps are done
  */
 export async function initProfiles(): Promise<void> {
-  await mapProfiles(async (profilePath) => {
-    try {
-      if (await fileExists(`${profilePath}/index`)) {
-        const profileModule = await import(`${profilePath}/index`);
-        if (profileModule.init) {
-          await profileModule.init();
+  if (!initialized) {
+    await mapProfiles(async (profilePath) => {
+      try {
+        if (await fileExists(`${profilePath}/index`)) {
+          const profileModule = await import(`${profilePath}/index`);
+          if (profileModule.init) {
+            await profileModule.init();
+          }
         }
+      } catch (error) {
+        log.error(`Error loading profile at ${profilePath}`, error);
       }
-    } catch (error) {
-      log.error(`Error loading profile at ${profilePath}`, error);
-    }
-  });
+    });
+    initialized = true;
+  }
 }

@@ -127,6 +127,8 @@
 - Profiles are now specified by package name and profile name @robgietema
 - Check accept header on returning content @robgietema
 - Add block registry @robgietema
+- Add scheduled jobs @robgietema
+- Add job queue runner @robgietema
 
 ### Bugfix
 
@@ -251,6 +253,8 @@
 - Refactor content rules to use profile init @robgietema
 - Refactor routes to use profile init @robgietema
 - Refactor models to use profile init @robgietema
+- Rename default profile to examplecontent @robgietema
+- Fix initialization for client @robgietema
 
 ### Documentation
 
