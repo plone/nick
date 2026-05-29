@@ -57,7 +57,7 @@ process.on('message', async (data: any) => {
 
         // Send result
         if (process.send) {
-          process.send({ result });
+          process.send({ result: result.data });
           process.exit(0);
         }
       } catch (err) {

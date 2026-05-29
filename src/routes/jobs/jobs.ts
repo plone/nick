@@ -25,28 +25,70 @@ export default [
   {
     op: 'get',
     view: '/@jobs/:id',
-    permission: 'Manage Site',
+    permission: 'View',
     client: 'getJob',
     cache: 'manage',
     handler: async (req: Request, trx: Knex.Transaction) => {
       const Job = models.get('Job');
       const job = await Job.fetchById(req.params.id, {}, trx);
+
+      // Check not found
       if (!job) {
         throw new RequestException(404, { error: req.i18n('Not found.') });
       }
+
+      // Check permission
+      if (
+        !req.permissions.includes('Manage Site') &&
+        req.user.id !== job.actor
+      ) {
+        throw new RequestException(403, {
+          error: req.i18n('You are not authorized to access this resource.'),
+        });
+      }
+
       return {
         json: {
           '@id': `${getUrl(req)}/@jobs/${req.params.id}`,
           ...(await job.toJson(req)),
         },
-        keys: [req.params.id],
+      };
+    },
+  },
+  {
+    op: 'get',
+    view: '/@jobs/:id/result',
+    permission: 'View',
+    client: 'getJobResult',
+    cache: 'content',
+    handler: async (req: Request, trx: Knex.Transaction) => {
+      const Job = models.get('Job');
+      const job = await Job.fetchById(req.params.id, {}, trx);
+
+      // Check not found
+      if (!job) {
+        throw new RequestException(404, { error: req.i18n('Not found.') });
+      }
+
+      // Check permission
+      if (
+        !req.permissions.includes('Manage Site') &&
+        req.user.id !== job.actor
+      ) {
+        throw new RequestException(403, {
+          error: req.i18n('You are not authorized to access this resource.'),
+        });
+      }
+
+      return {
+        json: job.result,
       };
     },
   },
   {
     op: 'get',
     view: '/@jobs',
-    permission: 'Manage Site',
+    permission: 'View',
     client: 'getJobs',
     middleware: apiLimiter,
     cache: 'manage',
@@ -57,6 +99,14 @@ export default [
         { order: { column: 'created', reverse: true } },
         trx,
       );
+
+      // Filter jobs based on permission
+      jobs.filter((job: any) => {
+        return (
+          req.permissions.includes('Manage Site') || req.user.id === job.actor
+        );
+      });
+
       return {
         json: await jobs.toJson(req),
       };
@@ -65,11 +115,24 @@ export default [
   {
     op: 'delete',
     view: '/@jobs/:id',
-    permission: 'Manage Site',
+    permission: 'View',
     client: 'deleteJob',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
       const Job = models.get('Job');
+      const job = await Job.fetchById(req.params.id, {}, trx);
+
+      // Check permission
+      if (
+        !req.permissions.includes('Manage Site') &&
+        req.user.id !== job.actor
+      ) {
+        throw new RequestException(403, {
+          error: req.i18n('You are not authorized to access this resource.'),
+        });
+      }
+
+      // Delete job
       await Job.deleteById(req.params.id, trx);
 
       return {
@@ -80,10 +143,24 @@ export default [
   {
     op: 'post',
     view: '/@jobs/:id/abort',
-    permission: 'Manage Site',
+    permission: 'View',
     client: 'abortJob',
     cache: 'alter',
-    handler: async (req: Request, _trx: Knex.Transaction) => {
+    handler: async (req: Request, trx: Knex.Transaction) => {
+      const Job = models.get('Job');
+      const job = await Job.fetchById(req.params.id, {}, trx);
+
+      // Check permission
+      if (
+        !req.permissions.includes('Manage Site') &&
+        req.user.id !== job.actor
+      ) {
+        throw new RequestException(403, {
+          error: req.i18n('You are not authorized to access this resource.'),
+        });
+      }
+
+      // Abort job
       await jobs.abort(req.params.id);
 
       return {
@@ -94,7 +171,7 @@ export default [
   {
     op: 'post',
     view: '/@jobs/:id/retry',
-    permission: 'Manage Site',
+    permission: 'View',
     client: 'retryJob',
     cache: 'alter',
     handler: async (req: Request, trx: Knex.Transaction) => {
@@ -102,6 +179,16 @@ export default [
       const job = await Job.fetchById(req.params.id, {}, trx);
       if (!job) {
         throw new RequestException(404, { error: req.i18n('Not found.') });
+      }
+
+      // Check permission
+      if (
+        !req.permissions.includes('Manage Site') &&
+        req.user.id !== job.actor
+      ) {
+        throw new RequestException(403, {
+          error: req.i18n('You are not authorized to access this resource.'),
+        });
       }
 
       const newUuid = uuid();
