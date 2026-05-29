@@ -1437,8 +1437,9 @@ msgstr "Nepovolené"
 #: src/routes/recyclebin/recyclebin.ts:35
 #: src/routes/recyclebin/recyclebin.ts:104
 #: src/routes/recyclebin/recyclebin.ts:202
-#: src/routes/jobs/jobs.ts:35
-#: src/routes/jobs/jobs.ts:104
+#: src/routes/jobs/jobs.ts:37
+#: src/routes/jobs/jobs.ts:77
+#: src/routes/jobs/jobs.ts:188
 #: src/routes/groups/groups.ts:34
 #: src/routes/email/email.ts:75
 #: src/routes/controlpanels/controlpanels.ts:159
@@ -2698,6 +2699,11 @@ msgstr ""
 #: src/routes/recyclebin/recyclebin.ts:45
 #: src/routes/recyclebin/recyclebin.ts:114
 #: src/routes/recyclebin/recyclebin.ts:212
+#: src/routes/jobs/jobs.ts:46
+#: src/routes/jobs/jobs.ts:86
+#: src/routes/jobs/jobs.ts:138
+#: src/routes/jobs/jobs.ts:166
+#: src/routes/jobs/jobs.ts:197
 #: src/helpers/handler/handler.ts:120
 msgctxt "Routes|Recyclebin"
 msgid "You are not authorized to access this resource."

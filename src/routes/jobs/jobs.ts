@@ -48,6 +48,13 @@ export default [
       }
 
       return {
+        ...(job.status === 'success'
+          ? {
+              headers: {
+                location: `${getUrl(req)}/@jobs/${req.params.id}/result`,
+              },
+            }
+          : {}),
         json: {
           '@id': `${getUrl(req)}/@jobs/${req.params.id}`,
           ...(await job.toJson(req)),
