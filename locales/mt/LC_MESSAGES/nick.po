@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06T11:50:40.335Z\n"
+"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rob Gietema\n"
 "Language: \n"
@@ -1126,7 +1126,7 @@ msgstr "Lingwa"
 #: src/profiles/multilingual/types/languageroot.json:3
 msgctxt "Profiles|Multilingual|Types|Languageroot"
 msgid "Language root"
-msgstr ""
+msgstr "Għerq tal-lingwa"
 
 #. Default: "Larger than"
 #: src/profiles/core/catalog.json:69
@@ -2693,7 +2693,7 @@ msgstr "Iva"
 #: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
-msgstr ""
+msgstr "M'intix awtorizzat biex taċċessa din ir-riżorsa."
 
 #. Default: "You are not authorized to access this resource."
 #: src/routes/recyclebin/recyclebin.ts:45
@@ -2750,7 +2750,7 @@ msgstr "M'għandekx permess tiftaħ dan id-dokument."
 #: src/routes/users/users.ts:195
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
-msgstr ""
+msgstr "M'għandekx permess iżżid utent."
 
 #. Default: "You don’t have permissions to view this user."
 #: src/routes/users/users.ts:136
