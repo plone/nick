@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/copymove
+permalink: /rest-api/endpoints/copymove
 parent: Endpoints
 ---
 

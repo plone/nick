@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/catalog
+permalink: /rest-api/endpoints/catalog
 parent: Endpoints
 ---
 

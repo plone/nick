@@ -49,7 +49,10 @@ class Blocks {
     if (!this.blocks[name]) {
       return this.blocks['_default'];
     }
-    return this.blocks[name];
+    return {
+      ...this.blocks['_default'],
+      ...this.blocks[name],
+    };
   }
 }
 

@@ -139,6 +139,7 @@ import principalsRoutes from '../../routes/principals/principals';
 import querystringRoutes from '../../routes/querystring/querystring';
 import recyclebinRoutes from '../../routes/recyclebin/recyclebin';
 import relatedRoutes from '../../routes/related/related';
+import replaceRoutes from '../../routes/replace/replace';
 import rolesRoutes from '../../routes/roles/roles';
 import scheduledJobsRoutes from '../../routes/scheduled_jobs/scheduled_jobs';
 import searchRoutes from '../../routes/search/search';
@@ -287,6 +288,7 @@ export function init(): void {
   routes.register(querystringRoutes);
   routes.register(recyclebinRoutes);
   routes.register(relatedRoutes);
+  routes.register(replaceRoutes);
   routes.register(rolesRoutes);
   routes.register(searchRoutes);
   routes.register(scheduledJobsRoutes);

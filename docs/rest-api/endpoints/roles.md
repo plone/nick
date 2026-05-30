@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/roles
+permalink: /rest-api/endpoints/roles
 parent: Endpoints
 ---
 

@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/userschema
+permalink: /rest-api/endpoints/userschema
 parent: Endpoints
 ---
 

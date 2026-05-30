@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/comments
+permalink: /rest-api/endpoints/comments
 parent: Endpoints
 ---
 

@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/history
+permalink: /rest-api/endpoints/history
 parent: Endpoints
 ---
 

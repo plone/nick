@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/types
+permalink: /rest-api/endpoints/types
 parent: Endpoints
 ---
 

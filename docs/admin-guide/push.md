@@ -1,5 +1,7 @@
 ---
-permalink: /usage/push
+title: Push API
+nav_order: 5
+permalink: /admin-guide/push
 parent: Push API
 ---
 

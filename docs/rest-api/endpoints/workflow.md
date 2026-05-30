@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/workflow
+permalink: /rest-api/endpoints/workflow
 parent: Endpoints
 ---
 

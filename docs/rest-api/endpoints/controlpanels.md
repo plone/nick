@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/controlpanels
+permalink: /rest-api/endpoints/controlpanels
 parent: Endpoints
 ---
 

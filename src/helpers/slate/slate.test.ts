@@ -7,7 +7,7 @@
 import { describe, it, expect } from 'vitest';
 
 // Internal imports
-import { slateToMarkdown } from './markdown';
+import { slateToMarkdown, slateReplace } from './slate';
 
 describe('slateToMarkdown', () => {
   it('should convert a simple paragraph to Markdown', () => {
@@ -207,5 +207,53 @@ describe('slateToMarkdown', () => {
     ).toBe(
       '1. Item 1\n2. Item 2\n    1. Item 2.1\n        1. Item 2.1.1\n        2. Item 2.1.2\n    2. Item 2.2\n3. Item 3\n\n',
     );
+  });
+});
+
+describe('slateReplace', () => {
+  it('should replace text in a simple text node', () => {
+    const nodes = [{ text: 'Hello World' }];
+    const pattern = new RegExp('World', 'g');
+    const result = slateReplace(nodes, pattern, 'Nick');
+    expect(result).toEqual([{ text: 'Hello Nick' }]);
+  });
+
+  it('should replace text in nested nodes', () => {
+    const nodes = [
+      {
+        type: 'p',
+        children: [
+          { text: 'Hello ' },
+          { type: 'strong', children: [{ text: 'World' }] },
+          { text: '!' },
+        ],
+      },
+    ];
+    const pattern = new RegExp('World', 'g');
+    const result = slateReplace(nodes, pattern, 'Nick');
+    expect(result).toEqual([
+      {
+        type: 'p',
+        children: [
+          { text: 'Hello ' },
+          { type: 'strong', children: [{ text: 'Nick' }] },
+          { text: '!' },
+        ],
+      },
+    ]);
+  });
+
+  it('should replace using a RegExp pattern', () => {
+    const nodes = [{ text: 'foo bar baz' }];
+    const pattern = new RegExp('foo|baz', 'g');
+    const result = slateReplace(nodes, pattern, 'qux');
+    expect(result).toEqual([{ text: 'qux bar qux' }]);
+  });
+
+  it('should replace all occurrences using a global RegExp pattern', () => {
+    const nodes = [{ text: 'one one one' }];
+    const pattern = new RegExp('one', 'g');
+    const result = slateReplace(nodes, pattern, 'two');
+    expect(result).toEqual([{ text: 'two two two' }]);
   });
 });

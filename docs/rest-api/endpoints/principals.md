@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/principals
+permalink: /rest-api/endpoints/principals
 parent: Endpoints
 ---
 

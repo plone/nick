@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/querystring
+permalink: /rest-api/endpoints/querystring
 parent: Endpoints
 ---
 

@@ -13,17 +13,17 @@ interface SlateParentNode {
   data?: Record<string, unknown>;
 }
 
-type SlateNode = SlateParentNode | SlateTextNode;
+export type SlateNode = SlateParentNode | SlateTextNode;
 
 /**
  * Render a Slate node into Markdown.
- * @param node The Slate node to render.
- * @param depth The current depth of the node in the tree (used for lists).
- * @param index The index of the node among its siblings (used for ordered lists).
- * @param parent The type of the parent node (used to determine list item formatting).
- * @returns A Markdown string representing the node.
+ * @param {SlateNode} node The Slate node to render.
+ * @param {number} depth The current depth of the node in the tree (used for lists).
+ * @param {number} index The index of the node among its siblings (used for ordered lists).
+ * @param {string | null} parent The type of the parent node (used to determine list item formatting).
+ * @returns {string} A Markdown string representing the node.
  */
-function renderNode(
+function renderMarkdownNode(
   node: SlateNode,
   depth: number,
   index: number,
@@ -41,7 +41,7 @@ function renderNode(
             if ('type' in child && child.type === 'li') {
               count = count += 1;
             }
-            return renderNode(child, depth + 1, count, node.type);
+            return renderMarkdownNode(child, depth + 1, count, node.type);
           })
           .join('')
       : '';
@@ -94,11 +94,40 @@ function renderNode(
 
 /**
  * Convert Slate nodes to Markdown.
- * @param nodes A Slate array of top-level Slate block nodes.
+ * @param {SlateNode[]} nodes A Slate array of top-level Slate block nodes.
  * @returns A Markdown string.
  */
 export function slateToMarkdown(nodes: SlateNode[]): string {
   return nodes
-    ? nodes.map((node) => renderNode(node, 0, 0, null)).join('\n\n')
+    ? nodes.map((node) => renderMarkdownNode(node, 0, 0, null)).join('\n\n')
     : '';
+}
+
+/**
+ * Replace text in Slate nodes.
+ * @param {SlateNode[]} nodes A Slate array of top-level Slate block nodes.
+ * @param {RegExp} pattern
+ * @param {string} replacement
+ * @returns {SlateNode[]} Nodes with replaced text
+ */
+export function slateReplace(
+  nodes: SlateNode[],
+  pattern: RegExp,
+  replacement: string,
+): SlateNode[] {
+  return nodes.map((node) => {
+    if ('text' in node) {
+      return {
+        ...node,
+        text: (node as SlateTextNode).text.replaceAll(pattern, replacement),
+      };
+    }
+    if ('children' in node) {
+      return {
+        ...node,
+        children: slateReplace(node.children, pattern, replacement),
+      };
+    }
+    return node;
+  });
 }

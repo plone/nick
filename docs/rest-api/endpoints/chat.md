@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/chat
+permalink: /rest-api/endpoints/chat
 parent: Endpoints
 ---
 

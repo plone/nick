@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/vocabularies
+permalink: /rest-api/endpoints/vocabularies
 parent: Endpoints
 ---
 

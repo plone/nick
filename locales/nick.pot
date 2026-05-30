@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
+"POT-Creation-Date: 2026-05-30T14:57:51.615Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -1524,6 +1524,12 @@ msgctxt "Profiles|Core|Actions"
 msgid "Paste"
 msgstr ""
 
+#. Default: "Pattern must be at least 1 character long."
+#: src/routes/replace/replace.ts:36
+msgctxt "Routes|Replace"
+msgid "Pattern must be at least 1 character long."
+msgstr ""
+
 #. Default: "Pending review"
 #: src/profiles/core/workflows.json:22
 msgctxt "Profiles|Core|Workflows"
@@ -1760,6 +1766,18 @@ msgstr ""
 #: src/profiles/core/actions.json:59
 msgctxt "Profiles|Core|Actions"
 msgid "Rename"
+msgstr ""
+
+#. Default: "Replaced text from {pattern} to {replacement}."
+#: src/routes/replace/replace.ts:174
+msgctxt "Routes|Replace"
+msgid "Replaced text from {pattern} to {replacement}."
+msgstr ""
+
+#. Default: "Replacement must be provided."
+#: src/routes/replace/replace.ts:50
+msgctxt "Routes|Replace"
+msgid "Replacement must be provided."
 msgstr ""
 
 #. Default: "Required field(s) missing."

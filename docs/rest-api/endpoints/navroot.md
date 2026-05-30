@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/navroot
+permalink: /rest-api/endpoints/navroot
 parent: Endpoints
 ---
 

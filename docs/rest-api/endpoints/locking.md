@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/locking
+permalink: /rest-api/endpoints/locking
 parent: Endpoints
 ---
 

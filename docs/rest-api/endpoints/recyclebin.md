@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/recyclebin
+permalink: /rest-api/endpoints/recyclebin
 parent: Endpoints
 ---
 

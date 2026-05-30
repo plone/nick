@@ -129,6 +129,7 @@
 - Add block registry @robgietema
 - Add scheduled jobs @robgietema
 - Add job queue runner @robgietema
+- Add replace endpoint @robgietema
 
 ### Bugfix
 

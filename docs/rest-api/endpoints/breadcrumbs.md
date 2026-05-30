@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/breadcrumbs
+permalink: /rest-api/endpoints/breadcrumbs
 parent: Endpoints
 ---
 

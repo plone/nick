@@ -13,4 +13,12 @@ export const block = {
   toMarkdown: (_self: any, _document: any) => {
     return '';
   },
+
+  /**
+   * Replace text.
+   * @param patern Pattern to search for.
+   * @param replacement Replacement text.
+   * @returns New object or false if nothing found.
+   */
+  replace: (_pattern: string, _replacement: string): any => false,
 };

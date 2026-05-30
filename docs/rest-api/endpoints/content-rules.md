@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/content-rules
+permalink: /rest-api/endpoints/content-rules
 parent: Endpoints
 ---
 

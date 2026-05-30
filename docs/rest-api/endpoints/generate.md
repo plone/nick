@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/generate
+permalink: /rest-api/endpoints/generate
 parent: Endpoints
 ---
 

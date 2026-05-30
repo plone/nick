@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/form
+permalink: /rest-api/endpoints/form
 parent: Endpoints
 ---
 

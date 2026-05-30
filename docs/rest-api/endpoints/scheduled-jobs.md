@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/scheduled-jobs
+permalink: /rest-api/endpoints/scheduled-jobs
 parent: Endpoints
 ---
 

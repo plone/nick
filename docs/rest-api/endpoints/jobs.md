@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/jobs
+permalink: /rest-api/endpoints/jobs
 parent: Endpoints
 ---
 

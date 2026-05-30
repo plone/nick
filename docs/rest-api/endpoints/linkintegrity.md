@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/linkintegrity
+permalink: /rest-api/endpoints/linkintegrity
 parent: Endpoints
 ---
 

@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/searching
+permalink: /rest-api/endpoints/searching
 parent: Endpoints
 ---
 

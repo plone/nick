@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/inherit
+permalink: /rest-api/endpoints/inherit
 parent: Endpoints
 ---
 

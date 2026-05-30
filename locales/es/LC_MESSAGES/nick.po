@@ -1527,6 +1527,12 @@ msgctxt "Profiles|Core|Actions"
 msgid "Paste"
 msgstr "Pegar"
 
+#. Default: "Pattern must be at least 1 character long."
+#: src/routes/replace/replace.ts:36
+msgctxt "Routes|Replace"
+msgid "Pattern must be at least 1 character long."
+msgstr ""
+
 #. Default: "Pending review"
 #: src/profiles/core/workflows.json:22
 msgctxt "Profiles|Core|Workflows"
@@ -1764,6 +1770,18 @@ msgstr "Ruta relativa"
 msgctxt "Profiles|Core|Actions"
 msgid "Rename"
 msgstr "Renombrar"
+
+#. Default: "Replaced text from {pattern} to {replacement}."
+#: src/routes/replace/replace.ts:174
+msgctxt "Routes|Replace"
+msgid "Replaced text from {pattern} to {replacement}."
+msgstr ""
+
+#. Default: "Replacement must be provided."
+#: src/routes/replace/replace.ts:50
+msgctxt "Routes|Replace"
+msgid "Replacement must be provided."
+msgstr ""
 
 #. Default: "Required field(s) missing."
 #: src/routes/content/content.ts:590

@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/database
+permalink: /rest-api/endpoints/database
 parent: Endpoints
 ---
 

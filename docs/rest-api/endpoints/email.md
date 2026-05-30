@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/email
+permalink: /rest-api/endpoints/email
 parent: Endpoints
 ---
 

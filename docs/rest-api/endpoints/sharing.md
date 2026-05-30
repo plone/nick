@@ -1,5 +1,5 @@
 ---
-permalink: /endpoints/sharing
+permalink: /rest-api/endpoints/sharing
 parent: Endpoints
 ---
 
