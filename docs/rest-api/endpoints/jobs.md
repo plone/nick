@@ -5,7 +5,7 @@ parent: Endpoints
 
 # Jobs
 
-Nick provides a jobs system to manage long-running tasks asynchronously. Jobs can be created, listed, inspected, deleted, aborted, and retried.
+Nick provides a jobs system to manage long-running tasks asynchronously. Jobs can be [created](/developer-guide/jobs), listed, inspected, deleted, aborted, and retried.
 
 | Verb     | URL                 | Action              |
 | -------- | ------------------- | ------------------- |
