@@ -206,6 +206,7 @@
 - Fix from address in email handlers @robgietema
 - Fix related items bug @robgietema
 - Bff fixes for Aurora @sneridagh
+- Fix issue with package resolve when using Nick as a dep @robgietema
 
 ### Internal
 

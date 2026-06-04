@@ -4,6 +4,7 @@
  */
 
 // External imports
+import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
@@ -31,7 +32,21 @@ export async function mapProfiles(
     // Get profile path
     const profile = config.settings.profiles[i];
     const [packageName, profileName] = profile.split(':');
-    const packageEntry = fileURLToPath(import.meta.resolve(packageName));
+    let packageEntry: string;
+    try {
+      packageEntry = fileURLToPath(import.meta.resolve(packageName));
+    } catch {
+      const rootPkg = JSON.parse(
+        fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf-8'),
+      );
+      if (rootPkg.name === packageName) {
+        packageEntry = path.join(process.cwd(), './src/profiles')
+      } else {
+        throw new Error(
+          `Cannot resolve package '${packageName}', not a dependency and not the workspace root`,
+        );
+      }
+    }
     const profilePath = path.resolve(
       path.dirname(packageEntry),
       `./profiles/${profileName}`,
