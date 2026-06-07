@@ -40,7 +40,7 @@ export async function mapProfiles(
         fs.readFileSync(path.join(process.cwd(), 'package.json'), 'utf-8'),
       );
       if (rootPkg.name === packageName) {
-        packageEntry = path.join(process.cwd(), './src/profiles')
+        packageEntry = path.join(process.cwd(), './src/profiles');
       } else {
         throw new Error(
           `Cannot resolve package '${packageName}', not a dependency and not the workspace root`,
