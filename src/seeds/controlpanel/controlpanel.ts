@@ -13,6 +13,7 @@ import { promises as fs } from 'fs';
 
 // Internal imports
 import {
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -50,6 +51,7 @@ export const seedControlpanel = async (
       current = await Controlpanel.fetchById(data.id, {}, trx);
 
       // Handle files and images
+      data.data = await handleBlocks(data.data);
       data.data = await handleFiles(
         data.data,
         current.schema,

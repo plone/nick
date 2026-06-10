@@ -15,6 +15,7 @@ import slugify from 'slugify';
 // Internal imports
 import contentRules from '../../content_rules';
 import {
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -321,6 +322,7 @@ export default [
       const controlpanel = await Controlpanel.fetchById(req.params.id, {}, trx);
 
       // Handle images
+      json = await handleBlocks(json);
       json = await handleFiles(json, controlpanel.schema, trx);
       json = await handleImages(json, controlpanel.schema, trx);
       json = await handleRelationLists(json, controlpanel.schema);

@@ -32,6 +32,7 @@ export const config = {
     exposeHeaders: '*',
     maxAge: 3660,
   },
+  xss: { stripIgnoreTagBody: ['script'] },
   imageScales: {
     large: [768, 768],
     preview: [400, 400],

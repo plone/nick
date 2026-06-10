@@ -3,6 +3,9 @@
  * @module types
  */
 
+// Type imports
+import type { IFilterXSSOptions } from 'xss';
+
 // External imports
 import express from 'express';
 import { Knex } from 'knex';
@@ -37,6 +40,7 @@ export type MiddlewareHandler = (
 
 export type Block = {
   toMarkdown: (self: any, document: any) => string;
+  process: (self: any) => Promise<any>;
 };
 
 export interface DeleteInfo {
@@ -310,6 +314,7 @@ export type ConfigSettings = {
     exposeHeaders: string;
     maxAge: number;
   };
+  xss: IFilterXSSOptions;
   imageScales: Record<string, [number, number]>;
   health: {
     long_running: number;

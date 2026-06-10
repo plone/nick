@@ -16,6 +16,7 @@ import { v4 as uuid } from 'uuid';
 
 // Internal imports
 import {
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -96,6 +97,7 @@ export const seedDocument = async (
       // Handle files and images
       const type = await Type.fetchById(document.type || 'Page', {}, trx);
       const schema = type._schema;
+      document = await handleBlocks(document);
       document = await handleFiles(
         document,
         schema,

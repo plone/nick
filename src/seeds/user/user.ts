@@ -15,6 +15,7 @@ import { omit } from 'es-toolkit/object';
 // Internal imports
 import config from '../../helpers/config/config';
 import {
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -52,6 +53,7 @@ export const seedUser = async (
       const schema: Schema = config.settings.userschema({
         i18n: (key: string) => key,
       } as any);
+      json = await handleBlocks(json);
       json = await handleFiles(json, schema, trx, profilePath);
       json = await handleImages(json, schema, trx, `${profilePath}/users`);
       json = await handleRelationLists(json, schema);

@@ -18,6 +18,7 @@ import config from '../../helpers/config/config';
 import events from '../../events';
 import { RequestException } from '../../helpers/error/error';
 import {
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -225,6 +226,7 @@ export default [
 
       // Handle files, images and relation lists
       const schema = config.settings.userschema(req);
+      json = await handleBlocks(json);
       json = await handleFiles(json, schema, trx);
       json = await handleImages(json, schema, trx);
       json = await handleRelationLists(json, schema);

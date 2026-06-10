@@ -15,6 +15,7 @@ import { PDFParse } from 'pdf-parse';
 
 // Internal imports
 import { vision } from '../ai/ai';
+import blocks from '../../blocks';
 import config from '../config/config';
 import { readProfileFile, writeFile, writeImage } from '../fs/fs';
 import { getFactoryFields } from '../schema/schema';
@@ -223,6 +224,30 @@ export async function handleRelationLists(
 
   // Return new field data
   return fields;
+}
+
+/**
+ * Handle blocks
+ * @method handleBlocks
+ * @param {Json} json Current json object.
+ * @returns {Json} Json with blocks processed.
+ */
+export async function handleBlocks(json: Json): Promise<Json> {
+  // Make a copy of the json data
+  const output = { ...json };
+
+  if (output.blocks && isObject(output.blocks)) {
+    await Promise.all(
+      Object.keys(output.blocks).map(async (blockId) => {
+        const blockData: any = output.blocks?.[blockId];
+        const block = blocks.get(blockData['@type']);
+        output.blocks![blockId] = await block.process(blockData);
+      }),
+    );
+  }
+
+  // Return new json data
+  return output;
 }
 
 /**

@@ -131,6 +131,7 @@
 - Add job queue runner @robgietema
 - Add replace endpoint @robgietema
 - Add health check endpoint @robgietema
+- Add xss filtering for html blocks @robgietema
 
 ### Bugfix
 

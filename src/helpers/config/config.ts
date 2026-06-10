@@ -86,6 +86,7 @@ class Config {
           config.cors?.exposeHeaders || 'Content-Length,Content-Type',
         maxAge: config.cors?.maxAge || 3600,
       },
+      xss: config.xss || { stripIgnoreTagBody: ['script'] },
       imageScales: config.imageScales || {
         large: [768, 768],
         preview: [400, 400],

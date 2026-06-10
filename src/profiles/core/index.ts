@@ -31,6 +31,7 @@ import { Workflow } from '../../models/workflow/workflow';
 
 // Blocks
 import blocks from '../../blocks';
+import { html } from '../../blocks/html/html';
 import { slate } from '../../blocks/slate/slate';
 import { title } from '../../blocks/title/title';
 
@@ -179,6 +180,7 @@ export function init(): void {
   models.register('Workflow', () => Workflow);
 
   // Register blocks
+  blocks.register('html', html);
   blocks.register('title', title);
   blocks.register('slate', slate);
 

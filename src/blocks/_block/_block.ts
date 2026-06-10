@@ -21,4 +21,11 @@ export const block = {
    * @returns New object or false if nothing found.
    */
   replace: (_pattern: RegExp, _replacement: string): any => false,
+
+  /**
+   * Process block.
+   * @param {any} self The block instance.
+   * @returns {any} Processed block
+   */
+  process: async (self: any): Promise<any> => self,
 };

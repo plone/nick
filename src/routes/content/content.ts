@@ -22,6 +22,7 @@ import config from '../../helpers/config/config';
 import {
   getComponents,
   handleBlockReferences,
+  handleBlocks,
   handleFiles,
   handleImages,
   handleRelationLists,
@@ -627,6 +628,7 @@ export default [
 
       // Handle files, images and relation lists
       const schema = type._schema;
+      json = await handleBlocks(json);
       json = await handleFiles(json, schema, trx);
       json = await handleImages(json, schema, trx);
       json = await handleRelationLists(json, schema);
@@ -818,6 +820,7 @@ export default [
         ),
       };
       const schema = config.settings.userschema(req);
+      json = await handleBlocks(json);
       json = await handleFiles(json, schema, trx);
       json = await handleImages(json, schema, trx);
       json = await handleRelationLists(json, schema);
@@ -879,12 +882,6 @@ export default [
 
       // Reindex document
       await req.document.reindex(trx);
-
-      // Get document json
-      const documentJson = await req.document.toJson(
-        req,
-        await getComponents(req, trx, req.query?.expand?.split(',') || []),
-      );
 
       // Trigger onAfterModified
       await events.trigger('onAfterModified', req.document, req.user, trx, req);
