@@ -127,6 +127,7 @@ import databaseRoutes from '../../routes/database/database';
 import emailRoutes from '../../routes/email/email';
 import formRoutes from '../../routes/form/form';
 import groupsRoutes from '../../routes/groups/groups';
+import healthRoutes from '../../routes/health/health';
 import historyRoutes from '../../routes/history/history';
 import inheritRoutes from '../../routes/inherit/inherit';
 import jobsRoutes from '../../routes/jobs/jobs';
@@ -276,6 +277,7 @@ export function init(): void {
   routes.register(emailRoutes);
   routes.register(formRoutes);
   routes.register(groupsRoutes);
+  routes.register(healthRoutes);
   routes.register(historyRoutes);
   routes.register(inheritRoutes);
   routes.register(jobsRoutes);

@@ -95,6 +95,10 @@ class Config {
         icon: [32, 32],
         listing: [16, 16],
       },
+      health: config.health || {
+        long_running: 3,
+        stalled: 30,
+      },
       frontendUrl: config.frontendUrl || 'http://localhost:3000',
       prefix: config.prefix || '',
       userRegistration: config.userRegistration || false,

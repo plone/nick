@@ -25,6 +25,7 @@ import models from './models';
 import routes from './routes';
 import scheduledJobs from './scheduled_jobs';
 import middleware from './middleware';
+import requests from './helpers/requests/requests';
 
 // Init profiles
 await initProfiles();
@@ -134,6 +135,7 @@ routes.routes.map((route: Route) => {
       // Start transaction
       const Document = models.get('Document');
       const trx = await Document.startTransaction();
+      let requestId = '';
       req.apiPath = `${req.protocol}://${req.headers.host}`;
       if (req.headers.authorization) {
         const match = req.headers.authorization.match(/^Bearer (.*)$/);
@@ -164,6 +166,7 @@ routes.routes.map((route: Route) => {
             }
           });
         } else {
+          requestId = requests.register({ url: req.url });
           let view = await callHandler(req, trx, route, () => {});
 
           // Try to commit the transaction
@@ -197,10 +200,15 @@ routes.routes.map((route: Route) => {
           } else if (view && view.html) {
             res.status(view.status || 200).send(view.html);
           }
+          // Mark transaction as done
+          requests.done(requestId);
         }
       } catch (err) {
         // Rollback transaction
         await trx.rollback();
+
+        // Mark transaction as done
+        requests.done(requestId);
 
         // Check if request exception
         if (err instanceof RequestException) {
@@ -228,6 +236,7 @@ routes.routes.map((route: Route) => {
         } else {
           // Log error
           log.error(err);
+          console.log(err);
 
           // Return internal server error
           return res

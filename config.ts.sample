@@ -54,6 +54,10 @@ export const config = {
     icon: [32, 32],
     listing: [16, 16],
   },
+  health: {
+    long_running: 3,
+    stalled: 30,
+  },
   frontendUrl: 'http://localhost:3000',
   prefix: '',
   userRegistration: false,

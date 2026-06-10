@@ -1076,8 +1076,8 @@ msgid "Information about rights held in and over this item."
 msgstr "இந்த உருப்படியின் உரிமைகள் பற்றிய தகவல்."
 
 #. Default: "Internal server error"
-#: src/app.ts:225
-#: src/app.ts:235
+#: src/app.ts:233
+#: src/app.ts:244
 msgctxt "App"
 msgid "Internal server error"
 msgstr "உள் சேவையக பிழை"
@@ -2442,8 +2442,8 @@ msgstr "இன்று"
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:161
-#: src/app.ts:174
+#: src/app.ts:163
+#: src/app.ts:177
 msgctxt "Client"
 msgid "Transaction error."
 msgstr "பரிவர்த்தனை பிழை."
@@ -2798,4 +2798,11 @@ msgstr "பூலியன்"
 #: src/profiles/core/vocabularies/events.json:3
 msgctxt "Profiles|Core|Vocabularies|Events"
 msgid "events"
+msgstr ""
+
+#. Default: "{count} request(s) taking longer than {duration} seconds"
+#: src/routes/health/health.ts:48
+#: src/routes/health/health.ts:54
+msgctxt "Routes|Health"
+msgid "{count} request(s) taking longer than {duration} seconds"
 msgstr ""

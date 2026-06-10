@@ -311,6 +311,10 @@ export type ConfigSettings = {
     maxAge: number;
   };
   imageScales: Record<string, [number, number]>;
+  health: {
+    long_running: number;
+    stalled: number;
+  };
   frontendUrl: string;
   prefix: string;
   userRegistration: boolean;

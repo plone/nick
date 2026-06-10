@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-06-08T14:30:12.234Z\n"
+"POT-Creation-Date: 2026-06-10T13:01:09.337Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -1073,8 +1073,8 @@ msgid "Information about rights held in and over this item."
 msgstr ""
 
 #. Default: "Internal server error"
-#: src/app.ts:225
-#: src/app.ts:235
+#: src/app.ts:233
+#: src/app.ts:244
 msgctxt "App"
 msgid "Internal server error"
 msgstr ""
@@ -2439,8 +2439,8 @@ msgstr ""
 
 #. Default: "Transaction error."
 #: src/client.ts:81
-#: src/app.ts:161
-#: src/app.ts:174
+#: src/app.ts:163
+#: src/app.ts:177
 msgctxt "Client"
 msgid "Transaction error."
 msgstr ""
@@ -2795,4 +2795,11 @@ msgstr ""
 #: src/profiles/core/vocabularies/events.json:3
 msgctxt "Profiles|Core|Vocabularies|Events"
 msgid "events"
+msgstr ""
+
+#. Default: "{count} request(s) taking longer than {duration} seconds"
+#: src/routes/health/health.ts:48
+#: src/routes/health/health.ts:54
+msgctxt "Routes|Health"
+msgid "{count} request(s) taking longer than {duration} seconds"
 msgstr ""
