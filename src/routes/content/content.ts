@@ -788,15 +788,13 @@ export default [
       if (req.document._parent) {
         await req.document._parent.fetchChildren({}, trx, false);
       }
-      const id =
-        req.document._parent.path === '/'
-          ? req.document.id
-          : req.body.id || req.document.id;
       const path = req.document.path;
+      const id =
+        path === '/' ? req.document.id : req.body.id || req.document.id;
 
       // Get unique id if id has changed
       const newId =
-        req.body.id && req.body.id !== req.document.id
+        req.body.id && req.body.id !== req.document.id && path !== '/'
           ? uniqueId(
               id,
               req.document._parent._children.map(
