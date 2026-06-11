@@ -281,6 +281,7 @@
 - Add documentation about how to setup the recyclebin @robgietema
 - Add documentation on how to setup limits @robgietema
 - Add documentation on how to setup caching @robgietema
+- Add documentation about profiles @robgietema
 
 ## 2.8.0 (2022-07-17)
 
