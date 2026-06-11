@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06T11:50:40.334Z\n"
+"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rob Gietema\n"
 "Language: \n"
@@ -239,13 +239,13 @@ msgstr "La descrizione di un elemento"
 #: src/profiles/core/catalog.json:440
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s type (e.g. Event)"
-msgstr "Il tipo di elemento (ad esempio "Evento")"
+msgstr "Il tipo di elemento (ad esempio \"Evento\")"
 
 #. Default: "An item’s workflow state (e.g.published)"
 #: src/profiles/core/catalog.json:459
 msgctxt "Profiles|Core|Catalog"
 msgid "An item’s workflow state (e.g.published)"
-msgstr "Lo stato del workflow (ad esempio "Pubblicato")"
+msgstr "Lo stato del workflow (ad esempio \"Pubblicato\")"
 
 #. Default: "Anonymous"
 #: src/profiles/core/roles.json:6
@@ -1126,7 +1126,7 @@ msgstr "Lingua"
 #: src/profiles/multilingual/types/languageroot.json:3
 msgctxt "Profiles|Multilingual|Types|Languageroot"
 msgid "Language root"
-msgstr ""
+msgstr "Radice lingua"
 
 #. Default: "Larger than"
 #: src/profiles/core/catalog.json:69
@@ -1959,13 +1959,13 @@ msgstr "Sito"
 #: src/profiles/core/controlpanels/mail.json:24
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Site 'From' address"
-msgstr "Indirizzo "mittente" del sito"
+msgstr "Indirizzo \"mittente\" del sito"
 
 #. Default: "Site 'From' name"
 #: src/profiles/core/controlpanels/mail.json:29
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Site 'From' name"
-msgstr "Nome del "mittente""
+msgstr "Nome del \"mittente\""
 
 #. Default: "Site Logo"
 #: src/profiles/core/controlpanels/site.json:22
@@ -2711,7 +2711,7 @@ msgstr "Sì"
 #: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
-msgstr ""
+msgstr "Non sei autorizzato ad accedere a questa risorsa."
 
 #. Default: "You are not authorized to access this resource."
 #: src/routes/recyclebin/recyclebin.ts:45
@@ -2768,7 +2768,7 @@ msgstr "Non hai il permesso di sbloccare questo documento."
 #: src/routes/users/users.ts:201
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
-msgstr ""
+msgstr "Non hai il permesso di aggiungere un utente."
 
 #. Default: "You don’t have permissions to view this user."
 #: src/routes/users/users.ts:142

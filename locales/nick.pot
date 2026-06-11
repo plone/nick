@@ -12,7 +12,7 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8\n"
 "Domain: nick\n"
-
+ 
 #. Default: "&e = the triggering event, &c = the context, &u = the user"
 #: src/content_rules/actions/logger.ts:30
 msgctxt "Content rules|Actions|Logger"

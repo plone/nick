@@ -1,0 +1,2748 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-30T12:57:54.776Z\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: \n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Language-Code: tl\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#. Default: "&e = the triggering event, &c = the context, &u = the user"
+#: src/content_rules/actions/logger.ts:30
+msgctxt "Content rules|Actions|Logger"
+msgid "&e = the triggering event, &c = the context, &u = the user"
+msgstr ""
+
+#. Default: "A description of this item."
+#: src/profiles/core/behaviors/basic.json:15
+msgctxt "Profiles|Core|Behaviors|Basic"
+msgid "A description of this item."
+msgstr "Paglalarawan ng item na ito."
+
+#. Default: "A name given to this item."
+#: src/profiles/core/behaviors/basic.json:21
+msgctxt "Profiles|Core|Behaviors|Basic"
+msgid "A name given to this item."
+msgstr "Pangalang ibinigay sa item na ito."
+
+#. Default: "A related item from which this item is derived."
+#: src/profiles/core/behaviors/ownership.json:25
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "A related item from which this item is derived."
+msgstr "Kaugnay na item kung saan nagmula ang item na ito."
+
+#. Default: "A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."
+#: src/constants/userschema.ts:19
+msgctxt "Constants|Userschema"
+msgid "A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."
+msgstr ""
+
+#. Default: "AI"
+#: src/profiles/ai/permissions.json:6
+#: src/profiles/ai/controlpanels/ai.json:3
+msgctxt "Profiles|Ai|Permissions"
+msgid "AI"
+msgstr ""
+
+#. Default: "AI is disabled."
+#: src/routes/related/related.ts:22
+#: src/routes/ai/ai.ts:50
+#: src/routes/ai/ai.ts:104
+msgctxt "Routes|Related"
+msgid "AI is disabled."
+msgstr "Hindi pinagana ang AI."
+
+#. Default: "Absolute path"
+#: src/profiles/core/catalog.json:14
+msgctxt "Profiles|Core|Catalog"
+msgid "Absolute path"
+msgstr "Ganap na landas"
+
+#. Default: "Accessibility"
+#: src/profiles/core/actions.json:71
+msgctxt "Profiles|Core|Actions"
+msgid "Accessibility"
+msgstr "Aksesibilidad"
+
+#. Default: "Add"
+#: src/profiles/core/permissions.json:10
+msgctxt "Profiles|Core|Permissions"
+msgid "Add"
+msgstr "Magdagdag"
+
+#. Default: "Add Comment"
+#: src/profiles/core/permissions.json:54
+#: src/profiles/core/upgrades/1002/permissions.json:10
+msgctxt "Profiles|Core|Permissions"
+msgid "Add Comment"
+msgstr ""
+
+#. Default: "Add additional items to the navigation, one per line. In the format 'title|description|url'."
+#: src/profiles/core/controlpanels/navigation.json:33
+msgctxt "Profiles|Core|Controlpanels|Navigation"
+msgid "Add additional items to the navigation, one per line. In the format 'title|description|url'."
+msgstr "Magdagdag ng karagdagang mga item sa nabigasyon, isa kada linya. Sa format na 'pamagat|paglalarawan|url'."
+
+#. Default: "Add prompt"
+#: src/profiles/ai/controlpanels/ai.json:19
+msgctxt "Profiles|Ai|Controlpanels"
+msgid "Add prompt"
+msgstr "Magdagdag ng prompt"
+
+#. Default: "Additional items"
+#: src/profiles/core/controlpanels/navigation.json:32
+msgctxt "Profiles|Core|Controlpanels|Navigation"
+msgid "Additional items"
+msgstr "Karagdagang mga item"
+
+#. Default: "Adds effective and expiration dates."
+#: src/profiles/core/behaviors/dates.json:4
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "Adds effective and expiration dates."
+msgstr "Nagdadagdag ng mga petsa ng bisa at pag-expire."
+
+#. Default: "Adds keywords and language fields."
+#: src/profiles/core/behaviors/categorization.json:4
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Adds keywords and language fields."
+msgstr "Nagdadagdag ng mga field ng keyword at wika."
+
+#. Default: "Adds ownership and rights fields."
+#: src/profiles/core/behaviors/ownership.json:4
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Adds ownership and rights fields."
+msgstr "Nagdadagdag ng mga field ng pagmamay-ari at mga karapatan."
+
+#. Default: "Adds standard metadatafields"
+#: src/profiles/core/behaviors/dublin_core.json:4
+msgctxt "Profiles|Core|Behaviors|Dublin core"
+msgid "Adds standard metadatafields"
+msgstr "Nagdadagdag ng mga pangunahing field ng metadata"
+
+#. Default: "Adds title and description fields."
+#: src/profiles/core/behaviors/basic.json:4
+msgctxt "Profiles|Core|Behaviors|Basic"
+msgid "Adds title and description fields."
+msgstr "Nagdadagdag ng mga field ng pamagat at paglalarawan."
+
+#. Default: "Administrator"
+#: src/profiles/core/roles.json:47
+#: src/profiles/core/upgrades/1002/roles.json:26
+msgctxt "Profiles|Core|Roles"
+msgid "Administrator"
+msgstr "Administrator"
+
+#. Default: "Administrators"
+#: src/profiles/multilingualcontent/groups.json:6
+#: src/profiles/default/groups.json:6
+msgctxt "Profiles|Multilingualcontent|Groups"
+msgid "Administrators"
+msgstr "Mga administrator"
+
+#. Default: "After N days in the future"
+#: src/profiles/core/catalog.json:95
+#: src/profiles/core/catalog.json:168
+#: src/profiles/core/catalog.json:510
+#: src/profiles/core/catalog.json:589
+#: src/profiles/core/catalog.json:662
+#: src/profiles/core/catalog.json:735
+msgctxt "Profiles|Core|Catalog"
+msgid "After N days in the future"
+msgstr "Pagkatapos ng N araw sa hinaharap"
+
+#. Default: "After date"
+#: src/profiles/core/catalog.json:124
+#: src/profiles/core/catalog.json:197
+#: src/profiles/core/catalog.json:539
+#: src/profiles/core/catalog.json:618
+#: src/profiles/core/catalog.json:691
+#: src/profiles/core/catalog.json:764
+msgctxt "Profiles|Core|Catalog"
+msgid "After date"
+msgstr "Pagkatapos ng petsa"
+
+#. Default: "After relative date"
+#: src/profiles/core/catalog.json:94
+#: src/profiles/core/catalog.json:167
+#: src/profiles/core/catalog.json:509
+#: src/profiles/core/catalog.json:588
+#: src/profiles/core/catalog.json:661
+#: src/profiles/core/catalog.json:734
+msgctxt "Profiles|Core|Catalog"
+msgid "After relative date"
+msgstr "Pagkatapos ng relatibong petsa"
+
+#. Default: "After the current day"
+#: src/profiles/core/catalog.json:101
+#: src/profiles/core/catalog.json:174
+#: src/profiles/core/catalog.json:516
+#: src/profiles/core/catalog.json:595
+#: src/profiles/core/catalog.json:668
+#: src/profiles/core/catalog.json:741
+msgctxt "Profiles|Core|Catalog"
+msgid "After the current day"
+msgstr "Pagkatapos ng kasalukuyang araw"
+
+#. Default: "After today"
+#: src/profiles/core/catalog.json:100
+#: src/profiles/core/catalog.json:173
+#: src/profiles/core/catalog.json:515
+#: src/profiles/core/catalog.json:594
+#: src/profiles/core/catalog.json:667
+#: src/profiles/core/catalog.json:740
+msgctxt "Profiles|Core|Catalog"
+msgid "After today"
+msgstr "Pagkatapos ng araw na ito"
+
+#. Default: "Allowed Content Types"
+#: src/models/type/type.ts:158
+msgctxt "Models|Type"
+msgid "Allowed Content Types"
+msgstr "Mga Pinapayagang Uri ng Nilalaman"
+
+#. Default: "Allows users to login with their email address instead of specifying a separate login name."
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:16
+#: src/profiles/core/controlpanels/security.json:16
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Security"
+msgid "Allows users to login with their email address instead of specifying a separate login name."
+msgstr ""
+
+#. Default: "Already locked"
+#: src/routes/lock/lock.ts:70
+#: src/routes/lock/lock.ts:123
+msgctxt "Routes|Lock"
+msgid "Already locked"
+msgstr "Naka-lock na"
+
+#. Default: "An entity responsible for making this item available."
+#: src/profiles/core/behaviors/ownership.json:15
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "An entity responsible for making this item available."
+msgstr "Entidad na responsable sa pagbibigay ng item na ito."
+
+#. Default: "An item’s description"
+#: src/profiles/core/catalog.json:234
+msgctxt "Profiles|Core|Catalog"
+msgid "An item’s description"
+msgstr "Paglalarawan ng item"
+
+#. Default: "An item’s type (e.g. Event)"
+#: src/profiles/core/catalog.json:440
+msgctxt "Profiles|Core|Catalog"
+msgid "An item’s type (e.g. Event)"
+msgstr "Uri ng item (hal. Kaganapan)"
+
+#. Default: "An item’s workflow state (e.g.published)"
+#: src/profiles/core/catalog.json:459
+msgctxt "Profiles|Core|Catalog"
+msgid "An item’s workflow state (e.g.published)"
+msgstr "Estado ng workflow ng item (hal. nailathala)"
+
+#. Default: "Anonymous"
+#: src/profiles/core/roles.json:6
+#: src/profiles/core/upgrades/1002/roles.json:6
+msgctxt "Profiles|Core|Roles"
+msgid "Anonymous"
+msgstr "Hindi kilala"
+
+#. Default: "Apply only to a objects in a particular workflow state"
+#: src/content_rules/conditions/workflow_state.ts:12
+msgctxt "Content rules|Conditions|Workflow state"
+msgid "Apply only to a objects in a particular workflow state"
+msgstr ""
+
+#. Default: "Apply only to a particular file extension"
+#: src/content_rules/conditions/file_extension.ts:12
+msgctxt "Content rules|Conditions|File extension"
+msgid "Apply only to a particular file extension"
+msgstr ""
+
+#. Default: "Apply only when the current content object is of a particular type"
+#: src/content_rules/conditions/content_type.ts:12
+msgctxt "Content rules|Conditions|Content type"
+msgid "Apply only when the current content object is of a particular type"
+msgstr ""
+
+#. Default: "Apply only when the current user has the given role"
+#: src/content_rules/conditions/user_role.ts:15
+msgctxt "Content rules|Conditions|User role"
+msgid "Apply only when the current user has the given role"
+msgstr ""
+
+#. Default: "Apply only when the current user is in the given group"
+#: src/content_rules/conditions/user_group.ts:15
+msgctxt "Content rules|Conditions|User group"
+msgid "Apply only when the current user is in the given group"
+msgstr ""
+
+#. Default: "As a path relative to the portal root."
+#: src/content_rules/actions/move_item.ts:40
+#: src/content_rules/actions/copy_item.ts:37
+msgctxt "Content rules|Actions|Move item"
+msgid "As a path relative to the portal root."
+msgstr ""
+
+#. Default: "Attendees"
+#: src/profiles/core/types/event.json:81
+msgctxt "Profiles|Core|Types|Event"
+msgid "Attendees"
+msgstr ""
+
+#. Default: "Authenticated"
+#: src/profiles/core/roles.json:11
+#: src/profiles/core/upgrades/1002/roles.json:11
+#: src/profiles/ai/roles.json:6
+msgctxt "Profiles|Core|Roles"
+msgid "Authenticated"
+msgstr "Napatunayan"
+
+#. Default: "Available languages"
+#: src/profiles/core/controlpanels/language.json:27
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "Available languages"
+msgstr "Mga magagamit na wika"
+
+#. Default: "Basic metadata"
+#: src/profiles/core/behaviors/basic.json:3
+msgctxt "Profiles|Core|Behaviors|Basic"
+msgid "Basic metadata"
+msgstr "Pangunahing metadata"
+
+#. Default: "Before N days in the past"
+#: src/profiles/core/catalog.json:107
+#: src/profiles/core/catalog.json:180
+#: src/profiles/core/catalog.json:522
+#: src/profiles/core/catalog.json:601
+#: src/profiles/core/catalog.json:674
+#: src/profiles/core/catalog.json:747
+msgctxt "Profiles|Core|Catalog"
+msgid "Before N days in the past"
+msgstr "Bago ang N araw sa nakaraan"
+
+#. Default: "Before date"
+#: src/profiles/core/catalog.json:136
+#: src/profiles/core/catalog.json:209
+#: src/profiles/core/catalog.json:551
+#: src/profiles/core/catalog.json:630
+#: src/profiles/core/catalog.json:703
+#: src/profiles/core/catalog.json:776
+msgctxt "Profiles|Core|Catalog"
+msgid "Before date"
+msgstr "Bago ang petsa"
+
+#. Default: "Before relative date"
+#: src/profiles/core/catalog.json:106
+#: src/profiles/core/catalog.json:179
+#: src/profiles/core/catalog.json:521
+#: src/profiles/core/catalog.json:600
+#: src/profiles/core/catalog.json:673
+#: src/profiles/core/catalog.json:746
+msgctxt "Profiles|Core|Catalog"
+msgid "Before relative date"
+msgstr "Bago ang relatibong petsa"
+
+#. Default: "Before the current day"
+#: src/profiles/core/catalog.json:113
+#: src/profiles/core/catalog.json:186
+#: src/profiles/core/catalog.json:528
+#: src/profiles/core/catalog.json:607
+#: src/profiles/core/catalog.json:680
+#: src/profiles/core/catalog.json:753
+msgctxt "Profiles|Core|Catalog"
+msgid "Before the current day"
+msgstr "Bago ang kasalukuyang araw"
+
+#. Default: "Before today"
+#: src/profiles/core/catalog.json:112
+#: src/profiles/core/catalog.json:185
+#: src/profiles/core/catalog.json:527
+#: src/profiles/core/catalog.json:606
+#: src/profiles/core/catalog.json:679
+#: src/profiles/core/catalog.json:752
+msgctxt "Profiles|Core|Catalog"
+msgid "Before today"
+msgstr "Bago ang araw na ito"
+
+#. Default: "Behaviors"
+#: src/models/type/type.ts:141
+msgctxt "Models|Type"
+msgid "Behaviors"
+msgstr "Mga Gawi"
+
+#. Default: "Between dates"
+#: src/profiles/core/catalog.json:118
+#: src/profiles/core/catalog.json:191
+#: src/profiles/core/catalog.json:533
+#: src/profiles/core/catalog.json:612
+#: src/profiles/core/catalog.json:685
+#: src/profiles/core/catalog.json:758
+msgctxt "Profiles|Core|Catalog"
+msgid "Between dates"
+msgstr "Sa pagitan ng mga petsa"
+
+#. Default: "Biography"
+#: src/constants/userschema.ts:22
+msgctxt "Constants|Userschema"
+msgid "Biography"
+msgstr ""
+
+#. Default: "Blocks"
+#: src/profiles/core/behaviors/blocks.json:3
+#: src/profiles/core/behaviors/blocks.json:17
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "Blocks"
+msgstr "Mga Bloke"
+
+#. Default: "Blocks Layout"
+#: src/profiles/core/behaviors/blocks.json:26
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "Blocks Layout"
+msgstr "Layout ng mga Bloke"
+
+#. Default: "Can only be seen and edited by the owner."
+#: src/profiles/core/workflows.json:13
+msgctxt "Profiles|Core|Workflows"
+msgid "Can only be seen and edited by the owner."
+msgstr "Makikita at mae-edit lamang ng may-ari."
+
+#. Default: "Categorization"
+#: src/profiles/core/behaviors/categorization.json:3
+#: src/profiles/core/behaviors/categorization.json:10
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Categorization"
+msgstr "Pagkakategorya"
+
+#. Default: "Change Note"
+#: src/profiles/core/behaviors/versioning.json:16
+msgctxt "Profiles|Core|Behaviors|Versioning"
+msgid "Change Note"
+msgstr "Tala ng Pagbabago"
+
+#. Default: "Comment"
+#: src/content_rules/actions/version_item.ts:33
+msgctxt "Content rules|Actions|Version item"
+msgid "Comment"
+msgstr ""
+
+#. Default: "Comment does not exist."
+#: src/routes/comments/comments.ts:211
+#: src/routes/comments/comments.ts:266
+msgctxt "Routes|Comments"
+msgid "Comment does not exist."
+msgstr ""
+
+#. Default: "Confirm password"
+#: src/routes/userschema/userschema.ts:115
+msgctxt "Routes|Userschema"
+msgid "Confirm password"
+msgstr ""
+
+#. Default: "Contact"
+#: src/profiles/core/actions.json:76
+msgctxt "Profiles|Core|Actions"
+msgid "Contact"
+msgstr "Kontak"
+
+#. Default: "Contact E-mail"
+#: src/profiles/core/types/event.json:94
+msgctxt "Profiles|Core|Types|Event"
+msgid "Contact E-mail"
+msgstr ""
+
+#. Default: "Contact Name"
+#: src/profiles/core/types/event.json:88
+msgctxt "Profiles|Core|Types|Event"
+msgid "Contact Name"
+msgstr ""
+
+#. Default: "Contact Phone"
+#: src/profiles/core/types/event.json:100
+msgctxt "Profiles|Core|Types|Event"
+msgid "Contact Phone"
+msgstr ""
+
+#. Default: "Contains"
+#: src/profiles/core/catalog.json:240
+#: src/profiles/core/catalog.json:259
+#: src/profiles/core/catalog.json:278
+#: src/profiles/core/catalog.json:484
+msgctxt "Profiles|Core|Catalog"
+msgid "Contains"
+msgstr "Naglalaman"
+
+#. Default: "Content"
+#: src/routes/controlpanels/controlpanels.ts:148
+msgctxt "Routes|Controlpanels"
+msgid "Content"
+msgstr "Nilalaman"
+
+#. Default: "Content Types"
+#: src/routes/controlpanels/controlpanels.ts:147
+#: src/profiles/core/controlpanels/dexterity-types.json:3
+msgctxt "Routes|Controlpanels"
+msgid "Content Types"
+msgstr "Mga Uri ng Nilalaman"
+
+#. Default: "Content type"
+#: src/content_rules/conditions/content_type.ts:10
+#: src/content_rules/conditions/content_type.ts:44
+msgctxt "Content rules|Conditions|Content type"
+msgid "Content type"
+msgstr ""
+
+#. Default: "Content type: {types}"
+#: src/content_rules/conditions/content_type.ts:16
+msgctxt "Content rules|Conditions|Content type"
+msgid "Content type: {types}"
+msgstr ""
+
+#. Default: "Contents"
+#: src/profiles/core/actions.json:17
+msgctxt "Profiles|Core|Actions"
+msgid "Contents"
+msgstr "Mga Nilalaman"
+
+#. Default: "Contributor"
+#: src/profiles/core/roles.json:32
+msgctxt "Profiles|Core|Roles"
+msgid "Contributor"
+msgstr "Tagapag-ambag"
+
+#. Default: "Copy"
+#: src/profiles/core/actions.json:44
+msgctxt "Profiles|Core|Actions"
+msgid "Copy"
+msgstr "Kopyahin"
+
+#. Default: "Copy the triggering item to a specific folder"
+#: src/content_rules/actions/copy_item.ts:19
+msgctxt "Content rules|Actions|Copy item"
+msgid "Copy the triggering item to a specific folder"
+msgstr ""
+
+#. Default: "Copy to folder"
+#: src/content_rules/actions/copy_item.ts:17
+msgctxt "Content rules|Actions|Copy item"
+msgid "Copy to folder"
+msgstr ""
+
+#. Default: "Copy to folder {target_folder}"
+#: src/content_rules/actions/copy_item.ts:21
+msgctxt "Content rules|Actions|Copy item"
+msgid "Copy to folder {target_folder}"
+msgstr ""
+
+#. Default: "Coverage"
+#: src/profiles/core/behaviors/categorization.json:16
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Coverage"
+msgstr "Saklaw"
+
+#. Default: "Creation date"
+#: src/profiles/core/catalog.json:654
+msgctxt "Profiles|Core|Catalog"
+msgid "Creation date"
+msgstr "Petsa ng paggawa"
+
+#. Default: "Creator"
+#: src/profiles/core/catalog.json:408
+msgctxt "Profiles|Core|Catalog"
+msgid "Creator"
+msgstr "Tagalikha"
+
+#. Default: "Current logged in user"
+#: src/profiles/core/catalog.json:421
+msgctxt "Profiles|Core|Catalog"
+msgid "Current logged in user"
+msgstr "Kasalukuyang naka-log in na gumagamit"
+
+#. Default: "Cut"
+#: src/profiles/core/actions.json:39
+msgctxt "Profiles|Core|Actions"
+msgid "Cut"
+msgstr "I-cut"
+
+#. Default: "Date and Time when the event begins."
+#: src/profiles/core/types/event.json:30
+msgctxt "Profiles|Core|Types|Event"
+msgid "Date and Time when the event begins."
+msgstr ""
+
+#. Default: "Date and Time when the event ends."
+#: src/profiles/core/types/event.json:37
+msgctxt "Profiles|Core|Types|Event"
+msgid "Date and Time when the event ends."
+msgstr ""
+
+#. Default: "Dates"
+#: src/profiles/core/behaviors/dates.json:3
+#: src/profiles/core/behaviors/dates.json:10
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "Dates"
+msgstr "Mga Petsa"
+
+#. Default: "Debug"
+#: src/profiles/core/controlpanels/mail.json:57
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Debug"
+msgstr "Debug"
+
+#. Default: "Default"
+#: src/routes/userschema/userschema.ts:26
+#: src/routes/userschema/userschema.ts:70
+#: src/content_rules/conditions/workflow_state.ts:25
+#: src/content_rules/conditions/user_role.ts:28
+#: src/content_rules/conditions/user_group.ts:28
+#: src/content_rules/conditions/file_extension.ts:22
+#: src/content_rules/conditions/content_type.ts:27
+#: src/content_rules/actions/version_item.ts:25
+#: src/content_rules/actions/transition_workflow.ts:26
+#: src/content_rules/actions/send_email.ts:30
+#: src/constants/userschema.ts:13
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:10
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:10
+#: src/profiles/core/types/video.json:13
+#: src/profiles/core/types/image.json:13
+#: src/profiles/core/types/file.json:13
+#: src/profiles/core/types/feed.json:13
+#: src/profiles/core/types/event.json:25
+#: src/profiles/core/controlpanels/usergroup.json:10
+#: src/profiles/core/controlpanels/security.json:10
+#: src/profiles/core/behaviors/versioning.json:10
+#: src/profiles/core/behaviors/preview_image_link.json:10
+#: src/profiles/core/behaviors/basic.json:10
+msgctxt "Routes|Userschema"
+msgid "Default"
+msgstr ""
+
+#. Default: "Define custom prompts for the assistant."
+#: src/profiles/ai/controlpanels/ai.json:16
+msgctxt "Profiles|Ai|Controlpanels"
+msgid "Define custom prompts for the assistant."
+msgstr "Magtakda ng mga custom na prompt para sa katulong."
+
+#. Default: "Define the event recurrence rule."
+#: src/profiles/core/types/event.json:58
+msgctxt "Profiles|Core|Types|Event"
+msgid "Define the event recurrence rule."
+msgstr ""
+
+#. Default: "Delete"
+#: src/profiles/core/actions.json:54
+msgctxt "Profiles|Core|Actions"
+msgid "Delete"
+msgstr "Burahin"
+
+#. Default: "Delete item"
+#: src/content_rules/actions/delete_item.ts:19
+#: src/content_rules/actions/delete_item.ts:21
+msgctxt "Content rules|Actions|Delete item"
+msgid "Delete item"
+msgstr ""
+
+#. Default: "Delete the triggering item"
+#: src/content_rules/actions/delete_item.ts:20
+msgctxt "Content rules|Actions|Delete item"
+msgid "Delete the triggering item"
+msgstr ""
+
+#. Default: "Description"
+#: src/models/type/type.ts:165
+#: src/profiles/core/catalog.json:233
+#: src/profiles/core/behaviors/basic.json:16
+#: src/profiles/ai/controlpanels/ai.json:33
+msgctxt "Models|Type"
+msgid "Description"
+msgstr "Paglalarawan"
+
+#. Default: "Determines if your site is optimized for small or large sites. In environments with a lot of groups it can be very slow or impossible to build a list all groups. This option tunes the user interface and behaviour for this case by allowing you to search for groups instead of listing all of them."
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:21
+#: src/profiles/core/controlpanels/usergroup.json:21
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+msgid "Determines if your site is optimized for small or large sites. In environments with a lot of groups it can be very slow or impossible to build a list all groups. This option tunes the user interface and behaviour for this case by allowing you to search for groups instead of listing all of them."
+msgstr ""
+
+#. Default: "Determines if your site is optimized for small or large sites. In environments with a lot of users it can be very slow or impossible to build a list all users. This option tunes the user interface and behaviour for this case by allowing you to search for users instead of listing all of them."
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:16
+#: src/profiles/core/controlpanels/usergroup.json:16
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+msgid "Determines if your site is optimized for small or large sites. In environments with a lot of users it can be very slow or impossible to build a list all users. This option tunes the user interface and behaviour for this case by allowing you to search for users instead of listing all of them."
+msgstr ""
+
+#. Default: "Displayed content types"
+#: src/profiles/core/controlpanels/navigation.json:27
+msgctxt "Profiles|Core|Controlpanels|Navigation"
+msgid "Displayed content types"
+msgstr "Mga ipinapakitang uri ng nilalaman"
+
+#. Default: "Do not send the email to the user that did the action."
+#: src/content_rules/actions/send_email.ts:35
+msgctxt "Content rules|Actions|Send email"
+msgid "Do not send the email to the user that did the action."
+msgstr ""
+
+#. Default: "Document added to this container"
+#: src/profiles/core/vocabularies/events.json:5
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "Document added to this container"
+msgstr ""
+
+#. Default: "Document copied"
+#: src/profiles/core/vocabularies/events.json:11
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "Document copied"
+msgstr ""
+
+#. Default: "Document locked"
+#: src/routes/history/history.ts:68
+#: src/routes/content/content.ts:778
+msgctxt "Routes|History"
+msgid "Document locked"
+msgstr "Naka-lock ang dokumento"
+
+#. Default: "Document modified"
+#: src/profiles/core/vocabularies/events.json:10
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "Document modified"
+msgstr ""
+
+#. Default: "Document removed from this container"
+#: src/profiles/core/vocabularies/events.json:7
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "Document removed from this container"
+msgstr ""
+
+#. Default: "Document {document} restored successfully"
+#: src/routes/recyclebin/recyclebin.ts:172
+msgctxt "Routes|Recyclebin"
+msgid "Document {document} restored successfully"
+msgstr ""
+
+#. Default: "Dublin Core metadata"
+#: src/profiles/core/behaviors/dublin_core.json:3
+msgctxt "Profiles|Core|Behaviors|Dublin core"
+msgid "Dublin Core metadata"
+msgstr "Dublin Core metadata"
+
+#. Default: "ESMTP password"
+#: src/profiles/core/controlpanels/mail.json:40
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "ESMTP password"
+msgstr "ESMTP password"
+
+#. Default: "ESMTP username"
+#: src/profiles/core/controlpanels/mail.json:52
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "ESMTP username"
+msgstr "ESMTP username"
+
+#. Default: "Edit"
+#: src/profiles/core/actions.json:12
+msgctxt "Profiles|Core|Actions"
+msgid "Edit"
+msgstr "I-edit"
+
+#. Default: "Editor"
+#: src/profiles/core/roles.json:37
+msgctxt "Profiles|Core|Roles"
+msgid "Editor"
+msgstr "Editor"
+
+#. Default: "Effective date"
+#: src/profiles/core/catalog.json:727
+msgctxt "Profiles|Core|Catalog"
+msgid "Effective date"
+msgstr "Petsa ng bisa"
+
+#. Default: "Email"
+#: src/routes/userschema/userschema.ts:40
+#: src/routes/userschema/userschema.ts:93
+msgctxt "Routes|Userschema"
+msgid "Email"
+msgstr ""
+
+#. Default: "Email address to contact about this event."
+#: src/profiles/core/types/event.json:92
+msgctxt "Profiles|Core|Types|Event"
+msgid "Email address to contact about this event."
+msgstr ""
+
+#. Default: "Email recipients"
+#: src/content_rules/actions/send_email.ts:52
+msgctxt "Content rules|Actions|Send email"
+msgid "Email recipients"
+msgstr ""
+
+#. Default: "Email report to {recipients}"
+#: src/content_rules/actions/send_email.ts:22
+msgctxt "Content rules|Actions|Send email"
+msgid "Email report to {recipients}"
+msgstr ""
+
+#. Default: "Email source"
+#: src/content_rules/actions/send_email.ts:59
+msgctxt "Content rules|Actions|Send email"
+msgid "Email source"
+msgstr ""
+
+#. Default: "Enables Volto Blocks support"
+#: src/profiles/core/behaviors/blocks.json:4
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "Enables Volto Blocks support"
+msgstr "Pinapagana ang suporta ng Volto Blocks"
+
+#. Default: "Enter a comment that describes the changes you made."
+#: src/profiles/core/behaviors/versioning.json:15
+msgctxt "Profiles|Core|Behaviors|Versioning"
+msgid "Enter a comment that describes the changes you made."
+msgstr "Maglagay ng komento na naglalarawan ng mga pagbabagong ginawa mo."
+
+#. Default: "Enter a user name, usually something like 'jsmith'. No spaces or special characters. Usernames and passwords are case sensitive, make sure the caps lock key is not enabled. This is the name used to log in."
+#: src/routes/userschema/userschema.ts:120
+msgctxt "Routes|Userschema"
+msgid "Enter a user name, usually something like 'jsmith'. No spaces or special characters. Usernames and passwords are case sensitive, make sure the caps lock key is not enabled. This is the name used to log in."
+msgstr ""
+
+#. Default: "Enter full name, for example, John Smith."
+#: src/routes/userschema/userschema.ts:32
+#: src/routes/userschema/userschema.ts:83
+msgctxt "Routes|Userschema"
+msgid "Enter full name, for example, John Smith."
+msgstr ""
+
+#. Default: "Enter your new password."
+#: src/routes/userschema/userschema.ts:106
+msgctxt "Routes|Userschema"
+msgid "Enter your new password."
+msgstr ""
+
+#. Default: "Equals"
+#: src/profiles/core/catalog.json:63
+#: src/profiles/core/catalog.json:340
+msgctxt "Profiles|Core|Catalog"
+msgid "Equals"
+msgstr "Katumbas"
+
+#. Default: "Event"
+#: src/profiles/core/types/event.json:3
+msgctxt "Profiles|Core|Types|Event"
+msgid "Event"
+msgstr ""
+
+#. Default: "Event Ends"
+#: src/profiles/core/types/event.json:38
+msgctxt "Profiles|Core|Types|Event"
+msgid "Event Ends"
+msgstr ""
+
+#. Default: "Event Starts"
+#: src/profiles/core/types/event.json:31
+msgctxt "Profiles|Core|Types|Event"
+msgid "Event Starts"
+msgstr ""
+
+#. Default: "Event URL"
+#: src/profiles/core/types/event.json:106
+msgctxt "Profiles|Core|Types|Event"
+msgid "Event URL"
+msgstr ""
+
+#. Default: "Event end date"
+#: src/profiles/core/catalog.json:160
+msgctxt "Profiles|Core|Catalog"
+msgid "Event end date"
+msgstr "Petsa ng pagtatapos ng kaganapan"
+
+#. Default: "Event lasts whole day."
+#: src/profiles/core/types/event.json:45
+msgctxt "Profiles|Core|Types|Event"
+msgid "Event lasts whole day."
+msgstr ""
+
+#. Default: "Event start date"
+#: src/profiles/core/catalog.json:87
+msgctxt "Profiles|Core|Catalog"
+msgid "Event start date"
+msgstr "Petsa ng pagsisimula ng kaganapan"
+
+#. Default: "Exclude actor from recipients"
+#: src/content_rules/actions/send_email.ts:38
+msgctxt "Content rules|Actions|Send email"
+msgid "Exclude actor from recipients"
+msgstr ""
+
+#. Default: "Exclude from navigation"
+#: src/profiles/core/behaviors/exclude_from_nav.json:3
+#: src/profiles/core/behaviors/exclude_from_nav.json:15
+msgctxt "Profiles|Core|Behaviors|Exclude from nav"
+msgid "Exclude from navigation"
+msgstr "Ibukod sa nabigasyon"
+
+#. Default: "Execute transition {transition}"
+#: src/content_rules/actions/transition_workflow.ts:18
+msgctxt "Content rules|Actions|Transition workflow"
+msgid "Execute transition {transition}"
+msgstr ""
+
+#. Default: "Expiration Date"
+#: src/profiles/core/behaviors/dates.json:22
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "Expiration Date"
+msgstr "Petsa ng Pag-expire"
+
+#. Default: "Expiration date"
+#: src/profiles/core/catalog.json:581
+msgctxt "Profiles|Core|Catalog"
+msgid "Expiration date"
+msgstr "Petsa ng pag-expire"
+
+#. Default: "Feed"
+#: src/profiles/core/types/feed.json:3
+msgctxt "Profiles|Core|Types|Feed"
+msgid "Feed"
+msgstr ""
+
+#. Default: "File"
+#: src/profiles/core/types/file.json:3
+#: src/profiles/core/types/file.json:19
+msgctxt "Profiles|Core|Types|File"
+msgid "File"
+msgstr "File"
+
+#. Default: "File Extension"
+#: src/content_rules/conditions/file_extension.ts:10
+msgctxt "Content rules|Conditions|File extension"
+msgid "File Extension"
+msgstr ""
+
+#. Default: "File extension"
+#: src/content_rules/conditions/file_extension.ts:29
+msgctxt "Content rules|Conditions|File extension"
+msgid "File extension"
+msgstr ""
+
+#. Default: "File extension is {extension}"
+#: src/content_rules/conditions/file_extension.ts:14
+msgctxt "Content rules|Conditions|File extension"
+msgid "File extension is {extension}"
+msgstr ""
+
+#. Default: "Filter Contained Types"
+#: src/models/type/type.ts:171
+msgctxt "Models|Type"
+msgid "Filter Contained Types"
+msgstr "I-filter ang Mga Naglalaman na Uri"
+
+#. Default: "Find items related to the selected items"
+#: src/profiles/core/catalog.json:334
+msgctxt "Profiles|Core|Catalog"
+msgid "Find items related to the selected items"
+msgstr "Maghanap ng mga item na nauugnay sa mga napiling item"
+
+#. Default: "Find items that can contain other objects"
+#: src/profiles/core/catalog.json:353
+msgctxt "Profiles|Core|Catalog"
+msgid "Find items that can contain other objects"
+msgstr "Maghanap ng mga item na maaaring maglaman ng iba pang mga item"
+
+#. Default: "Folder"
+#: src/profiles/core/types/folder.json:3
+msgctxt "Profiles|Core|Types|Folder"
+msgid "Folder"
+msgstr "Folder"
+
+#. Default: "Folder-like"
+#: src/profiles/core/catalog.json:352
+msgctxt "Profiles|Core|Catalog"
+msgid "Folder-like"
+msgstr "Tulad ng Folder"
+
+#. Default: "Form"
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:3
+#: src/profiles/core/controlpanels/form.json:3
+msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+msgid "Form"
+msgstr ""
+
+#. Default: "From and message are required fields."
+#: src/routes/email/email.ts:67
+#: src/routes/email/email.ts:114
+msgctxt "Routes|Email"
+msgid "From and message are required fields."
+msgstr "Kinakailangan ang mga field na Mula at Mensahe."
+
+#. Default: "Full Name"
+#: src/routes/userschema/userschema.ts:33
+#: src/routes/userschema/userschema.ts:86
+msgctxt "Routes|Userschema"
+msgid "Full Name"
+msgstr ""
+
+#. Default: "Gives the ability to rename an item from its edit form."
+#: src/profiles/core/behaviors/short_name.json:4
+#: src/profiles/core/behaviors/preview_image_link.json:4
+msgctxt "Profiles|Core|Behaviors|Short name"
+msgid "Gives the ability to rename an item from its edit form."
+msgstr "Nagbibigay ng kakayahang i-rename ang item mula sa edit form nito."
+
+#. Default: "Group name"
+#: src/content_rules/conditions/user_group.ts:45
+msgctxt "Content rules|Conditions|User group"
+msgid "Group name"
+msgstr ""
+
+#. Default: "Groups are: {groups}"
+#: src/content_rules/conditions/user_group.ts:17
+msgctxt "Content rules|Conditions|User group"
+msgid "Groups are: {groups}"
+msgstr ""
+
+#. Default: "History"
+#: src/profiles/core/actions.json:22
+msgctxt "Profiles|Core|Actions"
+msgid "History"
+msgstr "Kasaysayan"
+
+#. Default: "Home Page"
+#: src/constants/userschema.ts:30
+msgctxt "Constants|Userschema"
+msgid "Home Page"
+msgstr ""
+
+#. Default: "Identifier"
+#: src/profiles/core/behaviors/short_name.json:16
+msgctxt "Profiles|Core|Behaviors|Short name"
+msgid "Identifier"
+msgstr "Pantukoy"
+
+#. Default: "If enabled, the mail is sent to a test server."
+#: src/profiles/core/controlpanels/mail.json:58
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "If enabled, the mail is sent to a test server."
+msgstr "Kung pinagana, ipapadala ang mail sa test server."
+
+#. Default: "If enabled, the mail is sent using a secure connection."
+#: src/profiles/core/controlpanels/mail.json:63
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "If enabled, the mail is sent using a secure connection."
+msgstr "Kung pinagana, ipapadala ang mail gamit ang ligtas na koneksyon."
+
+#. Default: "If enabled, the site is multilingual."
+#: src/profiles/core/controlpanels/language.json:42
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "If enabled, the site is multilingual."
+msgstr "Kung pinagana, ang site ay maraming wika."
+
+#. Default: "If selected, this item will not appear in the navigation tree."
+#: src/profiles/core/behaviors/exclude_from_nav.json:4
+#: src/profiles/core/behaviors/exclude_from_nav.json:16
+msgctxt "Profiles|Core|Behaviors|Exclude from nav"
+msgid "If selected, this item will not appear in the navigation tree."
+msgstr "Kung pipiliin ito, hindi lalabas ang item na ito sa puno ng nabigasyon."
+
+#. Default: "If this date is in the future, the content will not show up in listings and searches until this date."
+#: src/profiles/core/behaviors/dates.json:15
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "If this date is in the future, the content will not show up in listings and searches until this date."
+msgstr "Kung ang petsang ito ay sa hinaharap, hindi lalabas ang nilalaman sa mga listahan at paghahanap hanggang sa petsang ito."
+
+#. Default: "Image"
+#: src/profiles/core/types/image.json:3
+#: src/profiles/core/types/image.json:19
+msgctxt "Profiles|Core|Types|Image"
+msgid "Image"
+msgstr "Larawan"
+
+#. Default: "Images can be referenced in pages or displayed in an album."
+#: src/profiles/core/types/image.json:4
+msgctxt "Profiles|Core|Types|Image"
+msgid "Images can be referenced in pages or displayed in an album."
+msgstr "Maaaring i-reference ang mga larawan sa mga pahina o ipakita sa isang album."
+
+#. Default: "Information about rights held in and over this item."
+#: src/profiles/core/behaviors/ownership.json:20
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Information about rights held in and over this item."
+msgstr "Impormasyon tungkol sa mga karapatan ng item na ito."
+
+#. Default: "Internal server error"
+#: src/app.ts:241
+#: src/app.ts:251
+msgctxt "App"
+msgid "Internal server error"
+msgstr "Panloob na error ng server"
+
+#. Default: "Invalid credentials"
+#: src/routes/authentication/authentication.ts:85
+#: src/routes/authentication/authentication.ts:99
+msgctxt "Routes|Authentication"
+msgid "Invalid credentials"
+msgstr "Hindi wastong mga kredensyal"
+
+#. Default: "Invalid move."
+#: src/routes/controlpanels/controlpanels.ts:519
+#: src/routes/controlpanels/controlpanels.ts:572
+msgctxt "Routes|Controlpanels"
+msgid "Invalid move."
+msgstr ""
+
+#. Default: "Invalid session"
+#: src/routes/authentication/authentication.ts:134
+msgctxt "Routes|Authentication"
+msgid "Invalid session"
+msgstr "Hindi wastong sesyon"
+
+#. Default: "Is"
+#: src/profiles/core/catalog.json:396
+#: src/profiles/core/catalog.json:490
+msgctxt "Profiles|Core|Catalog"
+msgid "Is"
+msgstr "Ay"
+
+#. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
+#: src/models/type/type.ts:172
+msgctxt "Models|Type"
+msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
+msgstr "Ang mga item ng ganitong uri ay maaaring kumilos bilang folder na naglalaman ng iba pang mga item. Anong mga uri ng nilalaman ang dapat payagan sa loob?"
+
+#. Default: "Language"
+#: src/profiles/core/controlpanels/language.json:3
+#: src/profiles/core/behaviors/categorization.json:22
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "Language"
+msgstr "Wika"
+
+#. Default: "Language root"
+#: src/profiles/multilingual/types/languageroot.json:3
+msgctxt "Profiles|Multilingual|Types|Languageroot"
+msgid "Language root"
+msgstr "Ugat ng wika"
+
+#. Default: "Larger than"
+#: src/profiles/core/catalog.json:69
+msgctxt "Profiles|Core|Catalog"
+msgid "Larger than"
+msgstr "Mas malaki kaysa"
+
+#. Default: "Layout"
+#: src/profiles/core/behaviors/blocks.json:10
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "Layout"
+msgstr "Layout"
+
+#. Default: "Less than"
+#: src/profiles/core/catalog.json:75
+msgctxt "Profiles|Core|Catalog"
+msgid "Less than"
+msgstr "Mas maliit kaysa"
+
+#. Default: "Lets you upload a file to the site."
+#: src/profiles/core/types/file.json:4
+msgctxt "Profiles|Core|Types|File"
+msgid "Lets you upload a file to the site."
+msgstr "Hinahayaan kang mag-upload ng file sa site."
+
+#. Default: "List of attendees."
+#: src/profiles/core/types/event.json:73
+msgctxt "Profiles|Core|Types|Event"
+msgid "List of attendees."
+msgstr ""
+
+#. Default: "Location"
+#: src/constants/userschema.ts:38
+#: src/profiles/core/catalog.json:7
+#: src/profiles/core/types/event.json:67
+msgctxt "Constants|Userschema"
+msgid "Location"
+msgstr ""
+
+#. Default: "Location in the navigation structure"
+#: src/profiles/core/catalog.json:21
+msgctxt "Profiles|Core|Catalog"
+msgid "Location in the navigation structure"
+msgstr "Lokasyon sa istraktura ng nabigasyon"
+
+#. Default: "Location in the site structure"
+#: src/profiles/core/catalog.json:15
+msgctxt "Profiles|Core|Catalog"
+msgid "Location in the site structure"
+msgstr "Lokasyon sa istraktura ng site"
+
+#. Default: "Location of the event."
+#: src/profiles/core/types/event.json:65
+msgctxt "Profiles|Core|Types|Event"
+msgid "Location of the event."
+msgstr ""
+
+#. Default: "Log a particular event"
+#: src/content_rules/actions/logger.ts:14
+msgctxt "Content rules|Actions|Logger"
+msgid "Log a particular event"
+msgstr ""
+
+#. Default: "Log in"
+#: src/profiles/core/actions.json:93
+msgctxt "Profiles|Core|Actions"
+msgid "Log in"
+msgstr "Mag-log in"
+
+#. Default: "Log message {message}"
+#: src/content_rules/actions/logger.ts:16
+msgctxt "Content rules|Actions|Logger"
+msgid "Log message {message}"
+msgstr ""
+
+#. Default: "Log out"
+#: src/profiles/core/actions.json:98
+msgctxt "Profiles|Core|Actions"
+msgid "Log out"
+msgstr "Mag-log out"
+
+#. Default: "Logger"
+#: src/content_rules/actions/logger.ts:13
+msgctxt "Content rules|Actions|Logger"
+msgid "Logger"
+msgstr ""
+
+#. Default: "Login"
+#: src/profiles/core/permissions.json:14
+msgctxt "Profiles|Core|Permissions"
+msgid "Login"
+msgstr "Pag-login"
+
+#. Default: "Login and password must be provided in body."
+#: src/routes/authentication/authentication.ts:64
+msgctxt "Routes|Authentication"
+msgid "Login and password must be provided in body."
+msgstr "Kinakailangan ang login at password sa katawan."
+
+#. Default: "Logout"
+#: src/profiles/core/permissions.json:18
+msgctxt "Profiles|Core|Permissions"
+msgid "Logout"
+msgstr "Pag-logout"
+
+#. Default: "Mail"
+#: src/profiles/core/controlpanels/mail.json:3
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Mail"
+msgstr "Mail"
+
+#. Default: "Mail Template"
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:15
+#: src/profiles/core/controlpanels/form.json:15
+msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+msgid "Mail Template"
+msgstr ""
+
+#. Default: "Manage Preferences"
+#: src/profiles/core/permissions.json:22
+msgctxt "Profiles|Core|Permissions"
+msgid "Manage Preferences"
+msgstr "Pamahalaan ang mga Kagustuhan"
+
+#. Default: "Manage Site"
+#: src/profiles/core/permissions.json:30
+msgctxt "Profiles|Core|Permissions"
+msgid "Manage Site"
+msgstr "Pamahalaan ang Site"
+
+#. Default: "Manage Users"
+#: src/profiles/core/permissions.json:26
+msgctxt "Profiles|Core|Permissions"
+msgid "Manage Users"
+msgstr "Pamahalaan ang mga Gumagamit"
+
+#. Default: "Many groups?"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:20
+#: src/profiles/core/controlpanels/usergroup.json:20
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+msgid "Many groups?"
+msgstr ""
+
+#. Default: "Many users?"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:15
+#: src/profiles/core/controlpanels/usergroup.json:15
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+msgid "Many users?"
+msgstr ""
+
+#. Default: "Matches all conditions"
+#: src/profiles/core/catalog.json:299
+msgctxt "Profiles|Core|Catalog"
+msgid "Matches all conditions"
+msgstr "Tumutugma sa lahat ng"
+
+#. Default: "Matches any condition"
+#: src/profiles/core/catalog.json:305
+#: src/profiles/core/catalog.json:415
+#: src/profiles/core/catalog.json:446
+#: src/profiles/core/catalog.json:465
+msgctxt "Profiles|Core|Catalog"
+msgid "Matches any condition"
+msgstr "Tumutugma sa alinman sa"
+
+#. Default: "Message"
+#: src/content_rules/actions/send_email.ts:44
+#: src/content_rules/actions/logger.ts:33
+msgctxt "Content rules|Actions|Send email"
+msgid "Message"
+msgstr ""
+
+#. Default: "Missing credentials"
+#: src/routes/authentication/authentication.ts:63
+msgctxt "Routes|Authentication"
+msgid "Missing credentials"
+msgstr "Nawawalang mga kredensyal"
+
+#. Default: "Modification date"
+#: src/profiles/core/catalog.json:502
+msgctxt "Profiles|Core|Catalog"
+msgid "Modification date"
+msgstr "Petsa ng pagbabago"
+
+#. Default: "Modify"
+#: src/profiles/core/permissions.json:34
+msgctxt "Profiles|Core|Permissions"
+msgid "Modify"
+msgstr "Baguhin"
+
+#. Default: "Modify Comments"
+#: src/profiles/core/permissions.json:58
+#: src/profiles/core/upgrades/1002/permissions.json:14
+msgctxt "Profiles|Core|Permissions"
+msgid "Modify Comments"
+msgstr ""
+
+#. Default: "Modify Own Comments"
+#: src/profiles/core/permissions.json:62
+#: src/profiles/core/upgrades/1002/permissions.json:18
+msgctxt "Profiles|Core|Permissions"
+msgid "Modify Own Comments"
+msgstr ""
+
+#. Default: "Move the triggering item to a specific folder"
+#: src/content_rules/actions/move_item.ts:22
+msgctxt "Content rules|Actions|Move item"
+msgid "Move the triggering item to a specific folder"
+msgstr ""
+
+#. Default: "Move to folder"
+#: src/content_rules/actions/move_item.ts:20
+msgctxt "Content rules|Actions|Move item"
+msgid "Move to folder"
+msgstr ""
+
+#. Default: "Move to folder {target_folder}"
+#: src/content_rules/actions/move_item.ts:24
+msgctxt "Content rules|Actions|Move item"
+msgid "Move to folder {target_folder}"
+msgstr ""
+
+#. Default: "Multilingual"
+#: src/profiles/core/controlpanels/language.json:41
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "Multilingual"
+msgstr "Maraming wika"
+
+#. Default: "Name of a person to contact about this event."
+#: src/profiles/core/types/event.json:86
+msgctxt "Profiles|Core|Types|Event"
+msgid "Name of a person to contact about this event."
+msgstr ""
+
+#. Default: "Navigation"
+#: src/profiles/core/controlpanels/navigation.json:3
+msgctxt "Profiles|Core|Controlpanels|Navigation"
+msgid "Navigation"
+msgstr "Nabigasyon"
+
+#. Default: "Navigation path"
+#: src/profiles/core/catalog.json:20
+msgctxt "Profiles|Core|Catalog"
+msgid "Navigation path"
+msgstr "Landas ng nabigasyon"
+
+#. Default: "News"
+#: src/helpers/i18n/i18n.test.ts:14
+#: src/helpers/i18n/i18n.test.ts:17
+#: src/helpers/i18n/i18n.test.ts:20
+msgctxt "Helpers|I18n|I18n.test"
+msgid "News"
+msgstr ""
+
+#. Default: "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature."
+#: src/profiles/core/controlpanels/mail.json:25
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature."
+msgstr ""
+
+#. Default: "Nick generates email using this name as the email sender."
+#: src/profiles/core/controlpanels/mail.json:30
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Nick generates email using this name as the email sender."
+msgstr ""
+
+#. Default: "No"
+#: src/profiles/core/catalog.json:359
+#: src/profiles/core/vocabularies/boolean.json:6
+msgctxt "Profiles|Core|Catalog"
+msgid "No"
+msgstr "Hindi"
+
+#. Default: "No data is submitted."
+#: src/routes/form/form.ts:106
+msgctxt "Routes|Form"
+msgid "No data is submitted."
+msgstr ""
+
+#. Default: "None"
+#: src/content_rules/conditions/workflow_state.ts:18
+#: src/content_rules/conditions/user_role.ts:21
+#: src/content_rules/conditions/user_group.ts:21
+#: src/content_rules/conditions/file_extension.ts:15
+#: src/content_rules/conditions/content_type.ts:20
+#: src/content_rules/actions/version_item.ts:18
+#: src/content_rules/actions/transition_workflow.ts:19
+#: src/content_rules/actions/send_email.ts:23
+#: src/content_rules/actions/move_item.ts:28
+#: src/content_rules/actions/logger.ts:17
+#: src/content_rules/actions/copy_item.ts:25
+msgctxt "Content rules|Conditions|Workflow state"
+msgid "None"
+msgstr ""
+
+#. Default: "Not allowed"
+#: src/routes/lock/lock.ts:174
+msgctxt "Routes|Lock"
+msgid "Not allowed"
+msgstr "Hindi pinapayagan"
+
+#. Default: "Not found."
+#: src/routes/vocabularies/vocabularies.ts:68
+#: src/routes/users/users.ts:148
+#: src/routes/types/types.ts:45
+#: src/routes/recyclebin/recyclebin.ts:35
+#: src/routes/recyclebin/recyclebin.ts:104
+#: src/routes/recyclebin/recyclebin.ts:202
+#: src/routes/groups/groups.ts:34
+#: src/routes/email/email.ts:75
+#: src/routes/controlpanels/controlpanels.ts:159
+#: src/routes/controlpanels/controlpanels.ts:357
+#: src/routes/controlpanels/controlpanels.ts:394
+#: src/routes/controlpanels/controlpanels.ts:426
+#: src/routes/controlpanels/controlpanels.ts:445
+#: src/routes/controlpanels/controlpanels.ts:476
+#: src/routes/controlpanels/controlpanels.ts:512
+#: src/routes/controlpanels/controlpanels.ts:564
+#: src/routes/controlpanels/controlpanels.ts:612
+#: src/routes/controlpanels/controlpanels.ts:659
+#: src/routes/controlpanels/controlpanels.ts:697
+msgctxt "Routes|Vocabularies"
+msgid "Not found."
+msgstr "Hindi natagpuan."
+
+#. Default: "Not found: {url}"
+#: src/helpers/handler/handler.ts:79
+msgctxt "Helpers|Handler"
+msgid "Not found: {url}"
+msgstr ""
+
+#. Default: "Open End"
+#: src/profiles/core/types/event.json:54
+msgctxt "Profiles|Core|Types|Event"
+msgid "Open End"
+msgstr ""
+
+#. Default: "Order in folder"
+#: src/profiles/core/catalog.json:56
+msgctxt "Profiles|Core|Catalog"
+msgid "Order in folder"
+msgstr "Pagkakasunud-sunod sa folder"
+
+#. Default: "Owner"
+#: src/profiles/core/roles.json:22
+#: src/profiles/core/upgrades/1002/roles.json:16
+msgctxt "Profiles|Core|Roles"
+msgid "Owner"
+msgstr "May-ari"
+
+#. Default: "Ownership"
+#: src/profiles/core/behaviors/ownership.json:3
+#: src/profiles/core/behaviors/ownership.json:10
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Ownership"
+msgstr "Pagmamay-ari"
+
+#. Default: "Page"
+#: src/profiles/core/types/page.json:3
+msgctxt "Profiles|Core|Types|Page"
+msgid "Page"
+msgstr "Pahina"
+
+#. Default: "Parent comment does not exist."
+#: src/routes/comments/comments.ts:155
+msgctxt "Routes|Comments"
+msgid "Parent comment does not exist."
+msgstr ""
+
+#. Default: "Password"
+#: src/routes/userschema/userschema.ts:107
+msgctxt "Routes|Userschema"
+msgid "Password"
+msgstr ""
+
+#. Default: "Password reset request"
+#: src/routes/users/users.ts:108
+#: src/routes/users/users.ts:256
+msgctxt "Routes|Users"
+msgid "Password reset request"
+msgstr "Kahilingan sa pag-reset ng password"
+
+#. Default: "Password should be at least 8 characters long."
+#: src/routes/users/users.ts:44
+#: src/routes/users/users.ts:202
+msgctxt "Routes|Users"
+msgid "Password should be at least 8 characters long."
+msgstr ""
+
+#. Default: "Paste"
+#: src/profiles/core/actions.json:49
+msgctxt "Profiles|Core|Actions"
+msgid "Paste"
+msgstr "I-paste"
+
+#. Default: "Pending review"
+#: src/profiles/core/workflows.json:22
+msgctxt "Profiles|Core|Workflows"
+msgid "Pending review"
+msgstr "Naghihintay ng pagsusuri"
+
+#. Default: "Perform a workflow transition on the triggering object"
+#: src/content_rules/actions/transition_workflow.ts:16
+msgctxt "Content rules|Actions|Transition workflow"
+msgid "Perform a workflow transition on the triggering object"
+msgstr ""
+
+#. Default: "Phone number to contact about this event."
+#: src/profiles/core/types/event.json:98
+msgctxt "Profiles|Core|Types|Event"
+msgid "Phone number to contact about this event."
+msgstr ""
+
+#. Default: "Please enter the number in days."
+#: src/profiles/core/catalog.json:131
+#: src/profiles/core/catalog.json:143
+#: src/profiles/core/catalog.json:204
+#: src/profiles/core/catalog.json:216
+#: src/profiles/core/catalog.json:546
+#: src/profiles/core/catalog.json:558
+#: src/profiles/core/catalog.json:625
+#: src/profiles/core/catalog.json:637
+#: src/profiles/core/catalog.json:698
+#: src/profiles/core/catalog.json:710
+#: src/profiles/core/catalog.json:771
+#: src/profiles/core/catalog.json:783
+msgctxt "Profiles|Core|Catalog"
+msgid "Please enter the number in days."
+msgstr "Pakilagay ang bilang ng mga araw."
+
+#. Default: "Please use YYYY/MM/DD."
+#: src/profiles/core/catalog.json:119
+#: src/profiles/core/catalog.json:125
+#: src/profiles/core/catalog.json:137
+#: src/profiles/core/catalog.json:192
+#: src/profiles/core/catalog.json:198
+#: src/profiles/core/catalog.json:210
+#: src/profiles/core/catalog.json:534
+#: src/profiles/core/catalog.json:540
+#: src/profiles/core/catalog.json:552
+#: src/profiles/core/catalog.json:613
+#: src/profiles/core/catalog.json:619
+#: src/profiles/core/catalog.json:631
+#: src/profiles/core/catalog.json:686
+#: src/profiles/core/catalog.json:692
+#: src/profiles/core/catalog.json:704
+#: src/profiles/core/catalog.json:759
+#: src/profiles/core/catalog.json:765
+#: src/profiles/core/catalog.json:777
+msgctxt "Profiles|Core|Catalog"
+msgid "Please use YYYY/MM/DD."
+msgstr "Pakigamit ang YYYY/MM/DD."
+
+#. Default: "Portrait"
+#: src/constants/userschema.ts:43
+msgctxt "Constants|Userschema"
+msgid "Portrait"
+msgstr ""
+
+#. Default: "Preferences"
+#: src/profiles/core/actions.json:83
+msgctxt "Profiles|Core|Actions"
+msgid "Preferences"
+msgstr "Mga Kagustuhan"
+
+#. Default: "Preview Image Link"
+#: src/profiles/core/behaviors/preview_image_link.json:3
+msgctxt "Profiles|Core|Behaviors|Preview image link"
+msgid "Preview Image Link"
+msgstr "Link ng Preview na Larawan"
+
+#. Default: "Preview image"
+#: src/profiles/core/behaviors/preview_image_link.json:15
+msgctxt "Profiles|Core|Behaviors|Preview image link"
+msgid "Preview image"
+msgstr "Preview na larawan"
+
+#. Default: "Preview image caption"
+#: src/profiles/core/behaviors/preview_image_link.json:23
+msgctxt "Profiles|Core|Behaviors|Preview image link"
+msgid "Preview image caption"
+msgstr "Caption ng preview na larawan"
+
+#. Default: "Private"
+#: src/profiles/core/workflows.json:12
+msgctxt "Profiles|Core|Workflows"
+msgid "Private"
+msgstr "Pribado"
+
+#. Default: "Prompt"
+#: src/profiles/ai/controlpanels/ai.json:18
+#: src/profiles/ai/controlpanels/ai.json:37
+msgctxt "Profiles|Ai|Controlpanels"
+msgid "Prompt"
+msgstr "Prompt"
+
+#. Default: "Prompt is a required field."
+#: src/routes/ai/ai.ts:40
+#: src/routes/ai/ai.ts:94
+msgctxt "Routes|Ai"
+msgid "Prompt is a required field."
+msgstr "Kinakailangan ang prompt."
+
+#. Default: "Prompts"
+#: src/profiles/ai/controlpanels/ai.json:15
+msgctxt "Profiles|Ai|Controlpanels"
+msgid "Prompts"
+msgstr "Mga Prompt"
+
+#. Default: "Provided block id is not valid."
+#: src/routes/form/form.ts:48
+#: src/routes/form/form.ts:99
+msgctxt "Routes|Form"
+msgid "Provided block id is not valid."
+msgstr ""
+
+#. Default: "Publish"
+#: src/profiles/core/workflows.json:47
+msgctxt "Profiles|Core|Workflows"
+msgid "Publish"
+msgstr "I-publish"
+
+#. Default: "Published"
+#: src/profiles/core/workflows.json:33
+msgctxt "Profiles|Core|Workflows"
+msgid "Published"
+msgstr "Na-publish"
+
+#. Default: "Publisher"
+#: src/profiles/core/behaviors/ownership.json:16
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Publisher"
+msgstr "Tagapaglathala"
+
+#. Default: "Publishing Date"
+#: src/profiles/core/behaviors/dates.json:16
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "Publishing Date"
+msgstr "Petsa ng Paglathala"
+
+#. Default: "Query"
+#: src/profiles/core/types/feed.json:19
+msgctxt "Profiles|Core|Types|Feed"
+msgid "Query"
+msgstr ""
+
+#. Default: "Query must be at least 2 characters long."
+#: src/routes/users/users.ts:169
+#: src/routes/principals/principals.ts:30
+#: src/routes/groups/groups.ts:55
+msgctxt "Routes|Users"
+msgid "Query must be at least 2 characters long."
+msgstr ""
+
+#. Default: "Re-enter the password. Make sure the passwords are identical."
+#: src/routes/userschema/userschema.ts:112
+msgctxt "Routes|Userschema"
+msgid "Re-enter the password. Make sure the passwords are identical."
+msgstr ""
+
+#. Default: "Reader"
+#: src/profiles/core/roles.json:27
+msgctxt "Profiles|Core|Roles"
+msgid "Reader"
+msgstr "Mambabasa"
+
+#. Default: "Recurrence"
+#: src/profiles/core/types/event.json:60
+msgctxt "Profiles|Core|Types|Event"
+msgid "Recurrence"
+msgstr ""
+
+#. Default: "Register"
+#: src/profiles/core/permissions.json:38
+#: src/profiles/core/actions.json:103
+msgctxt "Profiles|Core|Permissions"
+msgid "Register"
+msgstr "Magparehistro"
+
+#. Default: "Related"
+#: src/profiles/core/behaviors/categorization.json:34
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Related"
+msgstr "Kaugnay"
+
+#. Default: "Related Items"
+#: src/profiles/core/behaviors/categorization.json:42
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Related Items"
+msgstr "Mga Kaugnay na Item"
+
+#. Default: "Related To"
+#: src/profiles/core/catalog.json:333
+msgctxt "Profiles|Core|Catalog"
+msgid "Related To"
+msgstr "Kaugnay Sa"
+
+#. Default: "Related resources."
+#: src/profiles/core/behaviors/categorization.json:31
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Related resources."
+msgstr "Mga kaugnay na mapagkukunan."
+
+#. Default: "Relative path"
+#: src/profiles/core/catalog.json:26
+msgctxt "Profiles|Core|Catalog"
+msgid "Relative path"
+msgstr "Relatibong landas"
+
+#. Default: "Rename"
+#: src/profiles/core/actions.json:59
+msgctxt "Profiles|Core|Actions"
+msgid "Rename"
+msgstr "Palitan ang pangalan"
+
+#. Default: "Required field(s) missing."
+#: src/routes/content/content.ts:590
+msgctxt "Routes|Content"
+msgid "Required field(s) missing."
+msgstr "Nawawala ang (mga) kinakailangang field."
+
+#. Default: "Retract"
+#: src/profiles/core/workflows.json:57
+msgctxt "Profiles|Core|Workflows"
+msgid "Retract"
+msgstr "Bawiin"
+
+#. Default: "Review"
+#: src/profiles/core/permissions.json:42
+msgctxt "Profiles|Core|Permissions"
+msgid "Review"
+msgstr "Pagsusuri"
+
+#. Default: "Review state"
+#: src/profiles/core/catalog.json:458
+msgctxt "Profiles|Core|Catalog"
+msgid "Review state"
+msgstr "Estado ng pagsusuri"
+
+#. Default: "Reviewer"
+#: src/profiles/core/roles.json:42
+#: src/profiles/core/upgrades/1002/roles.json:21
+msgctxt "Profiles|Core|Roles"
+msgid "Reviewer"
+msgstr "Tagasuri"
+
+#. Default: "Rights"
+#: src/profiles/core/behaviors/ownership.json:21
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Rights"
+msgstr "Mga Karapatan"
+
+#. Default: "Robots.txt"
+#: src/profiles/core/controlpanels/site.json:15
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "Robots.txt"
+msgstr "Robots.txt"
+
+#. Default: "Roles"
+#: src/content_rules/conditions/user_role.ts:45
+msgctxt "Content rules|Conditions|User role"
+msgid "Roles"
+msgstr ""
+
+#. Default: "Roles are: {roles}"
+#: src/content_rules/conditions/user_role.ts:17
+msgctxt "Content rules|Conditions|User role"
+msgid "Roles are: {roles}"
+msgstr ""
+
+#. Default: "Rules"
+#: src/profiles/core/actions.json:32
+msgctxt "Profiles|Core|Actions"
+msgid "Rules"
+msgstr "Mga Panuntunan"
+
+#. Default: "SMTP port"
+#: src/profiles/core/controlpanels/mail.json:46
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "SMTP port"
+msgstr "SMTP port"
+
+#. Default: "SMTP server"
+#: src/profiles/core/controlpanels/mail.json:34
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "SMTP server"
+msgstr "SMTP server"
+
+#. Default: "Searchable text"
+#: src/profiles/core/catalog.json:252
+msgctxt "Profiles|Core|Catalog"
+msgid "Searchable text"
+msgstr "Mahahanapang teksto"
+
+#. Default: "Secure"
+#: src/profiles/core/controlpanels/mail.json:62
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Secure"
+msgstr "Ligtas"
+
+#. Default: "Security"
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:3
+#: src/profiles/core/controlpanels/security.json:3
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Security"
+msgid "Security"
+msgstr ""
+
+#. Default: "Select an image that will be used in listing and teaser blocks."
+#: src/profiles/core/behaviors/preview_image_link.json:16
+msgctxt "Profiles|Core|Behaviors|Preview image link"
+msgid "Select an image that will be used in listing and teaser blocks."
+msgstr "Pumili ng larawan na gagamitin sa mga bloke ng listahan at teaser."
+
+#. Default: "Select the workflow transition to attempt"
+#: src/content_rules/actions/transition_workflow.ts:31
+msgctxt "Content rules|Actions|Transition workflow"
+msgid "Select the workflow transition to attempt"
+msgstr ""
+
+#. Default: "Send a confirmation mail with a link to set the password"
+#: src/routes/userschema/userschema.ts:100
+msgctxt "Routes|Userschema"
+msgid "Send a confirmation mail with a link to set the password"
+msgstr ""
+
+#. Default: "Send an email on the triggering object"
+#: src/content_rules/actions/send_email.ts:20
+msgctxt "Content rules|Actions|Send email"
+msgid "Send an email on the triggering object"
+msgstr ""
+
+#. Default: "Send back"
+#: src/profiles/core/workflows.json:52
+msgctxt "Profiles|Core|Workflows"
+msgid "Send back"
+msgstr "Ibalik"
+
+#. Default: "Send email"
+#: src/content_rules/actions/send_email.ts:18
+msgctxt "Content rules|Actions|Send email"
+msgid "Send email"
+msgstr ""
+
+#. Default: "Settings"
+#: src/profiles/core/behaviors/short_name.json:10
+#: src/profiles/core/behaviors/exclude_from_nav.json:10
+msgctxt "Profiles|Core|Behaviors|Short name"
+msgid "Settings"
+msgstr "Mga Setting"
+
+#. Default: "Sharing"
+#: src/profiles/core/actions.json:27
+msgctxt "Profiles|Core|Actions"
+msgid "Sharing"
+msgstr "Pagbabahagi"
+
+#. Default: "Short name"
+#: src/profiles/core/behaviors/short_name.json:3
+msgctxt "Profiles|Core|Behaviors|Short name"
+msgid "Short name"
+msgstr "Maikling pangalan"
+
+#. Default: "Short name (id)"
+#: src/profiles/core/catalog.json:389
+msgctxt "Profiles|Core|Catalog"
+msgid "Short name (id)"
+msgstr "Maikling pangalan (id)"
+
+#. Default: "Simple Publication Workflow"
+#: src/profiles/core/workflows.json:6
+msgctxt "Profiles|Core|Workflows"
+msgid "Simple Publication Workflow"
+msgstr "Simpleng Workflow para sa Publikasyon"
+
+#. Default: "Simple workflow that is useful for basic web sites. Things start out as private, and can either be submitted for review, or published directly. The creator of a content item can edit the item even after it is published."
+#: src/profiles/core/workflows.json:7
+msgctxt "Profiles|Core|Workflows"
+msgid "Simple workflow that is useful for basic web sites. Things start out as private, and can either be submitted for review, or published directly. The creator of a content item can edit the item even after it is published."
+msgstr "Simpleng workflow na kapaki-pakinabang para sa mga pangunahing website. Nagsisimula ang mga bagay bilang pribado, at maaaring isumite para sa pagsusuri, o direktang i-publish. Ang tagalikha ng nilalaman ay maaaring mag-edit ng item kahit na pagkatapos itong mailathala."
+
+#. Default: "Site"
+#: src/profiles/core/types/site.json:3
+#: src/profiles/core/controlpanels/site.json:3
+msgctxt "Profiles|Core|Types|Site"
+msgid "Site"
+msgstr "Site"
+
+#. Default: "Site 'From' address"
+#: src/profiles/core/controlpanels/mail.json:24
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Site 'From' address"
+msgstr "Address na 'Mula' ng Site"
+
+#. Default: "Site 'From' name"
+#: src/profiles/core/controlpanels/mail.json:29
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Site 'From' name"
+msgstr "Pangalan na 'Mula' ng Site"
+
+#. Default: "Site Logo"
+#: src/profiles/core/controlpanels/site.json:22
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "Site Logo"
+msgstr "Logo ng Site"
+
+#. Default: "Site Setup"
+#: src/profiles/core/actions.json:88
+msgctxt "Profiles|Core|Actions"
+msgid "Site Setup"
+msgstr "Pag-setup ng Site"
+
+#. Default: "Site language"
+#: src/profiles/core/controlpanels/language.json:34
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "Site language"
+msgstr "Wika ng site"
+
+#. Default: "Site title"
+#: src/profiles/core/controlpanels/site.json:28
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "Site title"
+msgstr "Pamagat ng site"
+
+#. Default: "Sitemap"
+#: src/profiles/core/actions.json:66
+msgctxt "Profiles|Core|Actions"
+msgid "Sitemap"
+msgstr "Mapa ng Site"
+
+#. Default: "Sortable Title"
+#: src/profiles/core/catalog.json:477
+msgctxt "Profiles|Core|Catalog"
+msgid "Sortable Title"
+msgstr "Pamagat na Maaaring I-sort"
+
+#. Default: "Source"
+#: src/profiles/core/behaviors/ownership.json:26
+msgctxt "Profiles|Core|Behaviors|Ownership"
+msgid "Source"
+msgstr "Pinagmulan"
+
+#. Default: "Store a new version of the item"
+#: src/content_rules/actions/version_item.ts:15
+msgctxt "Content rules|Actions|Version item"
+msgid "Store a new version of the item"
+msgstr ""
+
+#. Default: "Subject"
+#: src/content_rules/actions/send_email.ts:65
+msgctxt "Content rules|Actions|Send email"
+msgid "Subject"
+msgstr ""
+
+#. Default: "Subject of the message"
+#: src/content_rules/actions/send_email.ts:63
+msgctxt "Content rules|Actions|Send email"
+msgid "Subject of the message"
+msgstr ""
+
+#. Default: "Submit"
+#: src/profiles/core/permissions.json:46
+msgctxt "Profiles|Core|Permissions"
+msgid "Submit"
+msgstr "Isumite"
+
+#. Default: "Submit for publication"
+#: src/profiles/core/workflows.json:62
+msgctxt "Profiles|Core|Workflows"
+msgid "Submit for publication"
+msgstr "Isumite para sa publikasyon"
+
+#. Default: "Successfully assigned the content rule {rule}"
+#: src/routes/content_rules/content_rules.ts:123
+msgctxt "Routes|Content rules"
+msgid "Successfully assigned the content rule {rule}"
+msgstr ""
+
+#. Default: "Successfully disabled rules {rules}"
+#: src/routes/content_rules/content_rules.ts:170
+msgctxt "Routes|Content rules"
+msgid "Successfully disabled rules {rules}"
+msgstr ""
+
+#. Default: "Successfully disabled rules {rules} to subfolders"
+#: src/routes/content_rules/content_rules.ts:213
+msgctxt "Routes|Content rules"
+msgid "Successfully disabled rules {rules} to subfolders"
+msgstr ""
+
+#. Default: "Successfully enabled rules {rules}"
+#: src/routes/content_rules/content_rules.ts:150
+msgctxt "Routes|Content rules"
+msgid "Successfully enabled rules {rules}"
+msgstr ""
+
+#. Default: "Successfully enabled rules {rules} to subfolders"
+#: src/routes/content_rules/content_rules.ts:190
+msgctxt "Routes|Content rules"
+msgid "Successfully enabled rules {rules} to subfolders"
+msgstr ""
+
+#. Default: "System group"
+#: src/routes/groups/groups.ts:142
+msgctxt "Routes|Groups"
+msgid "System group"
+msgstr "Grupo ng sistema"
+
+#. Default: "System users"
+#: src/routes/users/users.ts:326
+msgctxt "Routes|Users"
+msgid "System users"
+msgstr "Mga gumagamit ng sistema"
+
+#. Default: "Tag"
+#: src/profiles/core/catalog.json:290
+msgctxt "Profiles|Core|Catalog"
+msgid "Tag"
+msgstr "Tag"
+
+#. Default: "Tags"
+#: src/profiles/core/behaviors/categorization.json:50
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "Tags"
+msgstr "Mga Tag"
+
+#. Default: "Tags are used for organization of content"
+#: src/profiles/core/catalog.json:291
+msgctxt "Profiles|Core|Catalog"
+msgid "Tags are used for organization of content"
+msgstr "Ang mga tag ay ginagamit para sa organisasyon ng nilalaman"
+
+#. Default: "Target folder"
+#: src/content_rules/actions/move_item.ts:41
+#: src/content_rules/actions/copy_item.ts:38
+msgctxt "Content rules|Actions|Move item"
+msgid "Target folder"
+msgstr ""
+
+#. Default: "Target path not found."
+#: src/routes/recyclebin/recyclebin.ts:133
+msgctxt "Routes|Recyclebin"
+msgid "Target path not found."
+msgstr ""
+
+#. Default: "Text is required to add a comment."
+#: src/routes/comments/comments.ts:104
+#: src/routes/comments/comments.ts:162
+msgctxt "Routes|Comments"
+msgid "Text is required to add a comment."
+msgstr ""
+
+#. Default: "Text is required to modify a comment."
+#: src/routes/comments/comments.ts:229
+msgctxt "Routes|Comments"
+msgid "Text is required to modify a comment."
+msgstr ""
+
+#. Default: "Text search of an item’s contents"
+#: src/profiles/core/catalog.json:253
+msgctxt "Profiles|Core|Catalog"
+msgid "Text search of an item’s contents"
+msgstr "Paghahanap ng teksto sa mga nilalaman ng item"
+
+#. Default: "Text search of an item’s title"
+#: src/profiles/core/catalog.json:272
+msgctxt "Profiles|Core|Catalog"
+msgid "Text search of an item’s title"
+msgstr "Paghahanap ng teksto sa pamagat ng item"
+
+#. Default: "The JSON representation of the object blocks information. Must be a JSON object."
+#: src/profiles/core/behaviors/blocks.json:16
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "The JSON representation of the object blocks information. Must be a JSON object."
+msgstr "Ang JSON na representasyon ng impormasyon ng mga bloke ng object. Dapat itong isang JSON object."
+
+#. Default: "The JSON representation of the object blocks layout. Must be a JSON array."
+#: src/profiles/core/behaviors/blocks.json:25
+msgctxt "Profiles|Core|Behaviors|Blocks"
+msgid "The JSON representation of the object blocks layout. Must be a JSON array."
+msgstr "Ang JSON na representasyon ng layout ng mga bloke ng object. Dapat itong isang JSON array."
+
+#. Default: "The URL for your external home page, if you have one."
+#: src/constants/userschema.ts:27
+msgctxt "Constants|Userschema"
+msgid "The URL for your external home page, if you have one."
+msgstr ""
+
+#. Default: "The address of your local SMTP (outgoing email) server. Usually 'localhost', unless you use an external server to send email."
+#: src/profiles/core/controlpanels/mail.json:35
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The address of your local SMTP (outgoing email) server. Usually 'localhost', unless you use an external server to send email."
+msgstr "Ang address ng iyong lokal na SMTP (palabas na email) server. Karaniwang 'localhost', maliban kung gumagamit ka ng panlabas na server para magpadala ng email."
+
+#. Default: "The comment added to the history while versioning the content."
+#: src/content_rules/actions/version_item.ts:30
+msgctxt "Content rules|Actions|Version item"
+msgid "The comment added to the history while versioning the content."
+msgstr ""
+
+#. Default: "The content type to check for."
+#: src/content_rules/conditions/content_type.ts:33
+msgctxt "Content rules|Conditions|Content type"
+msgid "The content type to check for."
+msgstr ""
+
+#. Default: "The content types that should be shown in the navigation and site map."
+#: src/profiles/core/controlpanels/navigation.json:17
+msgctxt "Profiles|Core|Controlpanels|Navigation"
+msgid "The content types that should be shown in the navigation and site map."
+msgstr "Mga uri ng nilalaman na ipapakita sa nabigasyon at mapa ng site."
+
+#. Default: "The current day"
+#: src/profiles/core/catalog.json:149
+#: src/profiles/core/catalog.json:222
+#: src/profiles/core/catalog.json:564
+#: src/profiles/core/catalog.json:643
+#: src/profiles/core/catalog.json:716
+#: src/profiles/core/catalog.json:789
+msgctxt "Profiles|Core|Catalog"
+msgid "The current day"
+msgstr "Ang kasalukuyang araw"
+
+#. Default: "The date an item was created"
+#: src/profiles/core/catalog.json:655
+msgctxt "Profiles|Core|Catalog"
+msgid "The date an item was created"
+msgstr "Petsa kung kailan nilikha ang item"
+
+#. Default: "The email address that sends the email. If no email is provided here, it will use the portal from address."
+#: src/content_rules/actions/send_email.ts:56
+msgctxt "Content rules|Actions|Send email"
+msgid "The email address that sends the email. If no email is provided here, it will use the portal from address."
+msgstr ""
+
+#. Default: "The email where you want to send this message. To send it to different email addresses, just separate them with ,"
+#: src/content_rules/actions/send_email.ts:49
+msgctxt "Content rules|Actions|Send email"
+msgid "The email where you want to send this message. To send it to different email addresses, just separate them with ,"
+msgstr ""
+
+#. Default: "The end date and time of an event"
+#: src/profiles/core/catalog.json:161
+msgctxt "Profiles|Core|Catalog"
+msgid "The end date and time of an event"
+msgstr "Petsa at oras ng pagtatapos ng kaganapan"
+
+#. Default: "The file extension to check for"
+#: src/content_rules/conditions/file_extension.ts:27
+msgctxt "Content rules|Conditions|File extension"
+msgid "The file extension to check for"
+msgstr ""
+
+#. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
+#: src/routes/users/users.ts:109
+#: src/routes/users/users.ts:257
+msgctxt "Routes|Users"
+msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
+msgstr ""
+
+#. Default: "The item’s title, transformed for sorting"
+#: src/profiles/core/catalog.json:478
+msgctxt "Profiles|Core|Catalog"
+msgid "The item’s title, transformed for sorting"
+msgstr "Ang pamagat ng item, binago para sa pag-sort"
+
+#. Default: "The language of this item."
+#: src/profiles/core/behaviors/categorization.json:20
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "The language of this item."
+msgstr "Wika ng item na ito."
+
+#. Default: "The language used for the content and the UI of this site."
+#: src/profiles/core/controlpanels/language.json:33
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "The language used for the content and the UI of this site."
+msgstr "Ang wikang ginagamit sa nilalaman at interface ng site na ito."
+
+#. Default: "The languages in which the site should be translatable."
+#: src/profiles/core/controlpanels/language.json:17
+msgctxt "Profiles|Core|Controlpanels|Language"
+msgid "The languages in which the site should be translatable."
+msgstr "Mga wika kung saan dapat maisalin ang site."
+
+#. Default: "The location of an item"
+#: src/profiles/core/catalog.json:8
+msgctxt "Profiles|Core|Catalog"
+msgid "The location of an item"
+msgstr "Lokasyon ng item"
+
+#. Default: "The message that you want to mail."
+#: src/content_rules/actions/send_email.ts:42
+msgctxt "Content rules|Actions|Send email"
+msgid "The message that you want to mail."
+msgstr ""
+
+#. Default: "The name of the group."
+#: src/content_rules/conditions/user_group.ts:34
+msgctxt "Content rules|Conditions|User group"
+msgid "The name of the group."
+msgstr ""
+
+#. Default: "The order of an item in its parent folder"
+#: src/profiles/core/catalog.json:57
+msgctxt "Profiles|Core|Catalog"
+msgid "The order of an item in its parent folder"
+msgstr "Pagkakasunud-sunod ng item sa parent folder nito"
+
+#. Default: "The password for the ESMTP user account."
+#: src/profiles/core/controlpanels/mail.json:41
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The password for the ESMTP user account."
+msgstr "Password para sa ESMTP user account."
+
+#. Default: "The person that created an item"
+#: src/profiles/core/catalog.json:409
+msgctxt "Profiles|Core|Catalog"
+msgid "The person that created an item"
+msgstr "Taong lumikha ng item"
+
+#. Default: "The port of your local SMTP (outgoing email) server. Usually '25'."
+#: src/profiles/core/controlpanels/mail.json:47
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The port of your local SMTP (outgoing email) server. Usually '25'."
+msgstr "Ang port ng iyong lokal na SMTP (palabas na email) server. Karaniwang '25'."
+
+#. Default: "The roles to check for."
+#: src/content_rules/conditions/user_role.ts:34
+msgctxt "Content rules|Conditions|User role"
+msgid "The roles to check for."
+msgstr ""
+
+#. Default: "The short name of an item (used in the url)"
+#: src/profiles/core/catalog.json:390
+msgctxt "Profiles|Core|Catalog"
+msgid "The short name of an item (used in the url)"
+msgstr "Maikling pangalan ng item (ginagamit sa URL)"
+
+#. Default: "The spatial or temporal topic of this item, spatial applicability of this item, or jurisdiction under which this item is relevant."
+#: src/profiles/core/behaviors/categorization.json:15
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "The spatial or temporal topic of this item, spatial applicability of this item, or jurisdiction under which this item is relevant."
+msgstr "Ang spatial o temporal na paksa ng item na ito, spatial applicability ng item na ito, o hurisdiksyon kung saan nauugnay ang item na ito."
+
+#. Default: "The start date and time of an event"
+#: src/profiles/core/catalog.json:88
+msgctxt "Profiles|Core|Catalog"
+msgid "The start date and time of an event"
+msgstr "Petsa at oras ng pagsisimula ng kaganapan"
+
+#. Default: "The time and date an item was expired"
+#: src/profiles/core/catalog.json:582
+msgctxt "Profiles|Core|Catalog"
+msgid "The time and date an item was expired"
+msgstr "Oras at petsa kung kailan nag-expire ang item"
+
+#. Default: "The time and date an item was first published"
+#: src/profiles/core/catalog.json:728
+msgctxt "Profiles|Core|Catalog"
+msgid "The time and date an item was first published"
+msgstr "Oras at petsa kung kailan unang nailathala ang item"
+
+#. Default: "The time and date an item was last modified"
+#: src/profiles/core/catalog.json:503
+msgctxt "Profiles|Core|Catalog"
+msgid "The time and date an item was last modified"
+msgstr "Oras at petsa kung kailan huling binago ang item"
+
+#. Default: "The topic of this item."
+#: src/profiles/core/behaviors/categorization.json:48
+msgctxt "Profiles|Core|Behaviors|Categorization"
+msgid "The topic of this item."
+msgstr "Paksa ng item na ito."
+
+#. Default: "The user viewing the querystring results"
+#: src/profiles/core/catalog.json:422
+msgctxt "Profiles|Core|Catalog"
+msgid "The user viewing the querystring results"
+msgstr "Gumagamit na tumitingin sa mga resulta ng querystring"
+
+#. Default: "The workflow states to check for."
+#: src/content_rules/conditions/workflow_state.ts:31
+msgctxt "Content rules|Conditions|Workflow state"
+msgid "The workflow states to check for."
+msgstr ""
+
+#. Default: "This document is already locked by another user."
+#: src/routes/lock/lock.ts:67
+#: src/routes/lock/lock.ts:120
+msgctxt "Routes|Lock"
+msgid "This document is already locked by another user."
+msgstr "Naka-lock na ng ibang gumagamit ang dokumentong ito."
+
+#. Default: "This event is open ended."
+#: src/profiles/core/types/event.json:52
+msgctxt "Profiles|Core|Types|Event"
+msgid "This event is open ended."
+msgstr ""
+
+#. Default: "This is the contents of the robots.txt file."
+#: src/profiles/core/controlpanels/site.json:16
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "This is the contents of the robots.txt file."
+msgstr "Ito ang mga nilalaman ng robots.txt file."
+
+#. Default: "This is the mail template to be used when sending an email to the admin or the user. Variables like lang, title, header, footer, admin_info and fields can be used."
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:16
+#: src/profiles/core/controlpanels/form.json:16
+msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+msgid "This is the mail template to be used when sending an email to the admin or the user. Variables like lang, title, header, footer, admin_info and fields can be used."
+msgstr ""
+
+#. Default: "This name will be displayed in the URL."
+#: src/profiles/core/behaviors/short_name.json:15
+msgctxt "Profiles|Core|Behaviors|Short name"
+msgid "This name will be displayed in the URL."
+msgstr "Ipapakita ang pangalang ito sa URL."
+
+#. Default: "This shows a custom logo on your site."
+#: src/profiles/core/controlpanels/site.json:21
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "This shows a custom logo on your site."
+msgstr "Nagpapakita ng custom na logo sa iyong site."
+
+#. Default: "This shows up in the title bar of browsers and in syndication feeds."
+#: src/profiles/core/controlpanels/site.json:29
+msgctxt "Profiles|Core|Controlpanels|Site"
+msgid "This shows up in the title bar of browsers and in syndication feeds."
+msgstr "Lumalabas sa title bar ng mga browser at sa mga syndication feed."
+
+#. Default: "Tip: you can use * to autocomplete."
+#: src/profiles/core/catalog.json:297
+#: src/profiles/core/catalog.json:303
+#: src/profiles/core/catalog.json:397
+#: src/profiles/core/catalog.json:416
+#: src/profiles/core/catalog.json:447
+#: src/profiles/core/catalog.json:466
+#: src/profiles/core/catalog.json:491
+msgctxt "Profiles|Core|Catalog"
+msgid "Tip: you can use * to autocomplete."
+msgstr "Tip: maaari kang gumamit ng * para sa autocomplete."
+
+#. Default: "Title"
+#: src/profiles/core/catalog.json:271
+#: src/profiles/core/behaviors/basic.json:22
+#: src/profiles/ai/controlpanels/ai.json:29
+msgctxt "Profiles|Core|Catalog"
+msgid "Title"
+msgstr "Pamagat"
+
+#. Default: "To, from and message are required fields."
+#: src/routes/email/email.ts:28
+msgctxt "Routes|Email"
+msgid "To, from and message are required fields."
+msgstr "Kinakailangan ang mga field na Para Sa, Mula, at Mensahe."
+
+#. Default: "Today"
+#: src/profiles/core/catalog.json:148
+#: src/profiles/core/catalog.json:221
+#: src/profiles/core/catalog.json:563
+#: src/profiles/core/catalog.json:642
+#: src/profiles/core/catalog.json:715
+#: src/profiles/core/catalog.json:788
+msgctxt "Profiles|Core|Catalog"
+msgid "Today"
+msgstr "Ngayon"
+
+#. Default: "Transaction error."
+#: src/client.ts:81
+#: src/app.ts:177
+#: src/app.ts:190
+msgctxt "Client"
+msgid "Transaction error."
+msgstr "Error sa transaksyon."
+
+#. Default: "Transition"
+#: src/content_rules/actions/transition_workflow.ts:33
+msgctxt "Content rules|Actions|Transition workflow"
+msgid "Transition"
+msgstr ""
+
+#. Default: "Transition workflow state"
+#: src/content_rules/actions/transition_workflow.ts:14
+msgctxt "Content rules|Actions|Transition workflow"
+msgid "Transition workflow state"
+msgstr ""
+
+#. Default: "Type"
+#: src/profiles/core/catalog.json:439
+msgctxt "Profiles|Core|Catalog"
+msgid "Type"
+msgstr "Uri"
+
+#. Default: "Type Name"
+#: src/models/type/type.ts:180
+msgctxt "Models|Type"
+msgid "Type Name"
+msgstr "Pangalan ng Uri"
+
+#. Default: "Type of the current document is not found."
+#: src/helpers/handler/handler.ts:98
+msgctxt "Helpers|Handler"
+msgid "Type of the current document is not found."
+msgstr "Hindi natagpuan ang uri ng kasalukuyang dokumento."
+
+#. Default: "Type {type} not found."
+#: src/routes/content/content.ts:579
+msgctxt "Routes|Content"
+msgid "Type {type} not found."
+msgstr ""
+
+#. Default: "Use '../' to navigate to parent objects."
+#: src/profiles/core/catalog.json:27
+msgctxt "Profiles|Core|Catalog"
+msgid "Use '../' to navigate to parent objects."
+msgstr "Gamitin ang '../' para mag-navigate sa mga parent object."
+
+#. Default: "Use email address as login name"
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:15
+#: src/profiles/core/controlpanels/security.json:15
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Security"
+msgid "Use email address as login name"
+msgstr ""
+
+#. Default: "User and Group Settings"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:3
+#: src/profiles/core/controlpanels/usergroup.json:3
+msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+msgid "User and Group Settings"
+msgstr ""
+
+#. Default: "User created"
+#: src/profiles/core/vocabularies/events.json:18
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "User created"
+msgstr ""
+
+#. Default: "User doesn’t exist or invalid credentials."
+#: src/routes/users/users.ts:69
+msgctxt "Routes|Users"
+msgid "User doesn’t exist or invalid credentials."
+msgstr "Hindi umiiral ang gumagamit o hindi wastong mga kredensyal."
+
+#. Default: "User is not logged in."
+#: src/routes/authentication/authentication.ts:135
+msgctxt "Routes|Authentication"
+msgid "User is not logged in."
+msgstr "Hindi naka-log in ang gumagamit."
+
+#. Default: "User logged in"
+#: src/profiles/core/vocabularies/events.json:16
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "User logged in"
+msgstr ""
+
+#. Default: "User logged out"
+#: src/profiles/core/vocabularies/events.json:17
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "User logged out"
+msgstr ""
+
+#. Default: "User removed"
+#: src/profiles/core/vocabularies/events.json:19
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "User removed"
+msgstr ""
+
+#. Default: "Username"
+#: src/routes/userschema/userschema.ts:123
+msgctxt "Routes|Userschema"
+msgid "Username"
+msgstr ""
+
+#. Default: "Username for authentication to your email server. Not required unless you are using ESMTP."
+#: src/profiles/core/controlpanels/mail.json:53
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Username for authentication to your email server. Not required unless you are using ESMTP."
+msgstr "Username para sa authentication sa iyong email server. Hindi kinakailangan maliban kung gumagamit ka ng ESMTP."
+
+#. Default: "User’s group"
+#: src/content_rules/conditions/user_group.ts:13
+msgctxt "Content rules|Conditions|User group"
+msgid "User’s group"
+msgstr ""
+
+#. Default: "User’s role"
+#: src/content_rules/conditions/user_role.ts:13
+msgctxt "Content rules|Conditions|User role"
+msgid "User’s role"
+msgstr ""
+
+#. Default: "Version item"
+#: src/content_rules/actions/version_item.ts:14
+msgctxt "Content rules|Actions|Version item"
+msgid "Version item"
+msgstr ""
+
+#. Default: "Version item with comment {comment}"
+#: src/content_rules/actions/version_item.ts:17
+msgctxt "Content rules|Actions|Version item"
+msgid "Version item with comment {comment}"
+msgstr ""
+
+#. Default: "Versioning"
+#: src/profiles/core/behaviors/versioning.json:3
+msgctxt "Profiles|Core|Behaviors|Versioning"
+msgid "Versioning"
+msgstr "Pamamahala ng Bersyon"
+
+#. Default: "Versioning support"
+#: src/profiles/core/behaviors/versioning.json:4
+msgctxt "Profiles|Core|Behaviors|Versioning"
+msgid "Versioning support"
+msgstr "Suporta sa pamamahala ng bersyon"
+
+#. Default: "Video"
+#: src/profiles/core/types/video.json:3
+#: src/profiles/core/types/video.json:19
+msgctxt "Profiles|Core|Types|Video"
+msgid "Video"
+msgstr ""
+
+#. Default: "Videos can be referenced in pages."
+#: src/profiles/core/types/video.json:4
+msgctxt "Profiles|Core|Types|Video"
+msgid "Videos can be referenced in pages."
+msgstr ""
+
+#. Default: "View"
+#: src/profiles/core/permissions.json:6
+#: src/profiles/core/actions.json:7
+msgctxt "Profiles|Core|Permissions"
+msgid "View"
+msgstr "Tingnan"
+
+#. Default: "View Comments"
+#: src/profiles/core/permissions.json:50
+#: src/profiles/core/upgrades/1002/permissions.json:6
+msgctxt "Profiles|Core|Permissions"
+msgid "View Comments"
+msgstr ""
+
+#. Default: "Visible to everyone, editable by the owner."
+#: src/profiles/core/workflows.json:34
+msgctxt "Profiles|Core|Workflows"
+msgid "Visible to everyone, editable by the owner."
+msgstr "Makikita ng lahat, mae-edit ng may-ari."
+
+#. Default: "Waiting to be reviewed, not editable by the owner."
+#: src/profiles/core/workflows.json:23
+msgctxt "Profiles|Core|Workflows"
+msgid "Waiting to be reviewed, not editable by the owner."
+msgstr "Naghihintay ng pagsusuri, hindi mae-edit ng may-ari."
+
+#. Default: "We will use this address if you need to recover your password"
+#: src/routes/userschema/userschema.ts:37
+#: src/routes/userschema/userschema.ts:90
+msgctxt "Routes|Userschema"
+msgid "We will use this address if you need to recover your password"
+msgstr ""
+
+#. Default: "Web address with more info about the event. Add http:// for external links."
+#: src/profiles/core/types/event.json:104
+msgctxt "Profiles|Core|Types|Event"
+msgid "Web address with more info about the event. Add http:// for external links."
+msgstr ""
+
+#. Default: "When this date is reached, the content will no longer be visible in listings and searches."
+#: src/profiles/core/behaviors/dates.json:21
+msgctxt "Profiles|Core|Behaviors|Dates"
+msgid "When this date is reached, the content will no longer be visible in listings and searches."
+msgstr "Kapag naabot na ang petsang ito, hindi na makikita ang nilalaman sa mga listahan at paghahanap."
+
+#. Default: "Whole Day"
+#: src/profiles/core/types/event.json:47
+msgctxt "Profiles|Core|Types|Event"
+msgid "Whole Day"
+msgstr ""
+
+#. Default: "Within last"
+#: src/profiles/core/catalog.json:130
+#: src/profiles/core/catalog.json:203
+#: src/profiles/core/catalog.json:545
+#: src/profiles/core/catalog.json:624
+#: src/profiles/core/catalog.json:697
+#: src/profiles/core/catalog.json:770
+msgctxt "Profiles|Core|Catalog"
+msgid "Within last"
+msgstr "Sa loob ng huling"
+
+#. Default: "Within next"
+#: src/profiles/core/catalog.json:142
+#: src/profiles/core/catalog.json:215
+#: src/profiles/core/catalog.json:557
+#: src/profiles/core/catalog.json:636
+#: src/profiles/core/catalog.json:709
+#: src/profiles/core/catalog.json:782
+msgctxt "Profiles|Core|Catalog"
+msgid "Within next"
+msgstr "Sa loob ng susunod"
+
+#. Default: "Workflow state"
+#: src/content_rules/conditions/workflow_state.ts:10
+#: src/content_rules/conditions/workflow_state.ts:42
+msgctxt "Content rules|Conditions|Workflow state"
+msgid "Workflow state"
+msgstr ""
+
+#. Default: "Workflow state changed"
+#: src/profiles/core/vocabularies/events.json:13
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "Workflow state changed"
+msgstr ""
+
+#. Default: "Workflow states are: {states}"
+#: src/content_rules/conditions/workflow_state.ts:14
+msgctxt "Content rules|Conditions|Workflow state"
+msgid "Workflow states are: {states}"
+msgstr ""
+
+#. Default: "Wrong login and/or password."
+#: src/routes/authentication/authentication.ts:86
+#: src/routes/authentication/authentication.ts:100
+msgctxt "Routes|Authentication"
+msgid "Wrong login and/or password."
+msgstr "Maling login at/o password."
+
+#. Default: "Yes"
+#: src/profiles/core/catalog.json:365
+#: src/profiles/core/vocabularies/boolean.json:5
+msgctxt "Profiles|Core|Catalog"
+msgid "Yes"
+msgstr "Oo"
+
+#. Default: "You are not authorization to access this resource."
+#: src/routes/workflow/workflow.ts:45
+msgctxt "Routes|Workflow"
+msgid "You are not authorization to access this resource."
+msgstr "Wala kayong awtorisasyon para ma-access ang resource na ito."
+
+#. Default: "You are not authorized to access this resource."
+#: src/routes/recyclebin/recyclebin.ts:45
+#: src/routes/recyclebin/recyclebin.ts:114
+#: src/routes/recyclebin/recyclebin.ts:212
+#: src/helpers/handler/handler.ts:120
+msgctxt "Routes|Recyclebin"
+msgid "You are not authorized to access this resource."
+msgstr ""
+
+#. Default: "You can’t delete system groups."
+#: src/routes/groups/groups.ts:141
+msgctxt "Routes|Groups"
+msgid "You can’t delete system groups."
+msgstr "Hindi mo maaaring burahin ang mga grupo ng sistema."
+
+#. Default: "You can’t delete system users."
+#: src/routes/users/users.ts:325
+msgctxt "Routes|Users"
+msgid "You can’t delete system users."
+msgstr "Hindi mo maaaring burahin ang mga gumagamit ng sistema."
+
+#. Default: "You don’t have permission to delete this comment."
+#: src/routes/comments/comments.ts:277
+msgctxt "Routes|Comments"
+msgid "You don’t have permission to delete this comment."
+msgstr ""
+
+#. Default: "You don’t have permission to edit this comment."
+#: src/routes/comments/comments.ts:222
+msgctxt "Routes|Comments"
+msgid "You don’t have permission to edit this comment."
+msgstr ""
+
+#. Default: "You don’t have permission to save this document because it is locked by another user."
+#: src/routes/history/history.ts:65
+#: src/routes/content/content.ts:775
+msgctxt "Routes|History"
+msgid "You don’t have permission to save this document because it is locked by another user."
+msgstr "Wala kang pahintulot na i-save ang dokumentong ito dahil ito ay naka-lock ng ibang gumagamit."
+
+#. Default: "You don’t have permission to unlock this document."
+#: src/routes/lock/lock.ts:171
+msgctxt "Routes|Lock"
+msgid "You don’t have permission to unlock this document."
+msgstr "Wala kang pahintulot na i-unlock ang dokumentong ito."
+
+#. Default: "You don’t have permissions to add a user."
+#: src/routes/users/users.ts:195
+msgctxt "Routes|Users"
+msgid "You don’t have permissions to add a user."
+msgstr "Wala kang mga pahintulot na magdagdag ng gumagamit."
+
+#. Default: "You don’t have permissions to view this user."
+#: src/routes/users/users.ts:136
+msgctxt "Routes|Users"
+msgid "You don’t have permissions to view this user."
+msgstr ""
+
+#. Default: "Your location - either city and country - or in a company setting, where your office is located."
+#: src/constants/userschema.ts:35
+msgctxt "Constants|Userschema"
+msgid "Your location - either city and country - or in a company setting, where your office is located."
+msgstr ""
+
+#. Default: "Your portrait photo."
+#: src/constants/userschema.ts:42
+msgctxt "Constants|Userschema"
+msgid "Your portrait photo."
+msgstr ""
+
+#. Default: "boolean"
+#: src/profiles/core/vocabularies/boolean.json:3
+msgctxt "Profiles|Core|Vocabularies|Boolean"
+msgid "boolean"
+msgstr "boolean"
+
+#. Default: "events"
+#: src/profiles/core/vocabularies/events.json:3
+msgctxt "Profiles|Core|Vocabularies|Events"
+msgid "events"
+msgstr ""

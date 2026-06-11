@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06T11:50:40.332Z\n"
+"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rob Gietema\n"
 "Language: \n"
@@ -1126,7 +1126,7 @@ msgstr "Sprog"
 #: src/profiles/multilingual/types/languageroot.json:3
 msgctxt "Profiles|Multilingual|Types|Languageroot"
 msgid "Language root"
-msgstr ""
+msgstr "Sprogrodsmappe"
 
 #. Default: "Larger than"
 #: src/profiles/core/catalog.json:69
@@ -2711,7 +2711,7 @@ msgstr "Ja"
 #: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
-msgstr ""
+msgstr "Du har ikke tilladelse til at få adgang til denne ressource."
 
 #. Default: "You are not authorized to access this resource."
 #: src/routes/recyclebin/recyclebin.ts:45
@@ -2768,7 +2768,7 @@ msgstr "Du har ikke tilladelse til at låse dette dokument op."
 #: src/routes/users/users.ts:201
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
-msgstr ""
+msgstr "Du har ikke tilladelse til at tilføje en bruger."
 
 #. Default: "You don’t have permissions to view this user."
 #: src/routes/users/users.ts:142

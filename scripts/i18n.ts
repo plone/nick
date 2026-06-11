@@ -35,6 +35,17 @@ function pathToContext(path: string) {
 }
 
 /**
+ * Replace appearances of " to convert to \"
+ * to keep gettext compatibility in PO files
+ * Avoid double escaping
+ * @function escapeDoubleQuotes
+ * @return {string}
+ */
+function escapeDoubleQuotes(value: string) {
+  return value.replace(/\\"/g, '"').replace(/"/g, '\\"');
+}
+
+/**
  * Convert messages to pot format
  * @function messagesToPot
  * @param {Object} messages Messages
@@ -45,12 +56,12 @@ function messagesToPot(messages: any) {
     .sort()
     .map((key) =>
       [
-        `#. Default: "${messages[key].defaultMessage}"`,
+        `#. Default: "${escapeDoubleQuotes(messages[key].defaultMessage)}"`,
         ...messages[key].files.map(
           (file: any) => `#: ${file.file}:${file.line}`,
         ),
-        `msgctxt "${pathToContext(messages[key].files[0].file)}"`,
-        `msgid "${key}"`,
+        `msgctxt "${escapeDoubleQuotes(pathToContext(messages[key].files[0].file))}"`,
+        `msgid "${escapeDoubleQuotes(key)}"`,
         'msgstr ""',
       ].join('\n'),
     )
@@ -77,7 +88,7 @@ msgstr ""
 "Language-Name: English\\n"
 "Preferred-Encodings: utf-8\\n"
 "Domain: nick\\n"
-
+ 
 `;
 }
 
@@ -151,13 +162,24 @@ function syncPoByPot(translations: any) {
       `${formatHeader(po.comments, po.headers)}
 ${pot.items
   .map((item) => {
-    const poItem = po.items.find((subitem) => subitem.msgid === item.msgid);
+    const context = pathToContext(item.references[0]);
+    const poItem = po.items.find(
+      (subitem) =>
+        subitem.msgid === item.msgid &&
+        (subitem.msgctxt === context || (!subitem.msgctxt && !context)),
+    );
+    const translation =
+      lang === 'en'
+        ? ''
+        : translations[item.msgid]?.[lang] ||
+          (poItem?.msgstr && poItem.msgstr.length > 0 ? poItem.msgstr[0] : '');
+
     return [
       ...item.extractedComments.map((comment) => `#. ${comment}`),
       `${item.references.map((ref) => `#: ${ref}`).join('\n')}`,
-      `msgctxt "${pathToContext(item.references[0])}"`,
-      `msgid "${item.msgid}"`,
-      `msgstr "${lang === 'en' ? '' : translations[item.msgid]?.[lang] || poItem?.msgstr || ''}"`,
+      `msgctxt "${escapeDoubleQuotes(context)}"`,
+      `msgid "${escapeDoubleQuotes(item.msgid)}"`,
+      `msgstr "${escapeDoubleQuotes(translation)}"`,
     ].join('\n');
   })
   .join('\n\n')}\n`,
@@ -283,7 +305,7 @@ msgstr ""
 "Language-Name: ${lang}\\n"
 "Preferred-Encodings: utf-8\\n"
 "Domain: nick\\n"
-
+ 
 `,
         );
       }

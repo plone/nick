@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06T11:50:40.332Z\n"
+"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rob Gietema\n"
 "Language: \n"
@@ -2711,7 +2711,7 @@ msgstr "Да"
 #: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
-msgstr ""
+msgstr "Нямате право на достъп до този ресурс."
 
 #. Default: "You are not authorized to access this resource."
 #: src/routes/recyclebin/recyclebin.ts:45
@@ -2768,7 +2768,7 @@ msgstr "Нямате разрешение да отключите този до�
 #: src/routes/users/users.ts:201
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
-msgstr ""
+msgstr "Нямате разрешения за добавяне на потребител."
 
 #. Default: "You don’t have permissions to view this user."
 #: src/routes/users/users.ts:142

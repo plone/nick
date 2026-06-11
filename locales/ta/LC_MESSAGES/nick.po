@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-06T11:50:40.336Z\n"
+"POT-Creation-Date: 2026-05-29T21:08:03.849Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Rob Gietema\n"
 "Language: \n"
@@ -1126,7 +1126,7 @@ msgstr "மொழி"
 #: src/profiles/multilingual/types/languageroot.json:3
 msgctxt "Profiles|Multilingual|Types|Languageroot"
 msgid "Language root"
-msgstr ""
+msgstr "மொழி ரூட்"
 
 #. Default: "Larger than"
 #: src/profiles/core/catalog.json:69
@@ -2711,7 +2711,7 @@ msgstr "ஆம்"
 #: src/routes/workflow/workflow.ts:45
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
-msgstr ""
+msgstr "இந்த வளத்தை அணுக உங்களுக்கு அனுமதி இல்லை."
 
 #. Default: "You are not authorized to access this resource."
 #: src/routes/recyclebin/recyclebin.ts:45
@@ -2768,7 +2768,7 @@ msgstr "இந்த ஆவணத்தைத் திறக்க உங்க
 #: src/routes/users/users.ts:201
 msgctxt "Routes|Users"
 msgid "You don’t have permissions to add a user."
-msgstr ""
+msgstr "பயனரைச் சேர்க்க உங்களுக்கு அனுமதி இல்லை."
 
 #. Default: "You don’t have permissions to view this user."
 #: src/routes/users/users.ts:142
