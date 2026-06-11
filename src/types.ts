@@ -39,8 +39,8 @@ export type MiddlewareHandler = (
 ) => void;
 
 export type Block = {
-  toMarkdown: (self: any, document: any) => string;
-  process: (self: any) => Promise<any>;
+  toMarkdown?: (self: any, document: any) => string;
+  process?: (self: any) => Promise<any>;
 };
 
 export interface DeleteInfo {

@@ -10,40 +10,15 @@ import type { Knex } from 'knex';
 // External imports
 import {
   access as accessPromise,
-  copyFile as copyFilePromise,
   readFile as readFilePromise,
-  writeFile as writeFilePromise,
-  rm as rmPromise,
 } from 'node:fs/promises';
-import {
-  CopyObjectCommand,
-  DeleteObjectCommand,
-  GetObjectCommand,
-  PutObjectCommand,
-  S3Client,
-} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import { v4 as uuid, validate } from 'uuid';
 
 // Internal imports
+import blobs from '../../blobs';
 import config from '../../helpers/config/config';
-import models from '../../models';
 import { mapAsync } from '../utils/utils';
-
-/**
- * Connect to S3
- * @method connectS3
- * @returns {S3Client} S3 client instance
- */
-export function connectS3() {
-  return new S3Client({
-    region: config.settings.s3.region,
-    credentials: {
-      accessKeyId: config.settings.s3.accessKeyId,
-      secretAccessKey: config.settings.s3.secretAccessKey,
-    },
-  });
-}
 
 /**
  * Get scale dimensions
@@ -93,27 +68,11 @@ export async function readFile(
   uuid: string,
   trx: Knex.Transaction,
 ): Promise<Buffer> {
-  if (config.settings.blobs === 'db') {
-    const File = models.get('File');
-    return (await File.fetchById(uuid, {}, trx)).data;
-  } else if (config.settings.blobs === 's3') {
-    const s3 = connectS3();
-    const command = new GetObjectCommand({
-      Bucket: config.settings.s3.bucket,
-      Key: uuid,
-    });
-    const response = await s3.send(command);
-    return (await response?.Body?.transformToByteArray()) as Buffer;
-  } else {
-    if (!validate(uuid)) {
-      throw `Invalid uuid: ${uuid}`;
-    }
-    try {
-      return await readFilePromise(`${config.settings.blobsDir}/${uuid}`);
-    } catch (_err) {
-      throw `Can not read file`;
-    }
+  if (!validate(uuid)) {
+    throw `Invalid uuid: ${uuid}`;
   }
+  const blobsHandler = blobs.get(config.settings.blobs);
+  return blobsHandler.read(uuid, trx);
 }
 
 /**
@@ -227,30 +186,11 @@ export async function storeFile(
   data: Buffer,
   trx: Knex.Transaction | undefined,
 ): Promise<void> {
-  if (config.settings.blobs === 'db') {
-    const File = models.get('File');
-    await File.create(
-      {
-        uuid,
-        data,
-      },
-      {},
-      trx,
-    );
-  } else if (config.settings.blobs === 's3') {
-    const s3 = connectS3();
-    const command = new PutObjectCommand({
-      Body: data,
-      Bucket: config.settings.s3.bucket,
-      Key: uuid,
-    });
-    await s3.send(command);
-  } else {
-    if (!validate(uuid)) {
-      throw `Invalid uuid: ${uuid}`;
-    }
-    await writeFilePromise(`${config.settings.blobsDir}/${uuid}`, data);
+  if (!validate(uuid)) {
+    throw `Invalid uuid: ${uuid}`;
   }
+  const blobsHandler = blobs.get(config.settings.blobs);
+  return blobsHandler.store(uuid, data, trx);
 }
 
 /**
@@ -333,22 +273,11 @@ export async function removeFile(
   uuid: string,
   trx: Knex.Transaction,
 ): Promise<void> {
-  if (config.settings.blobs === 'db') {
-    const File = models.get('File');
-    await File.deleteById(uuid, trx);
-  } else if (config.settings.blobs === 's3') {
-    const s3 = connectS3();
-    const command = new DeleteObjectCommand({
-      Bucket: config.settings.s3.bucket,
-      Key: uuid,
-    });
-    await s3.send(command);
-  } else {
-    if (!validate(uuid)) {
-      throw `Invalid uuid: ${uuid}`;
-    }
-    await rmPromise(`${config.settings.blobsDir}/${uuid}`);
+  if (!validate(uuid)) {
+    throw `Invalid uuid: ${uuid}`;
   }
+  const blobsHandler = blobs.get(config.settings.blobs);
+  return blobsHandler.remove(uuid, trx);
 }
 
 /**
@@ -364,30 +293,14 @@ export async function copyFile(
   target: string,
   trx: Knex.Transaction | undefined,
 ): Promise<void> {
-  if (config.settings.blobs === 'db') {
-    const File = models.get('File');
-    const buffer = (await File.fetchById(source, {}, trx)).data;
-    await storeFile(target, buffer, trx);
-  } else if (config.settings.blobs === 's3') {
-    const s3 = connectS3();
-    const command = new CopyObjectCommand({
-      Bucket: config.settings.s3.bucket,
-      CopySource: `${config.settings.s3.bucket}/${source}`,
-      Key: target,
-    });
-    await s3.send(command);
-  } else {
-    if (!validate(source)) {
-      throw `Invalid source uuid: ${source}`;
-    }
-    if (!validate(target)) {
-      throw `Invalid target uuid: ${target}`;
-    }
-    await copyFilePromise(
-      `${config.settings.blobsDir}/${source}`,
-      `${config.settings.blobsDir}/${target}`,
-    );
+  if (!validate(source)) {
+    throw `Invalid source uuid: ${source}`;
   }
+  if (!validate(target)) {
+    throw `Invalid target uuid: ${target}`;
+  }
+  const blobsHandler = blobs.get(config.settings.blobs);
+  return blobsHandler.copy(source, target, trx);
 }
 
 /**

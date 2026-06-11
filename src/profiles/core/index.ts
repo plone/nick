@@ -29,6 +29,12 @@ import { Version } from '../../models/version/version';
 import { Vocabulary } from '../../models/vocabulary/vocabulary';
 import { Workflow } from '../../models/workflow/workflow';
 
+// Blobs
+import blobs from '../../blobs';
+import { db } from '../../blobs/db/db';
+import { file } from '../../blobs/file/file';
+import { s3 } from '../../blobs/s3/s3';
+
 // Blocks
 import blocks from '../../blocks';
 import { html } from '../../blocks/html/html';
@@ -178,6 +184,11 @@ export function init(): void {
   models.register('Version', () => Version);
   models.register('Vocabulary', () => Vocabulary);
   models.register('Workflow', () => Workflow);
+
+  // Register blobs
+  blobs.register('db', db);
+  blobs.register('file', file);
+  blobs.register('s3', s3);
 
   // Register blocks
   blocks.register('html', html);
