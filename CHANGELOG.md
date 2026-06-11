@@ -132,6 +132,7 @@
 - Add replace endpoint @robgietema
 - Add health check endpoint @robgietema
 - Add xss filtering for html blocks @robgietema
+- Add s3 storage support @robgietema
 
 ### Bugfix
 

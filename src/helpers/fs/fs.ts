@@ -15,6 +15,13 @@ import {
   writeFile as writeFilePromise,
   rm as rmPromise,
 } from 'node:fs/promises';
+import {
+  CopyObjectCommand,
+  DeleteObjectCommand,
+  GetObjectCommand,
+  PutObjectCommand,
+  S3Client,
+} from '@aws-sdk/client-s3';
 import sharp from 'sharp';
 import { v4 as uuid, validate } from 'uuid';
 
@@ -22,6 +29,21 @@ import { v4 as uuid, validate } from 'uuid';
 import config from '../../helpers/config/config';
 import models from '../../models';
 import { mapAsync } from '../utils/utils';
+
+/**
+ * Connect to S3
+ * @method connectS3
+ * @returns {S3Client} S3 client instance
+ */
+export function connectS3() {
+  return new S3Client({
+    region: config.settings.s3.region,
+    credentials: {
+      accessKeyId: config.settings.s3.accessKeyId,
+      secretAccessKey: config.settings.s3.secretAccessKey,
+    },
+  });
+}
 
 /**
  * Get scale dimensions
@@ -74,6 +96,14 @@ export async function readFile(
   if (config.settings.blobs === 'db') {
     const File = models.get('File');
     return (await File.fetchById(uuid, {}, trx)).data;
+  } else if (config.settings.blobs === 's3') {
+    const s3 = connectS3();
+    const command = new GetObjectCommand({
+      Bucket: config.settings.s3.bucket,
+      Key: uuid,
+    });
+    const response = await s3.send(command);
+    return (await response?.Body?.transformToByteArray()) as Buffer;
   } else {
     if (!validate(uuid)) {
       throw `Invalid uuid: ${uuid}`;
@@ -207,6 +237,14 @@ export async function storeFile(
       {},
       trx,
     );
+  } else if (config.settings.blobs === 's3') {
+    const s3 = connectS3();
+    const command = new PutObjectCommand({
+      Body: data,
+      Bucket: config.settings.s3.bucket,
+      Key: uuid,
+    });
+    await s3.send(command);
   } else {
     if (!validate(uuid)) {
       throw `Invalid uuid: ${uuid}`;
@@ -298,6 +336,13 @@ export async function removeFile(
   if (config.settings.blobs === 'db') {
     const File = models.get('File');
     await File.deleteById(uuid, trx);
+  } else if (config.settings.blobs === 's3') {
+    const s3 = connectS3();
+    const command = new DeleteObjectCommand({
+      Bucket: config.settings.s3.bucket,
+      Key: uuid,
+    });
+    await s3.send(command);
   } else {
     if (!validate(uuid)) {
       throw `Invalid uuid: ${uuid}`;
@@ -323,6 +368,14 @@ export async function copyFile(
     const File = models.get('File');
     const buffer = (await File.fetchById(source, {}, trx)).data;
     await storeFile(target, buffer, trx);
+  } else if (config.settings.blobs === 's3') {
+    const s3 = connectS3();
+    const command = new CopyObjectCommand({
+      Bucket: config.settings.s3.bucket,
+      CopySource: `${config.settings.s3.bucket}/${source}`,
+      Key: target,
+    });
+    await s3.send(command);
   } else {
     if (!validate(source)) {
       throw `Invalid source uuid: ${source}`;

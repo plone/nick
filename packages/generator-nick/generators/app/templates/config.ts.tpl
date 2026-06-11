@@ -19,6 +19,12 @@ export const config = {
   },
   blobs: 'file',
   blobsDir: `${__dirname}/var/blobstorage`,
+  s3: {
+    bucket: 'my-bucket-name',
+    region: 'my-region',
+    accessKeyId: 'my-access-key-id>',
+    secretAccessKey: 'my-secret-access-key',
+  },
   localesDir: `${__dirname}/src/develop/nick/locales`,
   port: 8080,
   secret: 'secret',

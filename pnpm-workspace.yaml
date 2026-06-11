@@ -2,5 +2,21 @@ allowBuilds:
   bcrypt: true
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  - '@aws-sdk/checksums@3.1000.4'
+  - '@aws-sdk/client-s3@3.1065.0'
+  - '@aws-sdk/core@3.974.20'
+  - '@aws-sdk/credential-provider-env@3.972.46'
+  - '@aws-sdk/credential-provider-http@3.972.48'
+  - '@aws-sdk/credential-provider-ini@3.972.52'
+  - '@aws-sdk/credential-provider-login@3.972.51'
+  - '@aws-sdk/credential-provider-node@3.972.54'
+  - '@aws-sdk/credential-provider-process@3.972.46'
+  - '@aws-sdk/credential-provider-sso@3.972.51'
+  - '@aws-sdk/credential-provider-web-identity@3.972.51'
+  - '@aws-sdk/middleware-flexible-checksums@3.974.29'
+  - '@aws-sdk/middleware-sdk-s3@3.972.50'
+  - '@aws-sdk/nested-clients@3.997.19'
+  - '@aws-sdk/token-providers@3.1065.0'
 onlyBuiltDependencies:
   - sharp

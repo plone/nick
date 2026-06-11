@@ -66,6 +66,12 @@ class Config {
       blobs: config.blobs || 'file',
       blobsDir:
         BLOBS_DIR || config.blobsDir || `${__dirname}/../../../var/blobstorage`,
+      s3: config.s3 || {
+        bucket: 'my-bucket',
+        region: 'my-region',
+        accessKeyId: 'my-access-key-id',
+        secretAccessKey: 'my-secret-access-key',
+      },
       localesDir:
         LOCALES_DIR || config.localesDir || `${__dirname}/../../../locales`,
       port: config.port || 8080,

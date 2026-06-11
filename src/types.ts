@@ -299,8 +299,14 @@ export type ConfigSettings = {
     user: string;
     password: string;
   };
-  blobs: 'file' | 'db';
+  blobs: 'file' | 'db' | 's3';
   blobsDir: string;
+  s3: {
+    bucket: string;
+    region: string;
+    accessKeyId: string;
+    secretAccessKey: string;
+  };
   localesDir: string;
   port: number;
   secret: string;
