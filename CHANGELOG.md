@@ -276,6 +276,7 @@
 - Write developer docs for all possible customizations @robgietema
 - Add documentation for blobs @robgietema
 - Add documentation about html filtering @robgietema
+- Add documentation about how to setup health checks @robgietema
 
 ## 2.8.0 (2022-07-17)
 
