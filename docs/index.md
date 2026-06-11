@@ -261,25 +261,25 @@ One of Nick's most practical benefits is **JavaScript everywhere**.
 
 ### Plone + Volto: Two Languages
 
-| Frontned (Volto)        | Backend (Plone)         |
+| Frontend (Volto)        | Backend (Plone)         |
 | ----------------------- | ----------------------- |
-│ JavaScript / TypeScript | Python                  │
-│ React                   | Zope                    │
-│ npm / pnpm / yarn       | pip / buildout          │
-│ Node.js runtime         | Python runtime          │
-│ Vitest for testing      | pytest for testing      │
+| JavaScript / TypeScript | Python                  |
+| React                   | Zope                    |
+| npm / pnpm / yarn       | pip / buildout          |
+| Node.js runtime         | Python runtime          |
+| Vitest for testing      | pytest for testing      |
 
 Two languages, two toolchains, two mental models
 
 ### Nick + Volto: One Language
 
-| Frontned (Volto)        | Backend (Nick)          |
+| Frontend (Volto)        | Backend (Nick)          |
 | ----------------------- | ----------------------- |
-│ JavaScript / TypeScript | JavaScript              │
-│ React                   | Node.js / Express       │
-│ npm / pnpm              | npm / pnpm              │
-│ Node.js runtime         | Node.js runtime         │
-│ Vitest for testing      | Vitest for testing      │
+| JavaScript / TypeScript | JavaScript              |
+| React                   | Node.js / Express       |
+| npm / pnpm              | npm / pnpm              |
+| Node.js runtime         | Node.js runtime         |
+| Vitest for testing      | Vitest for testing      |
 
 One language, one toolchain, one mental model
 
