@@ -21,6 +21,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "root",
       "portal_type": "Site",
+      "position_in_parent": 0,
       "review_state": "published",
       "modified": "2022-04-02T20:00:00.000Z",
       "Date": "2022-04-02T20:00:00.000Z",
@@ -35,7 +36,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:00:00.000Z",
       "EffectiveDate": "2022-04-02T20:00:00.000Z",
@@ -59,6 +62,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "users",
       "portal_type": "Folder",
+      "position_in_parent": 2,
       "review_state": "published",
       "modified": "2022-04-02T20:24:00.000Z",
       "Date": "2022-04-02T20:24:00.000Z",
@@ -73,7 +77,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:24:00.000Z",
       "EffectiveDate": "2022-04-02T20:24:00.000Z",
@@ -97,6 +103,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "news",
       "portal_type": "Folder",
+      "position_in_parent": 1,
       "review_state": "published",
       "modified": "2022-04-02T20:22:00.000Z",
       "Date": "2022-04-02T20:22:00.000Z",
@@ -111,7 +118,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:22:00.000Z",
       "EffectiveDate": "2022-04-02T20:22:00.000Z",
@@ -135,6 +144,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "events",
       "portal_type": "Folder",
+      "position_in_parent": 0,
       "review_state": "published",
       "modified": "2022-04-02T20:30:00.000Z",
       "Date": "2022-04-02T20:30:00.000Z",
@@ -149,7 +159,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:30:00.000Z",
       "EffectiveDate": "2022-04-02T20:30:00.000Z",
@@ -166,7 +178,9 @@ Content-Type: application/json
       "EffectiveDate": "2023-04-02T20:10:00.000Z",
       "ExpirationDate": null,
       "ModificationDate": "2023-04-02T20:10:00.000Z",
-      "Subject": ["event"],
+      "Subject": [
+        "event"
+      ],
       "Title": "Event 2",
       "Type": "Event",
       "UID": "455ca717-0c68-43a0-88ac-629a82658675",
@@ -185,11 +199,14 @@ Content-Type: application/json
       "image_scales": {},
       "is_folderish": true,
       "markdown": "# Event 2\n\nThis is the first event.\n\n",
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "modified": "2023-04-02T20:10:00.000Z",
       "path": "/events/event-2",
       "portal_type": "Event",
+      "position_in_parent": 1,
       "review_state": "published",
       "start": "2025-04-01T12:49:09.565Z",
       "title": "Event 2"
@@ -202,7 +219,9 @@ Content-Type: application/json
       "path": "/events/event-1",
       "Description": null,
       "Title": "Event 1",
-      "Subject": ["event"],
+      "Subject": [
+        "event"
+      ],
       "is_folderish": true,
       "markdown": "# Event 1\n\nThis is the first event.\n\n",
       "exclude_from_nav": false,
@@ -211,6 +230,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "event-1",
       "portal_type": "Event",
+      "position_in_parent": 0,
       "review_state": "published",
       "modified": "2022-04-02T20:10:00.000Z",
       "Date": "2022-04-02T20:10:00.000Z",
@@ -225,7 +245,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:10:00.000Z",
       "EffectiveDate": "2022-04-02T20:10:00.000Z",

@@ -21,6 +21,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "events",
       "portal_type": "Folder",
+      "position_in_parent": 0,
       "review_state": "published",
       "modified": "2022-04-02T20:30:00.000Z",
       "Date": "2022-04-02T20:30:00.000Z",
@@ -35,7 +36,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:30:00.000Z",
       "EffectiveDate": "2022-04-02T20:30:00.000Z",
@@ -59,6 +62,7 @@ Content-Type: application/json
       "Creator": "admin",
       "id": "news",
       "portal_type": "Folder",
+      "position_in_parent": 1,
       "review_state": "published",
       "modified": "2022-04-02T20:22:00.000Z",
       "Date": "2022-04-02T20:22:00.000Z",
@@ -73,7 +77,9 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:22:00.000Z",
       "EffectiveDate": "2022-04-02T20:22:00.000Z",

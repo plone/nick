@@ -20,6 +20,7 @@ Content-Type: application/json
       "Type": "Folder",
       "id": "events",
       "portal_type": "Folder",
+      "position_in_parent": 0,
       "review_state": "published",
       "modified": "2022-04-02T20:30:00.000Z",
       "Date": "2022-04-02T20:30:00.000Z",
@@ -28,7 +29,9 @@ Content-Type: application/json
       "deleted": false,
       "effective": "2022-04-02T20:30:00.000Z",
       "getObjSize": 248,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:30:00.000Z",
       "EffectiveDate": "2022-04-02T20:30:00.000Z",
@@ -52,12 +55,15 @@ Content-Type: application/json
           "path": "/events/event-1",
           "Description": null,
           "Title": "Event 1",
-          "Subject": ["event"],
+          "Subject": [
+            "event"
+          ],
           "is_folderish": true,
           "exclude_from_nav": false,
           "Type": "Event",
           "id": "event-1",
           "portal_type": "Event",
+          "position_in_parent": 0,
           "review_state": "published",
           "modified": "2022-04-02T20:10:00.000Z",
           "Date": "2022-04-02T20:10:00.000Z",
@@ -66,7 +72,9 @@ Content-Type: application/json
           "deleted": false,
           "effective": "2022-04-02T20:10:00.000Z",
           "getObjSize": 1090,
-          "listCreators": ["admin"],
+          "listCreators": [
+            "admin"
+          ],
           "mime_type": null,
           "CreationDate": "2022-04-02T20:10:00.000Z",
           "EffectiveDate": "2022-04-02T20:10:00.000Z",
@@ -91,12 +99,15 @@ Content-Type: application/json
           "path": "/events/event-2",
           "Description": null,
           "Title": "Event 2",
-          "Subject": ["event"],
+          "Subject": [
+            "event"
+          ],
           "is_folderish": true,
           "exclude_from_nav": false,
           "Type": "Event",
           "id": "event-2",
           "portal_type": "Event",
+          "position_in_parent": 1,
           "review_state": "published",
           "modified": "2023-04-02T20:10:00.000Z",
           "Date": "2023-04-02T20:10:00.000Z",
@@ -105,7 +116,9 @@ Content-Type: application/json
           "deleted": false,
           "effective": "2023-04-02T20:10:00.000Z",
           "getObjSize": 631,
-          "listCreators": ["admin"],
+          "listCreators": [
+            "admin"
+          ],
           "mime_type": null,
           "CreationDate": "2023-04-02T20:10:00.000Z",
           "EffectiveDate": "2023-04-02T20:10:00.000Z",
@@ -138,6 +151,7 @@ Content-Type: application/json
       "Type": "Folder",
       "id": "news",
       "portal_type": "Folder",
+      "position_in_parent": 1,
       "review_state": "published",
       "modified": "2022-04-02T20:22:00.000Z",
       "Date": "2022-04-02T20:22:00.000Z",
@@ -146,7 +160,9 @@ Content-Type: application/json
       "deleted": false,
       "effective": "2022-04-02T20:22:00.000Z",
       "getObjSize": 217,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:22:00.000Z",
       "EffectiveDate": "2022-04-02T20:22:00.000Z",
@@ -177,6 +193,7 @@ Content-Type: application/json
       "Type": "Folder",
       "id": "users",
       "portal_type": "Folder",
+      "position_in_parent": 2,
       "review_state": "published",
       "modified": "2022-04-02T20:24:00.000Z",
       "Date": "2022-04-02T20:24:00.000Z",
@@ -185,7 +202,9 @@ Content-Type: application/json
       "deleted": false,
       "effective": "2022-04-02T20:24:00.000Z",
       "getObjSize": 191,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:24:00.000Z",
       "EffectiveDate": "2022-04-02T20:24:00.000Z",

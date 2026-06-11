@@ -959,6 +959,11 @@
       "name": "markdown",
       "type": "text",
       "attr": "toMarkdown"
+    },
+    {
+      "name": "position_in_parent",
+      "type": "integer",
+      "attr": "position_in_parent"
     }
   ]
 }

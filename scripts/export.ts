@@ -247,7 +247,6 @@ const convertDocuments = async (path: string, url: string, token: string) => {
         ? '_root.json'
         : `${doc_path.substring(1).replaceAll('/', '.')}.json`;
     const json = await fetchFromApi(`${url}/++api++$${doc_path}`, 'GET', token);
-    console.log(filename);
 
     // Write files
     writeFileSync(
@@ -262,6 +261,7 @@ const convertDocuments = async (path: string, url: string, token: string) => {
           owner: json.creators[0],
           workflow_state: json.review_state,
           language: json.language.token,
+          position_in_parent: document.position_in_parent || 0,
           ...omit(json, [
             '@components',
             '@id',

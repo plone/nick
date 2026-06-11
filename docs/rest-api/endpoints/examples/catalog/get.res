@@ -19,6 +19,7 @@ Content-Type: application/json
   "Creator": "admin",
   "id": "root",
   "portal_type": "Site",
+  "position_in_parent": 0,
   "review_state": "published",
   "start": null,
   "recurrence": null,
@@ -38,9 +39,6 @@ Content-Type: application/json
   "ExpirationDate": null,
   "ModificationDate": "2022-04-02T20:00:00.000Z",
   "image_field": "",
-  "image_scales": {
-
-  },
+  "image_scales": {},
   "hasPreviewImage": false
 }
- 

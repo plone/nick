@@ -25,6 +25,7 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "portal_type": "Folder",
+      "position_in_parent": 0,
       "review_state": "published",
       "start": null,
       "recurrence": null,
@@ -36,7 +37,9 @@ Content-Type: application/json
       "effective": "2022-04-02T20:30:00.000Z",
       "getObjSize": 248,
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:30:00.000Z",
       "EffectiveDate": "2022-04-02T20:30:00.000Z",
@@ -64,6 +67,7 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "portal_type": "Folder",
+      "position_in_parent": 1,
       "review_state": "published",
       "start": null,
       "recurrence": null,
@@ -75,7 +79,9 @@ Content-Type: application/json
       "effective": "2022-04-02T20:22:00.000Z",
       "getObjSize": 217,
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:22:00.000Z",
       "EffectiveDate": "2022-04-02T20:22:00.000Z",
@@ -103,6 +109,7 @@ Content-Type: application/json
       "image_field": "",
       "image_scales": {},
       "portal_type": "Folder",
+      "position_in_parent": 2,
       "review_state": "published",
       "start": null,
       "recurrence": null,
@@ -114,7 +121,9 @@ Content-Type: application/json
       "effective": "2022-04-02T20:24:00.000Z",
       "getObjSize": 191,
       "hasPreviewImage": false,
-      "listCreators": ["admin"],
+      "listCreators": [
+        "admin"
+      ],
       "mime_type": null,
       "CreationDate": "2022-04-02T20:24:00.000Z",
       "EffectiveDate": "2022-04-02T20:24:00.000Z",

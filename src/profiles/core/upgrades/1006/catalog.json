@@ -1,0 +1,10 @@
+{
+  "indexes": [],
+  "metadata": [
+    {
+      "name": "position_in_parent",
+      "type": "integer",
+      "attr": "position_in_parent"
+    }
+  ]
+}
