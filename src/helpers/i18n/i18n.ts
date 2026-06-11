@@ -45,9 +45,7 @@ export function initI18n(): void {
     languages.map((language) => {
       const locale = language.replace('_', '-');
       const supportedLocale =
-        Intl.NumberFormat.supportedLocalesOf(locale).length > 0
-          ? locale
-          : 'en';
+        Intl.NumberFormat.supportedLocalesOf(locale).length > 0 ? locale : 'en';
       return createIntl(
         {
           locale: supportedLocale,
