@@ -275,6 +275,7 @@
 - Restructure documentation in to admin and dev docs @robgietema
 - Write developer docs for all possible customizations @robgietema
 - Add documentation for blobs @robgietema
+- Add documentation about html filtering @robgietema
 
 ## 2.8.0 (2022-07-17)
 
