@@ -90,8 +90,8 @@
     "vitest": "5.0.0-beta.2"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "3.1066.0",
-    "@formatjs/cli": "6.16.10",
+    "@aws-sdk/client-s3": "3.1067.0",
+    "@formatjs/cli": "6.16.11",
     "@formatjs/intl": "4.1.13",
     "bcrypt": "6.0.0",
     "bcrypt-promise": "2.0.0",
@@ -111,7 +111,7 @@
     "objection": "3.1.5",
     "pdf-parse": "2.4.5",
     "pg": "8.21.0",
-    "sharp": "0.35.0",
+    "sharp": "0.35.1",
     "slugify": "1.6.9",
     "turndown": "7.2.4",
     "tsx": "4.22.4",
