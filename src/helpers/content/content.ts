@@ -116,6 +116,12 @@ export async function handleFiles(
         size,
         text,
       };
+    } else if (
+      fields[field] &&
+      typeof fields[field] === 'object' &&
+      !('data' in fields[field])
+    ) {
+      delete fields[field];
     }
   });
 
@@ -189,6 +195,12 @@ export async function handleImages(
         size,
         text,
       };
+    } else if (
+      fields[field] &&
+      typeof fields[field] === 'object' &&
+      !('data' in fields[field])
+    ) {
+      delete fields[field];
     }
   });
 

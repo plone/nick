@@ -817,7 +817,7 @@ export default [
           omitProperties,
         ),
       };
-      const schema = config.settings.userschema(req);
+      const schema = req.type._schema;
       json = await handleBlocks(json);
       json = await handleFiles(json, schema, trx);
       json = await handleImages(json, schema, trx);
