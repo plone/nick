@@ -85,7 +85,7 @@
     "pofile": "1.1.4",
     "prettier": "3.9.5",
     "supertest": "7.2.2",
-    "typescript": "7.0.2",
+    "typescript": "6.0.3",
     "typescript-eslint": "8.64.0",
     "vitest": "5.0.0-beta.6"
   },
