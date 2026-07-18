@@ -136,6 +136,7 @@
 - Add s3 storage support @robgietema
 - Make blob storage pluggable @robgietema
 - Add enabled to scheduled task @robgietema
+- Add inline download to all file endpoints @robgietema
 
 ### Bugfix
 

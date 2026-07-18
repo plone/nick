@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-07-18T16:58:57.329Z\n"
+"POT-Creation-Date: 2026-07-18T17:56:42.920Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -708,7 +708,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:781
+#: src/routes/content/content.ts:799
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr ""
@@ -1788,7 +1788,7 @@ msgid "Replacement must be provided."
 msgstr ""
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:591
+#: src/routes/content/content.ts:609
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr ""
@@ -2483,7 +2483,7 @@ msgid "Type of the current document is not found."
 msgstr ""
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:580
+#: src/routes/content/content.ts:598
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2757,7 +2757,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:778
+#: src/routes/content/content.ts:796
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr ""

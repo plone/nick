@@ -38,6 +38,17 @@ dayjs.extend(utc);
 
 const omitProperties = ['@type', 'id', 'changeNote', 'language'];
 
+/**
+ * Get the content-disposition header value.
+ * @param {Request} req The request object.
+ * @param {string} filename The filename to disposition.
+ * @returns {string} The content-disposition header value.
+ */
+function getDisposition(req: Request, filename: string): string {
+  const type = req.query?.disposition === 'inline' ? 'inline' : 'attachment';
+  return `${type}; filename="${filename}"`;
+}
+
 export default [
   {
     op: 'post',
@@ -271,7 +282,7 @@ export default [
       return {
         headers: {
           'content-type': field['content-type'],
-          'content-disposition': `attachment; filename="${field.filename}"`,
+          'content-disposition': getDisposition(req, field.filename),
           'content-length': end - start + 1,
           'content-range': `bytes ${start}-${end}/${size}`,
           'Accept-Ranges': 'bytes',
@@ -303,7 +314,7 @@ export default [
       return {
         headers: {
           'content-type': field['content-type'],
-          'content-disposition': `attachment; filename="${field.filename}"`,
+          'content-disposition': getDisposition(req, field.filename),
           'Accept-Ranges': 'bytes',
         },
         etag: uuid,
@@ -358,7 +369,7 @@ export default [
       return {
         headers: {
           'content-type': field['content-type'],
-          'content-disposition': `attachment; filename="${field.filename}"`,
+          'content-disposition': getDisposition(req, field.filename),
         },
         etag: uuid,
         xkeys: [req.document.uuid],
@@ -386,7 +397,7 @@ export default [
       return {
         headers: {
           'content-type': field['content-type'],
-          'content-disposition': `attachment; filename="${field.filename}"`,
+          'content-disposition': getDisposition(req, field.filename),
         },
         etag: uuid,
         xkeys: [req.document.uuid],
@@ -405,11 +416,12 @@ export default [
       return {
         headers: {
           'content-type': 'application/json',
-          'content-disposition': `attachment; filename="${
+          'content-disposition': getDisposition(
+            req,
             req.document.path === '/'
               ? '_root.json'
-              : `${drop(req.document.path.split('/'), 1).join('.')}.json`
-          }"`,
+              : `${drop(req.document.path.split('/'), 1).join('.')}.json`,
+          ),
         },
         json: {
           uuid: json['UID'],
@@ -442,7 +454,7 @@ export default [
       return {
         headers: {
           'content-type': 'text/calendar',
-          'content-disposition': `attachment; filename="${req.document.id}.ics"`,
+          'content-disposition': getDisposition(req, `${req.document.id}.ics`),
         },
         xkeys: [req.document.uuid],
         html: ics,
@@ -463,7 +475,7 @@ export default [
       return {
         headers: {
           'content-type': 'application/rss+xml',
-          'content-disposition': `attachment; filename="${req.document.id}.rss"`,
+          'content-disposition': getDisposition(req, `${req.document.id}.rss`),
         },
         xkeys: [req.document.uuid],
         html: rss,
@@ -484,7 +496,7 @@ export default [
       return {
         headers: {
           'content-type': 'text/markdown',
-          'content-disposition': `attachment; filename="${req.document.id}.md"`,
+          'content-disposition': getDisposition(req, `${req.document.id}.md`),
         },
         xkeys: [req.document.uuid],
         html: markdown,
@@ -509,7 +521,10 @@ export default [
         return {
           headers: {
             'content-type': 'text/calendar',
-            'content-disposition': `attachment; filename="${req.document.id}.ics"`,
+            'content-disposition': getDisposition(
+              req,
+              `${req.document.id}.ics`,
+            ),
           },
           xkeys: [req.document.uuid],
           html: ics,
@@ -522,7 +537,10 @@ export default [
         return {
           headers: {
             'content-type': 'application/rss+xml',
-            'content-disposition': `attachment; filename="${req.document.id}.rss"`,
+            'content-disposition': getDisposition(
+              req,
+              `${req.document.id}.rss`,
+            ),
           },
           xkeys: [req.document.uuid],
           html: rss,
@@ -535,7 +553,7 @@ export default [
         return {
           headers: {
             'content-type': 'text/markdown',
-            'content-disposition': `attachment; filename="${req.document.id}.md"`,
+            'content-disposition': getDisposition(req, `${req.document.id}.md`),
           },
           xkeys: [req.document.uuid],
           html: markdown,

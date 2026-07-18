@@ -184,6 +184,30 @@ If a resource has been retrieved successfully, the server responds with `200 OK`
 {% include_relative endpoints/examples/content/export.res %}
 ```
 
+### Controlling the content-disposition
+
+File downloads (including `@export`, `ics_view`, `rss_view`, `markdown_view`, and the file, image, and video download endpoints) are served with a `Content-Disposition: attachment` header by default, prompting the browser to download the file.
+
+To have the browser render the content inline instead, add the `disposition=inline` query parameter to the request:
+
+```http
+{% include_relative endpoints/examples/content/export_inline.req %}
+```
+
+Or use the client directly:
+
+```ts
+{% include_relative endpoints/examples/content/export_inline.ts %}
+```
+
+### Successful Response (200 OK)
+
+The response is returned with a `Content-Disposition: inline` header:
+
+```http
+{% include_relative endpoints/examples/content/export_inline.res %}
+```
+
 ## Exporting ICS format
 
 We can use the `ics_view` endpoint to export the event content to an iCalendar file to be used for external services. We can export the data by sending a GET request to the resource URL:

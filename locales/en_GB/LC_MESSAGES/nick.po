@@ -711,7 +711,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:781
+#: src/routes/content/content.ts:799
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Document locked"
@@ -1791,7 +1791,7 @@ msgid "Replacement must be provided."
 msgstr ""
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:591
+#: src/routes/content/content.ts:609
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Required field(s) missing."
@@ -2486,7 +2486,7 @@ msgid "Type of the current document is not found."
 msgstr "Type of the current document is not found."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:580
+#: src/routes/content/content.ts:598
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
 msgstr ""
@@ -2760,7 +2760,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:778
+#: src/routes/content/content.ts:796
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "You don’t have permission to save this document because it is locked by another user."

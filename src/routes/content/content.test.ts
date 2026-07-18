@@ -67,6 +67,9 @@ describe('Content', () => {
   it('should export a content object', () =>
     testRequest(app, 'content/export'));
 
+  it('should export a content object with an inline disposition', () =>
+    testRequest(app, 'content/export_inline'));
+
   it('should export an ics file for a content object', () =>
     testRequest(app, 'content/ics'));
 
