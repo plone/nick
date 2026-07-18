@@ -35,6 +35,10 @@ export const seedScheduledJob = async (
             id: scheduled_job.id || `scheduled-job-${index + 1}`,
             title: scheduled_job.title || `Scheduled Job ${index + 1}`,
             description: scheduled_job.description || '',
+            enabled:
+              scheduled_job.enabled !== undefined
+                ? scheduled_job.enabled
+                : true,
             action: scheduled_job.action || '',
             params: scheduled_job.params || {},
             schedule: scheduled_job.schedule || '0 0 * * *',
