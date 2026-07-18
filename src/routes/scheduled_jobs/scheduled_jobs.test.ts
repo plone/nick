@@ -23,6 +23,9 @@ describe('Scheduled Jobs', () => {
   it('should add a new scheduled job', () =>
     testRequest(app, 'scheduled_jobs/post'));
 
+  it('should start a scheduled job', () =>
+    testRequest(app, 'scheduled_jobs/post_start'));
+
   it('should update a scheduled job', async () => {
     await testRequest(app, 'scheduled_jobs/post');
     return testRequest(app, 'scheduled_jobs/patch');

@@ -47,4 +47,8 @@ describe('Jobs', () => {
   it('should return the jobs', () => testRequest(app, 'jobs/get_all'));
 
   it('should delete a job', async () => testRequest(app, 'jobs/delete'));
+
+  it('should retry a job', () => testRequest(app, 'jobs/post_retry'));
+
+  it('should abort a job', () => testRequest(app, 'jobs/post_abort'));
 });

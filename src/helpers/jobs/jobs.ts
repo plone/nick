@@ -110,7 +110,9 @@ class Jobs {
 
     // Start job
     self.uuid = job.uuid;
-    self.worker = fork('./scripts/job.ts');
+    self.worker = fork('./scripts/job.ts', [], {
+      execArgv: ['--import', 'tsx'],
+    });
     self.worker.send(job.params);
     self.worker.on('message', async (data: any) => {
       const finished = dayjs.utc().format();

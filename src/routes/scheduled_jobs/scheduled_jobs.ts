@@ -7,12 +7,20 @@
 import type { Knex } from 'knex';
 import type { Request } from '../../types';
 
+// External imports
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { v4 as uuid } from 'uuid';
+
 // Internal imports
 import { RequestException } from '../../helpers/error/error';
+import jobs from '../../helpers/jobs/jobs';
 import { apiLimiter } from '../../helpers/limiter/limiter';
 import { getUrl } from '../../helpers/url/url';
 import models from '../../models';
 import scheduledJobs from '../../scheduled_jobs';
+
+dayjs.extend(utc);
 
 export default [
   {
@@ -46,6 +54,51 @@ export default [
           '@id': `${getUrl(req)}/@scheduled-jobs/${scheduledJob.id}`,
           ...(await scheduledJob.toJson(req)),
         },
+      };
+    },
+  },
+  {
+    op: 'post',
+    view: '/@scheduled-jobs/:id/start',
+    permission: 'Manage Site',
+    client: 'startScheduledJob',
+    cache: 'alter',
+    handler: async (req: Request, trx: Knex.Transaction) => {
+      const ScheduledJob = models.get('ScheduledJob');
+      const scheduledJob = await ScheduledJob.fetchById(req.params.id, {}, trx);
+      if (!scheduledJob) {
+        throw new RequestException(404, { error: req.i18n('Not found.') });
+      }
+
+      const Job = models.get('Job');
+      const newUuid = uuid();
+      const created = dayjs.utc().format();
+      await Job.create(
+        {
+          uuid: newUuid,
+          title: scheduledJob.title,
+          description: scheduledJob.description,
+          params: {
+            scheduled_job: scheduledJob.id,
+            action: scheduledJob.action,
+            ...scheduledJob.params,
+          },
+          actor: req.user.id,
+          created,
+          started: null,
+          finished: null,
+          status: 'created',
+          result: {},
+        },
+        {},
+        trx,
+      );
+
+      // Check if job needs to be ran
+      await jobs.check(trx);
+
+      return {
+        status: 204,
       };
     },
   },

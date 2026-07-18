@@ -7,14 +7,15 @@ parent: Endpoints
 
 Scheduled jobs are recurring tasks that run on a cron schedule. You can create, read, update, and delete them, as well as list available job actions.
 
-| Verb     | URL                       | Action                       |
-| -------- | ------------------------- | ---------------------------- |
-| `GET`    | `/@scheduled-jobs`        | List all scheduled jobs      |
-| `GET`    | `/@scheduled-jobs/{id}`   | Get a specific scheduled job |
-| `POST`   | `/@scheduled-jobs`        | Create a new scheduled job   |
-| `PATCH`  | `/@scheduled-jobs/{id}`   | Update a scheduled job       |
-| `DELETE` | `/@scheduled-jobs/{id}`   | Delete a scheduled job       |
-| `GET`    | `/@scheduled-job-actions` | List available job actions   |
+| Verb     | URL                            | Action                        |
+| -------- | ------------------------------ | ------------------------------ |
+| `GET`    | `/@scheduled-jobs`             | List all scheduled jobs       |
+| `GET`    | `/@scheduled-jobs/{id}`        | Get a specific scheduled job  |
+| `POST`   | `/@scheduled-jobs`             | Create a new scheduled job    |
+| `PATCH`  | `/@scheduled-jobs/{id}`        | Update a scheduled job        |
+| `DELETE` | `/@scheduled-jobs/{id}`        | Delete a scheduled job        |
+| `POST`   | `/@scheduled-jobs/{id}/start`  | Start a scheduled job now     |
+| `GET`    | `/@scheduled-job-actions`      | List available job actions    |
 
 ## Scheduled job schema
 
@@ -128,6 +129,26 @@ Response:
 
 ```http
 {% include_relative examples/scheduled_jobs/delete.res %}
+```
+
+## Start a scheduled job
+
+To run a scheduled job immediately, send a `POST` request to the `/@scheduled-jobs/{id}/start` endpoint:
+
+```http
+{% include_relative examples/scheduled_jobs/post_start.req %}
+```
+
+Or use the client directly:
+
+```ts
+{% include_relative examples/scheduled_jobs/post_start.ts %}
+```
+
+Response:
+
+```http
+{% include_relative examples/scheduled_jobs/post_start.res %}
 ```
 
 ## List available job actions
