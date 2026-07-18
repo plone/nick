@@ -217,6 +217,7 @@
 - Return username in user endpoints @robgietema
 - Fix bug when uploading images and files @robgietema
 - Fix bug with empty reset password @mpalomaki
+- Fix password reset link @mpalomaki
 
 ### Internal
 

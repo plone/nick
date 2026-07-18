@@ -271,7 +271,7 @@ export default [
             subject: req.i18n('Password reset request'),
             text: req.i18n(
               'The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)',
-              { url: `${config.settings.frontendUrl}/password-reset/${token}` },
+              { url: `${config.settings.frontendUrl}/passwordreset/${token}` },
             ),
           },
           trx,
