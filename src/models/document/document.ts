@@ -1016,14 +1016,18 @@ export class Document extends Model {
       const imageFields = getFactoryFields(self._type._schema, 'Image');
 
       imageFields.map((field: string) => {
-        chunks.push(self.json[field].text);
+        if (self.json[field]?.text) {
+          chunks.push(self.json[field].text);
+        }
       });
     }
 
     // Add text from indexed files
     const fileFields = getFactoryFields(self._type._schema, 'File');
     fileFields.map((field: string) => {
-      chunks.push(self.json[field].text);
+      if (self.json[field]?.text) {
+        chunks.push(self.json[field].text);
+      }
     });
 
     // Cache searchable text
