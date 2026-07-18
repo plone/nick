@@ -10,12 +10,17 @@ import type { Knex } from 'knex';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import { fork } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { v4 as uuid } from 'uuid';
 
 // Internal imports
 import models from '../../models';
 
 dayjs.extend(utc);
+
+const jobScript = fileURLToPath(
+  import.meta.resolve('@plone/nick/scripts/job.ts'),
+);
 
 /**
  * A job helper.
@@ -110,7 +115,7 @@ class Jobs {
 
     // Start job
     self.uuid = job.uuid;
-    self.worker = fork('./scripts/job.ts', [], {
+    self.worker = fork(jobScript, [], {
       execArgv: ['--import', 'tsx'],
     });
     self.worker.send(job.params);

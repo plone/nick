@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-07-18T08:50:39.001Z\n"
+"POT-Creation-Date: 2026-07-18T16:58:57.329Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -1436,7 +1436,8 @@ msgstr ""
 #: src/routes/vocabularies/vocabularies.ts:65
 #: src/routes/users/users.ts:154
 #: src/routes/types/types.ts:45
-#: src/routes/scheduled_jobs/scheduled_jobs.ts:42
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:50
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:70
 #: src/routes/recyclebin/recyclebin.ts:35
 #: src/routes/recyclebin/recyclebin.ts:104
 #: src/routes/recyclebin/recyclebin.ts:202

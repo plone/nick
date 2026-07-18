@@ -224,6 +224,7 @@
 - Fix issue with empty text indexing @mpalomaki
 - Fix issue with pdf indexing @mpalomaki
 - Fix breadcrumbs with navroots @mpalomaki
+- Fix job runner import @robgietema
 
 ### Internal
 

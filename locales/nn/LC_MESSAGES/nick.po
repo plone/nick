@@ -1439,7 +1439,8 @@ msgstr "Ikkje tillate"
 #: src/routes/vocabularies/vocabularies.ts:65
 #: src/routes/users/users.ts:154
 #: src/routes/types/types.ts:45
-#: src/routes/scheduled_jobs/scheduled_jobs.ts:42
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:50
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:70
 #: src/routes/recyclebin/recyclebin.ts:35
 #: src/routes/recyclebin/recyclebin.ts:104
 #: src/routes/recyclebin/recyclebin.ts:202
