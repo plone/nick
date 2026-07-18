@@ -89,6 +89,7 @@ Define pre-configured scheduled jobs in a `scheduled_jobs.json` file placed in y
       "id": "my-scheduled-job",
       "title": "My Scheduled Job",
       "description": "Description of my scheduled job",
+      "enabled": true,
       "action": "myAction",
       "params": {
         "param": "value"
@@ -108,13 +109,14 @@ Define pre-configured scheduled jobs in a `scheduled_jobs.json` file placed in y
 
 ### Scheduled job items
 
-| Field         | Type     | Description                                                               |
-| ------------- | -------- | ------------------------------------------------------------------------- |
-| `id`          | `string` | Unique identifier for the scheduled job. Defaults to `scheduled-job-{n}`. |
-| `title`       | `string` | Display title. Defaults to `Scheduled Job {n}`.                           |
-| `description` | `string` | A short description.                                                      |
-| `action`      | `string` | The name of the registered action (e.g. `reindex`, `myAction`).           |
-| `params`      | `object` | Configuration parameters passed to the action's handler.                  |
-| `schedule`    | `string` | A cron expression defining the run schedule. Defaults to `0 0 * * *`.     |
+| Field         | Type      | Description                                                               |
+| ------------- | --------- | ------------------------------------------------------------------------- |
+| `id`          | `string`  | Unique identifier for the scheduled job. Defaults to `scheduled-job-{n}`. |
+| `title`       | `string`  | Display title. Defaults to `Scheduled Job {n}`.                           |
+| `description` | `string`  | A short description.                                                      |
+| `enabled`     | `boolean` | Enabled or not.                                                           |
+| `action`      | `string`  | The name of the registered action (e.g. `reindex`, `myAction`).           |
+| `params`      | `object`  | Configuration parameters passed to the action's handler.                  |
+| `schedule`    | `string`  | A cron expression defining the run schedule. Defaults to `0 0 * * *`.     |
 
 Place the file at `src/profiles/{your-profile}/scheduled_jobs.json`. The schedule uses standard cron syntax — in the example above, `0 0 * * *` runs daily at midnight.
