@@ -105,7 +105,10 @@ export async function handleFiles(
         const buffer = Buffer.from(fields[field].data, fields[field].encoding);
         const parser = new PDFParse({ data: buffer });
         const result = await parser.getText();
-        text = result.text || '';
+        text = (result.text || '').replace(
+          /[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,
+          '',
+        );
       }
 
       // Set data

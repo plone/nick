@@ -221,6 +221,7 @@
 - Fix unique user error @mpalomaki
 - Fix issue with slash in id @mpalomaki
 - Fix issue with empty text indexing @mpalomaki
+- Fix issue with pdf indexing @mpalomaki
 
 ### Internal
 
