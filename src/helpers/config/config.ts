@@ -55,6 +55,7 @@ class Config {
    */
   constructor() {
     this.settings = {
+      ...config,
       packageRoot,
       connection: {
         port: parseInt(DB_PORT || config.connection?.port || '5432'),

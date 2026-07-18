@@ -389,4 +389,5 @@ export type ConfigSettings = {
     chunk: string;
   };
   userschema: (req: Request) => Schema;
+  [key: string]: unknown;
 };

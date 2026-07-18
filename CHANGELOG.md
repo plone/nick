@@ -137,6 +137,7 @@
 - Make blob storage pluggable @robgietema
 - Add enabled to scheduled task @robgietema
 - Add inline download to all file endpoints @robgietema
+- Add custom variable support in config @robgietema
 
 ### Bugfix
 
