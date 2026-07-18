@@ -22,7 +22,7 @@ Content-Type: application/json
     },
     {
       "label": "Knex",
-      "value": "3.2.10"
+      "value": "3.3.0"
     },
     {
       "label": "PostgreSQL",
