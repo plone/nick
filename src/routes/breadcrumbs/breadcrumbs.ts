@@ -78,7 +78,7 @@ export const handler = async (req: Request, trx: Knex.Transaction) => {
     compact(slugs),
     [
       {
-        '@id': getRootUrl(req),
+        '@id': `${getRootUrl(req)}${navrootPath}`,
         title: req.document.getTitle(),
       },
     ],
