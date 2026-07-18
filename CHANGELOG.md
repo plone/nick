@@ -219,6 +219,7 @@
 - Fix bug with empty reset password @mpalomaki
 - Fix password reset link @mpalomaki
 - Fix unique user error @mpalomaki
+- Fix issue with slash in id @mpalomaki
 
 ### Internal
 

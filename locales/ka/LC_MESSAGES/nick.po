@@ -486,13 +486,13 @@ msgid "Contains"
 msgstr "შეიცავს"
 
 #. Default: "Content"
-#: src/routes/controlpanels/controlpanels.ts:153
+#: src/routes/controlpanels/controlpanels.ts:156
 msgctxt "Routes|Controlpanels"
 msgid "Content"
 msgstr "შიგთავსი"
 
 #. Default: "Content Types"
-#: src/routes/controlpanels/controlpanels.ts:152
+#: src/routes/controlpanels/controlpanels.ts:155
 #: src/profiles/core/controlpanels/dexterity-types.json:3
 msgctxt "Routes|Controlpanels"
 msgid "Content Types"
@@ -1096,8 +1096,8 @@ msgid "Invalid credentials"
 msgstr "არასწორი ავტორიზაციის მონაცემები"
 
 #. Default: "Invalid move."
-#: src/routes/controlpanels/controlpanels.ts:526
-#: src/routes/controlpanels/controlpanels.ts:579
+#: src/routes/controlpanels/controlpanels.ts:529
+#: src/routes/controlpanels/controlpanels.ts:582
 msgctxt "Routes|Controlpanels"
 msgid "Invalid move."
 msgstr ""
@@ -1448,17 +1448,17 @@ msgstr "დაუშვებელია"
 #: src/routes/jobs/jobs.ts:188
 #: src/routes/groups/groups.ts:34
 #: src/routes/email/email.ts:75
-#: src/routes/controlpanels/controlpanels.ts:164
-#: src/routes/controlpanels/controlpanels.ts:364
-#: src/routes/controlpanels/controlpanels.ts:401
-#: src/routes/controlpanels/controlpanels.ts:433
-#: src/routes/controlpanels/controlpanels.ts:452
-#: src/routes/controlpanels/controlpanels.ts:483
-#: src/routes/controlpanels/controlpanels.ts:519
-#: src/routes/controlpanels/controlpanels.ts:571
-#: src/routes/controlpanels/controlpanels.ts:619
-#: src/routes/controlpanels/controlpanels.ts:666
-#: src/routes/controlpanels/controlpanels.ts:704
+#: src/routes/controlpanels/controlpanels.ts:167
+#: src/routes/controlpanels/controlpanels.ts:367
+#: src/routes/controlpanels/controlpanels.ts:404
+#: src/routes/controlpanels/controlpanels.ts:436
+#: src/routes/controlpanels/controlpanels.ts:455
+#: src/routes/controlpanels/controlpanels.ts:486
+#: src/routes/controlpanels/controlpanels.ts:522
+#: src/routes/controlpanels/controlpanels.ts:574
+#: src/routes/controlpanels/controlpanels.ts:622
+#: src/routes/controlpanels/controlpanels.ts:669
+#: src/routes/controlpanels/controlpanels.ts:707
 msgctxt "Routes|Vocabularies"
 msgid "Not found."
 msgstr "ვერ მოიძებნა."

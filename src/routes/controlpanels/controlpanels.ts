@@ -88,7 +88,10 @@ export default [
       const content_rule = await ContentRule.create(
         {
           id: uniqueId(
-            slugify(req.body.title, { lower: true, remove: /[*+~.()'"!:@?]/g }),
+            slugify(req.body.title, {
+              lower: true,
+              remove: /[*+~.()'"!:@?/]/g,
+            }),
             blacklist,
           ),
           title: req.body.title,
