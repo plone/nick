@@ -91,11 +91,11 @@ importers:
         version: 1.0.15
     devDependencies:
       '@babel/core':
-        specifier: 8.0.0-rc.6
-        version: 8.0.0-rc.6
+        specifier: 8.0.1
+        version: 8.0.1
       '@babel/plugin-transform-typescript':
-        specifier: 8.0.0-rc.6
-        version: 8.0.0-rc.6(@babel/core@8.0.0-rc.6)
+        specifier: 8.0.1
+        version: 8.0.1(@babel/core@8.0.1)
       '@eslint/eslintrc':
         specifier: 3.3.6
         version: 3.3.6
@@ -251,8 +251,8 @@ packages:
     resolution: {integrity: sha512-DOjnob/cXOUgDOozCDeq/aK2p5y8dUIVdf6tNhEV1HQRd6I8aQ4f4fbtHRVEvb6lP3BGomrKHiS8ICAASSVQSw==}
     engines: {node: ^22.18.0 || >=24.11.0}
 
-  '@babel/core@8.0.0-rc.6':
-    resolution: {integrity: sha512-89SVbTu7p+M/W052SFC7R5QuQYgypfuO6HmBBbhA/Kzl6gME8Ly2QrVpIegvTxmcQKOzAPIxiEIfNk+Jxd26mw==}
+  '@babel/core@8.0.1':
+    resolution: {integrity: sha512-5FgxM4dLQpMJHSiVATk8foW263dVHQHBVpXYiimNECVWG01f4nFyEbQixeT6Mwvg7TayREJ2gpKl3o2RoMdnqw==}
     engines: {node: ^22.18.0 || >=24.11.0}
 
   '@babel/generator@8.0.0':
@@ -341,11 +341,11 @@ packages:
     peerDependencies:
       '@babel/core': ^8.0.0
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.6':
-    resolution: {integrity: sha512-dCs2FcdGkauwKbs7w7hXATlq8T8e6QZz1F/PIO6xAyhyxk/iaqMXqgdhfIrWQQkzvjeYgW43WW8SVX1zpyFLjA==}
+  '@babel/plugin-transform-typescript@8.0.1':
+    resolution: {integrity: sha512-0Svqp3413Eg0GElldykF/T7SNsxQO5YVGD70fZyAdZTnX8WRgcopmbiU7GTa5xY5ZnJcEpNbfns8/GjX+/1yeA==}
     engines: {node: ^22.18.0 || >=24.11.0}
     peerDependencies:
-      '@babel/core': ^8.0.0-rc.6
+      '@babel/core': ^8.0.0
 
   '@babel/template@8.0.0':
     resolution: {integrity: sha512-eAD0QW/AlbamBbw0FeGiwasbCVPq5ncW0HNVyLP3B9czqLyh4gvw+5JTSNt6le9+ziAU7mqDZsKTHf3jTb4chQ==}
@@ -1489,6 +1489,10 @@ packages:
   electron-to-chromium@1.5.393:
     resolution: {integrity: sha512-kiDJdIUawuEIcp9XoICKp1iTYDEbgguIPq526N1Q7jIQDeQ3CqoMx71025PI/7E48Ddtw2HuWsVjY7afEgNxmg==}
 
+  empathic@2.0.1:
+    resolution: {integrity: sha512-YGRs8knHhKHVShLkFET/rWAU8kmHbOV5LwN938RHI0pljAJ1Gf6SzXsSmRaEzcXTtOOmVqJ5+WtQPL5uigY50Q==}
+    engines: {node: '>=14'}
+
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
     engines: {node: '>= 0.8'}
@@ -1667,10 +1671,6 @@ packages:
   finalhandler@2.1.1:
     resolution: {integrity: sha512-S8KoZgRZN+a5rNwqTxlZZePjT/4cnm0ROV70LedRHZ0p8u9fRID0hJUZQpkKLzro8LfmC8sx23bY6tVNxv8pQA==}
     engines: {node: '>= 18.0.0'}
-
-  find-up-simple@1.0.1:
-    resolution: {integrity: sha512-afd4O7zpqHeRyg4PfDQsXmlDe2PfdHtJt6Akt8jOWaApLOZk5JXs6VMR29lz03pRe9mpykrRCYIYxaJYcfpncQ==}
-    engines: {node: '>=18'}
 
   find-up@5.0.0:
     resolution: {integrity: sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng==}
@@ -2907,7 +2907,7 @@ snapshots:
 
   '@babel/compat-data@8.0.0': {}
 
-  '@babel/core@8.0.0-rc.6':
+  '@babel/core@8.0.1':
     dependencies:
       '@babel/code-frame': 8.0.0
       '@babel/generator': 8.0.0
@@ -2919,7 +2919,7 @@ snapshots:
       '@babel/types': 8.0.4
       '@types/gensync': 1.0.5
       convert-source-map: 2.0.0
-      find-up-simple: 1.0.1
+      empathic: 2.0.1
       gensync: 1.0.0-beta.2
       import-meta-resolve: 4.2.0
       json5: 2.2.3
@@ -2947,13 +2947,13 @@ snapshots:
       lru-cache: 11.5.2
       semver: 7.8.5
 
-  '@babel/helper-create-class-features-plugin@8.0.1(@babel/core@8.0.0-rc.6)':
+  '@babel/helper-create-class-features-plugin@8.0.1(@babel/core@8.0.1)':
     dependencies:
-      '@babel/core': 8.0.0-rc.6
+      '@babel/core': 8.0.1
       '@babel/helper-annotate-as-pure': 8.0.0
       '@babel/helper-member-expression-to-functions': 8.0.0
       '@babel/helper-optimise-call-expression': 8.0.0
-      '@babel/helper-replace-supers': 8.0.1(@babel/core@8.0.0-rc.6)
+      '@babel/helper-replace-supers': 8.0.1(@babel/core@8.0.1)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0
       '@babel/traverse': 8.0.4
       semver: 7.8.5
@@ -2969,13 +2969,13 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.4
 
-  '@babel/helper-plugin-utils@8.0.1(@babel/core@8.0.0-rc.6)':
+  '@babel/helper-plugin-utils@8.0.1(@babel/core@8.0.1)':
     dependencies:
-      '@babel/core': 8.0.0-rc.6
+      '@babel/core': 8.0.1
 
-  '@babel/helper-replace-supers@8.0.1(@babel/core@8.0.0-rc.6)':
+  '@babel/helper-replace-supers@8.0.1(@babel/core@8.0.1)':
     dependencies:
-      '@babel/core': 8.0.0-rc.6
+      '@babel/core': 8.0.1
       '@babel/helper-member-expression-to-functions': 8.0.0
       '@babel/helper-optimise-call-expression': 8.0.0
       '@babel/traverse': 8.0.4
@@ -3008,19 +3008,19 @@ snapshots:
     dependencies:
       '@babel/types': 8.0.4
 
-  '@babel/plugin-syntax-typescript@8.0.3(@babel/core@8.0.0-rc.6)':
+  '@babel/plugin-syntax-typescript@8.0.3(@babel/core@8.0.1)':
     dependencies:
-      '@babel/core': 8.0.0-rc.6
-      '@babel/helper-plugin-utils': 8.0.1(@babel/core@8.0.0-rc.6)
+      '@babel/core': 8.0.1
+      '@babel/helper-plugin-utils': 8.0.1(@babel/core@8.0.1)
 
-  '@babel/plugin-transform-typescript@8.0.0-rc.6(@babel/core@8.0.0-rc.6)':
+  '@babel/plugin-transform-typescript@8.0.1(@babel/core@8.0.1)':
     dependencies:
-      '@babel/core': 8.0.0-rc.6
+      '@babel/core': 8.0.1
       '@babel/helper-annotate-as-pure': 8.0.0
-      '@babel/helper-create-class-features-plugin': 8.0.1(@babel/core@8.0.0-rc.6)
-      '@babel/helper-plugin-utils': 8.0.1(@babel/core@8.0.0-rc.6)
+      '@babel/helper-create-class-features-plugin': 8.0.1(@babel/core@8.0.1)
+      '@babel/helper-plugin-utils': 8.0.1(@babel/core@8.0.1)
       '@babel/helper-skip-transparent-expression-wrappers': 8.0.0
-      '@babel/plugin-syntax-typescript': 8.0.3(@babel/core@8.0.0-rc.6)
+      '@babel/plugin-syntax-typescript': 8.0.3(@babel/core@8.0.1)
 
   '@babel/template@8.0.0':
     dependencies:
@@ -3982,6 +3982,8 @@ snapshots:
 
   electron-to-chromium@1.5.393: {}
 
+  empathic@2.0.1: {}
+
   encodeurl@2.0.0: {}
 
   es-define-property@1.0.1: {}
@@ -4212,8 +4214,6 @@ snapshots:
       statuses: 2.0.2
     transitivePeerDependencies:
       - supports-color
-
-  find-up-simple@1.0.1: {}
 
   find-up@5.0.0:
     dependencies:
