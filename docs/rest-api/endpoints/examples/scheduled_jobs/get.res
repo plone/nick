@@ -6,6 +6,7 @@ Content-Type: application/json
   "id": "reindex-events",
   "title": "Reindex Events",
   "description": "Reindex all events",
+  "enabled": true,
   "action": "reindex",
   "params": {
     "type": "Event"

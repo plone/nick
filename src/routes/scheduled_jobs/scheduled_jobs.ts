@@ -84,6 +84,7 @@ export default [
           action: req.body.action,
           params: req.body.params || {},
           schedule: req.body.schedule || '0 0 * * *',
+          enabled: req.body.enabled ?? true,
         },
         {},
         trx,
@@ -119,6 +120,7 @@ export default [
           action: req.body.action,
           params: req.body.params || {},
           schedule: req.body.schedule || '0 0 * * *',
+          enabled: req.body.enabled ?? true,
         },
         trx,
       );

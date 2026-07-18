@@ -6,6 +6,7 @@ Content-Type: application/json
   "id": "reindex-pages",
   "title": "Reindex Pages",
   "description": "Reindex all pages",
+  "enabled": true,
   "action": "reindex",
   "params": {
       "type": "Page"

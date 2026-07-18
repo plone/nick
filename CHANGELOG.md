@@ -135,6 +135,7 @@
 - Add xss filtering for html blocks @robgietema
 - Add s3 storage support @robgietema
 - Make blob storage pluggable @robgietema
+- Add enabled to scheduled task @robgietema
 
 ### Bugfix
 

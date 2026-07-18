@@ -104,34 +104,36 @@ class ScheduledJobs {
 
     // Register new tasks
     scheduledJobs.map((scheduledJob: any) => {
-      const task = cron.schedule(scheduledJob.schedule, async () => {
-        const newUuid = uuid();
-        const created = dayjs.utc().format();
-        await Job.create(
-          {
-            uuid: newUuid,
-            title: scheduledJob.title,
-            description: scheduledJob.description,
-            params: {
-              scheduled_job: scheduledJob.id,
-              action: scheduledJob.action,
-              ...scheduledJob.params,
+      if (scheduledJob.enabled) {
+        const task = cron.schedule(scheduledJob.schedule, async () => {
+          const newUuid = uuid();
+          const created = dayjs.utc().format();
+          await Job.create(
+            {
+              uuid: newUuid,
+              title: scheduledJob.title,
+              description: scheduledJob.description,
+              params: {
+                scheduled_job: scheduledJob.id,
+                action: scheduledJob.action,
+                ...scheduledJob.params,
+              },
+              actor: 'admin',
+              created,
+              started: null,
+              finished: null,
+              status: 'created',
+              result: {},
             },
-            actor: 'admin',
-            created,
-            started: null,
-            finished: null,
-            status: 'created',
-            result: {},
-          },
-          {},
-          trx,
-        );
+            {},
+            trx,
+          );
 
-        // Check if job needs to be ran
-        await jobs.check(trx);
-      });
-      self.tasks.push(task);
+          // Check if job needs to be ran
+          await jobs.check(trx);
+        });
+        self.tasks.push(task);
+      }
     });
   }
 }
