@@ -218,6 +218,7 @@
 - Fix bug when uploading images and files @robgietema
 - Fix bug with empty reset password @mpalomaki
 - Fix password reset link @mpalomaki
+- Fix unique user error @mpalomaki
 
 ### Internal
 

@@ -229,6 +229,12 @@ msgctxt "Profiles|Core|Behaviors|Ownership"
 msgid "An entity responsible for making this item available."
 msgstr "Đơn vị chịu trách nhiệm cung cấp mục này."
 
+#. Default: "An error occurred while creating the user."
+#: src/routes/users/users.ts:261
+msgctxt "Routes|Users"
+msgid "An error occurred while creating the user."
+msgstr ""
+
 #. Default: "An item’s description"
 #: src/profiles/core/catalog.json:234
 msgctxt "Profiles|Core|Catalog"
@@ -1509,7 +1515,7 @@ msgstr ""
 
 #. Default: "Password reset request"
 #: src/routes/users/users.ts:114
-#: src/routes/users/users.ts:271
+#: src/routes/users/users.ts:287
 msgctxt "Routes|Users"
 msgid "Password reset request"
 msgstr "Yêu cầu đặt lại mật khẩu"
@@ -2076,7 +2082,7 @@ msgid "System group"
 msgstr "Nhóm hệ thống"
 
 #. Default: "System users"
-#: src/routes/users/users.ts:354
+#: src/routes/users/users.ts:370
 msgctxt "Routes|Users"
 msgid "System users"
 msgstr "Người dùng hệ thống"
@@ -2228,7 +2234,7 @@ msgstr ""
 
 #. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 #: src/routes/users/users.ts:115
-#: src/routes/users/users.ts:272
+#: src/routes/users/users.ts:288
 msgctxt "Routes|Users"
 msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 msgstr ""
@@ -2734,7 +2740,7 @@ msgid "You can’t delete system groups."
 msgstr "Bạn không thể xóa các nhóm hệ thống."
 
 #. Default: "You can’t delete system users."
-#: src/routes/users/users.ts:353
+#: src/routes/users/users.ts:369
 msgctxt "Routes|Users"
 msgid "You can’t delete system users."
 msgstr "Bạn không thể xóa người dùng hệ thống."

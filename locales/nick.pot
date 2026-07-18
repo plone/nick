@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-06-15T15:00:49.428Z\n"
+"POT-Creation-Date: 2026-07-18T08:26:46.127Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -224,6 +224,12 @@ msgstr ""
 #: src/profiles/core/behaviors/ownership.json:15
 msgctxt "Profiles|Core|Behaviors|Ownership"
 msgid "An entity responsible for making this item available."
+msgstr ""
+
+#. Default: "An error occurred while creating the user."
+#: src/routes/users/users.ts:261
+msgctxt "Routes|Users"
+msgid "An error occurred while creating the user."
 msgstr ""
 
 #. Default: "An item’s description"
@@ -1506,7 +1512,7 @@ msgstr ""
 
 #. Default: "Password reset request"
 #: src/routes/users/users.ts:114
-#: src/routes/users/users.ts:271
+#: src/routes/users/users.ts:287
 msgctxt "Routes|Users"
 msgid "Password reset request"
 msgstr ""
@@ -2073,7 +2079,7 @@ msgid "System group"
 msgstr ""
 
 #. Default: "System users"
-#: src/routes/users/users.ts:354
+#: src/routes/users/users.ts:370
 msgctxt "Routes|Users"
 msgid "System users"
 msgstr ""
@@ -2225,7 +2231,7 @@ msgstr ""
 
 #. Default: "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 #: src/routes/users/users.ts:115
-#: src/routes/users/users.ts:272
+#: src/routes/users/users.ts:288
 msgctxt "Routes|Users"
 msgid "The following link takes you to a page where you can reset your password: {url} (This link will expire in 2 hours)"
 msgstr ""
@@ -2731,7 +2737,7 @@ msgid "You can’t delete system groups."
 msgstr ""
 
 #. Default: "You can’t delete system users."
-#: src/routes/users/users.ts:353
+#: src/routes/users/users.ts:369
 msgctxt "Routes|Users"
 msgid "You can’t delete system users."
 msgstr ""

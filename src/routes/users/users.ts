@@ -232,19 +232,35 @@ export default [
       json = await handleRelationLists(json, schema);
 
       // Add user
-      const user = await User.create(
-        {
-          id: req.body.username,
-          fullname: req.body.fullname,
-          email: req.body.email,
-          json,
-          password: manageUsers ? password : '',
-          _roles: manageUsers ? req.body.roles || [] : [],
-          _groups: manageUsers ? req.body.groups || [] : [],
-        },
-        { related: ['_roles', '_groups'] },
-        trx,
-      );
+      let user;
+      try {
+        user = await User.create(
+          {
+            id: req.body.username,
+            fullname: req.body.fullname,
+            email: req.body.email,
+            json,
+            password: manageUsers ? password : '',
+            _roles: manageUsers ? req.body.roles || [] : [],
+            _groups: manageUsers ? req.body.groups || [] : [],
+          },
+          { related: ['_roles', '_groups'] },
+          trx,
+        );
+      } catch (err: any) {
+        if (err.columns?.length > 0) {
+          throw new RequestException(400, {
+            message: req.i18n(
+              err.columns?.includes('email')
+                ? 'A user with this email already exists.'
+                : 'A user with this username already exists.',
+            ),
+          });
+        }
+        throw new RequestException(400, {
+          message: req.i18n('An error occurred while creating the user.'),
+        });
+      }
 
       // Check if password reset
       if (req.body.sendPasswordReset) {
