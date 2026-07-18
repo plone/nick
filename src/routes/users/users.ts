@@ -45,7 +45,7 @@ export default [
       }
 
       // Check min password length
-      if (req.body?.new_password.length < 8) {
+      if (req.body?.new_password && req.body.new_password.length < 8) {
         throw new RequestException(401, {
           message: req.i18n('Password should be at least 8 characters long.'),
         });

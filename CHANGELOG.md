@@ -216,6 +216,7 @@
 - Add position in parent to export script @robgietema
 - Return username in user endpoints @robgietema
 - Fix bug when uploading images and files @robgietema
+- Fix bug with empty reset password @mpalomaki
 
 ### Internal
 
