@@ -33,6 +33,9 @@ process.on('message', async (data: any) => {
           .getAction(data.action)
           .handler(omit(data, ['scheduled_job', 'action']), 'admin', trx);
 
+        // Commit transaction
+        await trx.commit();
+
         // Send result
         if (process.send) {
           process.send({ result });
