@@ -711,7 +711,7 @@ msgstr ""
 
 #. Default: "Document locked"
 #: src/routes/history/history.ts:68
-#: src/routes/content/content.ts:799
+#: src/routes/content/content.ts:804
 msgctxt "Routes|History"
 msgid "Document locked"
 msgstr "Tài liệu đã bị khóa"
@@ -1406,6 +1406,12 @@ msgctxt "Profiles|Core|Catalog"
 msgid "No"
 msgstr "Không"
 
+#. Default: "No JSON object could be decoded"
+#: src/helpers/multipart/multipart.ts:94
+msgctxt "Helpers|Multipart"
+msgid "No JSON object could be decoded"
+msgstr ""
+
 #. Default: "No data is submitted."
 #: src/routes/form/form.ts:106
 msgctxt "Routes|Form"
@@ -1506,6 +1512,12 @@ msgstr "Bài viết"
 #: src/routes/comments/comments.ts:155
 msgctxt "Routes|Comments"
 msgid "Parent comment does not exist."
+msgstr ""
+
+#. Default: "Part {part} not found."
+#: src/helpers/multipart/multipart.ts:117
+msgctxt "Helpers|Multipart"
+msgid "Part {part} not found."
 msgstr ""
 
 #. Default: "Password"
@@ -1791,7 +1803,7 @@ msgid "Replacement must be provided."
 msgstr ""
 
 #. Default: "Required field(s) missing."
-#: src/routes/content/content.ts:609
+#: src/routes/content/content.ts:613
 msgctxt "Routes|Content"
 msgid "Required field(s) missing."
 msgstr "Thiếu các trường bắt buộc."
@@ -2486,9 +2498,15 @@ msgid "Type of the current document is not found."
 msgstr "Không tìm thấy loại nội dung của tài liệu hiện tại."
 
 #. Default: "Type {type} not found."
-#: src/routes/content/content.ts:598
+#: src/routes/content/content.ts:602
 msgctxt "Routes|Content"
 msgid "Type {type} not found."
+msgstr ""
+
+#. Default: "Upload too large."
+#: src/helpers/multipart/multipart.ts:56
+msgctxt "Helpers|Multipart"
+msgid "Upload too large."
 msgstr ""
 
 #. Default: "Use '../' to navigate to parent objects."
@@ -2760,7 +2778,7 @@ msgstr ""
 
 #. Default: "You don’t have permission to save this document because it is locked by another user."
 #: src/routes/history/history.ts:65
-#: src/routes/content/content.ts:796
+#: src/routes/content/content.ts:801
 msgctxt "Routes|History"
 msgid "You don’t have permission to save this document because it is locked by another user."
 msgstr "Bạn không có quyền lưu tài liệu này vì nó đã bị khóa bởi người dùng khác."

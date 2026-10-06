@@ -55,6 +55,59 @@ If the resource could not be created, for instance because the title was missing
 
 The response body can contain information about why the request failed.
 
+## Uploading Files
+
+A file or image field can be set either as base64-encoded data in the JSON body, or, for one or
+more files in a single `POST` or `PATCH` request, as `multipart/form-data`.
+
+### Uploading as base64-encoded data
+
+```json
+{
+  "@type": "File",
+  "title": "My File",
+  "file": {
+    "data": "U3BhbSBhbmQgRWdncw==",
+    "encoding": "base64",
+    "filename": "test.txt",
+    "content-type": "text/plain"
+  }
+}
+```
+
+### Uploading with multipart/form-data
+
+In a `multipart/form-data` request, the `data` part carries the JSON body, and each file or
+image field in that JSON references another part by name, as `{ "part": "<part name>" }`. The
+`filename` and `content-type` are taken from the JSON if given, otherwise from the referenced
+part itself.
+
+```http
+POST /folder1 HTTP/1.1
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="data"; filename="data.json"
+Content-Type: application/json
+
+{
+  "@type": "File",
+  "title": "My File",
+  "file": {
+    "part": "attachment_0"
+  }
+}
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="attachment_0"; filename="test.txt"
+Content-Type: text/plain
+
+Spam and Eggs
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+```
+
+Only top-level fields are resolved this way. The maximum upload size is controlled by the
+`files` key of `requestLimit` (see the Limits admin guide).
+
 ## Reading a Resource with GET
 
 After a successful POST, we can access the resource by sending a GET request to the resource URL:

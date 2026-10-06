@@ -3,7 +3,7 @@
  * @module helpers/error/error
  */
 
-export type Status = 301 | 302 | 400 | 401 | 403 | 404 | 500;
+export type Status = 301 | 302 | 400 | 401 | 403 | 404 | 413 | 500;
 export type Message =
   | string
   | {
