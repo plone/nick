@@ -141,6 +141,7 @@
 - Add support for float indexes @robgietema
 - Read auth token from either the header or from a cookie @robgietema
 - Make the search batch size limit configurable via requestLimit.batch @robgietema
+- Add custom upgrade code support via index.ts in upgrade steps @robgietema
 
 ### Bugfix
 

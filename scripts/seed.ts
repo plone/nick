@@ -67,11 +67,15 @@ async function main() {
                 } as any),
                 async (value, index) => {
                   const version = parseInt(profile.version) + 1 + index;
+                  const upgradePath = `${profilePath}/upgrades/${version}`;
                   console.log(`Upgrading ${profilePath} to ${version}`);
-                  return await seeds.run(
-                    trx,
-                    `${profilePath}/upgrades/${version}`,
-                  );
+                  await seeds.run(trx, upgradePath);
+
+                  // Run custom upgrade code if available
+                  if (await fileExists(`${upgradePath}/index`)) {
+                    const upgrade = await import(`${upgradePath}/index`);
+                    await upgrade.init(trx);
+                  }
                 },
               );
             }

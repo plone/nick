@@ -196,7 +196,22 @@ Use the `pnpm seed:upgrade` command to apply pending upgrades. The upgrade logic
 3. **Sequential execution**: Each missing step is applied in order by calling `seeds.run(trx, ".../upgrades/<version>")` for each version number. For example, if the installed version is `1003` and the latest is `1006`, upgrades `1004`, `1005`, and `1006` are applied sequentially.
 4. **Idempotent seed handlers**: Each seed handler checks for the presence of its corresponding file inside the upgrade directory. If the file exists, the changes are applied; if not, the handler skips. This means an upgrade step only needs to include the files that actually change.
 
+5. **Custom upgrade code**: If the upgrade directory contains an `index.ts`, its `init` method is called after the seed handlers have run. It receives the transaction.
+
 If any step fails, the entire transaction is rolled back, ensuring consistency.
+
+### Custom upgrade code
+
+For changes that can't be expressed with the JSON configuration files (e.g. migrating content), add an `index.ts` to the upgrade directory exporting an `init` method:
+
+**`upgrades/1007/index.ts`:**
+```ts
+import type { Knex } from 'knex';
+
+export async function init(trx: Knex.Transaction): Promise<void> {
+  // Custom upgrade logic
+}
+```
 
 ### Creating a new upgrade
 
