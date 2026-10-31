@@ -166,6 +166,7 @@ import usersRoutes from '../../routes/users/users';
 import userschemaRoutes from '../../routes/userschema/userschema';
 import vocabulariesRoutes from '../../routes/vocabularies/vocabularies';
 import workflowRoutes from '../../routes/workflow/workflow';
+import worklistsRoutes from '../../routes/worklists/worklists';
 
 export function init(): void {
   // Register models
@@ -365,4 +366,5 @@ export function init(): void {
   routes.register(userschemaRoutes);
   routes.register(vocabulariesRoutes);
   routes.register(workflowRoutes);
+  routes.register(worklistsRoutes);
 }

@@ -49,6 +49,7 @@ const documentFields = [
   'language',
   'workflow_state',
   'workflow_history',
+  'workflow_status',
   'sharing',
   'content_rules',
 ];
@@ -154,6 +155,9 @@ export const seedDocument = async (
 
       // Save uuid
       uuids.push(insert.uuid);
+
+      // Restore the workflow variables
+      await insert.restoreWorkflowStatus(trx, document.workflow_status);
 
       // Handle files and images of versions, unchanged files are shared
       // with the document

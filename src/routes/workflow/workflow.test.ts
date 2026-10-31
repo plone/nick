@@ -99,6 +99,291 @@ describe('Workflow', () => {
     }
   });
 
+  it('should check the guard of a transition', async () => {
+    const Workflow = models.get('Workflow');
+    const workflow = await Workflow.fetchById(
+      'simple_publication_workflow',
+      {},
+      global.txn!,
+    );
+    await workflow.update(
+      {
+        json: {
+          ...workflow.json,
+          transitions: {
+            ...workflow.json.transitions,
+            publish: {
+              ...workflow.json.transitions.publish,
+              guard: {
+                permissions: ['Review'],
+                expr: "python:request.get('confirm') == 'yes'",
+              },
+            },
+          },
+        },
+      },
+      global.txn!,
+    );
+    await testRequest(app, 'content/post');
+    const list = async (query: string) =>
+      (
+        await request(app)
+          .get(`/news/my-news-item/@workflow${query}`)
+          .set('Accept', 'application/json')
+          .set('Authorization', `Bearer ${token}`)
+      ).body.transitions.map((item: any) => item['@id'].split('/').pop());
+
+    // The guard expression decides if the transition is offered and taken
+    expect(await list('')).toEqual(['submit']);
+    expect(await list('?confirm=yes')).toEqual(['publish', 'submit']);
+    expect((await transition('/news/my-news-item', 'publish')).status).toBe(
+      401,
+    );
+    const res = await transition('/news/my-news-item', 'publish', {
+      confirm: 'yes',
+    });
+    expect(res.status).toBe(200);
+    expect(res.body.review_state).toBe('published');
+  });
+
+  it('should keep the variables of a workflow', async () => {
+    const Workflow = models.get('Workflow');
+    const workflow = await Workflow.fetchById(
+      'simple_publication_workflow',
+      {},
+      global.txn!,
+    );
+    await workflow.update(
+      {
+        json: {
+          ...workflow.json,
+          variables: {
+            action: {
+              default_expr: 'transition/getId|nothing',
+              for_status: true,
+              update_always: true,
+            },
+            actor: {
+              default_expr: 'user/getId',
+              for_status: true,
+              update_always: true,
+            },
+            comments: {
+              default_expr: "python:state_change.kwargs.get('comment', '')",
+              for_status: true,
+              update_always: true,
+            },
+            time: {
+              default_expr: 'state_change/getDateTime',
+              for_status: true,
+              update_always: true,
+            },
+            review_history: {
+              default_expr: 'state_change/getHistory',
+              info_guard: { permissions: ['Submit', 'Review'] },
+            },
+            reviewed_by: { default_value: '', for_status: true },
+            submissions: { default_value: 0, for_status: true },
+            stage: { default_value: 'draft', for_status: true },
+          },
+          states: {
+            ...workflow.json.states,
+            published: {
+              ...workflow.json.states.published,
+              variables: { stage: 'live' },
+            },
+          },
+          transitions: {
+            ...workflow.json.transitions,
+            submit: {
+              ...workflow.json.transitions.submit,
+              variables: {
+                submissions:
+                  "python:here.portal_workflow.getInfoFor(here, 'submissions', 0) + 1",
+              },
+            },
+            publish: {
+              ...workflow.json.transitions.publish,
+              guard: {
+                permissions: ['Review'],
+                expr: "python:here.portal_workflow.getInfoFor(here, 'submissions') > 0",
+              },
+              variables: { reviewed_by: 'user/getId' },
+            },
+          },
+        },
+      },
+      global.txn!,
+    );
+    await testRequest(app, 'content/post');
+    const document = await fetch('/news/my-news-item');
+    expect(
+      (await document.fetchWorkflowStatus('simple_publication_workflow'))
+        .variables,
+    ).toEqual({
+      action: null,
+      actor: 'admin',
+      comments: '',
+      time: '2022-04-08T16:00:00.000Z',
+      reviewed_by: '',
+      submissions: 0,
+      stage: 'draft',
+    });
+
+    // The guard reads a variable, publish needs a submission first
+    expect((await transition('/news/my-news-item', 'publish')).status).toBe(
+      401,
+    );
+    await transition('/news/my-news-item', 'submit', { comment: 'Please' });
+    expect((await transition('/news/my-news-item', 'publish')).status).toBe(
+      200,
+    );
+    const status = await (
+      await fetch('/news/my-news-item')
+    ).fetchWorkflowStatus('simple_publication_workflow');
+    expect(status).toEqual({
+      state: 'published',
+      variables: {
+        action: 'publish',
+        actor: 'admin',
+        comments: '',
+        time: '2022-04-08T16:00:00.000Z',
+        reviewed_by: 'admin',
+        submissions: 1,
+        stage: 'live',
+      },
+    });
+
+    // The history has the variables, users without Submit or Review don't
+    // see it (the info guard of review_history)
+    const history = async (auth?: string) => {
+      const req = request(app)
+        .get('/news/my-news-item/@workflow')
+        .set('Accept', 'application/json');
+      return (await (auth ? req.set('Authorization', `Bearer ${auth}`) : req))
+        .body.history;
+    };
+    const entries = await history(token);
+    expect(entries.map((item: any) => item.action)).toEqual([
+      null,
+      'submit',
+      'publish',
+    ]);
+    expect(entries[1]).toMatchObject({
+      comments: 'Please',
+      submissions: 1,
+      stage: 'draft',
+    });
+    expect(entries[2]).toMatchObject({ reviewed_by: 'admin', stage: 'live' });
+    expect(await history()).toEqual([]);
+  });
+
+  it('should support a chain of workflows', async () => {
+    const Type = models.get('Type');
+    const Workflow = models.get('Workflow');
+    await Workflow.create(
+      {
+        id: 'flag_workflow',
+        title: 'Flag',
+        json: {
+          initial_state: 'unflagged',
+          managed_permissions: ['View', 'Modify'],
+          states: {
+            unflagged: {
+              title: 'Unflagged',
+              transitions: ['flag'],
+              permissions: {},
+              acquire: ['View', 'Modify'],
+            },
+            flagged: {
+              title: 'Flagged',
+              transitions: ['unflag'],
+              permissions: { Administrator: ['View', 'Modify'] },
+            },
+          },
+          transitions: {
+            flag: { title: 'Flag', new_state: 'flagged', permission: 'Review' },
+            unflag: {
+              title: 'Unflag',
+              new_state: 'unflagged',
+              permission: 'Review',
+            },
+          },
+        },
+      },
+      {},
+      global.txn!,
+    );
+    const page = await Type.fetchById('Page', {}, global.txn!);
+    await page.setChain(
+      ['simple_publication_workflow', 'flag_workflow'],
+      global.txn!,
+    );
+    const editor = await createUser('editor', ['Editor', 'Reader']);
+    await request(app)
+      .post('/news')
+      .set('Accept', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
+      .send({ '@type': 'Page', id: 'chained', title: 'Chained' })
+      .expect(201);
+    const document = await fetch('/news/chained');
+    expect((await document.fetchWorkflowStatus('flag_workflow')).state).toBe(
+      'unflagged',
+    );
+    const workflow = async (auth: string = token) =>
+      (
+        await request(app)
+          .get('/news/chained/@workflow')
+          .set('Accept', 'application/json')
+          .set('Authorization', `Bearer ${auth}`)
+      ).body;
+    const ids = (body: any) =>
+      body.transitions.map((item: any) => item['@id'].split('/').pop());
+
+    // The transitions of both workflows, the state of the first
+    expect(ids(await workflow())).toEqual(['publish', 'submit', 'flag']);
+    expect((await workflow()).state.id).toBe('private');
+
+    // A transition of the second workflow changes its state only
+    const res = await transition('/news/chained', 'flag', { comment: 'Spam' });
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({
+      action: 'flag',
+      review_state: 'flagged',
+      comments: 'Spam',
+    });
+    const flagged = await fetch('/news/chained');
+    expect(flagged.workflow_state).toBe('private');
+    expect((await flagged.fetchWorkflowStatus('flag_workflow')).state).toBe(
+      'flagged',
+    );
+    expect(flagged.workflow_history.at(-1)).toMatchObject({
+      action: 'flag',
+      workflow: 'flag_workflow',
+    });
+
+    // The history of @workflow is the history of the first workflow
+    const body = await workflow();
+    expect(ids(body)).toEqual(['publish', 'submit', 'unflag']);
+    expect(body.history.map((item: any) => item.action)).toEqual([null]);
+
+    // The second workflow takes View and Modify from the editor
+    expect(await workflow(editor)).toEqual({
+      message: 'You are not authorized to access this resource.',
+      type: 'Unauthorized',
+    });
+    const catalog = await global.txn!('catalog')
+      .where({ document: flagged.uuid })
+      .first();
+    expect(catalog._allowedUsersGroupsRoles).not.toContain('Editor');
+    expect(catalog._allowedUsersGroupsRoles).toContain('Administrator');
+    expect(catalog._review_state).toBe('private');
+
+    // Unknown transitions are refused for the whole chain
+    expect((await transition('/news/chained', 'flag')).status).toBe(200);
+    expect((await transition('/news/chained', 'nothing')).status).toBe(400);
+  });
+
   it('should refuse an unknown transition', async () => {
     const res = await transition('/news', 'no-such-transition');
     expect(res.status).toBe(400);

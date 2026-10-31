@@ -7,6 +7,16 @@
 import { createHash, randomBytes } from 'crypto';
 import { omit } from 'es-toolkit/object';
 
+// The workflow definitions are converted by the DCWorkflow loader
+export {
+  type XmlElement,
+  convertWorkflow,
+  mapWorkflowRole,
+  parseWorkflowBindings,
+  parseXml,
+} from '../dcworkflow/dcworkflow';
+export { permissionMapping } from '../workflow/workflow';
+
 /**
  * Convert a Plone uid (32 hex characters) to a uuid.
  * @method convertUid
@@ -359,215 +369,6 @@ export function parseTar(buffer: Buffer): Record<string, string> {
   return files;
 }
 
-export interface XmlElement {
-  name: string;
-  attributes: Record<string, string>;
-  children: XmlElement[];
-  text: string;
-}
-
-/**
- * Unescape xml entities.
- * @method unescapeXml
- * @param {string} value Escaped value.
- * @returns {string} Unescaped value.
- */
-function unescapeXml(value: string): string {
-  return value.replace(
-    /&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi,
-    (_match: string, entity: string) => {
-      if (entity[0] === '#') {
-        return String.fromCodePoint(
-          entity[1].toLowerCase() === 'x'
-            ? parseInt(entity.substring(2), 16)
-            : parseInt(entity.substring(1), 10),
-        );
-      }
-      return ({ amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" } as any)[
-        entity.toLowerCase()
-      ];
-    },
-  );
-}
-
-/**
- * Parse a (simple) xml document, like the GenericSetup workflow export.
- * @method parseXml
- * @param {string} xml Xml string.
- * @returns {XmlElement} Root element.
- */
-export function parseXml(xml: string): XmlElement {
-  const root: XmlElement = { name: '', attributes: {}, children: [], text: '' };
-  const stack: XmlElement[] = [root];
-  const tokens =
-    /<!--[\s\S]*?-->|<\?[\s\S]*?\?>|<!\[CDATA\[([\s\S]*?)\]\]>|<(\/?)([\w:.-]+)((?:\s+[\w:.-]+\s*=\s*(?:"[^"]*"|'[^']*'))*)\s*(\/?)>|([^<]+)/g;
-  let match;
-
-  while ((match = tokens.exec(xml)) !== null) {
-    const current = stack[stack.length - 1];
-    if (match[1] !== undefined) {
-      current.text += match[1];
-    } else if (match[3] !== undefined) {
-      if (match[2] === '/') {
-        stack.pop();
-      } else {
-        const element: XmlElement = {
-          name: match[3],
-          attributes: {},
-          children: [],
-          text: '',
-        };
-        const attributes = /([\w:.-]+)\s*=\s*(?:"([^"]*)"|'([^']*)')/g;
-        let attribute;
-        while ((attribute = attributes.exec(match[4])) !== null) {
-          element.attributes[attribute[1]] = unescapeXml(
-            attribute[2] ?? attribute[3],
-          );
-        }
-        current.children.push(element);
-        if (match[5] !== '/') {
-          stack.push(element);
-        }
-      }
-    } else if (match[6] !== undefined) {
-      current.text += unescapeXml(match[6]);
-    }
-  }
-  return root.children[0];
-}
-
-/**
- * Get child elements by name.
- * @method children
- * @param {XmlElement} element Parent element.
- * @param {string} name Name of the children.
- * @returns {XmlElement[]} Child elements.
- */
-function children(element: XmlElement | undefined, name: string) {
-  return (element?.children || []).filter((child) => child.name === name);
-}
-
-/**
- * Plone permissions in workflow definitions which map to Nick permissions.
- * Other permissions (like `Access contents information`) are dropped.
- */
-export const permissionMapping: Record<string, string> = {
-  View: 'View',
-  'Modify portal content': 'Modify',
-  'Add portal content': 'Add',
-  'Review portal content': 'Review',
-  'Request review': 'Submit',
-  'Reply to item': 'Add Comment',
-};
-
-/**
- * Map a role in a workflow definition. A permission for `Anonymous` is a
- * permission for everybody in Plone, logged in users in Nick only have the
- * `Authenticated` role.
- * @method mapWorkflowRole
- * @param {string} role Plone role.
- * @returns {string[]} Nick roles.
- */
-export function mapWorkflowRole(role: string): string[] {
-  return role === 'Anonymous'
-    ? ['Anonymous', 'Authenticated']
-    : [mapRole(role)];
-}
-
-/**
- * Convert a DCWorkflow definition (GenericSetup `definition.xml`).
- * Permission maps of the states are converted to Nick's role to permissions
- * mapping. A transition gets the first guard permission with a Nick
- * equivalent, or `Manage Site` when there is none. Guard roles, guard
- * expressions, scripts, worklists and variables are not converted.
- * @method convertWorkflow
- * @param {string} xml Workflow definition.
- * @returns {Object} Nick workflow.
- */
-export function convertWorkflow(xml: string): any {
-  const workflow = parseXml(xml);
-  const states: Record<string, any> = {};
-  const transitions: Record<string, any> = {};
-
-  children(workflow, 'state').map((state) => {
-    const permissions: Record<string, string[]> = {};
-    children(state, 'permission-map').map((map) => {
-      const permission = permissionMapping[map.attributes.name];
-      if (permission) {
-        children(map, 'permission-role').map((role) =>
-          mapWorkflowRole(role.text.trim()).map((nickRole) => {
-            permissions[nickRole] = [
-              ...new Set([...(permissions[nickRole] || []), permission]),
-            ];
-          }),
-        );
-      }
-    });
-    states[state.attributes.state_id] = {
-      title: state.attributes.title || state.attributes.state_id,
-      description: children(state, 'description')[0]?.text.trim() || '',
-      transitions: children(state, 'exit-transition').map(
-        (transition) => transition.attributes.transition_id,
-      ),
-      permissions,
-    };
-  });
-
-  children(workflow, 'transition').map((transition) => {
-    const guard = children(transition, 'guard')[0];
-    const permission = children(guard, 'guard-permission')
-      .map((element) => permissionMapping[element.text.trim()])
-      .find((element) => element);
-    const action = children(transition, 'action')[0]?.text.trim();
-    transitions[transition.attributes.transition_id] = {
-      title: action || transition.attributes.title,
-      description: children(transition, 'description')[0]?.text.trim() || '',
-      new_state: transition.attributes.new_state,
-      permission: permission || 'Manage Site',
-    };
-  });
-
-  return {
-    id: workflow.attributes.workflow_id,
-    title: workflow.attributes.title || workflow.attributes.workflow_id,
-    description: (workflow.attributes.description || '')
-      .replace(/\s+-\s+/g, ' ')
-      .trim(),
-    json: {
-      initial_state: workflow.attributes.initial_state,
-      states,
-      transitions,
-    },
-  };
-}
-
-/**
- * Get the workflow chains of the types from the GenericSetup
- * `workflows.xml`.
- * @method parseWorkflowBindings
- * @param {string} xml Workflow tool export.
- * @returns {Object} Default chain and chains by type, an empty chain means no workflow.
- */
-export function parseWorkflowBindings(xml: string): {
-  default: string[];
-  types: Record<string, string[]>;
-} {
-  const bindings = children(parseXml(xml), 'bindings')[0];
-  const chain = (element: XmlElement | undefined) =>
-    children(element, 'bound-workflow').map(
-      (workflow) => workflow.attributes.workflow_id,
-    );
-  return {
-    default: chain(children(bindings, 'default')[0]),
-    types: Object.fromEntries(
-      children(bindings, 'type').map((type) => [
-        type.attributes.type_id,
-        chain(type),
-      ]),
-    ),
-  };
-}
-
 /**
  * Get the state of a document of a type without workflow. Plone acquires
  * the permissions of the parent for those documents, so the state of the
@@ -595,7 +396,8 @@ export function getAcquiredState(workflow: any, parentState?: string): string {
  * Convert the workflow history of a document (the `history` of the
  * `@workflow` endpoint, oldest first) to Nick's workflow history. The
  * transition titles are taken from the workflow, the creation entry has no
- * action and the title `Create`.
+ * action and the title `Create`. Other workflow variables of the entries
+ * are kept.
  * @method convertWorkflowHistory
  * @param {Array} history Workflow history.
  * @param {Object} workflow Nick workflow of the document.
@@ -603,6 +405,16 @@ export function getAcquiredState(workflow: any, parentState?: string): string {
  */
 export function convertWorkflowHistory(history: any[], workflow?: any): any[] {
   return (history || []).map((entry) => ({
+    // Other workflow variables of the entry
+    ...omit(entry, [
+      'action',
+      'actor',
+      'comments',
+      'review_state',
+      'time',
+      'title',
+      'type',
+    ]),
     action: entry.action || null,
     actor: typeof entry.actor === 'object' ? entry.actor?.id : entry.actor,
     comments: entry.comments || '',

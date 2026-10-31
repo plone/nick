@@ -19,7 +19,6 @@ import {
   convertUid,
   convertUserList,
   convertVersions,
-  convertWorkflow,
   convertWorkflowHistory,
   exportBlobs,
   fetchAllBatches,
@@ -38,6 +37,7 @@ import {
   relativizeUrls,
   virtualGroups,
 } from '../src/helpers/export/export';
+import { convertDefinition } from '../src/helpers/dcworkflow/dcworkflow';
 import { stripI18n } from '../src/helpers/i18n/i18n';
 import { mapAsync } from '../src/helpers/utils/utils';
 import { omit } from 'es-toolkit/object';
@@ -225,10 +225,19 @@ const convertWorkflows = async (path: string, url: string, token: string) => {
   }
   const files = parseTar(gunzipSync(Buffer.from(await response.arrayBuffer())));
 
-  // Get workflows and bindings
+  // Get workflows (with guards, the id is the name of the directory) and
+  // bindings; what can't be converted is listed
+  const warnings: string[] = [];
   const workflows = Object.keys(files)
     .filter((file) => file.endsWith('/definition.xml'))
-    .map((file) => convertWorkflow(files[file]));
+    .map((file) => {
+      const converted = convertDefinition(
+        files[file],
+        file.split('/').slice(-2)[0],
+      );
+      warnings.push(...converted.warnings);
+      return converted.workflow;
+    });
   const bindings = parseWorkflowBindings(files['workflows.xml']);
   workflowInfo.workflows = Object.fromEntries(
     workflows.map((workflow) => [workflow.id, workflow]),
@@ -243,6 +252,7 @@ const convertWorkflows = async (path: string, url: string, token: string) => {
   );
 
   console.log('done!');
+  warnings.map((warning) => console.log(`  workflow ${warning}`));
 };
 
 /**
@@ -357,6 +367,10 @@ const convertTypes = async (
             }),
           },
           workflow: getTypeWorkflow(id),
+          // The whole chain when a type has more than one workflow
+          ...((workflowInfo.types[id] || []).length > 1
+            ? { workflows: workflowInfo.types[id] }
+            : {}),
         },
         null,
         2,

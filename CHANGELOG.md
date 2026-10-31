@@ -35,6 +35,11 @@
 
 ### Feature
 
+- Support several workflows per type (workflow chains, `workflows` in a type profile and `workflows.xml`, the new `type_workflow` table). Further workflows keep their state in the workflow status of the document, `@workflow` offers the transitions of all workflows like plone.restapi and takes a transition in the first workflow providing it, and the permissions of all states apply in turn. The export keeps the chains. Run `pnpm migrate` @martior
+- Add DCWorkflow worklists to workflows and the `@worklists` endpoint: the worklists the user passes the guard of, with the matching content they can view (by state and workflow variables, batched). The loader converts worklists @martior
+- Add DCWorkflow variables to workflows: `for_status` variables with default values and expressions, values set by states and expressions of transitions, stored with the history and in the new `document_workflow_status` table, `info_guard` (`review_history` hides the `@workflow` history like Plone) and `getInfoFor` in expressions. The loader converts variables and the export keeps them in the history. Run `pnpm migrate` @martior
+- Load Plone DCWorkflow definitions: `workflows/<id>/definition.xml` and `workflows.xml` bindings in a profile and `pnpm workflows:import`. The export from Plone uses the same loader, so migrated sites keep their guards (permissions, roles, groups, expressions), acquired permissions, hidden and automatic transitions. Adds the `Review Comments` permission for Reviewer and Administrator; run `pnpm seed:upgrade` (upgrade 1019) @martior
+- Add DCWorkflow guards to workflow transitions: one of a list of permissions, roles or groups and an expression, plus `manager_bypass`, `hidden` and automatic transitions. Expressions use a safe evaluator for the TALES subset of DCWorkflow definitions (`python:`, path, `not:`, `exists:`, `string:`); add-ons can provide content methods with `registerExpressionMethod`, and unsupported expressions are refused when a workflow is seeded @martior
 - Add the `host` setting (`BIND_HOST`) to listen on one address, for example `127.0.0.1` behind a reverse proxy, instead of on every interface @mpalomaki
 - Support range requests on `@@download`, so audio and video players can seek without downloading the file from the start @mpalomaki
 - Sort on `sortable_title` like Plone: case and accents are ignored and numbers are compared by value, so `Item 2` comes before `Item 10`; folder sorting on `sortable_title` does the same. Run `pnpm seed:upgrade` (upgrade 1017 recomputes the sortable titles in the catalog from the title metadata, no full reindex needed) @martior
@@ -428,6 +433,8 @@
 - Upgrade @formatjs/intl to 6.1.4 @robgietema
 - Upgrade express to 5.3.0 @robgietema
 - Reword the descriptions of the self-registration settings of the security control panel in Nick's own words @martior
+- Add a workflow conformance test: every state, transition and role of the standard Plone 6.2 workflows, loaded from their definition.xml, against a matrix captured from Plone 6.2 over HTTP. The GPL-licensed definitions are not included, the test reads them from the checkouts in `PLONE_WORKFLOWS_DIR` and is skipped without it @martior
+- Test the DCWorkflow loader, the workflow seed and `@worklists` with workflow definitions written for Nick instead of copies of Plone's (GPL-2.0) @martior
 - Upgraded dependencies @robgietema
 - Update node dependency requirement @robgietema
 - Split profiles in core and default @robgietema
@@ -490,6 +497,8 @@
 ### Documentation
 
 - Use the `default` profile instead of the old `examplecontent` name in the deployment docs and the Dockerfile, and say that the image installs the demo site with an `admin`/`admin` user without `PROFILES` @robgietema
+- Use a worklist of Nick's own in the workflow and `@worklists` examples @martior
+- Document that `checkPermission` in workflow expressions is a Nick extension, Plone's DCWorkflow guards don't have it @martior
 - Added documentation for AI support @robgietema
 - Rearranged documention into sections @robgietema
 - Use different documention theme @robgietema

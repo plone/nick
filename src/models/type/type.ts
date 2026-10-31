@@ -33,6 +33,9 @@ export class Type extends Model {
   declare description: string;
   declare allowed_content_types: string[];
   declare filter_content_types: string[];
+  declare workflow: string;
+  declare _workflow: any;
+  declare _chain?: any[];
 
   static collection: (typeof Model)['collection'] =
     TypeCollection as unknown as (typeof Model)['collection'];
@@ -50,6 +53,56 @@ export class Type extends Model {
         },
       },
     };
+  }
+
+  /**
+   * Fetch the workflow chain of the type: its workflow followed by the
+   * further workflows of the chain (`type_workflow`), like the chains of
+   * the Plone workflow tool. The chain is cached on the type.
+   * @method fetchChain
+   * @param {Knex.Transaction} trx Transaction object.
+   * @returns {Promise<Object[]>} Workflows, the first is the type's workflow.
+   */
+  async fetchChain(trx?: Knex.Transaction): Promise<any[]> {
+    const self: InstanceType<typeof Type> = this;
+    const Workflow = models.get('Workflow');
+    if (!self._workflow) {
+      await self.fetchRelated('_workflow', trx);
+    }
+    if (!self._chain) {
+      const rows = await (trx || Type.knex())('type_workflow')
+        .join('workflow', 'workflow.id', 'type_workflow.workflow')
+        .select('workflow.*')
+        .where('type_workflow.type', self.id)
+        .andWhere('type_workflow.position', '>', 0)
+        .andWhereNot('type_workflow.workflow', self.workflow)
+        .orderBy('type_workflow.position');
+      self._chain = rows.map((row: any) => Workflow.fromJson(row));
+    }
+    return [self._workflow, ...self._chain];
+  }
+
+  /**
+   * Set the workflow chain of the type; the first workflow becomes the
+   * type's workflow.
+   * @method setChain
+   * @param {string[]} chain Workflow ids.
+   * @param {Knex.Transaction} trx Transaction object.
+   */
+  async setChain(chain: string[], trx?: Knex.Transaction): Promise<void> {
+    const self: InstanceType<typeof Type> = this;
+    const knex = trx || Type.knex();
+    const ids = [...new Set(chain)];
+    if (ids.length === 0) {
+      throw new Error(`The workflow chain of ${self.id} is empty.`);
+    }
+    await self.update({ workflow: ids[0] }, trx);
+    await knex('type_workflow').where({ type: self.id }).delete();
+    await knex('type_workflow').insert(
+      ids.map((workflow, position) => ({ type: self.id, workflow, position })),
+    );
+    delete self._chain;
+    delete self._workflow;
   }
 
   /**

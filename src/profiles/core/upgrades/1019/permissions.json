@@ -1,0 +1,9 @@
+{
+  "purge": false,
+  "permissions": [
+    {
+      "id": "Review Comments",
+      "title:i18n": "Review Comments"
+    }
+  ]
+}

@@ -34,7 +34,7 @@ An add-on is an npm package that depends on `@plone/nick` and contains one or mo
 | `nick` field      | Description                                                                                                                     |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | `profiles`        | Directory of the profiles. Default: `profiles` next to the entry point of the package (`src/profiles` for `./src/index.ts`).    |
-| `migrations`      | Directory of the knex migrations of the package. They form the package's own migration chain.                                  |
+| `migrations`      | Directory of the knex migrations of the package. They form the package's own migration chain.                                   |
 | `schema`          | Postgres schema of the package's tables. Nick creates it (`create schema if not exists`) before it runs the package migrations. |
 | `migrationsTable` | Name of the migration ledger. Default: `knex_migrations_<package>`, like `knex_migrations_acme_nick_addon`.                     |
 
@@ -84,6 +84,7 @@ Deep imports like `@plone/nick/src/routes` still work, but they are **deprecated
 | Profiles and migrations  | `configuredProfiles`, `resolveProfiles`, `resolveProfile`, `resolvePackage`, `getProfiles`, `getPackages`, `readMetadata`, `initProfile`, `initProfiles`, `installProfiles`, `upgradeProfiles`, `migrateDatabase`, `migrateChain`, `migrationChains`, `migrationStatus`, `migrationTable`, `MigrationSource` |
 | Utilities                | `mapAsync`, `mapSync`, `uniqueId`, `stripI18n`, `Client`, `getApp` (the Express app, for tests)                                                                                                                                   |
 | Types                    | `Knex`, `Request`, `Route`, `View`, `Json`, `JsonObject`, `Params`, `Schema`, `Block`, `MiddlewareHandler`, `SeedHandler`, `Vocabulary`, `VocabularyTerm`, `VocabularyHandler`, `ScheduledJobAction`, `ScheduledJobContext`, `ContentRuleAction`, `ContentRuleCondition`, `ProfileMetadata`, `NickPackageConfig`, `ConfigSettings`, `DataMigration`, `BatchHandler`, `MigrationChain`, `PackageInfo`, `ProfileInfo` |
+| Workflows                | `registerExpressionMethod` (content methods for guard expressions, see [Workflows](/developer-guide/workflows#methods-of-add-ons)), type `ExpressionMethod`                                                                                                                                                                                                                                                                         |
 
 Control panels are profile data: add them as `controlpanels/<id>.json` in a profile, and read their settings with `getControlpanelSettings(id, trx)`.
 

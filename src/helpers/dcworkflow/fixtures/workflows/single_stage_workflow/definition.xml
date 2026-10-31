@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Test fixture of Nick, written for the DCWorkflow loader tests. -->
+<dc-workflow workflow_id="single_stage_workflow"
+             title="Single Stage"
+             description=""
+             initial_state="visible">
+
+  <permission>View</permission>
+  <permission>Modify portal content</permission>
+  <permission>Reply to item</permission>
+
+  <state state_id="visible" title="">
+    <permission-map name="View" acquired="True">
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Reply to item" acquired="False">
+      <permission-role>Member</permission-role>
+    </permission-map>
+  </state>
+
+</dc-workflow>

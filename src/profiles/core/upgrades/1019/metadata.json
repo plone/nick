@@ -1,0 +1,7 @@
+{
+  "id": "@plone/nick:core",
+  "title": "Nick Core",
+  "description": "Core functionality of Nick",
+  "version": 1019,
+  "upgrade": "Add the Review Comments permission for comment workflows."
+}

@@ -12,16 +12,17 @@ Types define the content types available in the system. Each type is defined by 
 
 A type JSON file has the following top-level fields:
 
-| Field                   | Type      | Default | Description                                                                                 |
-| ----------------------- | --------- | ------- | ------------------------------------------------------------------------------------------- |
-| `id`                    | `string`  | —       | Unique identifier for the type (e.g. `"Page"`, `"Event"`).                                  |
-| `title:i18n`            | `string`  | —       | Display name (the `:i18n` suffix enables translation).                                      |
-| `description:i18n`      | `string`  | `""`    | Optional description.                                                                       |
-| `global_allow`          | `boolean` | —       | Whether the type can be created globally.                                                   |
-| `filter_content_types`  | `boolean` | —       | When `true`, only types listed in `allowed_content_types` can be added as children.         |
-| `allowed_content_types` | `array`   | —       | List of type IDs allowed as children (only used when `filter_content_types` is `true`).     |
-| `schema`                | `object`  | —       | Schema definition including behaviors, fieldsets, properties, required fields, and layouts. |
-| `workflow`              | `string`  | —       | Default workflow ID for content of this type.                                               |
+| Field                   | Type      | Default | Description                                                                                                                             |
+| ----------------------- | --------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                    | `string`  | —       | Unique identifier for the type (e.g. `"Page"`, `"Event"`).                                                                              |
+| `title:i18n`            | `string`  | —       | Display name (the `:i18n` suffix enables translation).                                                                                  |
+| `description:i18n`      | `string`  | `""`    | Optional description.                                                                                                                   |
+| `global_allow`          | `boolean` | —       | Whether the type can be created globally.                                                                                               |
+| `filter_content_types`  | `boolean` | —       | When `true`, only types listed in `allowed_content_types` can be added as children.                                                     |
+| `allowed_content_types` | `array`   | —       | List of type IDs allowed as children (only used when `filter_content_types` is `true`).                                                 |
+| `schema`                | `object`  | —       | Schema definition including behaviors, fieldsets, properties, required fields, and layouts.                                             |
+| `workflow`              | `string`  | —       | Default workflow ID for content of this type.                                                                                           |
+| `workflows`             | `array`   | —       | Workflow chain: several workflows, see [Workflow chains](/developer-guide/workflows#workflow-chains). The first one becomes `workflow`. |
 
 ### Schema
 

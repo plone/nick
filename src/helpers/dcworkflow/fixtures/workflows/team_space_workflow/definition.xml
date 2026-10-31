@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Test fixture of Nick, written for the DCWorkflow loader tests. -->
+<dc-workflow workflow_id="team_space_workflow"
+             title="Team Space"
+             description="Spaces that start closed, are shared with the team and can be opened to everyone."
+             initial_state="closed"
+             manager_bypass="True">
+
+  <permission>View</permission>
+  <permission>Access contents information</permission>
+  <permission>Add portal content</permission>
+  <permission>Modify portal content</permission>
+
+  <state state_id="closed" title="Closed">
+    <description>Only the owner and the team leads.</description>
+    <exit-transition transition_id="share" />
+    <permission-map name="View" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="team" title="Shared with the team">
+    <description>Every logged-in member.</description>
+    <exit-transition transition_id="open_up" />
+    <exit-transition transition_id="close" />
+    <permission-map name="View" acquired="False">
+      <permission-role>Member</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="False">
+      <permission-role>Member</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="open" title="Open">
+    <description>Visible like its parent and to anonymous visitors.</description>
+    <exit-transition transition_id="close" />
+    <exit-transition transition_id="share" />
+    <permission-map name="View" acquired="True">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="Add portal content" acquired="True">
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+  </state>
+
+  <transition transition_id="share" title="Share" new_state="team"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Share with the team</action>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="open_up" title="Open up" new_state="open"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Open to everyone</action>
+    <guard>
+      <guard-role>Manager</guard-role>
+      <guard-group>Administrators</guard-group>
+    </guard>
+  </transition>
+
+  <transition transition_id="close" title="Close" new_state="closed"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Close</action>
+    <guard>
+      <guard-permission>Modify portal content</guard-permission>
+      <guard-role>Owner</guard-role>
+    </guard>
+  </transition>
+
+</dc-workflow>

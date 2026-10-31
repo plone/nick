@@ -78,6 +78,8 @@ export interface User extends Model {
 
 export interface Request extends express.Request {
   permissions: string[];
+  // Roles of the user on the document: global, local and Owner
+  roles?: string[];
   apiPath: string;
   document: any;
   documentPath: string;
@@ -112,16 +114,71 @@ export interface WorkflowState {
   permissions: { [key: string]: WorkflowPermission };
   acquire?: string[];
   transitions: string[];
+  // Values of workflow variables set when the state is entered
+  variables?: { [key: string]: any };
 }
 
 export type WorkflowPermission = string[];
 
+/**
+ * Guard of a transition (or worklist, variable), like DCWorkflow: one of
+ * the permissions, one of the roles, one of the groups and a true
+ * expression. Empty or missing parts are not checked.
+ */
+export interface WorkflowGuard {
+  permissions?: string[];
+  roles?: string[];
+  groups?: string[];
+  expr?: string;
+  // Set by the definition.xml loader when the expression is not supported
+  unsupported?: string;
+}
+
 export interface WorkflowTransition {
-  [key: string]: {
-    title: string;
-    new_state: string;
-    permission: string;
-  };
+  title: string;
+  description?: string;
+  // An empty new state stays in the current state
+  new_state: string;
+  // Shorthand for a guard with one permission
+  permission?: string;
+  guard?: WorkflowGuard;
+  // Automatic transitions are taken when their guard passes
+  trigger?: 'user' | 'automatic';
+  // Hidden transitions are not offered in @workflow (no action in DCWorkflow)
+  hidden?: boolean;
+  // Expressions setting workflow variables
+  variables?: { [key: string]: string };
+}
+
+/**
+ * Workflow variable, like a DCWorkflow variable. Variables `for_status`
+ * are stored with every transition (in the history entry and the workflow
+ * status of the document).
+ */
+export interface WorkflowVariable {
+  description?: string;
+  default_value?: any;
+  default_expr?: string;
+  for_catalog?: boolean;
+  for_status?: boolean;
+  update_always?: boolean;
+  // Who may read the variable (getInfoFor, the history of @workflow)
+  info_guard?: WorkflowGuard;
+  // Set by the definition.xml loader when an expression is not supported
+  unsupported?: string;
+}
+
+/**
+ * Worklist, like a DCWorkflow worklist: the content of the types of the
+ * workflow whose variables match (`review_state` or other variables), for
+ * users who pass the guard on the site root.
+ */
+export interface WorkflowWorklist {
+  title?: string;
+  description?: string;
+  match: { [key: string]: string[] };
+  guard?: WorkflowGuard;
+  action?: { name?: string; url?: string; category?: string };
 }
 
 export type PermissionModel = 'additive' | 'acquire';
@@ -129,7 +186,10 @@ export type PermissionModel = 'additive' | 'acquire';
 export interface WorkflowType {
   permission_model?: PermissionModel;
   managed_permissions?: string[];
+  manager_bypass?: boolean;
   initial_state?: string;
+  variables?: { [key: string]: WorkflowVariable };
+  worklists?: { [key: string]: WorkflowWorklist };
   states: { [key: string]: WorkflowState };
   transitions: { [key: string]: WorkflowTransition };
 }

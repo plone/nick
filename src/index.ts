@@ -45,6 +45,12 @@ export { log } from './helpers/log/log';
 export { RequestException } from './helpers/error/error';
 export { getPath, getRootUrl, getUrl, getUrlByPath } from './helpers/url/url';
 export { hasPermission } from './helpers/auth/auth';
+
+// Workflow expressions
+export {
+  type ExpressionMethod,
+  registerExpressionMethod,
+} from './helpers/expression/expression';
 export { getControlpanelSettings } from './helpers/controlpanels/controlpanels';
 
 // Jobs and data migrations

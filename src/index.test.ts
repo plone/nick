@@ -72,6 +72,7 @@ describe('Public API', () => {
       'queueDataMigration',
       'readMetadata',
       'registerDataMigration',
+      'registerExpressionMethod',
       'resolvePackage',
       'resolveProfile',
       'resolveProfiles',

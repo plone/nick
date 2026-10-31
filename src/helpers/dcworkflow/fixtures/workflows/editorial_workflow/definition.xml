@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Test fixture of Nick, written for the DCWorkflow loader tests. -->
+<dc-workflow xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+             workflow_id="editorial_workflow"
+             title="Editorial Desk"
+             description=" - Newsroom flow &amp; archive. - Authors write drafts, editors approve them for the live site. - Old stories go to the archive."
+             state_variable="review_state"
+             initial_state="draft"
+             i18n:domain="nick"
+             i18n:attributes="title; description">
+
+  <permission>View</permission>
+  <permission>Access contents information</permission>
+  <permission>Modify portal content</permission>
+  <permission>Delete objects</permission>
+
+  <state state_id="draft" title="Draft" i18n:attributes="title">
+    <description>Being written; only the author and the desk see it.</description>
+    <exit-transition transition_id="propose" />
+    <exit-transition transition_id="add_note" />
+    <exit-transition transition_id="refresh_index" />
+    <exit-transition transition_id="print_preview" />
+    <permission-map name="View" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Manager</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <assignment name="stage" type="string">writing</assignment>
+    <assignment name="priority" type="int">3</assignment>
+  </state>
+
+  <state state_id="in_review" title="With the desk" i18n:attributes="title">
+    <description>An editor checks the story.</description>
+    <exit-transition transition_id="approve" />
+    <exit-transition transition_id="send_back" />
+    <exit-transition transition_id="withdraw" />
+    <exit-transition transition_id="add_note" />
+    <permission-map name="View" acquired="False">
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="True">
+    </permission-map>
+    <assignment name="stage" type="string">checking</assignment>
+    <assignment name="flagged" type="bool">yes</assignment>
+  </state>
+
+  <state state_id="live" title="On the site" i18n:attributes="title">
+    <description>Public.</description>
+    <exit-transition transition_id="unpublish" />
+    <exit-transition transition_id="archive" />
+    <exit-transition transition_id="expire" />
+    <permission-map name="View" acquired="False">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Editor</permission-role>
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <permission-map name="Delete objects" acquired="False">
+      <permission-role>Manager</permission-role>
+    </permission-map>
+    <assignment name="weight" type="float">0.5</assignment>
+    <assignment name="embargo" type="none"></assignment>
+  </state>
+
+  <state state_id="archived" title="Archive" i18n:attributes="title">
+    <exit-transition transition_id="restore" />
+    <permission-map name="View" acquired="True">
+      <permission-role>Member</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+    </permission-map>
+  </state>
+
+  <transition transition_id="propose" title="Author hands in" new_state="in_review"
+              trigger="USER" before_script="" after_script="">
+    <action url="%(content_url)s/content_status_modify?workflow_action=propose"
+            category="workflow" icon="">Hand in to the desk</action>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+    </guard>
+    <assignment name="handed_in_by">python:user.getId()</assignment>
+  </transition>
+
+  <transition transition_id="approve" title="Editor approves" new_state="live"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Approve</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="send_back" title="Editor sends back" new_state="draft"
+              trigger="USER" before_script="" after_script="">
+    <description>Back to the author with remarks.</description>
+    <action url="" category="workflow" icon="">Send back</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="withdraw" title="Author withdraws" new_state="draft"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Withdraw</action>
+    <guard>
+      <guard-role>Owner</guard-role>
+    </guard>
+  </transition>
+
+  <transition transition_id="unpublish" title="Take offline" new_state="draft"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Take offline</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="archive" title="Archive" new_state="archived"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Move to the archive</action>
+    <guard>
+      <guard-role>Manager</guard-role>
+      <guard-role>Site Administrator</guard-role>
+      <guard-group>archivists</guard-group>
+    </guard>
+  </transition>
+
+  <transition transition_id="restore" title="Restore" new_state="draft"
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Restore as draft</action>
+    <guard>
+      <guard-expression>python:user.has_permission('Modify portal content', here) or 'Editor' in user.getRolesInContext(here)</guard-expression>
+    </guard>
+  </transition>
+
+  <transition transition_id="add_note" title="Add a note" new_state=""
+              trigger="USER" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Add a desk note</action>
+    <guard>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="expire" title="Expire" new_state="archived"
+              trigger="AUTOMATIC" before_script="" after_script="">
+    <guard>
+      <guard-expression>python:getattr(here, 'expires', None) is not None</guard-expression>
+    </guard>
+  </transition>
+
+  <transition transition_id="refresh_index" title="Refresh" new_state=""
+              trigger="WORKFLOW" before_script="" after_script="">
+    <action url="" category="workflow" icon="">Refresh</action>
+  </transition>
+
+  <transition transition_id="print_preview" title="Print preview" new_state=""
+              trigger="USER" before_script="" after_script="">
+    <action url="%(content_url)s/print" category="object_buttons" icon="">Print preview</action>
+    <guard>
+    </guard>
+  </transition>
+
+  <worklist worklist_id="desk_inbox" title="">
+    <description>Stories for the desk</description>
+    <action url="%(portal_url)s/search?review_state=in_review" category="global"
+            icon="">Desk (%(count)d)</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+    <match name="review_state" values="in_review" />
+  </worklist>
+
+  <worklist worklist_id="urgent_drafts" title="Urgent drafts">
+    <match name="review_state" values="draft" />
+    <match name="stage" values="writing; checking" />
+  </worklist>
+
+  <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
+    <description>Transition taken</description>
+    <default>
+      <expression>transition/getId|nothing</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+
+  <variable variable_id="actor" for_catalog="False" for_status="True" update_always="True">
+    <description>Who did it</description>
+    <default>
+      <expression>python:user.getId()</expression>
+    </default>
+    <guard>
+    </guard>
+  </variable>
+
+  <variable variable_id="review_history" for_catalog="False" for_status="False" update_always="False">
+    <description>Earlier steps</description>
+    <default>
+      <expression>state_change/getHistory</expression>
+    </default>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+      <guard-role>Owner</guard-role>
+    </guard>
+  </variable>
+
+  <variable variable_id="stage" for_catalog="True" for_status="True" update_always="False">
+    <description>Desk stage</description>
+    <default>
+      <value type="string">writing</value>
+    </default>
+  </variable>
+
+  <variable variable_id="priority" for_catalog="False" for_status="True" update_always="False">
+    <default>
+      <value type="int">5</value>
+    </default>
+  </variable>
+
+  <variable variable_id="handed_in_by" for_catalog="False" for_status="True" update_always="False">
+    <default>
+      <value type="string"></value>
+    </default>
+  </variable>
+
+</dc-workflow>

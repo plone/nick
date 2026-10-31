@@ -16,6 +16,7 @@ import { pick } from 'es-toolkit/object';
 import { hasPermission } from '../../helpers/auth/auth';
 import { RequestException } from '../../helpers/error/error';
 import { mapAsync } from '../../helpers/utils/utils';
+import { checkGuard } from '../../helpers/workflow/workflow';
 
 dayjs.extend(utc);
 
@@ -36,7 +37,13 @@ async function checkChildren(
 ): Promise<void> {
   await document.fetchChildren({}, trx, false);
   await mapAsync(document._children, async (child: any) => {
-    const check = await child.checkTransition(transition, req.user, trx);
+    const check = await child.checkTransition(
+      transition,
+      req.user,
+      trx,
+      undefined,
+      req,
+    );
     if (check !== 'apply' && check !== 'same') {
       throw new RequestException(400, {
         error: {
@@ -53,9 +60,45 @@ async function checkChildren(
 }
 
 export const handler = async (req: Request, trx: Knex.Transaction) => {
-  await req.type.fetchRelated('_workflow', trx);
+  const context = {
+    document: req.document,
+    user: req.user,
+    trx,
+    req,
+    roles: req.roles,
+    permissions: req.permissions,
+  };
+
+  // The transitions of all workflows of the chain, like listActionInfos
+  const chain: { workflow: any; state: string }[] =
+    await req.document.fetchWorkflowChain(trx);
+  const transitions: { id: string; title: string }[] = [];
+  for (const { workflow, state } of chain) {
+    for (const id of await workflow.getAvailableTransitions(state, context)) {
+      if (!transitions.some((transition) => transition.id === id)) {
+        transitions.push({ id, title: workflow.json.transitions[id].title });
+      }
+    }
+  }
+
+  // The history is the review_history of the first workflow which has it
+  // (the first workflow without variables), hidden from users who don't
+  // pass its info guard, like in Plone
+  const history =
+    chain.find(({ workflow }: any) => workflow.json.variables?.review_history)
+      ?.workflow ||
+    chain.find(({ workflow }: any) => !workflow.json.variables)?.workflow ||
+    chain[0].workflow;
+  const historyGuard = history.json.variables?.review_history?.info_guard;
+  const showHistory =
+    !historyGuard ||
+    (await checkGuard(historyGuard, { ...context, workflow: history }));
   return {
-    json: req.type._workflow.toJson(req),
+    json: chain[0].workflow.toJson(req, transitions, {
+      show: showHistory,
+      workflow: history,
+      primary: chain[0].workflow.id,
+    }),
   };
 };
 
@@ -87,13 +130,17 @@ export default [
       await req.document.lockForUpdate(trx);
       const transition = req.params.transition;
 
-      // Check the transition against the current state and the permissions
-      const check = await req.document.checkTransition(
+      // Check the transition against the current states and the guards of
+      // the workflows of the chain
+      const found = await req.document.findTransition(
         transition,
         req.user,
         trx,
         req.permissions,
+        req,
+        req.roles,
       );
+      const check = found.check;
       if (check === 'unknown' || check === 'unavailable') {
         throw new RequestException(400, {
           error: {
@@ -130,10 +177,15 @@ export default [
 
       // Return the last transition if the document is already in the new state
       if (check === 'same' && !recursive) {
+        const primary = found.workflow.id === req.type._workflow.id;
         const last: any = req.document.workflow_history
-          .filter((item: any) => !item.type || item.type === 'workflow')
+          .filter(
+            (item: any) =>
+              (!item.type || item.type === 'workflow') &&
+              (primary ? !item.workflow : item.workflow === found.workflow.id),
+          )
           .pop();
-        const state = req.document.workflow_state;
+        const state = found.state as string;
         return {
           json: {
             action: last?.action || null,
@@ -141,15 +193,15 @@ export default [
             comments: last?.comments || '',
             review_state: state,
             time: last?.time || req.document.modified,
-            title: req.i18n(req.type._workflow.json.states[state]?.title),
+            title: req.i18n(found.workflow.json.states[state]?.title),
           },
           xkeys: [req.document.uuid],
         };
       }
 
-      // Get new state and modified timestamp
+      // Get new state (an empty new state stays) and modified timestamp
       const new_state =
-        req.type._workflow.json.transitions[req.params.transition].new_state;
+        found.workflow.json.transitions[transition].new_state || found.state;
       const modified = dayjs.utc().format();
 
       // Change workflow
@@ -171,7 +223,7 @@ export default [
           comments: comment,
           review_state: new_state,
           time: modified,
-          title: req.type._workflow.json.states[new_state].title,
+          title: found.workflow.json.states[new_state].title,
         },
         xkeys: [req.document.uuid],
       };

@@ -76,7 +76,8 @@
     "rollback": "pnpm knex migrate:rollback --all",
     "reset": "pnpm rollback && pnpm migrate && pnpm seed",
     "test": "AUTH_RATE_LIMIT=1000 vitest",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "workflows:import": "tsx scripts/workflows.ts"
   },
   "engines": {
     "node": "^22 || ^24 || ^25 || ^26"

@@ -1,0 +1,953 @@
+{
+  "captured": "2026-10-16",
+  "generated": {
+    "how": "DCWorkflow semantics from definition.xml and the rolemaps of Products.CMFPlone and plone.app.discussion; acquired permissions come from a published Page (simple_publication_workflow); not installed on the reference site",
+    "workflows": ["comment_review_workflow", "comment_one_state_workflow"]
+  },
+  "roles": [
+    "Anonymous",
+    "Member",
+    "Owner",
+    "Reader",
+    "Contributor",
+    "Editor",
+    "Reviewer",
+    "Site Administrator",
+    "Manager"
+  ],
+  "source": "http://127.0.0.1:18640/plone (Plone 6.2, GET @workflow per role)",
+  "workflows": {
+    "comment_one_state_workflow": {
+      "states": {
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": [],
+            "status": 200
+          },
+          "Manager": {
+            "available": [],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": [],
+            "status": 200
+          }
+        }
+      },
+      "transitions": []
+    },
+    "comment_review_workflow": {
+      "states": {
+        "pending": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 401
+          },
+          "Editor": {
+            "available": [],
+            "status": 401
+          },
+          "Manager": {
+            "available": ["mark_as_spam", "publish", "reject"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 401
+          },
+          "Reviewer": {
+            "available": ["mark_as_spam", "publish", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["mark_as_spam", "publish", "reject"],
+            "status": 200
+          }
+        },
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": [],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["mark_as_spam", "recall", "reject"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["mark_as_spam", "recall", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["mark_as_spam", "recall", "reject"],
+            "status": 200
+          }
+        },
+        "rejected": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": [],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["mark_as_spam", "publish", "recall"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["mark_as_spam", "publish", "recall"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["mark_as_spam", "publish", "recall"],
+            "status": 200
+          }
+        },
+        "spam": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": [],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["publish", "recall", "reject"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish", "recall", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["publish", "recall", "reject"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": ["mark_as_spam", "publish", "recall", "reject"]
+    },
+    "folder_workflow": {
+      "states": {
+        "private": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["publish", "show"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["publish", "show"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["publish", "show"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 401
+          },
+          "Site Administrator": {
+            "available": ["publish", "show"],
+            "status": 200
+          }
+        },
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["hide", "retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["hide", "retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide", "retract"],
+            "status": 200
+          }
+        },
+        "visible": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["hide", "publish"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide", "publish"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["hide", "publish"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide", "publish"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": ["hide", "publish", "retract", "show"]
+    },
+    "intranet_folder_workflow": {
+      "states": {
+        "internal": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["hide"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["hide"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide"],
+            "status": 200
+          }
+        },
+        "private": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 401
+          },
+          "Site Administrator": {
+            "available": ["show_internally"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": ["hide", "show_internally"]
+    },
+    "intranet_workflow": {
+      "states": {
+        "external": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["retract"],
+            "status": 200
+          }
+        },
+        "internal": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["hide", "submit"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide", "publish_internally", "submit"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["hide", "submit"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish_internally"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide", "publish_internally", "submit"],
+            "status": 200
+          }
+        },
+        "internally_published": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["publish_externally", "reject", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish_externally", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["publish_externally", "reject", "retract"],
+            "status": 200
+          }
+        },
+        "pending": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": [
+              "publish_externally",
+              "publish_internally",
+              "reject",
+              "retract"
+            ],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish_externally", "publish_internally", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": [
+              "publish_externally",
+              "publish_internally",
+              "reject",
+              "retract"
+            ],
+            "status": 200
+          }
+        },
+        "private": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["show_internally"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 401
+          },
+          "Site Administrator": {
+            "available": ["show_internally"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": [
+        "hide",
+        "publish_externally",
+        "publish_internally",
+        "reject",
+        "retract",
+        "show_internally",
+        "submit"
+      ]
+    },
+    "one_state_workflow": {
+      "states": {
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": [],
+            "status": 200
+          },
+          "Manager": {
+            "available": [],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": [],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": [],
+            "status": 200
+          }
+        }
+      },
+      "transitions": []
+    },
+    "plone_workflow": {
+      "states": {
+        "pending": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide", "publish", "reject", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["hide", "publish", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide", "publish", "reject", "retract"],
+            "status": 200
+          }
+        },
+        "private": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["show"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["show"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["show"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 401
+          },
+          "Site Administrator": {
+            "available": ["show"],
+            "status": 200
+          }
+        },
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["reject", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["reject", "retract"],
+            "status": 200
+          }
+        },
+        "visible": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["hide", "submit"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["hide", "publish", "submit"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["hide", "submit"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["hide", "publish", "submit"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": ["hide", "publish", "reject", "retract", "show", "submit"]
+    },
+    "simple_publication_workflow": {
+      "states": {
+        "pending": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["publish", "reject", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["publish", "reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["publish", "reject", "retract"],
+            "status": 200
+          }
+        },
+        "private": {
+          "Anonymous": {
+            "available": [],
+            "status": 401
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["submit"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["publish", "submit"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 401
+          },
+          "Owner": {
+            "available": ["submit"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": [],
+            "status": 401
+          },
+          "Site Administrator": {
+            "available": ["publish", "submit"],
+            "status": 200
+          }
+        },
+        "published": {
+          "Anonymous": {
+            "available": [],
+            "status": 200
+          },
+          "Contributor": {
+            "available": [],
+            "status": 200
+          },
+          "Editor": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Manager": {
+            "available": ["reject", "retract"],
+            "status": 200
+          },
+          "Member": {
+            "available": [],
+            "status": 200
+          },
+          "Owner": {
+            "available": ["retract"],
+            "status": 200
+          },
+          "Reader": {
+            "available": [],
+            "status": 200
+          },
+          "Reviewer": {
+            "available": ["reject"],
+            "status": 200
+          },
+          "Site Administrator": {
+            "available": ["reject", "retract"],
+            "status": 200
+          }
+        }
+      },
+      "transitions": ["publish", "reject", "retract", "submit"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "purge": false,
+  "roles": [
+    {
+      "id": "Reviewer",
+      "title:i18n": "Reviewer",
+      "permissions": ["Review Comments"]
+    },
+    {
+      "id": "Administrator",
+      "title:i18n": "Administrator",
+      "permissions": ["Review Comments"]
+    }
+  ]
+}

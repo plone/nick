@@ -1074,6 +1074,9 @@ export default [
       // Apply behaviors
       await document.applyBehaviors(trx);
 
+      // Set the variables of the workflow
+      await document.initWorkflowStatus(req.user, trx, req);
+
       // Create initial version
       await document.createRelated(
         '_versions',

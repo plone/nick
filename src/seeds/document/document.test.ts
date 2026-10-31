@@ -132,4 +132,51 @@ describe('seedDocument', () => {
     const b = await Document.fetchOne({ path: '/news/b' }, {}, global.txn!);
     expect([a.position_in_parent, b.position_in_parent]).toEqual([1, 0]);
   });
+
+  it('restores the workflow variables', async () => {
+    const Document = models.get('Document');
+    const Workflow = models.get('Workflow');
+    const workflow = await Workflow.fetchById(
+      'simple_publication_workflow',
+      {},
+      global.txn!,
+    );
+    await workflow.update(
+      {
+        json: {
+          ...workflow.json,
+          variables: { reviewer: { for_status: true, default_value: '' } },
+        },
+      },
+      global.txn!,
+    );
+    profile = writeProfile({
+      'variables.json': {
+        uuid: '5b5e1c3e-2c6a-4f7e-9b1a-3f0d4a2c1e09',
+        type: 'Page',
+        title: 'Variables',
+        workflow_state: 'pending',
+        workflow_history: [
+          { action: null, actor: 'admin', review_state: 'private' },
+          {
+            action: 'submit',
+            actor: 'admin',
+            review_state: 'pending',
+            reviewer: 'jane',
+          },
+        ],
+      },
+    });
+
+    await seedDocument(global.txn!, profile);
+
+    const document = await Document.fetchOne(
+      { path: '/variables' },
+      {},
+      global.txn!,
+    );
+    expect(
+      await document.fetchWorkflowStatus('simple_publication_workflow'),
+    ).toEqual({ state: 'pending', variables: { reviewer: 'jane' } });
+  });
 });

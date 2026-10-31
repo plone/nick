@@ -135,7 +135,8 @@ msgid "Adds title and description fields."
 msgstr "Додава полиња за наслов и опис."
 
 #. Default: "Administrator"
-#: src/profiles/core/roles.json:64
+#: src/profiles/core/roles.json:70
+#: src/profiles/core/upgrades/1019/roles.json:11
 #: src/profiles/core/upgrades/1012/roles.json:26
 #: src/profiles/core/upgrades/1011/roles.json:16
 #: src/profiles/core/upgrades/1010/roles.json:21
@@ -208,7 +209,7 @@ msgid "After today"
 msgstr "По денес"
 
 #. Default: "Allowed Content Types"
-#: src/models/type/type.ts:158
+#: src/models/type/type.ts:211
 msgctxt "Models|Type"
 msgid "Allowed Content Types"
 msgstr "Дозволени типови на содржина"
@@ -417,7 +418,7 @@ msgid "Before today"
 msgstr "Пред денес"
 
 #. Default: "Behaviors"
-#: src/models/type/type.ts:141
+#: src/models/type/type.ts:194
 msgctxt "Models|Type"
 msgid "Behaviors"
 msgstr "Однесувања"
@@ -472,7 +473,7 @@ msgid "Change Note"
 msgstr "Белешка за промена"
 
 #. Default: "Client/server ordering mismatch."
-#: src/routes/content/content.ts:1160
+#: src/routes/content/content.ts:1163
 msgctxt "Routes|Content"
 msgid "Client/server ordering mismatch."
 msgstr ""
@@ -757,7 +758,7 @@ msgid "Delete the triggering item"
 msgstr ""
 
 #. Default: "Description"
-#: src/models/type/type.ts:165
+#: src/models/type/type.ts:218
 #: src/profiles/core/catalog.json:233
 #: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
@@ -804,11 +805,11 @@ msgid "Document copied"
 msgstr ""
 
 #. Default: "Document locked"
-#: src/routes/workflow/workflow.ts:121
+#: src/routes/workflow/workflow.ts:168
 #: src/routes/history/history.ts:84
 #: src/routes/content/content.ts:283
-#: src/routes/content/content.ts:1226
-#: src/routes/content/content.ts:1397
+#: src/routes/content/content.ts:1229
+#: src/routes/content/content.ts:1400
 msgctxt "Routes|Workflow"
 msgid "Document locked"
 msgstr ""
@@ -1082,7 +1083,7 @@ msgid "File extension is {extension}"
 msgstr ""
 
 #. Default: "Filter Contained Types"
-#: src/models/type/type.ts:171
+#: src/models/type/type.ts:224
 msgctxt "Models|Type"
 msgid "Filter Contained Types"
 msgstr "Филтрирај содржани типови"
@@ -1256,7 +1257,7 @@ msgid "Invalid credentials"
 msgstr "Невалидни акредитиви"
 
 #. Default: "Invalid date for {field}."
-#: src/routes/workflow/workflow.ts:79
+#: src/routes/workflow/workflow.ts:122
 msgctxt "Routes|Workflow"
 msgid "Invalid date for {field}."
 msgstr ""
@@ -1307,7 +1308,7 @@ msgid "Is"
 msgstr "Е"
 
 #. Default: "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
-#: src/models/type/type.ts:172
+#: src/models/type/type.ts:225
 msgctxt "Models|Type"
 msgid "Items of this type can act as a folder containing other items. What content types should be allowed inside?"
 msgstr "Ставките од овој тип може да служат како папка со други ставки. Кои типови на содржина треба да бидат дозволени внатре?"
@@ -1720,7 +1721,7 @@ msgid "No query supplied."
 msgstr ""
 
 #. Default: "No transition specified."
-#: src/routes/workflow/workflow.ts:187
+#: src/routes/workflow/workflow.ts:239
 msgctxt "Routes|Workflow"
 msgid "No transition specified."
 msgstr ""
@@ -1831,7 +1832,7 @@ msgid "Object is of wrong type."
 msgstr ""
 
 #. Default: "Object “{id}” is locked."
-#: src/routes/content/content.ts:1394
+#: src/routes/content/content.ts:1397
 msgctxt "Routes|Content"
 msgid "Object “{id}” is locked."
 msgstr ""
@@ -2237,9 +2238,9 @@ msgid "Required input is missing."
 msgstr ""
 
 #. Default: "Resource is locked."
-#: src/routes/workflow/workflow.ts:120
+#: src/routes/workflow/workflow.ts:167
 #: src/routes/content/content.ts:282
-#: src/routes/content/content.ts:1225
+#: src/routes/content/content.ts:1228
 msgctxt "Routes|Workflow"
 msgid "Resource is locked."
 msgstr ""
@@ -2263,6 +2264,13 @@ msgctxt "Profiles|Core|Permissions"
 msgid "Review"
 msgstr "Рецензирај"
 
+#. Default: "Review Comments"
+#: src/profiles/core/permissions.json:94
+#: src/profiles/core/upgrades/1019/permissions.json:6
+msgctxt "Profiles|Core|Permissions"
+msgid "Review Comments"
+msgstr ""
+
 #. Default: "Review state"
 #: src/profiles/core/catalog.json:495
 msgctxt "Profiles|Core|Catalog"
@@ -2271,6 +2279,7 @@ msgstr "Статус на рецензија"
 
 #. Default: "Reviewer"
 #: src/profiles/core/roles.json:59
+#: src/profiles/core/upgrades/1019/roles.json:6
 #: src/profiles/core/upgrades/1012/roles.json:21
 #: src/profiles/core/upgrades/1010/roles.json:16
 #: src/profiles/core/upgrades/1002/roles.json:21
@@ -2716,7 +2725,7 @@ msgid "The date an item was created"
 msgstr "Датумот кога ставката е создадена"
 
 #. Default: "The delta has to be top, bottom or an integer."
-#: src/routes/content/content.ts:1188
+#: src/routes/content/content.ts:1191
 msgctxt "Routes|Content"
 msgid "The delta has to be top, bottom or an integer."
 msgstr ""
@@ -2772,13 +2781,13 @@ msgstr ""
 
 #. Default: "The id “{id}” is invalid."
 #: src/routes/content/content.ts:922
-#: src/routes/content/content.ts:1244
+#: src/routes/content/content.ts:1247
 msgctxt "Routes|Content"
 msgid "The id “{id}” is invalid."
 msgstr ""
 
 #. Default: "The item “{id}” is not found."
-#: src/routes/content/content.ts:1176
+#: src/routes/content/content.ts:1179
 msgctxt "Routes|Content"
 msgid "The item “{id}” is not found."
 msgstr ""
@@ -3055,13 +3064,13 @@ msgid "Transition workflow state"
 msgstr ""
 
 #. Default: "Transition {transition} is not available for {path}."
-#: src/routes/workflow/workflow.ts:44
+#: src/routes/workflow/workflow.ts:51
 msgctxt "Routes|Workflow"
 msgid "Transition {transition} is not available for {path}."
 msgstr ""
 
 #. Default: "Transition {transition} is not available in the current state."
-#: src/routes/workflow/workflow.ts:101
+#: src/routes/workflow/workflow.ts:148
 msgctxt "Routes|Workflow"
 msgid "Transition {transition} is not available in the current state."
 msgstr ""
@@ -3085,7 +3094,7 @@ msgid "Type"
 msgstr "Тип"
 
 #. Default: "Type Name"
-#: src/models/type/type.ts:180
+#: src/models/type/type.ts:233
 msgctxt "Models|Type"
 msgid "Type Name"
 msgstr "Име на типот"
@@ -3393,7 +3402,7 @@ msgid "You are not allowed to set roles or groups."
 msgstr ""
 
 #. Default: "You are not authorization to access this resource."
-#: src/routes/workflow/workflow.ts:110
+#: src/routes/workflow/workflow.ts:157
 msgctxt "Routes|Workflow"
 msgid "You are not authorization to access this resource."
 msgstr "Немате овластување за пристап до овој ресурс."
@@ -3420,7 +3429,7 @@ msgstr ""
 #: src/routes/content/content.ts:272
 #: src/routes/comments/comments.ts:54
 #: src/routes/aliases/aliases.ts:43
-#: src/helpers/handler/handler.ts:120
+#: src/helpers/handler/handler.ts:122
 msgctxt "Routes|Users"
 msgid "You are not authorized to access this resource."
 msgstr ""
