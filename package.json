@@ -106,7 +106,7 @@
     "eslint": "10.13.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.7",
-    "glob": "13.0.6",
+    "glob": "14.0.3",
     "jiti": "2.7.0",
     "nodemon": "3.1.14",
     "pofile": "1.1.4",
