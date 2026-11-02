@@ -86,7 +86,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@babel/core": "8.0.9",
+    "@babel/core": "8.0.10",
     "@babel/plugin-transform-typescript": "8.0.6",
     "@eslint/eslintrc": "3.3.7",
     "@eslint/js": "10.0.1",
