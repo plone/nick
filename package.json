@@ -118,7 +118,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "3.1157.0",
-    "@formatjs/cli": "6.16.35",
+    "@formatjs/cli": "6.16.36",
     "@formatjs/intl": "6.1.4",
     "bcrypt": "6.0.0",
     "bcrypt-promise": "2.0.0",
