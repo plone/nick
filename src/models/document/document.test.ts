@@ -527,6 +527,19 @@ describe('Document', () => {
       value: [{ type: 'p', children: [{ text }] }],
       plaintext: text,
     });
+    const somersault = {
+      '@type': '__somersault__',
+      value: [
+        { type: 'title', children: [{ text: 'Plate page' }] },
+        { type: 'p', children: [{ text: 'Somersault text' }] },
+        {
+          type: 'ploneBlock',
+          '@type': 'teaser',
+          href: [{ '@id': '/news' }],
+          children: [{ text: '' }],
+        },
+      ],
+    };
     let count = 0;
     const create = async (id: string, json: any) => {
       count += 1;
@@ -540,6 +553,27 @@ describe('Document', () => {
         { json: { title: id, ...json } },
       );
     };
+
+    it('should index a somersault document with a stale layout', async () => {
+      const document = await create('plate', {
+        blocks: { __somersault__: somersault },
+        blocks_layout: { items: ['title-uuid', 'slate-uuid'] },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
+      expect(await document.searchableText()).toBe('plate Somersault text');
+      expect(document.getBlockTypes()).toEqual(['__somersault__', 'teaser']);
+    });
+
+    it('should only use the somersault document when there is one', async () => {
+      const document = await create('plate-and-legacy', {
+        blocks: { __somersault__: somersault, legacy: slate('Legacy text') },
+        blocks_layout: { items: ['legacy'] },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
+      expect(await document.searchableText()).toBe(
+        'plate-and-legacy Somersault text',
+      );
+    });
 
     it('should skip layout ids without a block', async () => {
       const document = await create('dangling', {

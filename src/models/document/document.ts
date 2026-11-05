@@ -27,11 +27,13 @@ import { v4 as uuid } from 'uuid';
 // Internal imports
 import models from '../';
 import blocks from '../../blocks';
+import { SOMERSAULT } from '../../blocks/somersault/somersault';
 import behaviors from '../../behaviors';
 import { DocumentCollection } from '../../collections/document/document';
 import languages from '../../constants/languages';
 import events from '../../events';
 import { generate, embed } from '../../helpers/ai/ai';
+import { plateBlocks } from '../../helpers/plate/plate';
 import {
   groupToken,
   principalTokens,
@@ -1412,10 +1414,17 @@ export class Document extends Model {
 
     const chunks: string[] = [];
 
-    // Add all text blocks
-    Object.values(self.json.blocks || {}).map((block: any) => {
-      if (block?.['@type'] === 'slate' && block.plaintext) {
-        chunks.push(block.plaintext);
+    // Add the text of the blocks, only the Plate document if there is one
+    const somersault = self.json.blocks?.[SOMERSAULT];
+    (isObject(somersault)
+      ? [somersault]
+      : Object.values(self.json.blocks || {})
+    ).map((block: any) => {
+      if (isObject(block)) {
+        const text = blocks.get((block as any)['@type']).searchableText(block);
+        if (text) {
+          chunks.push(text);
+        }
       }
     });
 
@@ -1965,6 +1974,9 @@ export class Document extends Model {
                     (subblock: any) => subblock?.['@type'],
                   )
                 : []),
+              ...(block?.['@type'] === SOMERSAULT
+                ? plateBlocks(block.value).map((node) => node['@type'])
+                : []),
             ]),
           ),
         ).filter((type: any) => typeof type === 'string')
@@ -2405,8 +2417,9 @@ END:VEVENT`;
   }
 
   /**
-   * Get the blocks in the order they are shown, the blocks of
-   * `blocks_layout`. Ids in the layout without a block are skipped.
+   * Get the blocks in the order they are shown: the Plate document of Plone
+   * Aurora if there is one, otherwise the blocks of `blocks_layout`. Ids in
+   * the layout without a block are skipped.
    * @method getLayoutBlocks
    * @returns {Array} Blocks
    */
@@ -2416,6 +2429,9 @@ END:VEVENT`;
 
     if (!isObject(json)) {
       return [];
+    }
+    if (isObject(json[SOMERSAULT])) {
+      return [json[SOMERSAULT]];
     }
     const items = self.json.blocks_layout?.items;
     return (Array.isArray(items) ? items : [])

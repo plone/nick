@@ -2,6 +2,11 @@
 
 ## 3.0.1 (unreleased)
 
+### Feature
+
+- Support the `__somersault__` block of Plone Aurora, which holds the whole page as a Plate document: its text is indexed in `SearchableText`, it is converted to Markdown, `@replace` changes its text, the blocks wrapped in it are processed by their type (html blocks are sanitized) and their types are in `block_types`. Once a page has this block, its `blocks_layout` and other blocks are not used for the Markdown and the searchable text @sneridagh
+- Blocks can define `searchableText` to add their text to `SearchableText`; the slate block uses its `plaintext` like before @sneridagh
+
 ### Bugfix
 
 - Don't fail with a 500 on content whose `blocks_layout` lists ids missing in `blocks`, or which has no `blocks`, for example Plone Aurora pages sent with the default layout: the missing blocks are skipped, like Plone does @sneridagh

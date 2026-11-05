@@ -21,6 +21,14 @@ export const slate = {
   },
 
   /**
+   * Get the searchable text, the plain text sent by the editor.
+   * @param {any} self The block instance.
+   * @returns {string} The searchable text.
+   */
+  searchableText: (self: any): string =>
+    typeof self.plaintext === 'string' ? self.plaintext : '',
+
+  /**
    * Replace text.
    * @param {RegExp} pattern Pattern to search for.
    * @param {string} replacement Replacement text.
