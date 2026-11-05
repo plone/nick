@@ -2218,7 +2218,7 @@ msgid "Rename"
 msgstr "Semmi mill-ġdid"
 
 #. Default: "Replaced text from {pattern} to {replacement}."
-#: src/routes/replace/replace.ts:174
+#: src/routes/replace/replace.ts:181
 msgctxt "Routes|Replace"
 msgid "Replaced text from {pattern} to {replacement}."
 msgstr ""
