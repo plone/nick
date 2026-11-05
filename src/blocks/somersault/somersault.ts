@@ -19,6 +19,11 @@ import {
   plateToMarkdown,
   plateToText,
 } from '../../helpers/plate/plate';
+import type {
+  PlateNode,
+  PlateValue,
+  SomersaultBlock,
+} from '../../helpers/plate/plate';
 import { slateReplace } from '../../helpers/slate/slate';
 
 /**
@@ -30,11 +35,11 @@ export const SOMERSAULT = '__somersault__';
 export const somersault = {
   /**
    * Convert to markdown, wrapped blocks use the markdown of their type.
-   * @param {any} self The block instance.
+   * @param {SomersaultBlock} self The block instance.
    * @param {any} document The document instance.
    * @returns {string} The markdown string.
    */
-  toMarkdown: (self: any, document: any): string =>
+  toMarkdown: (self: SomersaultBlock, document: any): string =>
     plateToMarkdown(self.value, (node) =>
       node['@type'] === SOMERSAULT
         ? ''
@@ -44,10 +49,10 @@ export const somersault = {
   /**
    * Get the searchable text, the title is left out since it is indexed from
    * the title field.
-   * @param {any} self The block instance.
+   * @param {SomersaultBlock} self The block instance.
    * @returns {string} The searchable text.
    */
-  searchableText: (self: any): string =>
+  searchableText: (self: SomersaultBlock): string =>
     plateToText(
       self.value,
       (node) =>
@@ -59,11 +64,16 @@ export const somersault = {
 
   /**
    * Replace text.
+   * @param {SomersaultBlock} self The block instance.
    * @param {RegExp} pattern Pattern to search for.
    * @param {string} replacement Replacement text.
-   * @returns {any} New object or false if nothing found.
+   * @returns {PlateValue | false} New value or false if nothing found.
    */
-  replace: (self: any, pattern: RegExp, replacement: string): any => {
+  replace: (
+    self: SomersaultBlock,
+    pattern: RegExp,
+    replacement: string,
+  ): PlateValue | false => {
     if (!Array.isArray(self.value)) {
       return false;
     }
@@ -76,24 +86,25 @@ export const somersault = {
       return false;
     }
 
-    // Return new value
-    return newValue;
+    // Return new value, only the text of the text nodes changed
+    return newValue as PlateValue;
   },
 
   /**
    * Process block, the wrapped blocks are processed by their type.
-   * @param {any} self The block instance.
-   * @returns {any} Processed block
+   * @param {SomersaultBlock} self The block instance.
+   * @returns {SomersaultBlock} Processed block
    */
-  process: async (self: any): Promise<any> =>
+  process: async (self: SomersaultBlock): Promise<SomersaultBlock> =>
     Array.isArray(self.value)
       ? {
           ...self,
-          value: await mapPlateBlocks(self.value, (node) =>
+          // Only the wrapped blocks are replaced, by their processed data
+          value: (await mapPlateBlocks(self.value, (node) =>
             node['@type'] === SOMERSAULT
-              ? Promise.resolve(node)
+              ? Promise.resolve<PlateNode>(node)
               : blocks.get(node['@type']).process(node),
-          ),
+          )) as PlateValue,
         }
       : self,
 };

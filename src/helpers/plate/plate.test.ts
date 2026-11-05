@@ -201,7 +201,7 @@ describe('plateToText', () => {
             ],
           },
         ],
-        (node) => node.url,
+        (node) => node.url ?? '',
         ['title'],
       ),
     ).toBe('Hello world! /image.jpg A B');
@@ -227,6 +227,13 @@ describe('plateBlocks', () => {
       ]),
     ).toEqual([image, teaser]);
     expect(plateBlocks(undefined as any)).toEqual([]);
+  });
+
+  it('should skip wrapped blocks without a block type', () => {
+    const untyped = { type: 'ploneBlock', children: [{ text: '' }] };
+    expect(plateBlocks([untyped, image])).toEqual([image]);
+    expect(plateToMarkdown([untyped], () => 'block')).toBe('');
+    expect(plateToText([untyped], () => 'block')).toBe('');
   });
 });
 

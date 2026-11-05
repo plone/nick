@@ -12,19 +12,121 @@
 
 export const PLONE_BLOCK_TYPE = 'ploneBlock';
 
-export interface PlateNode {
+/*
+ * The document model of `@plone/plate`. These types mirror `TText`,
+ * `TElement` and `Value` of `platejs`, and the nodes documented in the
+ * `@plone/plate` package (`docs/document.block.md`), without depending on
+ * `platejs`.
+ */
+
+/** Marks of Plate, set on text nodes. */
+export interface PlateMarks {
+  bold?: boolean;
+  italic?: boolean;
+  underline?: boolean;
+  strikethrough?: boolean;
+  code?: boolean;
+}
+
+/** Text node, like `TText` of `platejs`. */
+export interface PlateText extends PlateMarks {
+  text: string;
+  [key: string]: unknown;
+}
+
+/** Element, like `TElement` of `platejs`: `type` is the element's id. */
+export interface PlateElement {
+  type: string;
+  children: PlateDescendant[];
+  /** Added by the editor, see `blockWidth` in `@plone/plate`. */
+  blockWidth?: string;
+  [key: string]: unknown;
+}
+
+/** Inline link. */
+export interface PlateLinkElement extends PlateElement {
+  type: 'a';
+  url: string;
+}
+
+/**
+ * Paragraph or heading in a list: Plate's indent lists have no list
+ * elements, the list is a run of nodes with `listStyleType` and `indent`.
+ */
+export interface PlateListItemElement extends PlateElement {
+  listStyleType: string;
+  indent: number;
+  listStart?: number;
+  checked?: boolean;
+}
+
+/** Code block, whose children are `code_line` elements. */
+export interface PlateCodeBlockElement extends PlateElement {
+  type: 'code_block';
+  lang?: string;
+}
+
+/**
+ * Block wrapped in the document: the block data is next to `@type`, and
+ * `children` is one empty text node.
+ */
+export interface PlatePloneBlockElement extends PlateElement {
+  type: typeof PLONE_BLOCK_TYPE;
+  '@type': string;
+}
+
+/** Child of an element. */
+export type PlateDescendant = PlateElement | PlateText;
+
+/** A Plate document, like `Value` of `platejs`. */
+export type PlateValue = PlateElement[];
+
+/** The `__somersault__` block, which holds the whole page. */
+export interface SomersaultBlock {
+  '@type': '__somersault__';
+  value: PlateValue;
+}
+
+/**
+ * A node as stored. The value comes from clients and is not validated, so
+ * the helpers read every node through this loose shape and check what they
+ * use.
+ */
+export interface PlateNode extends PlateMarks {
   type?: string;
   text?: string;
   children?: PlateNode[];
-  [key: string]: any;
+  '@type'?: string;
+  url?: string;
+  listStyleType?: string;
+  indent?: number;
+  listStart?: number;
+  checked?: boolean;
+  lang?: string;
+  [key: string]: unknown;
+}
+
+/** A stored `ploneBlock` node whose block type is known. */
+export type PlateBlockNode = PlateNode & {
+  type: typeof PLONE_BLOCK_TYPE;
+  '@type': string;
+};
+
+/**
+ * Check if a node is a wrapped block with a block type.
+ * @param {PlateNode} node Node to check.
+ * @returns {boolean} True if the node is a `ploneBlock` with an `@type`.
+ */
+export function isPlateBlock(node: PlateNode): node is PlateBlockNode {
+  return node.type === PLONE_BLOCK_TYPE && typeof node['@type'] === 'string';
 }
 
 /**
  * Callback which renders the block wrapped in a `ploneBlock` node.
- * @param {PlateNode} node The `ploneBlock` node.
+ * @param {PlateBlockNode} node The `ploneBlock` node.
  * @returns {string} The rendered block.
  */
-export type PlateBlockRenderer = (node: PlateNode) => string;
+export type PlateBlockRenderer = (node: PlateBlockNode) => string;
 
 /**
  * Check if a node is inline: a text node or a link.
@@ -120,7 +222,7 @@ function renderNode(node: PlateNode, renderBlock: PlateBlockRenderer): string {
 
   switch (node.type) {
     case PLONE_BLOCK_TYPE:
-      return renderBlock(node);
+      return isPlateBlock(node) ? renderBlock(node) : '';
     case 'title':
     case 'h1':
       return `# ${children()}\n\n`;
@@ -249,7 +351,7 @@ export function plateToText(
       return '';
     }
     if (node.type === PLONE_BLOCK_TYPE) {
-      return blockText(node);
+      return isPlateBlock(node) ? blockText(node) : '';
     }
     const children = getChildren(node);
     return children
@@ -271,14 +373,18 @@ export function plateToText(
  * @param {PlateNode[]} nodes Nodes of the document.
  * @returns {PlateNode[]} The `ploneBlock` nodes.
  */
-export function plateBlocks(nodes: PlateNode[]): PlateNode[] {
+export function plateBlocks(nodes: PlateNode[]): PlateBlockNode[] {
   if (!Array.isArray(nodes)) {
     return [];
   }
   return nodes
     .filter((node) => node && typeof node === 'object')
     .flatMap((node) =>
-      node.type === PLONE_BLOCK_TYPE ? [node] : plateBlocks(getChildren(node)),
+      node.type === PLONE_BLOCK_TYPE
+        ? isPlateBlock(node)
+          ? [node]
+          : []
+        : plateBlocks(getChildren(node)),
     );
 }
 
@@ -291,7 +397,7 @@ export function plateBlocks(nodes: PlateNode[]): PlateNode[] {
  */
 export async function mapPlateBlocks(
   nodes: PlateNode[],
-  callback: (node: PlateNode) => Promise<PlateNode>,
+  callback: (node: PlateBlockNode) => Promise<PlateNode>,
 ): Promise<PlateNode[]> {
   if (!Array.isArray(nodes)) {
     return nodes;
@@ -302,7 +408,7 @@ export async function mapPlateBlocks(
         return node;
       }
       if (node.type === PLONE_BLOCK_TYPE) {
-        return callback(node);
+        return isPlateBlock(node) ? callback(node) : node;
       }
       if (Array.isArray(node.children)) {
         return {
