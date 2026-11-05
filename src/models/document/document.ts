@@ -1414,7 +1414,7 @@ export class Document extends Model {
 
     // Add all text blocks
     Object.values(self.json.blocks || {}).map((block: any) => {
-      if (block['@type'] === 'slate' && block.plaintext) {
+      if (block?.['@type'] === 'slate' && block.plaintext) {
         chunks.push(block.plaintext);
       }
     });
@@ -1955,20 +1955,19 @@ export class Document extends Model {
    */
   getBlockTypes(): string[] {
     const self: InstanceType<typeof Document> = this;
-    return self.json.blocks
+    return isObject(self.json.blocks)
       ? uniq(
           flatten(
-            Object.keys(self.json.blocks).map((block: string) => [
-              self.json.blocks[block]['@type'],
-              ...(self.json.blocks[block].blocks
-                ? Object.keys(self.json.blocks[block].blocks).map(
-                    (subblock: string) =>
-                      self.json.blocks[block].blocks[subblock]['@type'],
+            Object.values(self.json.blocks).map((block: any) => [
+              block?.['@type'],
+              ...(isObject(block?.blocks)
+                ? Object.values(block.blocks).map(
+                    (subblock: any) => subblock?.['@type'],
                   )
                 : []),
             ]),
           ),
-        )
+        ).filter((type: any) => typeof type === 'string')
       : [];
   }
 
@@ -2399,12 +2398,28 @@ END:VEVENT`;
   toMarkdown(): string {
     const self: InstanceType<typeof Document> = this;
 
-    return (self.json.blocks_layout?.items || [])
-      .map((block: any) => {
-        return blocks
-          .get(self.json.blocks[block]['@type'])
-          .toMarkdown(self.json.blocks[block], self);
-      })
+    return self
+      .getLayoutBlocks()
+      .map((block: any) => blocks.get(block['@type']).toMarkdown(block, self))
       .join('');
+  }
+
+  /**
+   * Get the blocks in the order they are shown, the blocks of
+   * `blocks_layout`. Ids in the layout without a block are skipped.
+   * @method getLayoutBlocks
+   * @returns {Array} Blocks
+   */
+  getLayoutBlocks(): any[] {
+    const self: InstanceType<typeof Document> = this;
+    const json: Record<string, any> = self.json.blocks;
+
+    if (!isObject(json)) {
+      return [];
+    }
+    const items = self.json.blocks_layout?.items;
+    return (Array.isArray(items) ? items : [])
+      .map((id: string) => json[id])
+      .filter((block: any) => isObject(block));
   }
 }

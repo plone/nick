@@ -126,9 +126,16 @@ export default [
         }
 
         // Check blocks
-        const curBlocks = document.json?.blocks || {};
+        const curBlocks: Record<string, any> = document.json?.blocks || {};
         let blocksChanged: boolean = false;
         Object.keys(curBlocks).map((blockId) => {
+          // Skip invalid blocks
+          if (
+            curBlocks[blockId] === null ||
+            typeof curBlocks[blockId] !== 'object'
+          ) {
+            return;
+          }
           const block: any = blocks.get(curBlocks[blockId]['@type']);
           const newValue = block.replace(
             curBlocks[blockId],

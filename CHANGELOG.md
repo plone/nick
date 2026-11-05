@@ -2,6 +2,10 @@
 
 ## 3.0.1 (unreleased)
 
+### Bugfix
+
+- Don't fail with a 500 on content whose `blocks_layout` lists ids missing in `blocks`, or which has no `blocks`, for example Plone Aurora pages sent with the default layout: the missing blocks are skipped, like Plone does @sneridagh
+
 ## 3.0.0 (2026-10-31)
 
 ### Breaking
