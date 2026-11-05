@@ -55,8 +55,11 @@ blocks.register('myBlock', myBlock);
 
 The block name (first argument) must match the `@type` value in the Volto block's JSON data. When a document is converted to Markdown, `Document.toMarkdown()` iterates the document's `blocks_layout.items`, skipping ids missing in `blocks`, looks up each block's `@type` in the registry, and calls its `toMarkdown` method.
 
-## Plone Aurora documents
+## `@plone/plate` documents
 
-Plone Aurora stores the whole page in one block with the id and the `@type` `__somersault__`, whose `value` is a Plate document: a list of nodes such as `title`, `p` and `h2`, and other blocks wrapped in nodes of type `ploneBlock` which carry the block data next to its `@type`. When a page has this block, `blocks_layout` and the other blocks are not used for the Markdown and the searchable text.
+`@plone/plate` has its own document model.
+Editors built on it, like the default editor of Plone Aurora and the [`@kitconcept/volto-plate`](https://github.com/kitconcept/volto-plate) add-on for Volto, store the whole page in one block with the id and the `@type` `__somersault__`, whose `value` is a Plate document: a list of nodes such as `title`, `p` and `h2`, and other blocks wrapped in nodes of type `ploneBlock` which carry the block data next to its `@type`. When a page has this block, `blocks_layout` and the other blocks are not used for the Markdown and the searchable text.
 
-The core profile registers the `__somersault__` block. It converts the Plate document itself, and calls the methods of the registered blocks for the wrapped blocks, so a block registered for Volto also works inside a Plone Aurora page.
+See [The unified block editor](https://plone-aurora.readthedocs.io/conceptual-guides/unified-editor.html) in the Plone Aurora documentation for the document model and how it relates to Volto blocks.
+
+The core profile registers the `__somersault__` block. It converts the Plate document itself, and calls the methods of the registered blocks for the wrapped blocks, so a block registered for Volto also works inside a `@plone/plate` document.

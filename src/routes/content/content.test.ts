@@ -118,7 +118,7 @@ describe('Content', () => {
   it('should export a markdown file for an object', () =>
     testRequest(app, 'content/markdown'));
 
-  it('should add a Plone Aurora document with a stale blocks layout', async () => {
+  it('should add a @plone/plate document with a stale blocks layout', async () => {
     await request(app)
       .post('/news')
       .set('Accept', 'application/json')

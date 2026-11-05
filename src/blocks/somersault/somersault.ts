@@ -1,10 +1,12 @@
 /**
- * Somersault block, the Plate document of Plone Aurora.
+ * Somersault block, the document model of `@plone/plate`.
  * @module blocks/somersault/somersault
  *
- * Plone Aurora stores the whole content of a page in one block, with the id
- * and the type `__somersault__`, whose `value` is a Plate document. Once a
- * page has this block, `blocks_layout` and the other blocks are not used.
+ * Editors built on `@plone/plate`, like the default editor of Plone Aurora
+ * and the `@kitconcept/volto-plate` add-on for Volto, store the whole content
+ * of a page in one block, with the id and the type `__somersault__`, whose
+ * `value` is a Plate document. Once a page has this block, `blocks_layout`
+ * and the other blocks are not used.
  */
 
 // External imports

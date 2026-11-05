@@ -2417,8 +2417,8 @@ END:VEVENT`;
   }
 
   /**
-   * Get the blocks in the order they are shown: the Plate document of Plone
-   * Aurora if there is one, otherwise the blocks of `blocks_layout`. Ids in
+   * Get the blocks in the order they are shown: the `@plone/plate` document
+   * if there is one, otherwise the blocks of `blocks_layout`. Ids in
    * the layout without a block are skipped.
    * @method getLayoutBlocks
    * @returns {Array} Blocks

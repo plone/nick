@@ -2,8 +2,8 @@
  * Plate helper.
  * @module helpers/plate/plate
  *
- * Plate documents are the value of the `__somersault__` block of Plone
- * Aurora: a list of Slate nodes with the marks of Plate on the text nodes
+ * Plate documents are the value of the `__somersault__` block, the document
+ * model of `@plone/plate`: a list of Slate nodes with the marks of Plate on the text nodes
  * (`bold`, `italic`, ...), links of type `a` with a `url`, lists as
  * paragraphs with `listStyleType` and `indent`, and other blocks wrapped in
  * nodes of type `ploneBlock` which carry the data of the block next to its
