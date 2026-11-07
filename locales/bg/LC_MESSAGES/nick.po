@@ -47,17 +47,17 @@ msgid "A short overview of who you are and what you do. Will be displayed on you
 msgstr ""
 
 #. Default: "AI"
-#: src/profiles/ai/permissions.json:6
 #: src/profiles/ai/controlpanels/ai.json:3
-msgctxt "Profiles|Ai|Permissions"
+#: src/profiles/ai/permissions.json:6
+msgctxt "Profiles|Ai|Controlpanels"
 msgid "AI"
 msgstr "ИИ"
 
 #. Default: "AI is disabled."
-#: src/routes/related/related.ts:22
 #: src/routes/ai/ai.ts:50
 #: src/routes/ai/ai.ts:104
-msgctxt "Routes|Related"
+#: src/routes/related/related.ts:22
+msgctxt "Routes|Ai"
 msgid "AI is disabled."
 msgstr "ИИ е деактивиран."
 
@@ -136,19 +136,19 @@ msgstr "Добавя полета за заглавие и описание."
 
 #. Default: "Administrator"
 #: src/profiles/core/roles.json:64
-#: src/profiles/core/upgrades/1012/roles.json:26
-#: src/profiles/core/upgrades/1011/roles.json:16
-#: src/profiles/core/upgrades/1010/roles.json:21
-#: src/profiles/core/upgrades/1007/roles.json:20
 #: src/profiles/core/upgrades/1002/roles.json:26
+#: src/profiles/core/upgrades/1007/roles.json:20
+#: src/profiles/core/upgrades/1010/roles.json:21
+#: src/profiles/core/upgrades/1011/roles.json:16
+#: src/profiles/core/upgrades/1012/roles.json:26
 msgctxt "Profiles|Core|Roles"
 msgid "Administrator"
 msgstr "Администратор"
 
 #. Default: "Administrators"
-#: src/profiles/multilingualcontent/groups.json:6
 #: src/profiles/default/groups.json:6
-msgctxt "Profiles|Multilingualcontent|Groups"
+#: src/profiles/multilingualcontent/groups.json:6
+msgctxt "Profiles|Default|Groups"
 msgid "Administrators"
 msgstr "Администратори"
 
@@ -214,10 +214,10 @@ msgid "Allowed Content Types"
 msgstr "Разрешени типове съдържание"
 
 #. Default: "Allows users to login with their email address instead of specifying a separate login name."
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:30
-#: src/profiles/core/upgrades/1001/controlpanels/security.json:16
 #: src/profiles/core/controlpanels/security.json:30
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:16
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:30
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Allows users to login with their email address instead of specifying a separate login name."
 msgstr ""
 
@@ -307,9 +307,9 @@ msgid "April"
 msgstr ""
 
 #. Default: "As a path relative to the portal root."
-#: src/content_rules/actions/move_item.ts:41
 #: src/content_rules/actions/copy_item.ts:37
-msgctxt "Content rules|Actions|Move item"
+#: src/content_rules/actions/move_item.ts:41
+msgctxt "Content rules|Actions|Copy item"
 msgid "As a path relative to the portal root."
 msgstr ""
 
@@ -332,10 +332,10 @@ msgid "August"
 msgstr ""
 
 #. Default: "Authenticated"
+#: src/profiles/ai/roles.json:6
 #: src/profiles/core/roles.json:11
 #: src/profiles/core/upgrades/1002/roles.json:11
-#: src/profiles/ai/roles.json:6
-msgctxt "Profiles|Core|Roles"
+msgctxt "Profiles|Ai|Roles"
 msgid "Authenticated"
 msgstr "Удостоверен"
 
@@ -549,10 +549,10 @@ msgid "Content Types"
 msgstr "Типове съдържание"
 
 #. Default: "Content type"
-#: src/scheduled_jobs/actions/reindex.ts:48
 #: src/content_rules/conditions/content_type.ts:10
 #: src/content_rules/conditions/content_type.ts:44
-msgctxt "Scheduled jobs|Actions|Reindex"
+#: src/scheduled_jobs/actions/reindex.ts:48
+msgctxt "Content rules|Conditions|Content type"
 msgid "Content type"
 msgstr ""
 
@@ -667,31 +667,31 @@ msgid "December"
 msgstr ""
 
 #. Default: "Default"
+#: src/constants/userschema.ts:13
+#: src/content_rules/actions/send_email.ts:30
+#: src/content_rules/actions/transition_workflow.ts:26
+#: src/content_rules/actions/version_item.ts:25
+#: src/content_rules/conditions/content_type.ts:27
+#: src/content_rules/conditions/file_extension.ts:23
+#: src/content_rules/conditions/user_group.ts:28
+#: src/content_rules/conditions/user_role.ts:28
+#: src/content_rules/conditions/workflow_state.ts:25
 #: src/routes/userschema/userschema.ts:26
 #: src/routes/userschema/userschema.ts:70
-#: src/content_rules/conditions/workflow_state.ts:25
-#: src/content_rules/conditions/user_role.ts:28
-#: src/content_rules/conditions/user_group.ts:28
-#: src/content_rules/conditions/file_extension.ts:23
-#: src/content_rules/conditions/content_type.ts:27
-#: src/content_rules/actions/version_item.ts:25
-#: src/content_rules/actions/transition_workflow.ts:26
-#: src/content_rules/actions/send_email.ts:30
-#: src/constants/userschema.ts:13
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:14
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:10
-#: src/profiles/core/upgrades/1001/controlpanels/security.json:10
-#: src/profiles/core/types/video.json:13
-#: src/profiles/core/types/image.json:13
-#: src/profiles/core/types/file.json:13
-#: src/profiles/core/types/feed.json:13
-#: src/profiles/core/types/event.json:25
-#: src/profiles/core/controlpanels/usergroup.json:10
-#: src/profiles/core/controlpanels/security.json:14
-#: src/profiles/core/behaviors/versioning.json:10
-#: src/profiles/core/behaviors/preview_image_link.json:10
 #: src/profiles/core/behaviors/basic.json:10
-msgctxt "Routes|Userschema"
+#: src/profiles/core/behaviors/preview_image_link.json:10
+#: src/profiles/core/behaviors/versioning.json:10
+#: src/profiles/core/controlpanels/security.json:14
+#: src/profiles/core/controlpanels/usergroup.json:10
+#: src/profiles/core/types/event.json:25
+#: src/profiles/core/types/feed.json:13
+#: src/profiles/core/types/file.json:13
+#: src/profiles/core/types/image.json:13
+#: src/profiles/core/types/video.json:13
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:10
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:10
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:14
+msgctxt "Constants|Userschema"
 msgid "Default"
 msgstr "По подразбиране"
 
@@ -736,10 +736,10 @@ msgid "Delegate Reviewer"
 msgstr ""
 
 #. Default: "Delete"
-#: src/profiles/core/permissions.json:38
 #: src/profiles/core/actions.json:54
+#: src/profiles/core/permissions.json:38
 #: src/profiles/core/upgrades/1011/permissions.json:6
-msgctxt "Profiles|Core|Permissions"
+msgctxt "Profiles|Core|Actions"
 msgid "Delete"
 msgstr ""
 
@@ -758,24 +758,24 @@ msgstr ""
 
 #. Default: "Description"
 #: src/models/type/type.ts:165
-#: src/profiles/core/catalog.json:233
-#: src/profiles/core/behaviors/basic.json:16
 #: src/profiles/ai/controlpanels/ai.json:33
+#: src/profiles/core/behaviors/basic.json:16
+#: src/profiles/core/catalog.json:233
 msgctxt "Models|Type"
 msgid "Description"
 msgstr "Описание"
 
 #. Default: "Determines if your site is optimized for small or large sites. In environments with a lot of groups it can be very slow or impossible to build a list all groups. This option tunes the user interface and behaviour for this case by allowing you to search for groups instead of listing all of them."
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:21
 #: src/profiles/core/controlpanels/usergroup.json:21
-msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:21
+msgctxt "Profiles|Core|Controlpanels|Usergroup"
 msgid "Determines if your site is optimized for small or large sites. In environments with a lot of groups it can be very slow or impossible to build a list all groups. This option tunes the user interface and behaviour for this case by allowing you to search for groups instead of listing all of them."
 msgstr ""
 
 #. Default: "Determines if your site is optimized for small or large sites. In environments with a lot of users it can be very slow or impossible to build a list all users. This option tunes the user interface and behaviour for this case by allowing you to search for users instead of listing all of them."
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:16
 #: src/profiles/core/controlpanels/usergroup.json:16
-msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:16
+msgctxt "Profiles|Core|Controlpanels|Usergroup"
 msgid "Determines if your site is optimized for small or large sites. In environments with a lot of users it can be very slow or impossible to build a list all users. This option tunes the user interface and behaviour for this case by allowing you to search for users instead of listing all of them."
 msgstr ""
 
@@ -804,12 +804,12 @@ msgid "Document copied"
 msgstr ""
 
 #. Default: "Document locked"
-#: src/routes/workflow/workflow.ts:121
-#: src/routes/history/history.ts:84
 #: src/routes/content/content.ts:283
 #: src/routes/content/content.ts:1226
 #: src/routes/content/content.ts:1397
-msgctxt "Routes|Workflow"
+#: src/routes/history/history.ts:84
+#: src/routes/workflow/workflow.ts:121
+msgctxt "Routes|Content"
 msgid "Document locked"
 msgstr ""
 
@@ -857,10 +857,10 @@ msgstr "Редактиране"
 
 #. Default: "Editor"
 #: src/profiles/core/roles.json:47
-#: src/profiles/core/upgrades/1012/roles.json:16
-#: src/profiles/core/upgrades/1011/roles.json:11
-#: src/profiles/core/upgrades/1010/roles.json:11
 #: src/profiles/core/upgrades/1007/roles.json:15
+#: src/profiles/core/upgrades/1010/roles.json:11
+#: src/profiles/core/upgrades/1011/roles.json:11
+#: src/profiles/core/upgrades/1012/roles.json:16
 msgctxt "Profiles|Core|Roles"
 msgid "Editor"
 msgstr "Редактор"
@@ -909,9 +909,9 @@ msgid "Email source"
 msgstr ""
 
 #. Default: "Enable self-registration"
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:19
 #: src/profiles/core/controlpanels/security.json:19
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:19
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Enable self-registration"
 msgstr ""
 
@@ -1116,9 +1116,9 @@ msgid "Folder-like"
 msgstr "Подобен на папка"
 
 #. Default: "Form"
-#: src/profiles/core/upgrades/1003/controlpanels/form.json:3
 #: src/profiles/core/controlpanels/form.json:3
-msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:3
+msgctxt "Profiles|Core|Controlpanels|Form"
 msgid "Form"
 msgstr ""
 
@@ -1149,9 +1149,9 @@ msgid "Full Name"
 msgstr ""
 
 #. Default: "Gives the ability to rename an item from its edit form."
-#: src/profiles/core/behaviors/short_name.json:4
 #: src/profiles/core/behaviors/preview_image_link.json:4
-msgctxt "Profiles|Core|Behaviors|Short name"
+#: src/profiles/core/behaviors/short_name.json:4
+msgctxt "Profiles|Core|Behaviors|Preview image link"
 msgid "Gives the ability to rename an item from its edit form."
 msgstr "Дава възможност за преименуване на елемент от формата за редактиране."
 
@@ -1349,9 +1349,9 @@ msgid "June"
 msgstr ""
 
 #. Default: "Language"
-#: src/profiles/core/controlpanels/language.json:3
 #: src/profiles/core/behaviors/categorization.json:22
-msgctxt "Profiles|Core|Controlpanels|Language"
+#: src/profiles/core/controlpanels/language.json:3
+msgctxt "Profiles|Core|Behaviors|Categorization"
 msgid "Language"
 msgstr "Език"
 
@@ -1380,9 +1380,9 @@ msgid "Less than"
 msgstr "По-малко от"
 
 #. Default: "Let users select their own passwords"
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:24
 #: src/profiles/core/controlpanels/security.json:24
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:24
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Let users select their own passwords"
 msgstr ""
 
@@ -1393,9 +1393,9 @@ msgid "Lets you upload a file to the site."
 msgstr "Позволява ви да качите файл в сайта."
 
 #. Default: "Limit must be a positive number."
-#: src/routes/users/users.ts:201
 #: src/routes/groups/groups.ts:69
-msgctxt "Routes|Users"
+#: src/routes/users/users.ts:201
+msgctxt "Routes|Groups"
 msgid "Limit must be a positive number."
 msgstr ""
 
@@ -1492,9 +1492,9 @@ msgid "Mail"
 msgstr "Поща"
 
 #. Default: "Mail Template"
-#: src/profiles/core/upgrades/1003/controlpanels/form.json:15
 #: src/profiles/core/controlpanels/form.json:15
-msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:15
+msgctxt "Profiles|Core|Controlpanels|Form"
 msgid "Mail Template"
 msgstr ""
 
@@ -1517,16 +1517,16 @@ msgid "Manage Users"
 msgstr "Управление на потребители"
 
 #. Default: "Many groups?"
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:20
 #: src/profiles/core/controlpanels/usergroup.json:20
-msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:20
+msgctxt "Profiles|Core|Controlpanels|Usergroup"
 msgid "Many groups?"
 msgstr ""
 
 #. Default: "Many users?"
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:15
 #: src/profiles/core/controlpanels/usergroup.json:15
-msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:15
+msgctxt "Profiles|Core|Controlpanels|Usergroup"
 msgid "Many users?"
 msgstr ""
 
@@ -1573,9 +1573,9 @@ msgid "May"
 msgstr ""
 
 #. Default: "Message"
-#: src/content_rules/actions/send_email.ts:44
 #: src/content_rules/actions/logger.ts:33
-msgctxt "Content rules|Actions|Send email"
+#: src/content_rules/actions/send_email.ts:44
+msgctxt "Content rules|Actions|Logger"
 msgid "Message"
 msgstr ""
 
@@ -1695,8 +1695,8 @@ msgstr ""
 #. Default: "No"
 #: src/profiles/core/catalog.json:365
 #: src/profiles/core/catalog.json:390
-#: src/profiles/core/vocabularies/boolean.json:6
 #: src/profiles/core/upgrades/1016/catalog.json:14
+#: src/profiles/core/vocabularies/boolean.json:6
 msgctxt "Profiles|Core|Catalog"
 msgid "No"
 msgstr "Не"
@@ -1726,19 +1726,19 @@ msgid "No transition specified."
 msgstr ""
 
 #. Default: "None"
-#: src/scheduled_jobs/actions/reindex.ts:24
-#: src/content_rules/conditions/workflow_state.ts:18
-#: src/content_rules/conditions/user_role.ts:21
-#: src/content_rules/conditions/user_group.ts:21
-#: src/content_rules/conditions/file_extension.ts:16
-#: src/content_rules/conditions/content_type.ts:20
-#: src/content_rules/actions/version_item.ts:18
-#: src/content_rules/actions/transition_workflow.ts:19
-#: src/content_rules/actions/send_email.ts:23
-#: src/content_rules/actions/move_item.ts:29
-#: src/content_rules/actions/logger.ts:17
 #: src/content_rules/actions/copy_item.ts:25
-msgctxt "Scheduled jobs|Actions|Reindex"
+#: src/content_rules/actions/logger.ts:17
+#: src/content_rules/actions/move_item.ts:29
+#: src/content_rules/actions/send_email.ts:23
+#: src/content_rules/actions/transition_workflow.ts:19
+#: src/content_rules/actions/version_item.ts:18
+#: src/content_rules/conditions/content_type.ts:20
+#: src/content_rules/conditions/file_extension.ts:16
+#: src/content_rules/conditions/user_group.ts:21
+#: src/content_rules/conditions/user_role.ts:21
+#: src/content_rules/conditions/workflow_state.ts:18
+#: src/scheduled_jobs/actions/reindex.ts:24
+msgctxt "Content rules|Actions|Copy item"
 msgid "None"
 msgstr ""
 
@@ -1767,29 +1767,7 @@ msgid "Not found"
 msgstr ""
 
 #. Default: "Not found."
-#: src/routes/vocabularies/vocabularies.ts:65
-#: src/routes/users/users.ts:168
-#: src/routes/users/users.ts:418
-#: src/routes/users/users.ts:492
-#: src/routes/types/types.ts:59
-#: src/routes/types/types.ts:171
-#: src/routes/types/types.ts:329
-#: src/routes/types/types.ts:376
-#: src/routes/translations/translations.ts:33
-#: src/routes/scheduled_jobs/scheduled_jobs.ts:43
-#: src/routes/scheduled_jobs/scheduled_jobs.ts:63
-#: src/routes/recyclebin/recyclebin.ts:35
-#: src/routes/recyclebin/recyclebin.ts:104
-#: src/routes/recyclebin/recyclebin.ts:202
-#: src/routes/jobs/jobs.ts:30
-#: src/routes/jobs/jobs.ts:70
-#: src/routes/jobs/jobs.ts:153
-#: src/routes/jobs/jobs.ts:184
-#: src/routes/groups/groups.ts:37
-#: src/routes/groups/groups.ts:194
-#: src/routes/groups/groups.ts:238
-#: src/routes/email/email.ts:24
-#: src/routes/email/email.ts:90
+#: src/routes/content/content.ts:558
 #: src/routes/controlpanels/controlpanels.ts:167
 #: src/routes/controlpanels/controlpanels.ts:375
 #: src/routes/controlpanels/controlpanels.ts:412
@@ -1801,8 +1779,30 @@ msgstr ""
 #: src/routes/controlpanels/controlpanels.ts:630
 #: src/routes/controlpanels/controlpanels.ts:677
 #: src/routes/controlpanels/controlpanels.ts:715
-#: src/routes/content/content.ts:558
-msgctxt "Routes|Vocabularies"
+#: src/routes/email/email.ts:24
+#: src/routes/email/email.ts:90
+#: src/routes/groups/groups.ts:37
+#: src/routes/groups/groups.ts:194
+#: src/routes/groups/groups.ts:238
+#: src/routes/jobs/jobs.ts:30
+#: src/routes/jobs/jobs.ts:70
+#: src/routes/jobs/jobs.ts:153
+#: src/routes/jobs/jobs.ts:184
+#: src/routes/recyclebin/recyclebin.ts:35
+#: src/routes/recyclebin/recyclebin.ts:104
+#: src/routes/recyclebin/recyclebin.ts:202
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:43
+#: src/routes/scheduled_jobs/scheduled_jobs.ts:63
+#: src/routes/translations/translations.ts:33
+#: src/routes/types/types.ts:59
+#: src/routes/types/types.ts:171
+#: src/routes/types/types.ts:329
+#: src/routes/types/types.ts:376
+#: src/routes/users/users.ts:168
+#: src/routes/users/users.ts:418
+#: src/routes/users/users.ts:492
+#: src/routes/vocabularies/vocabularies.ts:65
+msgctxt "Routes|Content"
 msgid "Not found."
 msgstr "Не е намерено."
 
@@ -1862,11 +1862,11 @@ msgstr "Ред в папката"
 
 #. Default: "Owner"
 #: src/profiles/core/roles.json:22
-#: src/profiles/core/upgrades/1012/roles.json:6
-#: src/profiles/core/upgrades/1011/roles.json:6
-#: src/profiles/core/upgrades/1010/roles.json:6
-#: src/profiles/core/upgrades/1007/roles.json:6
 #: src/profiles/core/upgrades/1002/roles.json:16
+#: src/profiles/core/upgrades/1007/roles.json:6
+#: src/profiles/core/upgrades/1010/roles.json:6
+#: src/profiles/core/upgrades/1011/roles.json:6
+#: src/profiles/core/upgrades/1012/roles.json:6
 msgctxt "Profiles|Core|Roles"
 msgid "Owner"
 msgstr "Собственик"
@@ -1948,9 +1948,9 @@ msgid "Pending review"
 msgstr "Чакащ преглед"
 
 #. Default: "People who sign up choose their password themselves. When this is off, new accounts get no password and have to reset it."
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:25
 #: src/profiles/core/controlpanels/security.json:25
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:25
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "People who sign up choose their password themselves. When this is off, new accounts get no password and have to reset it."
 msgstr ""
 
@@ -2112,9 +2112,9 @@ msgid "Query"
 msgstr ""
 
 #. Default: "Query must be at least 2 characters long."
-#: src/routes/principals/principals.ts:30
 #: src/routes/groups/groups.ts:58
-msgctxt "Routes|Principals"
+#: src/routes/principals/principals.ts:30
+msgctxt "Routes|Groups"
 msgid "Query must be at least 2 characters long."
 msgstr ""
 
@@ -2137,9 +2137,9 @@ msgid "Recurrence"
 msgstr ""
 
 #. Default: "Register"
-#: src/profiles/core/permissions.json:50
 #: src/profiles/core/actions.json:103
-msgctxt "Profiles|Core|Permissions"
+#: src/profiles/core/permissions.json:50
+msgctxt "Profiles|Core|Actions"
 msgid "Register"
 msgstr "Регистрация"
 
@@ -2162,16 +2162,16 @@ msgid "Reindex items of type {type}"
 msgstr ""
 
 #. Default: "Reindex security"
-#: src/scheduled_jobs/actions/reindex_security.ts:16
 #: src/routes/sharing/sharing.ts:340
-msgctxt "Scheduled jobs|Actions|Reindex security"
+#: src/scheduled_jobs/actions/reindex_security.ts:16
+msgctxt "Routes|Sharing"
 msgid "Reindex security"
 msgstr ""
 
 #. Default: "Reindex security of {path}"
-#: src/scheduled_jobs/actions/reindex_security.ts:20
 #: src/routes/sharing/sharing.ts:341
-msgctxt "Scheduled jobs|Actions|Reindex security"
+#: src/scheduled_jobs/actions/reindex_security.ts:20
+msgctxt "Routes|Sharing"
 msgid "Reindex security of {path}"
 msgstr ""
 
@@ -2230,17 +2230,17 @@ msgid "Replacement must be provided."
 msgstr ""
 
 #. Default: "Required input is missing."
-#: src/routes/content/content.ts:905
 #: src/helpers/schema/schema.ts:178
-msgctxt "Routes|Content"
+#: src/routes/content/content.ts:905
+msgctxt "Helpers|Schema"
 msgid "Required input is missing."
 msgstr ""
 
 #. Default: "Resource is locked."
-#: src/routes/workflow/workflow.ts:120
 #: src/routes/content/content.ts:282
 #: src/routes/content/content.ts:1225
-msgctxt "Routes|Workflow"
+#: src/routes/workflow/workflow.ts:120
+msgctxt "Routes|Content"
 msgid "Resource is locked."
 msgstr ""
 
@@ -2271,9 +2271,9 @@ msgstr "Състояние на преглед"
 
 #. Default: "Reviewer"
 #: src/profiles/core/roles.json:59
-#: src/profiles/core/upgrades/1012/roles.json:21
-#: src/profiles/core/upgrades/1010/roles.json:16
 #: src/profiles/core/upgrades/1002/roles.json:21
+#: src/profiles/core/upgrades/1010/roles.json:16
+#: src/profiles/core/upgrades/1012/roles.json:21
 msgctxt "Profiles|Core|Roles"
 msgid "Reviewer"
 msgstr "Рецензент"
@@ -2351,10 +2351,10 @@ msgid "Secure"
 msgstr "Сигурен"
 
 #. Default: "Security"
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:3
-#: src/profiles/core/upgrades/1001/controlpanels/security.json:3
 #: src/profiles/core/controlpanels/security.json:3
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:3
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:3
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Security"
 msgstr ""
 
@@ -2407,9 +2407,9 @@ msgid "September"
 msgstr ""
 
 #. Default: "Settings"
-#: src/profiles/core/behaviors/short_name.json:10
 #: src/profiles/core/behaviors/exclude_from_nav.json:10
-msgctxt "Profiles|Core|Behaviors|Short name"
+#: src/profiles/core/behaviors/short_name.json:10
+msgctxt "Profiles|Core|Behaviors|Exclude from nav"
 msgid "Settings"
 msgstr "Настройки"
 
@@ -2450,9 +2450,9 @@ msgid "Simple workflow that is useful for basic web sites. Things start out as p
 msgstr "Прост работен процес, който е полезен за основни уебсайтове. Нещата започват като частни и могат да бъдат или изпратени за преглед, или публикувани директно. Създателят на елемент със съдържание може да редактира елемента дори след като е публикуван."
 
 #. Default: "Site"
-#: src/profiles/core/types/site.json:3
 #: src/profiles/core/controlpanels/site.json:3
-msgctxt "Profiles|Core|Types|Site"
+#: src/profiles/core/types/site.json:3
+msgctxt "Profiles|Core|Controlpanels|Site"
 msgid "Site"
 msgstr "Сайт"
 
@@ -2613,9 +2613,9 @@ msgid "Tags are used for organization of content"
 msgstr "Етикетите се използват за организиране на съдържанието"
 
 #. Default: "Target folder"
-#: src/content_rules/actions/move_item.ts:42
 #: src/content_rules/actions/copy_item.ts:38
-msgctxt "Content rules|Actions|Move item"
+#: src/content_rules/actions/move_item.ts:42
+msgctxt "Content rules|Actions|Copy item"
 msgid "Target folder"
 msgstr ""
 
@@ -2958,9 +2958,9 @@ msgid "This is the contents of the robots.txt file."
 msgstr "Това е съдържанието на файла robots.txt."
 
 #. Default: "This is the mail template to be used when sending an email to the admin or the user. Variables like lang, title, header, footer, admin_info and fields can be used."
-#: src/profiles/core/upgrades/1003/controlpanels/form.json:16
 #: src/profiles/core/controlpanels/form.json:16
-msgctxt "Profiles|Core|Upgrades|1003|Controlpanels|Form"
+#: src/profiles/core/upgrades/1003/controlpanels/form.json:16
+msgctxt "Profiles|Core|Controlpanels|Form"
 msgid "This is the mail template to be used when sending an email to the admin or the user. Variables like lang, title, header, footer, admin_info and fields can be used."
 msgstr ""
 
@@ -3010,10 +3010,10 @@ msgid "Tip: you can use * to autocomplete."
 msgstr "Съвет: можете да използвате * за автоматично довършване."
 
 #. Default: "Title"
-#: src/profiles/core/catalog.json:271
-#: src/profiles/core/behaviors/basic.json:24
 #: src/profiles/ai/controlpanels/ai.json:29
-msgctxt "Profiles|Core|Catalog"
+#: src/profiles/core/behaviors/basic.json:24
+#: src/profiles/core/catalog.json:271
+msgctxt "Profiles|Ai|Controlpanels"
 msgid "Title"
 msgstr "Заглавие"
 
@@ -3035,10 +3035,10 @@ msgid "Today"
 msgstr "Днес"
 
 #. Default: "Transaction error."
-#: src/client.ts:93
 #: src/app.ts:182
 #: src/app.ts:199
-msgctxt "Client"
+#: src/client.ts:93
+msgctxt "App"
 msgid "Transaction error."
 msgstr "Грешка в транзакцията."
 
@@ -3121,17 +3121,17 @@ msgid "Use '../' to navigate to parent objects."
 msgstr "Използвайте '../', за да навигирате към родителски обекти."
 
 #. Default: "Use email address as login name"
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:29
-#: src/profiles/core/upgrades/1001/controlpanels/security.json:15
 #: src/profiles/core/controlpanels/security.json:29
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1001/controlpanels/security.json:15
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:29
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Use email address as login name"
 msgstr ""
 
 #. Default: "User and Group Settings"
-#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:3
 #: src/profiles/core/controlpanels/usergroup.json:3
-msgctxt "Profiles|Core|Upgrades|1001|Controlpanels|Usergroup"
+#: src/profiles/core/upgrades/1001/controlpanels/usergroup.json:3
+msgctxt "Profiles|Core|Controlpanels|Usergroup"
 msgid "User and Group Settings"
 msgstr ""
 
@@ -3214,10 +3214,10 @@ msgid "Version item with comment {comment}"
 msgstr ""
 
 #. Default: "Version not found."
-#: src/routes/history/history.ts:104
 #: src/routes/content/content.ts:451
 #: src/routes/content/content.ts:459
-msgctxt "Routes|History"
+#: src/routes/history/history.ts:104
+msgctxt "Routes|Content"
 msgid "Version not found."
 msgstr ""
 
@@ -3247,9 +3247,9 @@ msgid "Videos can be referenced in pages."
 msgstr ""
 
 #. Default: "View"
-#: src/profiles/core/permissions.json:6
 #: src/profiles/core/actions.json:7
-msgctxt "Profiles|Core|Permissions"
+#: src/profiles/core/permissions.json:6
+msgctxt "Profiles|Core|Actions"
 msgid "View"
 msgstr "Преглед"
 
@@ -3274,9 +3274,9 @@ msgid "Visible to everyone, editable by the owner."
 msgstr "Видимо за всички, редактируемо от собственика."
 
 #. Default: "Visitors can create their own account. When this is off, only administrators can add users."
-#: src/profiles/core/upgrades/1015/controlpanels/security.json:20
 #: src/profiles/core/controlpanels/security.json:20
-msgctxt "Profiles|Core|Upgrades|1015|Controlpanels|Security"
+#: src/profiles/core/upgrades/1015/controlpanels/security.json:20
+msgctxt "Profiles|Core|Controlpanels|Security"
 msgid "Visitors can create their own account. When this is off, only administrators can add users."
 msgstr ""
 
@@ -3380,8 +3380,8 @@ msgstr ""
 #. Default: "Yes"
 #: src/profiles/core/catalog.json:371
 #: src/profiles/core/catalog.json:396
-#: src/profiles/core/vocabularies/boolean.json:5
 #: src/profiles/core/upgrades/1016/catalog.json:20
+#: src/profiles/core/vocabularies/boolean.json:5
 msgctxt "Profiles|Core|Catalog"
 msgid "Yes"
 msgstr "Да"
@@ -3405,23 +3405,23 @@ msgid "You are not authorized to access the vocabulary “{id}”."
 msgstr ""
 
 #. Default: "You are not authorized to access this resource."
-#: src/routes/users/users.ts:401
-#: src/routes/types/types.ts:43
-#: src/routes/translations/translations.ts:39
-#: src/routes/recyclebin/recyclebin.ts:45
-#: src/routes/recyclebin/recyclebin.ts:114
-#: src/routes/recyclebin/recyclebin.ts:212
+#: src/helpers/handler/handler.ts:120
+#: src/routes/aliases/aliases.ts:43
+#: src/routes/comments/comments.ts:54
+#: src/routes/content/content.ts:272
+#: src/routes/history/history.ts:59
 #: src/routes/jobs/jobs.ts:39
 #: src/routes/jobs/jobs.ts:79
 #: src/routes/jobs/jobs.ts:131
 #: src/routes/jobs/jobs.ts:162
 #: src/routes/jobs/jobs.ts:193
-#: src/routes/history/history.ts:59
-#: src/routes/content/content.ts:272
-#: src/routes/comments/comments.ts:54
-#: src/routes/aliases/aliases.ts:43
-#: src/helpers/handler/handler.ts:120
-msgctxt "Routes|Users"
+#: src/routes/recyclebin/recyclebin.ts:45
+#: src/routes/recyclebin/recyclebin.ts:114
+#: src/routes/recyclebin/recyclebin.ts:212
+#: src/routes/translations/translations.ts:39
+#: src/routes/types/types.ts:43
+#: src/routes/users/users.ts:401
+msgctxt "Helpers|Handler"
 msgid "You are not authorized to access this resource."
 msgstr ""
 

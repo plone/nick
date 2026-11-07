@@ -163,11 +163,18 @@ function syncPoByPot(translations: any) {
 ${pot.items
   .map((item) => {
     const context = pathToContext(item.references[0]);
-    const poItem = po.items.find(
-      (subitem) =>
-        subitem.msgid === item.msgid &&
-        (subitem.msgctxt === context || (!subitem.msgctxt && !context)),
-    );
+    // Prefer the translation with the same context, fall back to any
+    // translation of the same message so a changed context (for example when
+    // the same message is added to another file) doesn't lose it
+    const poItem =
+      po.items.find(
+        (subitem) =>
+          subitem.msgid === item.msgid &&
+          (subitem.msgctxt === context || (!subitem.msgctxt && !context)),
+      ) ||
+      po.items.find(
+        (subitem) => subitem.msgid === item.msgid && subitem.msgstr?.[0],
+      );
     const translation =
       lang === 'en'
         ? ''
@@ -232,18 +239,24 @@ function extractMessages() {
   });
 
   // Read js files
-  glob('src/**/*.ts').map((file) => {
-    transformSync(readFileSync(file).toString(), {
-      plugins: ['@babel/plugin-transform-typescript', () => plugin(file)],
+  // Sort the files, the order of glob is not stable and decides which file is
+  // the first reference, and so the context, of a message
+  glob('src/**/*.ts')
+    .sort()
+    .map((file) => {
+      transformSync(readFileSync(file).toString(), {
+        plugins: ['@babel/plugin-transform-typescript', () => plugin(file)],
+      });
     });
-  });
 
   // Read json files
-  glob('src/**/*.json').map((file) => {
-    transformSync(`export default ${readFileSync(file)}`, {
-      plugins: [() => plugin(file)],
+  glob('src/**/*.json')
+    .sort()
+    .map((file) => {
+      transformSync(`export default ${readFileSync(file)}`, {
+        plugins: [() => plugin(file)],
+      });
     });
-  });
 
   return messages;
 }
