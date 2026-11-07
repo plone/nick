@@ -6,6 +6,7 @@
 
 - Support the `__somersault__` block, the document model of `@plone/plate` used by Plone Aurora and `@kitconcept/volto-plate`, which holds the whole page as a Plate document: its text is indexed in `SearchableText`, it is converted to Markdown, `@replace` changes its text, the blocks wrapped in it are processed by their type (html blocks are sanitized) and their types are in `block_types`. Once a page has this block, its `blocks_layout` and other blocks are not used for the Markdown and the searchable text @sneridagh
 - Blocks can define `searchableText` to add their text to `SearchableText`; the slate block uses its `plaintext` like before @sneridagh
+- Add a Microsoft 365 (OAuth) mail transport: set the application (client) ID, tenant ID and client secret in the mail control panel to send mail through the Microsoft Graph API with the client credentials flow instead of SMTP. Run `pnpm seed:upgrade` (upgrade 1019) @robgietema
 
 ### Bugfix
 
