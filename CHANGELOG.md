@@ -2,6 +2,10 @@
 
 ## 3.0.1 (unreleased)
 
+### Feature
+
+- Add a Microsoft 365 (OAuth) mail transport: set the application (client) ID, tenant ID and client secret in the mail control panel to send mail through the Microsoft Graph API with the client credentials flow instead of SMTP. Run `pnpm seed:upgrade` (upgrade 1019) @robgietema
+
 ### Internal
 
 - Make `pnpm i18n` deterministic: sort the source files, so the context of a message that is in more than one file no longer depends on the order of glob, and keep the existing translation of a message when its context changes @robgietema
