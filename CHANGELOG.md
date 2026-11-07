@@ -2,6 +2,10 @@
 
 ## 3.0.1 (unreleased)
 
+### Internal
+
+- Make `pnpm i18n` deterministic: sort the source files, so the context of a message that is in more than one file no longer depends on the order of glob, and keep the existing translation of a message when its context changes @robgietema
+
 ## 3.0.0 (2026-10-31)
 
 ### Breaking
