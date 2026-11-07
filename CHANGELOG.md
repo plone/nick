@@ -11,6 +11,10 @@
 
 - Don't fail with a 500 on content whose `blocks_layout` lists ids missing in `blocks`, or which has no `blocks`, for example `@plone/plate` documents sent with the default layout: the missing blocks are skipped, like Plone does @sneridagh
 
+### Internal
+
+- Make `pnpm i18n` deterministic: sort the source files, so the context of a message that is in more than one file no longer depends on the order of glob, and keep the existing translation of a message when its context changes @robgietema
+
 ## 3.0.0 (2026-10-31)
 
 ### Breaking
