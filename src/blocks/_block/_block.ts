@@ -15,12 +15,20 @@ export const block = {
   },
 
   /**
+   * Get the searchable text.
+   * @param {any} _self The block instance.
+   * @returns {string} The searchable text.
+   */
+  searchableText: (_self: any): string => '',
+
+  /**
    * Replace text.
+   * @param {any} _self The block instance.
    * @param {RegExp} _pattern Pattern to search for.
    * @param {string} _replacement Replacement text.
    * @returns New object or false if nothing found.
    */
-  replace: (_pattern: RegExp, _replacement: string): any => false,
+  replace: (_self: any, _pattern: RegExp, _replacement: string): any => false,
 
   /**
    * Process block.

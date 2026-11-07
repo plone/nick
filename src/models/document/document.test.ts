@@ -520,4 +520,83 @@ describe('Document', () => {
       expect(maximum).toBe(1);
     });
   });
+
+  describe('blocks', () => {
+    const slate = (text: string) => ({
+      '@type': 'slate',
+      value: [{ type: 'p', children: [{ text }] }],
+      plaintext: text,
+    });
+    const somersault = {
+      '@type': '__somersault__',
+      value: [
+        { type: 'title', children: [{ text: 'Plate page' }] },
+        { type: 'p', children: [{ text: 'Somersault text' }] },
+        {
+          type: 'ploneBlock',
+          '@type': 'teaser',
+          href: [{ '@id': '/news' }],
+          children: [{ text: '' }],
+        },
+      ],
+    };
+    let count = 0;
+    const create = async (id: string, json: any) => {
+      count += 1;
+      const Document = models.get('Document');
+      const news = await Document.fetchOne({ path: '/news' }, {}, global.txn!);
+      return createDocument(
+        `0123abcd-0000-4000-8000-${String(600 + count).padStart(12, '0')}`,
+        news,
+        id,
+        'Page',
+        { json: { title: id, ...json } },
+      );
+    };
+
+    it('should index a somersault document with a stale layout', async () => {
+      const document = await create('plate', {
+        blocks: { __somersault__: somersault },
+        blocks_layout: { items: ['title-uuid', 'slate-uuid'] },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
+      expect(await document.searchableText()).toBe('plate Somersault text');
+      expect(document.getBlockTypes()).toEqual(['__somersault__', 'teaser']);
+    });
+
+    it('should only use the somersault document when there is one', async () => {
+      const document = await create('plate-and-legacy', {
+        blocks: { __somersault__: somersault, legacy: slate('Legacy text') },
+        blocks_layout: { items: ['legacy'] },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
+      expect(await document.searchableText()).toBe(
+        'plate-and-legacy Somersault text',
+      );
+    });
+
+    it('should skip layout ids without a block', async () => {
+      const document = await create('dangling', {
+        blocks: { text: slate('Some text') },
+        blocks_layout: { items: ['missing', 'text'] },
+      });
+      expect(document.toMarkdown()).toBe('Some text\n\n');
+      expect(await document.searchableText()).toBe('dangling Some text');
+    });
+
+    it('should handle missing blocks and layout', async () => {
+      const noBlocks = await create('no-blocks', {
+        blocks_layout: { items: ['missing'] },
+      });
+      expect(noBlocks.toMarkdown()).toBe('');
+      expect(noBlocks.getBlockTypes()).toEqual([]);
+
+      const noLayout = await create('no-layout', {
+        blocks: { text: slate('Some text'), invalid: null },
+      });
+      expect(noLayout.toMarkdown()).toBe('');
+      expect(noLayout.getBlockTypes()).toEqual(['slate']);
+      expect(await noLayout.searchableText()).toBe('no-layout Some text');
+    });
+  });
 });
