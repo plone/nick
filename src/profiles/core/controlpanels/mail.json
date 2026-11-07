@@ -6,6 +6,7 @@
     "fieldsets": [
       {
         "fields": [
+          "transport",
           "host",
           "port",
           "secure",
@@ -17,9 +18,24 @@
         ],
         "id": "default",
         "title": "Default"
+      },
+      {
+        "fields": ["oauth_client_id", "oauth_tenant_id", "oauth_client_secret"],
+        "id": "oauth",
+        "title:i18n": "Microsoft 365 (OAuth)"
       }
     ],
     "properties": {
+      "transport": {
+        "title:i18n": "Mail transport",
+        "description:i18n": "How the mail is sent: through an SMTP server, or through Microsoft 365 using OAuth (set the application details on the Microsoft 365 tab).",
+        "type": "string",
+        "default": "smtp",
+        "choices": [
+          ["smtp", "SMTP"],
+          ["microsoft365", "Microsoft 365 (OAuth)"]
+        ]
+      },
       "email_from_address": {
         "title:i18n": "Site 'From' address",
         "description:i18n": "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature.",
@@ -62,11 +78,28 @@
         "title:i18n": "Secure",
         "description:i18n": "If enabled, the mail is sent using a secure connection.",
         "type": "boolean"
+      },
+      "oauth_client_id": {
+        "title:i18n": "Application (client) ID",
+        "description:i18n": "The application (client) ID of the app registration in Microsoft Entra ID. Used when the mail transport is Microsoft 365.",
+        "type": "string"
+      },
+      "oauth_tenant_id": {
+        "title:i18n": "Tenant ID",
+        "description:i18n": "The directory (tenant) ID of your Microsoft 365 tenant.",
+        "type": "string"
+      },
+      "oauth_client_secret": {
+        "title:i18n": "Client secret",
+        "description:i18n": "The client secret value of the app registration. The app needs the Mail.Send application permission, and the mail is sent from the site 'From' address, which must be a mailbox in the tenant.",
+        "type": "string",
+        "widget": "password"
       }
     },
     "required": ["host", "port", "email_from_name", "email_from_address"]
   },
   "data": {
+    "transport": "smtp",
     "host": "localhost",
     "port": 25,
     "secure": true,

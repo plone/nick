@@ -1,0 +1,104 @@
+{
+  "id": "mail",
+  "title:i18n": "Mail",
+  "group": "General",
+  "schema": {
+    "fieldsets": [
+      {
+        "fields": [
+          "transport",
+          "host",
+          "port",
+          "secure",
+          "user",
+          "pass",
+          "email_from_name",
+          "email_from_address",
+          "debug"
+        ],
+        "id": "default",
+        "title": "Default"
+      },
+      {
+        "fields": ["oauth_client_id", "oauth_tenant_id", "oauth_client_secret"],
+        "id": "oauth",
+        "title:i18n": "Microsoft 365 (OAuth)"
+      }
+    ],
+    "properties": {
+      "transport": {
+        "title:i18n": "Mail transport",
+        "description:i18n": "How the mail is sent: through an SMTP server, or through Microsoft 365 using OAuth (set the application details on the Microsoft 365 tab).",
+        "type": "string",
+        "default": "smtp",
+        "choices": [
+          ["smtp", "SMTP"],
+          ["microsoft365", "Microsoft 365 (OAuth)"]
+        ]
+      },
+      "email_from_address": {
+        "title:i18n": "Site 'From' address",
+        "description:i18n": "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature.",
+        "type": "string"
+      },
+      "email_from_name": {
+        "title:i18n": "Site 'From' name",
+        "description:i18n": "Nick generates email using this name as the email sender.",
+        "type": "string"
+      },
+      "host": {
+        "title:i18n": "SMTP server",
+        "description:i18n": "The address of your local SMTP (outgoing email) server. Usually 'localhost', unless you use an external server to send email.",
+        "default": "localhost",
+        "type": "string"
+      },
+      "pass": {
+        "title:i18n": "ESMTP password",
+        "description:i18n": "The password for the ESMTP user account.",
+        "type": "string",
+        "widget": "password"
+      },
+      "port": {
+        "title:i18n": "SMTP port",
+        "description:i18n": "The port of your local SMTP (outgoing email) server. Usually '25'.",
+        "default": 25,
+        "type": "integer"
+      },
+      "user": {
+        "title:i18n": "ESMTP username",
+        "description:i18n": "Username for authentication to your email server. Not required unless you are using ESMTP.",
+        "type": "string"
+      },
+      "debug": {
+        "title:i18n": "Debug",
+        "description:i18n": "If enabled, the mail is sent to a test server.",
+        "type": "boolean"
+      },
+      "secure": {
+        "title:i18n": "Secure",
+        "description:i18n": "If enabled, the mail is sent using a secure connection.",
+        "type": "boolean"
+      },
+      "oauth_client_id": {
+        "title:i18n": "Application (client) ID",
+        "description:i18n": "The application (client) ID of the app registration in Microsoft Entra ID. Used when the mail transport is Microsoft 365.",
+        "type": "string"
+      },
+      "oauth_tenant_id": {
+        "title:i18n": "Tenant ID",
+        "description:i18n": "The directory (tenant) ID of your Microsoft 365 tenant.",
+        "type": "string"
+      },
+      "oauth_client_secret": {
+        "title:i18n": "Client secret",
+        "description:i18n": "The client secret value of the app registration. The app needs the Mail.Send application permission, and the mail is sent from the site 'From' address, which must be a mailbox in the tenant.",
+        "type": "string",
+        "widget": "password"
+      }
+    },
+    "required": ["host", "port", "email_from_name", "email_from_address"]
+  },
+  "data": {
+    "transport": "smtp"
+  }
+}

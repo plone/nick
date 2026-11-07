@@ -264,6 +264,13 @@ msgctxt "Profiles|Core|Roles"
 msgid "Anonymous"
 msgstr "అనామకుడు"
 
+#. Default: "Application (client) ID"
+#: src/profiles/core/controlpanels/mail.json:83
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:83
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Application (client) ID"
+msgstr ""
+
 #. Default: "Apply only to a objects in a particular workflow state"
 #: src/content_rules/conditions/workflow_state.ts:12
 msgctxt "Content rules|Conditions|Workflow state"
@@ -471,6 +478,13 @@ msgctxt "Profiles|Core|Behaviors|Versioning"
 msgid "Change Note"
 msgstr "మార్పు గమనిక"
 
+#. Default: "Client secret"
+#: src/profiles/core/controlpanels/mail.json:93
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:93
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Client secret"
+msgstr ""
+
 #. Default: "Client/server ordering mismatch."
 #: src/routes/content/content.ts:1160
 msgctxt "Routes|Content"
@@ -649,7 +663,8 @@ msgid "Dates"
 msgstr "తేదీలు"
 
 #. Default: "Debug"
-#: src/profiles/core/controlpanels/mail.json:57
+#: src/profiles/core/controlpanels/mail.json:73
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:73
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Debug"
 msgstr "డీబగ్"
@@ -838,13 +853,15 @@ msgid "Dublin Core metadata"
 msgstr "Dublin Core మెటాడేటా"
 
 #. Default: "ESMTP password"
-#: src/profiles/core/controlpanels/mail.json:40
+#: src/profiles/core/controlpanels/mail.json:56
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:56
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "ESMTP password"
 msgstr "ESMTP పాస్‌వర్డ్"
 
 #. Default: "ESMTP username"
-#: src/profiles/core/controlpanels/mail.json:52
+#: src/profiles/core/controlpanels/mail.json:68
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:68
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "ESMTP username"
 msgstr "ESMTP వినియోగదారు పేరు"
@@ -1179,6 +1196,13 @@ msgctxt "Constants|Userschema"
 msgid "Home Page"
 msgstr ""
 
+#. Default: "How the mail is sent: through an SMTP server, or through Microsoft 365 using OAuth (set the application details on the Microsoft 365 tab)."
+#: src/profiles/core/controlpanels/mail.json:31
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:31
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "How the mail is sent: through an SMTP server, or through Microsoft 365 using OAuth (set the application details on the Microsoft 365 tab)."
+msgstr ""
+
 #. Default: "Identifier"
 #: src/profiles/core/behaviors/short_name.json:16
 msgctxt "Profiles|Core|Behaviors|Short name"
@@ -1186,13 +1210,15 @@ msgid "Identifier"
 msgstr "గుర్తింపు"
 
 #. Default: "If enabled, the mail is sent to a test server."
-#: src/profiles/core/controlpanels/mail.json:58
+#: src/profiles/core/controlpanels/mail.json:74
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:74
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "If enabled, the mail is sent to a test server."
 msgstr "ప్రారంభిస్తే, మెయిల్ టెస్ట్ సర్వర్‌కు పంపబడుతుంది."
 
 #. Default: "If enabled, the mail is sent using a secure connection."
-#: src/profiles/core/controlpanels/mail.json:63
+#: src/profiles/core/controlpanels/mail.json:79
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:79
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "If enabled, the mail is sent using a secure connection."
 msgstr "ప్రారంభిస్తే, మెయిల్ సురక్షిత కనెక్షన్ ఉపయోగించి పంపబడుతుంది."
@@ -1487,6 +1513,7 @@ msgstr "లాగౌట్"
 
 #. Default: "Mail"
 #: src/profiles/core/controlpanels/mail.json:3
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:3
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Mail"
 msgstr "మెయిల్"
@@ -1496,6 +1523,13 @@ msgstr "మెయిల్"
 #: src/profiles/core/upgrades/1003/controlpanels/form.json:15
 msgctxt "Profiles|Core|Controlpanels|Form"
 msgid "Mail Template"
+msgstr ""
+
+#. Default: "Mail transport"
+#: src/profiles/core/controlpanels/mail.json:30
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:30
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Mail transport"
 msgstr ""
 
 #. Default: "Manage Preferences"
@@ -1577,6 +1611,13 @@ msgstr ""
 #: src/content_rules/actions/send_email.ts:44
 msgctxt "Content rules|Actions|Logger"
 msgid "Message"
+msgstr ""
+
+#. Default: "Microsoft 365 (OAuth)"
+#: src/profiles/core/controlpanels/mail.json:25
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:25
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Microsoft 365 (OAuth)"
 msgstr ""
 
 #. Default: "Missing credentials"
@@ -1681,13 +1722,15 @@ msgid "News"
 msgstr ""
 
 #. Default: "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature."
-#: src/profiles/core/controlpanels/mail.json:25
+#: src/profiles/core/controlpanels/mail.json:41
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:41
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Nick generates email using this address as the email return address. It is also used as the destination address for the site-wide contact form and the “Send test email” feature."
 msgstr ""
 
 #. Default: "Nick generates email using this name as the email sender."
-#: src/profiles/core/controlpanels/mail.json:30
+#: src/profiles/core/controlpanels/mail.json:46
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:46
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Nick generates email using this name as the email sender."
 msgstr ""
@@ -2315,13 +2358,15 @@ msgid "Rules"
 msgstr "నియమాలు"
 
 #. Default: "SMTP port"
-#: src/profiles/core/controlpanels/mail.json:46
+#: src/profiles/core/controlpanels/mail.json:62
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:62
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "SMTP port"
 msgstr "SMTP పోర్ట్"
 
 #. Default: "SMTP server"
-#: src/profiles/core/controlpanels/mail.json:34
+#: src/profiles/core/controlpanels/mail.json:50
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:50
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "SMTP server"
 msgstr "SMTP సర్వర్"
@@ -2345,7 +2390,8 @@ msgid "Searchable text"
 msgstr "శోధించగల వచనం"
 
 #. Default: "Secure"
-#: src/profiles/core/controlpanels/mail.json:62
+#: src/profiles/core/controlpanels/mail.json:78
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:78
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Secure"
 msgstr "సురక్షితం"
@@ -2457,13 +2503,15 @@ msgid "Site"
 msgstr "సైట్"
 
 #. Default: "Site 'From' address"
-#: src/profiles/core/controlpanels/mail.json:24
+#: src/profiles/core/controlpanels/mail.json:40
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:40
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Site 'From' address"
 msgstr "సైట్ 'నుండి' చిరునామా"
 
 #. Default: "Site 'From' name"
-#: src/profiles/core/controlpanels/mail.json:29
+#: src/profiles/core/controlpanels/mail.json:45
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:45
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Site 'From' name"
 msgstr "సైట్ 'నుండి' పేరు"
@@ -2625,6 +2673,13 @@ msgctxt "Routes|Recyclebin"
 msgid "Target path not found."
 msgstr ""
 
+#. Default: "Tenant ID"
+#: src/profiles/core/controlpanels/mail.json:88
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:88
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "Tenant ID"
+msgstr ""
+
 #. Default: "Text is required to add a comment."
 #: src/routes/comments/comments.ts:121
 #: src/routes/comments/comments.ts:181
@@ -2669,10 +2724,25 @@ msgid "The URL for your external home page, if you have one."
 msgstr ""
 
 #. Default: "The address of your local SMTP (outgoing email) server. Usually 'localhost', unless you use an external server to send email."
-#: src/profiles/core/controlpanels/mail.json:35
+#: src/profiles/core/controlpanels/mail.json:51
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:51
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "The address of your local SMTP (outgoing email) server. Usually 'localhost', unless you use an external server to send email."
 msgstr "మీ స్థానిక SMTP (అవుట్‌గోయింగ్ ఇమెయిల్) సర్వర్ చిరునామా. బాహ్య సర్వర్‌ను ఉపయోగించకపోతే సాధారణంగా 'localhost'."
+
+#. Default: "The application (client) ID of the app registration in Microsoft Entra ID. Used when the mail transport is Microsoft 365."
+#: src/profiles/core/controlpanels/mail.json:84
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:84
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The application (client) ID of the app registration in Microsoft Entra ID. Used when the mail transport is Microsoft 365."
+msgstr ""
+
+#. Default: "The client secret value of the app registration. The app needs the Mail.Send application permission, and the mail is sent from the site 'From' address, which must be a mailbox in the tenant."
+#: src/profiles/core/controlpanels/mail.json:94
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:94
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The client secret value of the app registration. The app needs the Mail.Send application permission, and the mail is sent from the site 'From' address, which must be a mailbox in the tenant."
+msgstr ""
 
 #. Default: "The comment added to the history while versioning the content."
 #: src/content_rules/actions/version_item.ts:30
@@ -2719,6 +2789,13 @@ msgstr "అంశం సృష్టించబడిన తేదీ"
 #: src/routes/content/content.ts:1188
 msgctxt "Routes|Content"
 msgid "The delta has to be top, bottom or an integer."
+msgstr ""
+
+#. Default: "The directory (tenant) ID of your Microsoft 365 tenant."
+#: src/profiles/core/controlpanels/mail.json:89
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:89
+msgctxt "Profiles|Core|Controlpanels|Mail"
+msgid "The directory (tenant) ID of your Microsoft 365 tenant."
 msgstr ""
 
 #. Default: "The email address that sends the email. If no email is provided here, it will use the portal from address."
@@ -2832,7 +2909,8 @@ msgid "The order of an item in its parent folder"
 msgstr "దాని పేరెంట్ ఫోల్డర్‌లో అంశం యొక్క క్రమం"
 
 #. Default: "The password for the ESMTP user account."
-#: src/profiles/core/controlpanels/mail.json:41
+#: src/profiles/core/controlpanels/mail.json:57
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:57
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "The password for the ESMTP user account."
 msgstr "ESMTP వినియోగదారు ఖాతా యొక్క పాస్‌వర్డ్."
@@ -2844,7 +2922,8 @@ msgid "The person that created an item"
 msgstr "అంశాన్ని సృష్టించిన వ్యక్తి"
 
 #. Default: "The port of your local SMTP (outgoing email) server. Usually '25'."
-#: src/profiles/core/controlpanels/mail.json:47
+#: src/profiles/core/controlpanels/mail.json:63
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:63
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "The port of your local SMTP (outgoing email) server. Usually '25'."
 msgstr "మీ స్థానిక SMTP (అవుట్‌గోయింగ్ ఇమెయిల్) సర్వర్ పోర్ట్. సాధారణంగా '25'."
@@ -3178,7 +3257,8 @@ msgid "Username"
 msgstr ""
 
 #. Default: "Username for authentication to your email server. Not required unless you are using ESMTP."
-#: src/profiles/core/controlpanels/mail.json:53
+#: src/profiles/core/controlpanels/mail.json:69
+#: src/profiles/core/upgrades/1019/controlpanels/mail.json:69
 msgctxt "Profiles|Core|Controlpanels|Mail"
 msgid "Username for authentication to your email server. Not required unless you are using ESMTP."
 msgstr "మీ ఇమెయిల్ సర్వర్‌కు ప్రమాణీకరణ కోసం వినియోగదారు పేరు. ESMTP ఉపయోగించకపోతే అవసరం లేదు."
