@@ -39,7 +39,7 @@ import { s3 } from '../../blobs/s3/s3';
 import blocks from '../../blocks';
 import { html } from '../../blocks/html/html';
 import { slate } from '../../blocks/slate/slate';
-import { SOMERSAULT, somersault } from '../../blocks/somersault/somersault';
+import { LEGACY_PLATE, PLATE, plate } from '../../blocks/plate/plate';
 import { title } from '../../blocks/title/title';
 
 // Events
@@ -201,7 +201,9 @@ export function init(): void {
   blocks.register('html', html);
   blocks.register('title', title);
   blocks.register('slate', slate);
-  blocks.register(SOMERSAULT, somersault);
+  blocks.register(PLATE, plate);
+  // Deprecated: content saved before Plate regions existed
+  blocks.register(LEGACY_PLATE, plate);
 
   // Register events
   events.register(content_rules);

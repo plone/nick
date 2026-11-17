@@ -27,7 +27,11 @@ import { v4 as uuid } from 'uuid';
 // Internal imports
 import models from '../';
 import blocks from '../../blocks';
-import { SOMERSAULT } from '../../blocks/somersault/somersault';
+import {
+  getMainRegion,
+  getPlateRegions,
+  isPlateRegion,
+} from '../../blocks/plate/plate';
 import behaviors from '../../behaviors';
 import { DocumentCollection } from '../../collections/document/document';
 import languages from '../../constants/languages';
@@ -1414,10 +1418,10 @@ export class Document extends Model {
 
     const chunks: string[] = [];
 
-    // Add the text of the blocks, only the Plate document if there is one
-    const somersault = self.json.blocks?.[SOMERSAULT];
-    (isObject(somersault)
-      ? [somersault]
+    // Add the text of the blocks, only the Plate regions if the page has a
+    // main region: the page body first, then the slots
+    (getMainRegion(self.json.blocks)
+      ? getPlateRegions(self.json.blocks)
       : Object.values(self.json.blocks || {})
     ).map((block: any) => {
       if (isObject(block)) {
@@ -1974,7 +1978,7 @@ export class Document extends Model {
                     (subblock: any) => subblock?.['@type'],
                   )
                 : []),
-              ...(block?.['@type'] === SOMERSAULT
+              ...(isPlateRegion(block)
                 ? plateBlocks(block.value).map((node) => node['@type'])
                 : []),
             ]),
@@ -2417,8 +2421,8 @@ END:VEVENT`;
   }
 
   /**
-   * Get the blocks in the order they are shown: the `@plone/plate` document
-   * if there is one, otherwise the blocks of `blocks_layout`. Ids in
+   * Get the blocks in the order they are shown: the `main` Plate region if
+   * there is one, otherwise the blocks of `blocks_layout`. Ids in
    * the layout without a block are skipped.
    * @method getLayoutBlocks
    * @returns {Array} Blocks
@@ -2430,8 +2434,9 @@ END:VEVENT`;
     if (!isObject(json)) {
       return [];
     }
-    if (isObject(json[SOMERSAULT])) {
-      return [json[SOMERSAULT]];
+    const main = getMainRegion(json);
+    if (main) {
+      return [main];
     }
     const items = self.json.blocks_layout?.items;
     return (Array.isArray(items) ? items : [])

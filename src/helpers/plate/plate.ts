@@ -2,8 +2,8 @@
  * Plate helper.
  * @module helpers/plate/plate
  *
- * Plate documents are the value of the `__somersault__` block, the document
- * model of `@plone/plate`: a list of Slate nodes with the marks of Plate on the text nodes
+ * Plate documents are the value of the Plate regions of `blocks`, whose
+ * `@type` is `plate`, in the document model of `@plone/plate`: a list of Slate nodes with the marks of Plate on the text nodes
  * (`bold`, `italic`, ...), links of type `a` with a `url`, lists as
  * paragraphs with `listStyleType` and `indent`, and other blocks wrapped in
  * nodes of type `ploneBlock` which carry the data of the block next to its
@@ -81,11 +81,21 @@ export type PlateDescendant = PlateElement | PlateText;
 /** A Plate document, like `Value` of `platejs`. */
 export type PlateValue = PlateElement[];
 
-/** The `__somersault__` block, which holds the whole page. */
-export interface SomersaultBlock {
-  '@type': '__somersault__';
+/**
+ * A Plate region, an entry of `blocks` keyed by the name of the region, like
+ * `main` for the page body. Content saved before regions existed has one
+ * region with the key and the type `__somersault__`.
+ */
+export interface PlateRegion {
+  '@type': 'plate' | '__somersault__';
   value: PlateValue;
 }
+
+/**
+ * The single region of content saved before regions existed.
+ * @deprecated Use `PlateRegion`.
+ */
+export type SomersaultBlock = PlateRegion;
 
 /**
  * A node as stored. The value comes from clients and is not validated, so

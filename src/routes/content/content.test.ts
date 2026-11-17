@@ -128,11 +128,11 @@ describe('Content', () => {
         id: 'plate',
         title: 'Plate page',
         blocks: {
-          __somersault__: {
-            '@type': '__somersault__',
+          main: {
+            '@type': 'plate',
             value: [
               { type: 'title', children: [{ text: 'Plate page' }] },
-              { type: 'p', children: [{ text: 'Somersault paragraph' }] },
+              { type: 'p', children: [{ text: 'Plateregion paragraph' }] },
               {
                 type: 'ploneBlock',
                 '@type': 'html',
@@ -151,19 +151,17 @@ describe('Content', () => {
       .set('Accept', 'text/markdown')
       .set('Authorization', `Bearer ${token}`)
       .expect(200);
-    expect(markdown.text).toBe('# Plate page\n\nSomersault paragraph\n\nSafe');
+    expect(markdown.text).toBe('# Plate page\n\nPlateregion paragraph\n\nSafe');
 
     const content = await request(app)
       .get('/news/plate')
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`)
       .expect(200);
-    expect(content.body.blocks.__somersault__.value[2].html).toBe(
-      '<p>Safe</p>',
-    );
+    expect(content.body.blocks.main.value[2].html).toBe('<p>Safe</p>');
 
     const search = await request(app)
-      .get('/@search?SearchableText=somersault')
+      .get('/@search?SearchableText=plateregion')
       .set('Accept', 'application/json')
       .set('Authorization', `Bearer ${token}`)
       .expect(200);

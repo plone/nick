@@ -527,11 +527,11 @@ describe('Document', () => {
       value: [{ type: 'p', children: [{ text }] }],
       plaintext: text,
     });
-    const somersault = {
-      '@type': '__somersault__',
+    const main = {
+      '@type': 'plate',
       value: [
         { type: 'title', children: [{ text: 'Plate page' }] },
-        { type: 'p', children: [{ text: 'Somersault text' }] },
+        { type: 'p', children: [{ text: 'Main text' }] },
         {
           type: 'ploneBlock',
           '@type': 'teaser',
@@ -554,25 +554,51 @@ describe('Document', () => {
       );
     };
 
-    it('should index a somersault document with a stale layout', async () => {
+    it('should index a main region with a stale layout', async () => {
       const document = await create('plate', {
-        blocks: { __somersault__: somersault },
+        blocks: { main },
         blocks_layout: { items: ['title-uuid', 'slate-uuid'] },
       });
-      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
-      expect(await document.searchableText()).toBe('plate Somersault text');
-      expect(document.getBlockTypes()).toEqual(['__somersault__', 'teaser']);
+      expect(document.toMarkdown()).toBe('# Plate page\n\nMain text\n\n');
+      expect(await document.searchableText()).toBe('plate Main text');
+      expect(document.getBlockTypes()).toEqual(['plate', 'teaser']);
     });
 
-    it('should only use the somersault document when there is one', async () => {
+    it('should only use the Plate regions when there is a main region', async () => {
       const document = await create('plate-and-legacy', {
-        blocks: { __somersault__: somersault, legacy: slate('Legacy text') },
+        blocks: { main, legacy: slate('Legacy text') },
         blocks_layout: { items: ['legacy'] },
       });
-      expect(document.toMarkdown()).toBe('# Plate page\n\nSomersault text\n\n');
+      expect(document.toMarkdown()).toBe('# Plate page\n\nMain text\n\n');
       expect(await document.searchableText()).toBe(
-        'plate-and-legacy Somersault text',
+        'plate-and-legacy Main text',
       );
+    });
+
+    it('should index the slot regions after the main region', async () => {
+      const document = await create('plate-slots', {
+        blocks: {
+          aboveContent: {
+            '@type': 'plate',
+            value: [{ type: 'p', children: [{ text: 'Slot text' }] }],
+          },
+          main,
+        },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nMain text\n\n');
+      expect(await document.searchableText()).toBe(
+        'plate-slots Main text Slot text',
+      );
+    });
+
+    it('should read the legacy __somersault__ region as the main region', async () => {
+      const document = await create('plate-legacy', {
+        blocks: { __somersault__: { ...main, '@type': '__somersault__' } },
+        blocks_layout: { items: ['title-uuid', 'slate-uuid'] },
+      });
+      expect(document.toMarkdown()).toBe('# Plate page\n\nMain text\n\n');
+      expect(await document.searchableText()).toBe('plate-legacy Main text');
+      expect(document.getBlockTypes()).toEqual(['__somersault__', 'teaser']);
     });
 
     it('should skip layout ids without a block', async () => {
