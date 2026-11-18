@@ -345,7 +345,10 @@ export async function handleBlocks(json: Json): Promise<Json> {
     await Promise.all(
       Object.keys(output.blocks).map(async (blockId) => {
         const blockData: any = output.blocks?.[blockId];
-        const block = blocks.get(blockData['@type']);
+        if (!isObject(blockData)) {
+          return;
+        }
+        const block = blocks.get((blockData as any)['@type']);
         output.blocks![blockId] = await block.process(blockData);
       }),
     );
@@ -392,6 +395,9 @@ export async function handleBlockReferences(
   if (output.blocks && isObject(output.blocks)) {
     await Promise.all(
       Object.keys(output.blocks).map(async (block) => {
+        if (!isObject(output.blocks?.[block])) {
+          return;
+        }
         if (isObject(output.blocks?.[block].href)) {
           output.blocks[block].href[0] = await extendHref(
             output.blocks[block].href[0],
@@ -416,7 +422,7 @@ export async function handleBlockReferences(
         if (isObject(output.blocks?.[block].blocks)) {
           await Promise.all(
             Object.keys(output.blocks[block].blocks).map(async (subblock) => {
-              if (isObject(output.blocks?.[block].blocks?.[subblock].href)) {
+              if (isObject(output.blocks?.[block].blocks?.[subblock]?.href)) {
                 output.blocks[block].blocks[subblock].href[0] =
                   await extendHref(
                     output.blocks[block].blocks[subblock].href[0],

@@ -40,6 +40,8 @@ export type MiddlewareHandler = (
 
 export type Block = {
   toMarkdown?: (self: any, document: any) => string;
+  searchableText?: (self: any) => string;
+  replace?: (self: any, pattern: RegExp, replacement: string) => any;
   process?: (self: any) => Promise<any>;
 };
 

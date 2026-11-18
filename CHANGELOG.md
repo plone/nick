@@ -4,7 +4,13 @@
 
 ### Feature
 
+- Support the Plate regions of the `@plone/plate` document model used by Plone Aurora and `@kitconcept/volto-plate`: entries of `blocks` whose `@type` is `plate` and whose `value` is a Plate document, keyed by the name of the region, `main` for the page body and the slot name for slots, like `aboveContent`. Their text is indexed in `SearchableText`, the `main` region is converted to Markdown, `@replace` changes their text, the blocks wrapped in them are processed by their type (html blocks are sanitized) and their types are in `block_types`. Once a page has a `main` region, its `blocks_layout` and other blocks are not used for the Markdown and the searchable text. The legacy `__somersault__` region of content saved before regions existed is read as the `main` region, and is deprecated @sneridagh
+- Blocks can define `searchableText` to add their text to `SearchableText`; the slate block uses its `plaintext` like before @sneridagh
 - Add a Microsoft 365 (OAuth) mail transport: set the application (client) ID, tenant ID and client secret in the mail control panel to send mail through the Microsoft Graph API with the client credentials flow instead of SMTP. Run `pnpm seed:upgrade` (upgrade 1019) @robgietema
+
+### Bugfix
+
+- Don't fail with a 500 on content whose `blocks_layout` lists ids missing in `blocks`, or which has no `blocks`, for example `@plone/plate` documents sent with the default layout: the missing blocks are skipped, like Plone does @sneridagh
 
 ### Internal
 

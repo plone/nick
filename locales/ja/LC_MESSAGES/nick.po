@@ -2261,7 +2261,7 @@ msgid "Rename"
 msgstr "名前の変更"
 
 #. Default: "Replaced text from {pattern} to {replacement}."
-#: src/routes/replace/replace.ts:174
+#: src/routes/replace/replace.ts:181
 msgctxt "Routes|Replace"
 msgid "Replaced text from {pattern} to {replacement}."
 msgstr ""

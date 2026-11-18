@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Nick\n"
-"POT-Creation-Date: 2026-11-07T03:40:26.620Z\n"
+"POT-Creation-Date: 2026-11-07T04:26:39.615Z\n"
 "Last-Translator: Rob Gietema\n"
 "Language-Team: Nick\n"
 "MIME-Version: 1.0\n"
@@ -2258,7 +2258,7 @@ msgid "Rename"
 msgstr ""
 
 #. Default: "Replaced text from {pattern} to {replacement}."
-#: src/routes/replace/replace.ts:174
+#: src/routes/replace/replace.ts:181
 msgctxt "Routes|Replace"
 msgid "Replaced text from {pattern} to {replacement}."
 msgstr ""

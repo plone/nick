@@ -118,6 +118,58 @@ describe('Content', () => {
   it('should export a markdown file for an object', () =>
     testRequest(app, 'content/markdown'));
 
+  it('should add a @plone/plate document with a stale blocks layout', async () => {
+    await request(app)
+      .post('/news')
+      .set('Accept', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
+      .send({
+        '@type': 'Page',
+        id: 'plate',
+        title: 'Plate page',
+        blocks: {
+          main: {
+            '@type': 'plate',
+            value: [
+              { type: 'title', children: [{ text: 'Plate page' }] },
+              { type: 'p', children: [{ text: 'Plateregion paragraph' }] },
+              {
+                type: 'ploneBlock',
+                '@type': 'html',
+                html: '<p>Safe</p><script>alert(1)</script>',
+                children: [{ text: '' }],
+              },
+            ],
+          },
+        },
+        blocks_layout: { items: ['title-uuid', 'slate-uuid'] },
+      })
+      .expect(201);
+
+    const markdown = await request(app)
+      .get('/news/plate')
+      .set('Accept', 'text/markdown')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+    expect(markdown.text).toBe('# Plate page\n\nPlateregion paragraph\n\nSafe');
+
+    const content = await request(app)
+      .get('/news/plate')
+      .set('Accept', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+    expect(content.body.blocks.main.value[2].html).toBe('<p>Safe</p>');
+
+    const search = await request(app)
+      .get('/@search?SearchableText=plateregion')
+      .set('Accept', 'application/json')
+      .set('Authorization', `Bearer ${token}`)
+      .expect(200);
+    expect(search.body.items.map((item: any) => item['@id'])).toEqual([
+      'http://localhost:8080/news/plate',
+    ]);
+  });
+
   it('should ignore a workflow history sent on create', async () => {
     const Document = models.get('Document');
     await request(app)
