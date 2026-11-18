@@ -2,6 +2,10 @@
 
 ## 3.1.1 (unreleased)
 
+### Bugfix
+
+- Don't return the items of the navigation root in the @navroot endpoint (and `?expand=navroot`), like plone.restapi, so the titles of private top-level items can't leak; use @navigation or @search to list them @robgietema
+
 ## 3.1.0 (2026-11-18)
 
 ### Feature
