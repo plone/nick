@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.2 (2026-11-18)
+
+### Bugfix
+
+- Depend on `@plone/nick` `^3.1.0` in generated projects @robgietema
+
 ## 0.1.1 (2026-10-31)
 
 ### Bugfix
