@@ -4,6 +4,7 @@
 
 ### Bugfix
 
+- Fix an error when deleting a content item with an empty file or image field, by skipping empty fields when removing the files and images @robgietema
 - Don't return the items of the navigation root in the @navroot endpoint (and `?expand=navroot`), like plone.restapi, so the titles of private top-level items can't leak; use @navigation or @search to list them @robgietema
 
 ### Internal

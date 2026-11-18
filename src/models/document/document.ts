@@ -2391,16 +2391,16 @@ END:VEVENT`;
       const files = uniq(
         flattenDeep(
           self._versions.map((version: any) => [
-            ...fileFields.map((field: string) => version.json[field].uuid),
+            ...fileFields.map((field: string) => version.json[field]?.uuid),
             ...imageFields.map((field: string) => [
-              version.json[field].uuid,
+              version.json[field]?.uuid,
               ...Object.keys(config.settings.imageScales).map(
-                (scale) => version.json[field].scales[scale].uuid,
+                (scale) => version.json[field]?.scales?.[scale]?.uuid,
               ),
             ]),
           ]),
         ),
-      );
+      ).filter(Boolean);
 
       // Remove files
       await mapAsync(files, async (file: any) => await removeFile(file, trx));
