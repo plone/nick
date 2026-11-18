@@ -6,6 +6,10 @@
 
 - Don't return the items of the navigation root in the @navroot endpoint (and `?expand=navroot`), like plone.restapi, so the titles of private top-level items can't leak; use @navigation or @search to list them @robgietema
 
+### Internal
+
+- Update all dependencies to their latest versions, except TypeScript, which stays at 6.0.3 because typescript-eslint doesn't support TypeScript 7 yet @robgietema
+
 ## 3.1.0 (2026-11-18)
 
 ### Feature
