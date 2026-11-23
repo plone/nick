@@ -117,7 +117,7 @@
     "vitest": "5.1.0"
   },
   "dependencies": {
-    "@aws-sdk/client-s3": "3.1170.0",
+    "@aws-sdk/client-s3": "3.1173.0",
     "@formatjs/cli": "6.19.1",
     "@formatjs/intl": "6.1.6",
     "bcrypt": "6.0.0",
