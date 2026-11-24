@@ -134,7 +134,7 @@
     "mime-types": "3.0.2",
     "multer": "2.5.0",
     "node-cron": "4.6.0",
-    "nodemailer": "10.6.0",
+    "nodemailer": "10.6.1",
     "objection": "4.4.3",
     "pdf-parse": "2.4.5",
     "pg": "8.23.1",
